@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NIKAH RAPI — Wedding Planner Excel Premium</title>
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap"
     rel="stylesheet">
   <style>
     :root {
@@ -24,6 +24,14 @@
       --text-dark: #2C2218;
       --text-mid: #5C4A3E;
       --text-light: #8C7A6E;
+      
+      /* Tambahan untuk Interactive Preview */
+      --warm: #FDFBF8;
+      --blush-d: #D4A090;
+      --rose: #C4857A;
+      --text: #2C2218;
+      --mid: #5C4A3E;
+      --light: #8C7A6E;
     }
 
     *,
@@ -228,13 +236,8 @@
     }
 
     @keyframes fillBar {
-      from {
-        width: 0;
-      }
-
-      to {
-        width: 64%;
-      }
+      from { width: 0; }
+      to { width: 64%; }
     }
 
     .slots-text {
@@ -268,27 +271,13 @@
     }
 
     @keyframes floatUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes float {
-
-      0%,
-      100% {
-        transform: translateY(0px);
-      }
-
-      50% {
-        transform: translateY(-12px);
-      }
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
     }
 
     .mockup-card {
@@ -432,27 +421,13 @@
     }
 
     @keyframes fadeLeft {
-      from {
-        opacity: 0;
-        transform: translateX(20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
+      from { opacity: 0; transform: translateX(20px); }
+      to { opacity: 1; transform: translateX(0); }
     }
 
     @keyframes fadeRight {
-      from {
-        opacity: 0;
-        transform: translateX(-20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
+      from { opacity: 0; transform: translateX(-20px); }
+      to { opacity: 1; transform: translateX(0); }
     }
 
     .fb-icon {
@@ -740,6 +715,75 @@
       color: var(--mauve);
     }
 
+    /* ── INTERACTIVE PREVIEW SECTION ── */
+    .s { padding: 100px 80px; background: var(--warm); position: relative; overflow: hidden; }
+    .s::before { content: ''; position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(232, 196, 184, 0.3) 0%, transparent 70%); pointer-events: none; }
+    .inn { max-width: 1000px; margin: 0 auto; position: relative; z-index: 2; }
+    .eye { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 16px; color: var(--rose); text-align: center; margin-bottom: 12px; }
+    .ttl { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 4vw, 52px); font-weight: 300; color: var(--text); text-align: center; line-height: 1.2; margin-bottom: 14px; }
+    .ttl em { font-style: italic; color: var(--mauve); }
+    .sub { font-size: 14px; color: var(--light); font-weight: 300; text-align: center; max-width: 520px; margin: 0 auto 48px; line-height: 1.7; }
+    .tabs { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
+    .tab-btn { padding: 9px 20px; border-radius: 100px; font-size: 12px; font-weight: 500; cursor: pointer; border: 1px solid rgba(139, 94, 106, 0.2); color: var(--light); background: transparent; font-family: 'Jost', sans-serif; transition: all .25s; }
+    .tab-btn:hover { border-color: var(--mauve); color: var(--mauve); }
+    .tab-btn.on { background: var(--mauve); border-color: var(--mauve); color: white; }
+    .stage { display: none; animation: fu .4s ease both; }
+    .stage.on { display: block; }
+    @keyframes fu { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    .ew { background: #FDFAF6; border-radius: 16px; overflow: hidden; box-shadow: 0 30px 60px rgba(92, 61, 46, 0.12), 0 0 0 1px rgba(139, 94, 106, 0.1); }
+    .eb { background: #F5EEE6; padding: 12px 20px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid rgba(139, 94, 106, 0.1); }
+    .dots { display: flex; gap: 6px; }
+    .dot { width: 12px; height: 12px; border-radius: 50%; }
+    .fn { font-size: .75rem; color: var(--light); flex: 1; text-align: center; }
+    .est { background: #F0E8E0; padding: 0 20px; display: flex; gap: 2px; border-bottom: 1px solid rgba(139, 94, 106, 0.1); overflow-x: auto; }
+    .et { padding: 8px 14px; font-size: .7rem; font-weight: 600; border-radius: 4px 4px 0 0; white-space: nowrap; color: rgba(92, 61, 46, 0.4); cursor: default; }
+    .et.on { background: #FDFAF6; color: var(--mauve); border-top: 2px solid var(--mauve); }
+    .sb2 { padding: 24px; min-height: 380px; }
+    .dh { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid rgba(139, 94, 106, 0.1); }
+    .krow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 20px; }
+    .kc { border-radius: 12px; padding: 16px; border: 1px solid rgba(139, 94, 106, 0.12); }
+    .kl { font-size: .6rem; color: var(--light); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .kv { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; line-height: 1; margin-bottom: 5px; }
+    .kn { font-size: .62rem; font-weight: 500; }
+    .pg2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .pb { background: rgba(139, 94, 106, 0.04); border: 1px solid rgba(139, 94, 106, 0.1); border-radius: 12px; padding: 16px; }
+    .pt { font-size: .68rem; color: var(--light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px; }
+    .pr { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .pi { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; }
+    .pn2 { font-size: .72rem; font-weight: 600; color: var(--mid); margin-bottom: 4px; }
+    .pw { height: 4px; background: rgba(139, 94, 106, 0.1); border-radius: 4px; overflow: hidden; }
+    .pf { height: 100%; border-radius: 4px; background: linear-gradient(90deg, var(--blush-d), var(--mauve)); }
+    .pp { font-size: .65rem; color: var(--light); white-space: nowrap; }
+    .tbl { width: 100%; border-collapse: collapse; font-size: .78rem; }
+    .tbl th { background: rgba(139, 94, 106, 0.08); color: var(--mauve); font-size: .62rem; letter-spacing: 1.5px; text-transform: uppercase; padding: 10px 12px; text-align: left; font-weight: 700; }
+    .tbl td { padding: 11px 12px; color: var(--mid); border-bottom: 1px solid rgba(139, 94, 106, 0.07); vertical-align: middle; }
+    .tbl tr:hover td { background: rgba(139, 94, 106, 0.03); }
+    .inn2 { display: flex; align-items: center; gap: 8px; font-weight: 600; color: var(--text); }
+    .id2 { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .pc { font-weight: 700; color: var(--mauve); }
+    .bg { font-size: .62rem; font-weight: 700; padding: 3px 8px; border-radius: 100px; }
+    .tr-t { background: rgba(139, 94, 106, 0.06) !important; }
+    .tr-t td { font-weight: 700; color: var(--text); border-top: 2px solid rgba(139, 94, 106, 0.15) !important; }
+    .ks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
+    .kk { border-radius: 12px; padding: 16px; text-align: center; }
+    .kkv { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 600; line-height: 1; margin-bottom: 4px; }
+    .kkl { font-size: .65rem; color: var(--light); }
+    .ktbl { width: 100%; border-collapse: collapse; font-size: .78rem; }
+    .ktbl th { background: rgba(201, 169, 110, 0.1); color: var(--gold); font-size: .62rem; letter-spacing: 1.5px; text-transform: uppercase; padding: 10px 12px; text-align: left; font-weight: 700; }
+    .ktbl td { padding: 10px 12px; color: var(--mid); border-bottom: 1px solid rgba(201, 169, 110, 0.08); vertical-align: middle; }
+    .kt { display: flex; align-items: center; gap: 8px; }
+    .av { font-weight: 700; color: var(--gold); }
+    .ud { font-size: .65rem; color: var(--light); max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .btbl { width: 100%; border-collapse: collapse; font-size: .78rem; }
+    .btbl th { background: rgba(139, 94, 106, 0.08); color: var(--mauve); font-size: .62rem; letter-spacing: 1.5px; text-transform: uppercase; padding: 8px 12px; text-align: left; font-weight: 700; }
+    .btbl td { padding: 10px 12px; color: var(--mid); border-bottom: 1px solid rgba(139, 94, 106, 0.07); vertical-align: middle; }
+    .bw { width: 80px; height: 6px; background: rgba(139, 94, 106, 0.1); border-radius: 4px; overflow: hidden; }
+    .bb { height: 100%; border-radius: 4px; }
+    .ov { color: var(--rose) !important; font-weight: 700; }
+    .ok { color: var(--sage); font-weight: 700; }
+    .feats { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 32px; }
+    .feat { display: flex; align-items: center; gap: 8px; background: rgba(139, 94, 106, 0.06); border: 1px solid rgba(139, 94, 106, 0.15); border-radius: 100px; padding: 8px 16px; font-size: .8rem; color: var(--mid); }
+
     /* ── PRICING SECTION ── */
     .pricing-section {
       background: var(--cream);
@@ -970,15 +1014,8 @@
 
     /* ── ANIMATIONS ── */
     @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .reveal {
@@ -1024,213 +1061,59 @@
     }
 
     /* ── RESPONSIVE ── */
-
-    /* Tablet besar (1024px ke bawah) */
     @media (max-width: 1024px) {
-      .hero-left {
-        padding: 60px 40px 60px 60px;
-      }
-
-      .hero-right {
-        overflow: hidden;
-      }
-
-      .mockup-card {
-        width: 280px;
-      }
-
-      .fb-top {
-        right: -10px;
-      }
-
-      .fb-bottom {
-        left: -10px;
-      }
-
-      .pain-section,
-      .solution-section,
-      .sheets-section,
-      .pricing-section,
-      .faq-section,
-      .final-cta,
-      footer {
-        padding: 80px 40px;
-      }
-
-      .sheets-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      .hero-left { padding: 60px 40px 60px 60px; }
+      .hero-right { overflow: hidden; }
+      .mockup-card { width: 280px; }
+      .fb-top { right: -10px; }
+      .fb-bottom { left: -10px; }
+      .pain-section, .solution-section, .sheets-section, .s, .pricing-section, .faq-section, .final-cta, footer { padding: 80px 40px; }
+      .sheets-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
-    /* Tablet (768px ke bawah) */
     @media (max-width: 768px) {
-      .hero {
-        grid-template-columns: 1fr;
-        min-height: auto;
-      }
-
-      .hero-right {
-        display: none;
-      }
-
-      .hero-left {
-        padding: 80px 24px 60px;
-      }
-
-      .hero-title {
-        font-size: clamp(36px, 8vw, 52px);
-      }
-
-      .slots-track {
-        width: 100%;
-        max-width: 280px;
-      }
-
-      .pain-section,
-      .solution-section,
-      .sheets-section,
-      .pricing-section,
-      .faq-section,
-      .final-cta {
-        padding: 60px 24px;
-      }
-
-      footer {
-        padding: 32px 24px;
-        flex-direction: column;
-        gap: 12px;
-        text-align: center;
-      }
-
-      .pain-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-      }
-
-      .solution-inner {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-
-      .solution-section::before {
-        font-size: 160px;
-      }
-
-      .sheets-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .pricing-card {
-        padding: 40px 24px;
-      }
-
-      .price-main {
-        font-size: 64px;
-      }
-
-      .faq-inner {
-        max-width: 100%;
-      }
-
-      .faq-q {
-        font-size: 17px;
-      }
-
-      .section-title {
-        font-size: clamp(26px, 7vw, 40px);
-      }
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-right { display: none; }
+      .hero-left { padding: 80px 24px 60px; }
+      .hero-title { font-size: clamp(36px, 8vw, 52px); }
+      .slots-track { width: 100%; max-width: 280px; }
+      .pain-section, .solution-section, .sheets-section, .s, .pricing-section, .faq-section, .final-cta { padding: 60px 24px; }
+      footer { padding: 32px 24px; flex-direction: column; gap: 12px; text-align: center; }
+      .pain-grid { grid-template-columns: 1fr; gap: 16px; }
+      .solution-inner { grid-template-columns: 1fr; gap: 40px; }
+      .solution-section::before { font-size: 160px; }
+      .sheets-grid { grid-template-columns: repeat(2, 1fr); }
+      .krow { grid-template-columns: repeat(2, 1fr); }
+      .pg2 { grid-template-columns: 1fr; }
+      .ks { grid-template-columns: 1fr 1fr; }
+      .pricing-card { padding: 40px 24px; }
+      .price-main { font-size: 64px; }
+      .faq-inner { max-width: 100%; }
+      .faq-q { font-size: 17px; }
+      .section-title { font-size: clamp(26px, 7vw, 40px); }
     }
 
-    /* Mobile kecil (480px ke bawah) */
     @media (max-width: 480px) {
-      .hero-left {
-        padding: 70px 20px 50px;
-      }
-
-      .hero-title {
-        font-size: 34px;
-      }
-
-      .hero-sub {
-        font-size: 14px;
-      }
-
-      .btn-primary {
-        padding: 15px 28px;
-        font-size: 13px;
-        width: 100%;
-        justify-content: center;
-      }
-
-      .price-note {
-        flex-wrap: wrap;
-        font-size: 12px;
-      }
-
-      .pain-section,
-      .solution-section,
-      .sheets-section,
-      .pricing-section,
-      .faq-section,
-      .final-cta {
-        padding: 50px 20px;
-      }
-
-      .sheets-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-      }
-
-      .sheet-card {
-        padding: 14px 12px;
-      }
-
-      .sheet-num {
-        font-size: 22px;
-      }
-
-      .sheet-name {
-        font-size: 11px;
-      }
-
-      .sheet-desc {
-        font-size: 10px;
-      }
-
-      .pricing-card {
-        padding: 32px 20px;
-      }
-
-      .price-main {
-        font-size: 56px;
-      }
-
-      .include-list li {
-        font-size: 13px;
-      }
-
-      .sticky-cta {
-        right: 12px;
-        bottom: 12px;
-        padding: 12px 20px;
-        font-size: 12px;
-      }
-
-      footer {
-        padding: 28px 20px;
-      }
-
-      .footer-brand {
-        font-size: 18px;
-      }
-
-      .section-title {
-        font-size: clamp(24px, 8vw, 36px);
-      }
-
-      .faq-q {
-        font-size: 15px;
-      }
+      .hero-left { padding: 70px 20px 50px; }
+      .hero-title { font-size: 34px; }
+      .hero-sub { font-size: 14px; }
+      .btn-primary { padding: 15px 28px; font-size: 13px; width: 100%; justify-content: center; }
+      .price-note { flex-wrap: wrap; font-size: 12px; }
+      .pain-section, .solution-section, .sheets-section, .s, .pricing-section, .faq-section, .final-cta { padding: 50px 20px; }
+      .sheets-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .sheet-card { padding: 14px 12px; }
+      .sheet-num { font-size: 22px; }
+      .sheet-name { font-size: 11px; }
+      .sheet-desc { font-size: 10px; }
+      .pricing-card { padding: 32px 20px; }
+      .price-main { font-size: 56px; }
+      .include-list li { font-size: 13px; }
+      .sticky-cta { right: 12px; bottom: 12px; padding: 12px 20px; font-size: 12px; }
+      footer { padding: 28px 20px; }
+      .footer-brand { font-size: 18px; }
+      .section-title { font-size: clamp(24px, 8vw, 36px); }
+      .faq-q { font-size: 15px; }
+      .ks { grid-template-columns: 1fr; }
     }
   </style>
   <!-- Facebook Pixel Code -->
@@ -1257,7 +1140,7 @@
 <body>
 
   <!-- STICKY CTA -->
-  <a href="https://entrepreneurai.myscalev.com/checkout-page" class="sticky-cta" id="stickyCta">
+  <a href="https://entrepreneurai.myscalev.com/landing-page-baru" class="sticky-cta" id="stickyCta">
     💍 Dapatkan Sekarang — Rp 99rb
   </a>
 
@@ -1294,7 +1177,6 @@
     <div class="hero-right">
       <div class="hero-visual">
         <div class="mockup-container">
-          <!-- Floating badge top -->
           <div class="floating-badge fb-top">
             <div class="fb-icon" style="background:#FFF0EC;">💌</div>
             <div>
@@ -1303,7 +1185,6 @@
             </div>
           </div>
 
-          <!-- Main card -->
           <div class="mockup-card">
             <div class="mockup-header">
               <div class="mockup-dot" style="background:#E8C4B8;"></div>
@@ -1354,7 +1235,6 @@
             </div>
           </div>
 
-          <!-- Floating badge bottom -->
           <div class="floating-badge fb-bottom">
             <div class="fb-icon" style="background:#F0F4F0;">💍</div>
             <div>
@@ -1400,8 +1280,7 @@
       <div class="pain-card reveal">
         <span class="pain-emoji">😫</span>
         <h3>Capek Sebelum Hari H</h3>
-        <p>Harusnya excited menjelang pernikahan, tapi malah stres karena data berantakan dan banyak yang belum beres.
-        </p>
+        <p>Harusnya excited menjelang pernikahan, tapi malah stres karena data berantakan dan banyak yang belum beres.</p>
       </div>
     </div>
     <p class="pain-closer reveal">
@@ -1426,8 +1305,7 @@
           <div class="feature-icon">💍</div>
           <div class="feature-text">
             <h4>Seserahan Tracker <span class="usp-tag">Eksklusif</span></h4>
-            <p>Catat semua item seserahan, harga, status beli. Auto-hitung total dan yang belum terbeli. Nggak ada di
-              produk manapun.</p>
+            <p>Catat semua item seserahan, harga, status beli. Auto-hitung total dan yang belum terbeli. Nggak ada di produk manapun.</p>
           </div>
         </div>
         <div class="feature-card reveal">
@@ -1441,8 +1319,7 @@
           <div class="feature-icon">💰</div>
           <div class="feature-text">
             <h4>Budget Planner Otomatis</h4>
-            <p>Rencana vs realisasi. Tahu persis berapa yang sudah keluar, berapa sisa, dan kategori mana yang
-              overbudget.</p>
+            <p>Rencana vs realisasi. Tahu persis berapa yang sudah keluar, berapa sisa, dan kategori mana yang overbudget.</p>
           </div>
         </div>
         <div class="feature-card reveal">
@@ -1461,100 +1338,164 @@
     <p class="section-eyebrow reveal">Yang kamu dapatkan</p>
     <h2 class="section-title reveal">19 Sheet Lengkap,<br>Tidak Ada yang Terlewat</h2>
     <div class="sheets-grid">
-      <div class="sheet-card star reveal">
-        <div class="sheet-num">01</div>
-        <div class="sheet-name">Dashboard Utama ✦</div>
-        <div class="sheet-desc">Ringkasan semua progress pernikahan dalam satu tampilan</div>
+      <div class="sheet-card star reveal"><div class="sheet-num">01</div><div class="sheet-name">Dashboard Utama ✦</div><div class="sheet-desc">Ringkasan semua progress pernikahan dalam satu tampilan</div></div>
+      <div class="sheet-card reveal"><div class="sheet-num">02</div><div class="sheet-name">Budget Planner</div><div class="sheet-desc">Rencana & realisasi pengeluaran per kategori</div></div>
+      <div class="sheet-card star reveal"><div class="sheet-num">03</div><div class="sheet-name">Seserahan Tracker ✦</div><div class="sheet-desc">Item, harga, status, total otomatis — eksklusif!</div></div>
+      <div class="sheet-card star reveal"><div class="sheet-num">04</div><div class="sheet-name">Kado & Angpao ✦</div><div class="sheet-desc">Rekap pemberi, nominal, follow up ucapan — eksklusif!</div></div>
+      <div class="sheet-card reveal"><div class="sheet-num">05</div><div class="sheet-name">Guest List</div><div class="sheet-desc">Daftar tamu lengkap dengan kategori & kapasitas</div></div>
+      <div class="sheet-card reveal"><div class="sheet-num">06</div><div class="sheet-name">RSVP Tracker</div><div class="sheet-desc">Konfirmasi hadir, kebutuhan meja, kupon makan</div></div>
+      <div class="sheet-card reveal"><div class="sheet-num">07</div><div class="sheet-name">Vendor Manager</div><div class="sheet-desc">Kontak, kontrak, DP & pelunasan semua vendor</div></div>
+      <div class="sheet-card reveal"><div class="sheet-num">08</div><div class="sheet-name">Timeline Acara</div><div class="sheet-desc">Rundown H-1 hingga hari pernikahan detail</div></div>
+      <div class="sheet-card reveal"><div class="sheet-num">09</div><div class="sheet-name">Checklist Persiapan</div><div class="sheet-desc">Master checklist agar tidak ada yang terlewat</div></div>
+      <div class="sheet-card reveal"><div class="sheet-num">10</div><div class="sheet-name">Dekorasi & Tema</div><div class="sheet-desc">Moodboard konsep, referensi warna & dekorasi</div></div>
+      <div class="sheet-card reveal"><div class="sheet-num">11</div><div class="sheet-name">Katering & Menu</div><div class="sheet-desc">Pilihan menu, estimasi porsi, tracking pembayaran</div></div>
+      <div class="sheet-card reveal"><div class="sheet-num">12</div><div class="sheet-name">Undangan & Desain</div><div class="sheet-desc">Tracking cetak, digital, pengiriman undangan</div></div>
+      <div class="sheet-card reveal"><div class="sheet-num">13</div><div class="sheet-name">MUA & Busana</div><div class="sheet-desc">Jadwal fitting, MUA, sewa/beli baju pengantin</div></div>
+      <div class="sheet-card reveal"><div class="sheet-num">14</div><div class="sheet-name">Foto & Video</div><div class="sheet-desc">Shot list, photographer/videographer brief</div></div>
+      <div class="sheet-card reveal"><div class="sheet-num">15</div><div class="sheet-name">Cincin & Mahar</div><div class="sheet-desc">Detail mahar, cincin, dan perlengkapan akad</div></div>
+      <div class="sheet-card reveal"><div class="sheet-num">16</div><div class="sheet-name">Honeymoon Planner</div><div class="sheet-desc">Itinerary, booking, budget bulan madu</div></div>
+      <div class="sheet-card reveal"><div class="sheet-num">17</div><div class="sheet-name">Souvenir & Hampers</div><div class="sheet-desc">Jumlah, desain, vendor, distribusi souvenir</div></div>
+      <div class="sheet-card reveal"><div class="sheet-num">18</div><div class="sheet-name">Catatan Penting</div><div class="sheet-desc">Notes, reminder, dan hal-hal kecil tapi penting</div></div>
+      <div class="sheet-card reveal"><div class="sheet-num">19</div><div class="sheet-name">Rekap Akhir</div><div class="sheet-desc">Summary total biaya, evaluasi, dan kenangan</div></div>
+    </div>
+  </section>
+
+  <!-- ══ INTERACTIVE PREVIEW UI ══ -->
+  <section class="s reveal">
+    <div class="inn">
+      <p class="eye">✨ Lihat Isi Produknya</p>
+      <h2 class="ttl">Intip Dulu Sebelum Beli —<br><em>Ini yang Ada di Dalamnya</em></h2>
+      <p class="sub">19 sheet lengkap, saling terhubung otomatis. Tinggal isi data, semua terupdate sendiri.</p>
+      <div class="tabs">
+        <button class="tab-btn on" onclick="sw(this,'n1')">🏠 Dashboard</button>
+        <button class="tab-btn" onclick="sw(this,'n2')">💍 Seserahan</button>
+        <button class="tab-btn" onclick="sw(this,'n3')">🎁 Kado & Angpao</button>
+        <button class="tab-btn" onclick="sw(this,'n4')">💰 Budget</button>
       </div>
-      <div class="sheet-card reveal">
-        <div class="sheet-num">02</div>
-        <div class="sheet-name">Budget Planner</div>
-        <div class="sheet-desc">Rencana & realisasi pengeluaran per kategori</div>
+
+      <!-- DASHBOARD -->
+      <div class="stage on" id="n1">
+        <div class="ew">
+          <div class="eb"><div class="dots"><div class="dot" style="background:#ff5f57"></div><div class="dot" style="background:#febc2e"></div><div class="dot" style="background:#28c840"></div></div><div class="fn">NIKAH_RAPI_PREMIUM_FINAL.xlsx</div></div>
+          <div class="est">
+            <div class="et on">🏠 Dashboard</div><div class="et">💰 Budget</div>
+            <div class="et" style="color:rgba(139,94,106,0.7)">💍 Seserahan ✦</div>
+            <div class="et" style="color:rgba(201,169,110,0.7)">🎁 Kado & Angpao ✦</div>
+            <div class="et">👥 Guest List</div><div class="et">📋 RSVP</div><div class="et">🏢 Vendor</div>
+          </div>
+          <div class="sb2">
+            <div class="dh">
+              <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--mauve)">NIKAH RAPI ✦</div>
+              <div style="font-size:.72rem;color:var(--light)">H-127 menuju Hari Bahagia 💍</div>
+            </div>
+            <div class="krow">
+              <div class="kc" style="background:linear-gradient(135deg,#FFF0EC,#FAE8E2);border-color:rgba(212,160,144,0.3)"><div class="kl">Budget Total</div><div class="kv" style="color:var(--mauve)">Rp 85jt</div><div class="kn" style="color:var(--rose)">Terpakai 62%</div></div>
+              <div class="kc" style="background:linear-gradient(135deg,#F0F4F0,#E8EEE8);border-color:rgba(122,140,126,0.3)"><div class="kl">Tamu</div><div class="kv" style="color:var(--sage)">248</div><div class="kn" style="color:var(--sage)">186 konfirmasi</div></div>
+              <div class="kc" style="background:linear-gradient(135deg,#FFF8EC,#F5EEDD);border-color:rgba(201,169,110,0.3)"><div class="kl">Kado & Angpao</div><div class="kv" style="color:var(--gold)">Rp 48,5jt</div><div class="kn" style="color:var(--gold)">42 pemberi</div></div>
+              <div class="kc" style="background:linear-gradient(135deg,#FAF0EC,#F0E4DC);border-color:rgba(139,94,106,0.2)"><div class="kl">Seserahan</div><div class="kv" style="color:var(--mauve)">12/15</div><div class="kn" style="color:var(--rose)">3 item pending</div></div>
+            </div>
+            <div class="pg2">
+              <div class="pb">
+                <div class="pt">Progress Persiapan</div>
+                <div class="pr"><div class="pi" style="background:#E8F5E9">✅</div><div style="flex:1"><div class="pn2">Budget & Keuangan</div><div class="pw"><div class="pf" style="width:100%"></div></div></div><div class="pp" style="color:var(--sage)">100%</div></div>
+                <div class="pr"><div class="pi" style="background:#FFF0EC">🏢</div><div style="flex:1"><div class="pn2">Vendor & Catering</div><div class="pw"><div class="pf" style="width:85%"></div></div></div><div class="pp" style="color:var(--sage)">85%</div></div>
+                <div class="pr"><div class="pi" style="background:#FFF8EC">💍</div><div style="flex:1"><div class="pn2">Seserahan & Hantaran</div><div class="pw"><div class="pf" style="width:60%"></div></div></div><div class="pp">60%</div></div>
+                <div class="pr"><div class="pi" style="background:#F0F4F0">👗</div><div style="flex:1"><div class="pn2">Busana & MUA</div><div class="pw"><div class="pf" style="width:40%"></div></div></div><div class="pp">40%</div></div>
+              </div>
+              <div class="pb">
+                <div class="pt">Vendor Status</div>
+                <div style="display:flex;flex-direction:column;gap:8px;margin-top:4px">
+                  <div style="display:flex;justify-content:space-between;font-size:.78rem;padding:8px 0;border-bottom:1px dashed rgba(139,94,106,0.1)"><span style="color:var(--mid)">📸 Fotografer</span><span style="color:var(--sage);font-weight:700">✓ Lunas DP</span></div>
+                  <div style="display:flex;justify-content:space-between;font-size:.78rem;padding:8px 0;border-bottom:1px dashed rgba(139,94,106,0.1)"><span style="color:var(--mid)">🍽 Catering</span><span style="color:var(--sage);font-weight:700">✓ Lunas DP</span></div>
+                  <div style="display:flex;justify-content:space-between;font-size:.78rem;padding:8px 0;border-bottom:1px dashed rgba(139,94,106,0.1)"><span style="color:var(--mid)">🌸 Dekorasi</span><span style="color:var(--gold);font-weight:700">⚡ Nego</span></div>
+                  <div style="display:flex;justify-content:space-between;font-size:.78rem;padding:8px 0"><span style="color:var(--mid)">💄 MUA</span><span style="color:var(--rose);font-weight:700">○ Belum</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="sheet-card star reveal">
-        <div class="sheet-num">03</div>
-        <div class="sheet-name">Seserahan Tracker ✦</div>
-        <div class="sheet-desc">Item, harga, status, total otomatis — eksklusif!</div>
+
+      <!-- SESERAHAN -->
+      <div class="stage" id="n2">
+        <div class="ew">
+          <div class="eb"><div class="dots"><div class="dot" style="background:#ff5f57"></div><div class="dot" style="background:#febc2e"></div><div class="dot" style="background:#28c840"></div></div><div class="fn">NIKAH_RAPI_PREMIUM_FINAL.xlsx — Seserahan Tracker ✦</div></div>
+          <div class="est"><div class="et">🏠 Dashboard</div><div class="et">💰 Budget</div><div class="et on" style="color:var(--mauve)">💍 Seserahan ✦</div><div class="et">🎁 Kado & Angpao ✦</div><div class="et">👥 Guest List</div></div>
+          <div class="sb2">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+              <div><div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--mauve)">Seserahan Tracker ✦</div><div style="font-size:.72rem;color:var(--light);margin-top:2px">Fitur Eksklusif NIKAH RAPI</div></div>
+              <div style="text-align:right"><div style="font-size:.68rem;color:var(--light)">Total Estimasi</div><div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:var(--mauve)">Rp 12.450.000</div></div>
+            </div>
+            <table class="tbl">
+              <thead><tr><th>Item Seserahan</th><th>Kategori</th><th>Est. Harga</th><th>Harga Aktual</th><th>Tempat Beli</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td><div class="inn2"><div class="id2" style="background:var(--mauve)"></div>Al-Qur'an & Tasbih</div></td><td style="color:var(--light)">Ibadah</td><td>Rp 450.000</td><td class="pc">Rp 420.000</td><td style="color:var(--light)">Gramedia</td><td><span class="bg" style="background:rgba(122,140,126,0.15);color:var(--sage)">✓ Sudah</span></td></tr>
+                <tr><td><div class="inn2"><div class="id2" style="background:var(--rose)"></div>Mukena Premium</div></td><td style="color:var(--light)">Ibadah</td><td>Rp 850.000</td><td class="pc">Rp 875.000</td><td style="color:var(--light)">Tokopedia</td><td><span class="bg" style="background:rgba(122,140,126,0.15);color:var(--sage)">✓ Sudah</span></td></tr>
+                <tr><td><div class="inn2"><div class="id2" style="background:var(--gold)"></div>Perhiasan Emas</div></td><td style="color:var(--light)">Perhiasan</td><td>Rp 5.000.000</td><td class="pc">Rp 5.200.000</td><td style="color:var(--light)">Toko Mas XYZ</td><td><span class="bg" style="background:rgba(122,140,126,0.15);color:var(--sage)">✓ Sudah</span></td></tr>
+                <tr><td><div class="inn2"><div class="id2" style="background:var(--blush-d)"></div>Parfum Set</div></td><td style="color:var(--light)">Kecantikan</td><td>Rp 1.200.000</td><td class="pc">—</td><td style="color:var(--light)">—</td><td><span class="bg" style="background:rgba(196,133,122,0.15);color:var(--rose)">○ Belum</span></td></tr>
+                <tr><td><div class="inn2"><div class="id2" style="background:var(--sage)"></div>Buah-buahan</div></td><td style="color:var(--light)">Makanan</td><td>Rp 500.000</td><td class="pc">—</td><td style="color:var(--light)">H-3 acara</td><td><span class="bg" style="background:rgba(201,169,110,0.15);color:var(--gold)">⏳ Nanti</span></td></tr>
+                <tr class="tr-t"><td colspan="2"><strong>TOTAL</strong></td><td><strong>Rp 12.450.000</strong></td><td class="pc"><strong>Rp 6.495.000</strong></td><td colspan="2" style="color:var(--rose);font-size:.72rem">Sisa Rp 5.955.000 belum dibeli</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
-      <div class="sheet-card star reveal">
-        <div class="sheet-num">04</div>
-        <div class="sheet-name">Kado & Angpao ✦</div>
-        <div class="sheet-desc">Rekap pemberi, nominal, follow up ucapan — eksklusif!</div>
+
+      <!-- KADO -->
+      <div class="stage" id="n3">
+        <div class="ew">
+          <div class="eb"><div class="dots"><div class="dot" style="background:#ff5f57"></div><div class="dot" style="background:#febc2e"></div><div class="dot" style="background:#28c840"></div></div><div class="fn">NIKAH_RAPI_PREMIUM_FINAL.xlsx — Kado & Angpao Tracker ✦</div></div>
+          <div class="est"><div class="et">🏠 Dashboard</div><div class="et">💰 Budget</div><div class="et">💍 Seserahan ✦</div><div class="et on" style="color:var(--gold)">🎁 Kado & Angpao ✦</div><div class="et">👥 Guest List</div></div>
+          <div class="sb2">
+            <div class="ks">
+              <div class="kk" style="background:linear-gradient(135deg,#FFF8EC,#F5EEDD);border:1px solid rgba(201,169,110,0.2);border-radius:12px"><div class="kkv" style="color:var(--gold)">Rp 48,5jt</div><div class="kkl">Total Angpao</div></div>
+              <div class="kk" style="background:linear-gradient(135deg,#FFF0EC,#FAE8E2);border:1px solid rgba(212,160,144,0.2);border-radius:12px"><div class="kkv" style="color:var(--mauve)">42</div><div class="kkl">Total Pemberi</div></div>
+              <div class="kk" style="background:linear-gradient(135deg,#F0F4F0,#E8EEE8);border:1px solid rgba(122,140,126,0.2);border-radius:12px"><div class="kkv" style="color:var(--sage)">38/42</div><div class="kkl">Ucapan Terkirim</div></div>
+            </div>
+            <table class="ktbl">
+              <thead><tr><th>Nama Pemberi</th><th>Jenis</th><th>Nominal/Kado</th><th>Dari</th><th>Ucapan Terima Kasih</th></tr></thead>
+              <tbody>
+                <tr><td style="font-weight:600;color:var(--text)">Keluarga Bapak Hendra</td><td><div class="kt"><div class="id2" style="background:var(--gold)"></div>Angpao</div></td><td class="av">Rp 2.000.000</td><td style="color:var(--light)">Pihak keluarga</td><td><span class="ud" style="color:var(--sage)">✓ Sudah dikirim WA</span></td></tr>
+                <tr><td style="font-weight:600;color:var(--text)">Ibu Sari & Keluarga</td><td><div class="kt"><div class="id2" style="background:var(--mauve)"></div>Kado</div></td><td style="color:var(--mid)">Rice Cooker Cosmos</td><td style="color:var(--light)">Teman kantor</td><td><span class="ud" style="color:var(--sage)">✓ Sudah dikirim WA</span></td></tr>
+                <tr><td style="font-weight:600;color:var(--text)">Rombongan RT 05</td><td><div class="kt"><div class="id2" style="background:var(--gold)"></div>Angpao</div></td><td class="av">Rp 1.500.000</td><td style="color:var(--light)">Tetangga</td><td><span class="ud" style="color:var(--sage)">✓ Sudah dikirim WA</span></td></tr>
+                <tr><td style="font-weight:600;color:var(--text)">Dinda & Rizky</td><td><div class="kt"><div class="id2" style="background:var(--rose)"></div>Kado</div></td><td style="color:var(--mid)">Stand Mixer KitchenAid</td><td style="color:var(--light)">Sahabat kuliah</td><td><span class="ud" style="color:var(--rose)">○ Belum dikirim</span></td></tr>
+                <tr><td style="font-weight:600;color:var(--text)">Pak Budi (Bos)</td><td><div class="kt"><div class="id2" style="background:var(--gold)"></div>Angpao</div></td><td class="av">Rp 500.000</td><td style="color:var(--light)">Atasan kerja</td><td><span class="ud" style="color:var(--rose)">○ Belum dikirim</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
-      <div class="sheet-card reveal">
-        <div class="sheet-num">05</div>
-        <div class="sheet-name">Guest List</div>
-        <div class="sheet-desc">Daftar tamu lengkap dengan kategori & kapasitas</div>
+
+      <!-- BUDGET -->
+      <div class="stage" id="n4">
+        <div class="ew">
+          <div class="eb"><div class="dots"><div class="dot" style="background:#ff5f57"></div><div class="dot" style="background:#febc2e"></div><div class="dot" style="background:#28c840"></div></div><div class="fn">NIKAH_RAPI_PREMIUM_FINAL.xlsx — Budget Planner</div></div>
+          <div class="est"><div class="et">🏠 Dashboard</div><div class="et on">💰 Budget</div><div class="et">💍 Seserahan ✦</div><div class="et">🎁 Kado & Angpao ✦</div><div class="et">👥 Guest List</div></div>
+          <div class="sb2">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+              <div><div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--text)">Budget Planner Pernikahan</div><div style="font-size:.72rem;color:var(--light);margin-top:4px">Rencana vs Realisasi</div></div>
+              <div style="text-align:right"><div style="font-size:.68rem;color:var(--light)">Total Budget</div><div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:var(--mauve)">Rp 85.000.000</div><div style="font-size:.68rem;color:var(--rose);margin-top:2px">Terpakai: Rp 52.750.000 (62%)</div></div>
+            </div>
+            <table class="btbl">
+              <thead><tr><th>Kategori</th><th>Rencana</th><th>Realisasi</th><th>Selisih</th><th>Progress</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td style="font-weight:600;color:var(--text)">🍽 Catering & Konsumsi</td><td>Rp 32.000.000</td><td style="font-weight:600">Rp 30.500.000</td><td class="ok">+Rp 1,5jt</td><td><div class="bw"><div class="bb" style="width:95%;background:linear-gradient(90deg,var(--sage),#5a8a5a)"></div></div></td><td><span style="font-size:.63rem;color:var(--sage);font-weight:700">✓ Hemat</span></td></tr>
+                <tr><td style="font-weight:600;color:var(--text)">🏛 Venue & Dekorasi</td><td>Rp 20.000.000</td><td style="font-weight:600">Rp 22.000.000</td><td class="ov">-Rp 2jt</td><td><div class="bw"><div class="bb" style="width:110%;background:linear-gradient(90deg,var(--rose),#c0392b)"></div></div></td><td><span style="font-size:.63rem;color:var(--rose);font-weight:700">⚠ Over</span></td></tr>
+                <tr><td style="font-weight:600;color:var(--text)">📸 Foto & Video</td><td>Rp 8.000.000</td><td style="font-weight:600">Rp 7.500.000</td><td class="ok">+Rp 500rb</td><td><div class="bw"><div class="bb" style="width:94%;background:linear-gradient(90deg,var(--sage),#5a8a5a)"></div></div></td><td><span style="font-size:.63rem;color:var(--sage);font-weight:700">✓ Hemat</span></td></tr>
+                <tr><td style="font-weight:600;color:var(--text)">👗 Busana & MUA</td><td>Rp 12.000.000</td><td style="font-weight:600;color:var(--light)">Rp 0</td><td style="color:var(--light)">Belum</td><td><div class="bw"><div class="bb" style="width:0%"></div></div></td><td><span style="font-size:.63rem;color:var(--light)">○ Belum</span></td></tr>
+                <tr><td style="font-weight:600;color:var(--text)">💍 Seserahan</td><td>Rp 13.000.000</td><td style="font-weight:600">Rp 6.495.000</td><td style="color:var(--gold);font-weight:700">+Rp 6,5jt</td><td><div class="bw"><div class="bb" style="width:50%;background:linear-gradient(90deg,var(--gold),#b8902a)"></div></div></td><td><span style="font-size:.63rem;color:var(--gold);font-weight:700">⚡ Proses</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
-      <div class="sheet-card reveal">
-        <div class="sheet-num">06</div>
-        <div class="sheet-name">RSVP Tracker</div>
-        <div class="sheet-desc">Konfirmasi hadir, kebutuhan meja, kupon makan</div>
-      </div>
-      <div class="sheet-card reveal">
-        <div class="sheet-num">07</div>
-        <div class="sheet-name">Vendor Manager</div>
-        <div class="sheet-desc">Kontak, kontrak, DP & pelunasan semua vendor</div>
-      </div>
-      <div class="sheet-card reveal">
-        <div class="sheet-num">08</div>
-        <div class="sheet-name">Timeline Acara</div>
-        <div class="sheet-desc">Rundown H-1 hingga hari pernikahan detail</div>
-      </div>
-      <div class="sheet-card reveal">
-        <div class="sheet-num">09</div>
-        <div class="sheet-name">Checklist Persiapan</div>
-        <div class="sheet-desc">Master checklist agar tidak ada yang terlewat</div>
-      </div>
-      <div class="sheet-card reveal">
-        <div class="sheet-num">10</div>
-        <div class="sheet-name">Dekorasi & Tema</div>
-        <div class="sheet-desc">Moodboard konsep, referensi warna & dekorasi</div>
-      </div>
-      <div class="sheet-card reveal">
-        <div class="sheet-num">11</div>
-        <div class="sheet-name">Katering & Menu</div>
-        <div class="sheet-desc">Pilihan menu, estimasi porsi, tracking pembayaran</div>
-      </div>
-      <div class="sheet-card reveal">
-        <div class="sheet-num">12</div>
-        <div class="sheet-name">Undangan & Desain</div>
-        <div class="sheet-desc">Tracking cetak, digital, pengiriman undangan</div>
-      </div>
-      <div class="sheet-card reveal">
-        <div class="sheet-num">13</div>
-        <div class="sheet-name">MUA & Busana</div>
-        <div class="sheet-desc">Jadwal fitting, MUA, sewa/beli baju pengantin</div>
-      </div>
-      <div class="sheet-card reveal">
-        <div class="sheet-num">14</div>
-        <div class="sheet-name">Foto & Video</div>
-        <div class="sheet-desc">Shot list, photographer/videographer brief</div>
-      </div>
-      <div class="sheet-card reveal">
-        <div class="sheet-num">15</div>
-        <div class="sheet-name">Cincin & Mahar</div>
-        <div class="sheet-desc">Detail mahar, cincin, dan perlengkapan akad</div>
-      </div>
-      <div class="sheet-card reveal">
-        <div class="sheet-num">16</div>
-        <div class="sheet-name">Honeymoon Planner</div>
-        <div class="sheet-desc">Itinerary, booking, budget bulan madu</div>
-      </div>
-      <div class="sheet-card reveal">
-        <div class="sheet-num">17</div>
-        <div class="sheet-name">Souvenir & Hampers</div>
-        <div class="sheet-desc">Jumlah, desain, vendor, distribusi souvenir</div>
-      </div>
-      <div class="sheet-card reveal">
-        <div class="sheet-num">18</div>
-        <div class="sheet-name">Catatan Penting</div>
-        <div class="sheet-desc">Notes, reminder, dan hal-hal kecil tapi penting</div>
-      </div>
-      <div class="sheet-card reveal">
-        <div class="sheet-num">19</div>
-        <div class="sheet-name">Rekap Akhir</div>
-        <div class="sheet-desc">Summary total biaya, evaluasi, dan kenangan</div>
+
+      <div class="feats">
+        <div class="feat"><span>💍</span> Seserahan Tracker</div>
+        <div class="feat"><span>🎁</span> Kado & Angpao Tracker</div>
+        <div class="feat"><span>💰</span> Budget vs Realisasi</div>
+        <div class="feat"><span>👥</span> Guest List & RSVP</div>
+        <div class="feat"><span>19</span> Sheet Lengkap</div>
       </div>
     </div>
   </section>
@@ -1568,24 +1509,12 @@
       <div class="price-main"><sup>Rp</sup>99rb</div>
       <div class="price-was">Harga normal <s>Rp 149.000</s> — hemat 33%</div>
       <ul class="include-list">
-        <li>
-          <div class="check">✓</div> File Excel NIKAH RAPI — 19 sheet lengkap
-        </li>
-        <li>
-          <div class="check">✓</div> Seserahan Tracker (fitur eksklusif)
-        </li>
-        <li>
-          <div class="check">✓</div> Kado & Angpao Tracker (fitur eksklusif)
-        </li>
-        <li>
-          <div class="check">✓</div> Sudah terproteksi & siap pakai langsung
-        </li>
-        <li>
-          <div class="check">✓</div> Panduan penggunaan PDF
-        </li>
-        <li>
-          <div class="check">✓</div> Update file gratis seumur hidup
-        </li>
+        <li><div class="check">✓</div> File Excel NIKAH RAPI — 19 sheet lengkap</li>
+        <li><div class="check">✓</div> Seserahan Tracker (fitur eksklusif)</li>
+        <li><div class="check">✓</div> Kado & Angpao Tracker (fitur eksklusif)</li>
+        <li><div class="check">✓</div> Sudah terproteksi & siap pakai langsung</li>
+        <li><div class="check">✓</div> Panduan penggunaan PDF</li>
+        <li><div class="check">✓</div> Update file gratis seumur hidup</li>
       </ul>
       <a href="https://entrepreneurai.myscalev.com/checkout-page" class="btn-primary"
         style="width:100%;justify-content:center;">
@@ -1602,28 +1531,23 @@
     <div class="faq-inner">
       <div class="faq-item reveal" onclick="toggleFaq(this)">
         <div class="faq-q">Harus bisa Excel dulu tidak? <span class="faq-arrow">+</span></div>
-        <div class="faq-a">Tidak perlu jago Excel sama sekali! NIKAH RAPI sudah dirancang agar tinggal isi data, semua
-          kalkulasi dan dashboard berjalan otomatis. Kalau bisa ngetik di HP, kamu bisa pakai ini.</div>
+        <div class="faq-a">Tidak perlu jago Excel sama sekali! NIKAH RAPI sudah dirancang agar tinggal isi data, semua kalkulasi dan dashboard berjalan otomatis. Kalau bisa ngetik di HP, kamu bisa pakai ini.</div>
       </div>
       <div class="faq-item reveal" onclick="toggleFaq(this)">
         <div class="faq-q">Bisa dibuka di HP atau hanya laptop? <span class="faq-arrow">+</span></div>
-        <div class="faq-a">Bisa dibuka di keduanya! Paling nyaman di laptop atau PC dengan Microsoft Excel atau Google
-          Sheets. Di HP bisa pakai aplikasi Excel/Google Sheets gratis.</div>
+        <div class="faq-a">Bisa dibuka di keduanya! Paling nyaman di laptop atau PC dengan Microsoft Excel atau Google Sheets. Di HP bisa pakai aplikasi Excel/Google Sheets gratis.</div>
       </div>
       <div class="faq-item reveal" onclick="toggleFaq(this)">
         <div class="faq-q">Setelah bayar, file dikirim ke mana? <span class="faq-arrow">+</span></div>
-        <div class="faq-a">File dikirim langsung ke WhatsApp atau email kamu dalam waktu maksimal 1x24 jam (biasanya
-          langsung). Disertai panduan singkat cara penggunaan.</div>
+        <div class="faq-a">File dikirim langsung ke WhatsApp atau email kamu dalam waktu maksimal 1x24 jam (biasanya langsung). Disertai panduan singkat cara penggunaan.</div>
       </div>
       <div class="faq-item reveal" onclick="toggleFaq(this)">
         <div class="faq-q">Apakah ada garansi uang kembali? <span class="faq-arrow">+</span></div>
-        <div class="faq-a">Ada garansi 7 hari. Jika kamu merasa file tidak sesuai deskripsi, hubungi kami dan kami akan
-          proses refund penuh tanpa pertanyaan berlebihan.</div>
+        <div class="faq-a">Ada garansi 7 hari. Jika kamu merasa file tidak sesuai deskripsi, hubungi kami dan kami akan proses refund penuh tanpa pertanyaan berlebihan.</div>
       </div>
       <div class="faq-item reveal" onclick="toggleFaq(this)">
         <div class="faq-q">Bisa untuk pernikahan adat apa saja? <span class="faq-arrow">+</span></div>
-        <div class="faq-a">Bisa untuk semua adat — Jawa, Sunda, Minang, Betawi, Modern, dan lainnya. Sheet seserahan
-          bisa disesuaikan dengan tradisi masing-masing daerah.</div>
+        <div class="faq-a">Bisa untuk semua adat — Jawa, Sunda, Minang, Betawi, Modern, dan lainnya. Sheet seserahan bisa disesuaikan dengan tradisi masing-masing daerah.</div>
       </div>
     </div>
   </section>
@@ -1633,10 +1557,9 @@
     <p class="section-eyebrow reveal">Sudah siap?</p>
     <h2 class="section-title reveal">Mulai rencanakan pernikahanmu<br>dengan lebih <em
         style="color:var(--gold-light);">tenang</em></h2>
-    <p class="reveal">Ratusan detail pernikahan dalam satu file. Supaya hari terbaikmu benar-benar terasa seperti hari
-      terbaik.</p>
+    <p class="reveal">Ratusan detail pernikahan dalam satu file. Supaya hari terbaikmu benar-benar terasa seperti hari terbaik.</p>
     <div class="final-price-inline reveal">Early Bird Rp 99.000 · Sisa 18 slot · Harga naik setelah habis</div>
-    <a href="https://entrepreneurai.myscalev.com/checkout-page" class="btn-secondary reveal" style="margin:0 auto;">
+    <a href="https://entrepreneurai.myscalev.com/landing-page-baru" class="btn-secondary reveal" style="margin:0 auto;">
       💍 Ambil Sekarang Sebelum Harga Naik
     </a>
   </section>
@@ -1668,6 +1591,14 @@
     // FAQ toggle
     function toggleFaq(el) {
       el.classList.toggle('open');
+    }
+
+    // Interactive Preview Tabs
+    function sw(btn, id) {
+      document.querySelectorAll('.tab-btn').forEach(t => t.classList.remove('on'));
+      document.querySelectorAll('.stage').forEach(s => s.classList.remove('on'));
+      btn.classList.add('on');
+      document.getElementById(id).classList.add('on');
     }
   </script>
 </body>
