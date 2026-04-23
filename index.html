@@ -25,7 +25,6 @@
       --text-mid: #5C4A3E;
       --text-light: #8C7A6E;
       
-      /* Tambahan untuk Interactive Preview */
       --warm: #FDFBF8;
       --blush-d: #D4A090;
       --rose: #C4857A;
@@ -42,9 +41,7 @@
       padding: 0;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Jost', sans-serif;
@@ -66,24 +63,20 @@
     .hero::before {
       content: '';
       position: absolute;
-      top: -120px;
-      right: -120px;
-      width: 600px;
-      height: 600px;
+      top: -120px; right: -120px;
+      width: 600px; height: 600px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(232, 196, 184, 0.35) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(232,196,184,0.35) 0%, transparent 70%);
       pointer-events: none;
     }
 
     .hero::after {
       content: '';
       position: absolute;
-      bottom: -80px;
-      left: -80px;
-      width: 400px;
-      height: 400px;
+      bottom: -80px; left: -80px;
+      width: 400px; height: 400px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(168, 184, 172, 0.25) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(168,184,172,0.25) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -113,10 +106,7 @@
       animation: fadeUp 0.6s ease both;
     }
 
-    .badge::before {
-      content: '✦';
-      color: var(--gold);
-    }
+    .badge::before { content: '✦'; color: var(--gold); }
 
     .hero-eyebrow {
       font-family: 'Cormorant Garamond', serif;
@@ -137,10 +127,7 @@
       animation: fadeUp 0.8s ease both;
     }
 
-    .hero-title em {
-      font-style: italic;
-      color: var(--mauve);
-    }
+    .hero-title em { font-style: italic; color: var(--mauve); }
 
     .hero-sub {
       font-size: 15px;
@@ -183,7 +170,7 @@
     .btn-primary:hover {
       background: var(--brown);
       transform: translateY(-2px);
-      box-shadow: 0 12px 40px rgba(139, 94, 106, 0.3);
+      box-shadow: 0 12px 40px rgba(139,94,106,0.3);
     }
 
     .price-note {
@@ -194,963 +181,386 @@
       gap: 8px;
     }
 
-    .price-note strong {
-      color: var(--mauve);
-      font-size: 20px;
-      font-family: 'Cormorant Garamond', serif;
-    }
+    .price-note strong { color: var(--mauve); font-size: 20px; font-family: 'Cormorant Garamond', serif; }
+    .price-note s { color: var(--text-light); font-size: 13px; }
 
-    .price-note s {
-      color: var(--text-light);
-      font-size: 13px;
-    }
+    .slots-bar { margin-top: 20px; animation: fadeUp 1.1s ease both; }
+    .slots-label { font-size: 12px; color: var(--text-light); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .slots-track { height: 4px; background: var(--gold-light); border-radius: 4px; width: 280px; position: relative; overflow: hidden; }
+    .slots-fill { height: 100%; width: 64%; background: linear-gradient(90deg, var(--dusty-rose), var(--gold)); border-radius: 4px; animation: fillBar 1.5s ease 1s both; }
+    @keyframes fillBar { from { width: 0; } to { width: 64%; } }
+    .slots-text { font-size: 12px; color: var(--dusty-rose); margin-top: 6px; font-weight: 500; }
 
-    .slots-bar {
-      margin-top: 20px;
-      animation: fadeUp 1.1s ease both;
-    }
+    .hero-right { position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .hero-visual { position: relative; width: 100%; height: 100%; background: linear-gradient(135deg, #F0E8E0 0%, #E8D5C8 50%, #DCC8BC 100%); display: flex; align-items: center; justify-content: center; }
+    .mockup-container { position: relative; animation: floatUp 0.9s ease both, float 6s ease-in-out infinite 1s; }
 
-    .slots-label {
-      font-size: 12px;
-      color: var(--text-light);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
+    @keyframes floatUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-12px); } }
 
-    .slots-track {
-      height: 4px;
-      background: var(--gold-light);
-      border-radius: 4px;
-      width: 280px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .slots-fill {
-      height: 100%;
-      width: 64%;
-      background: linear-gradient(90deg, var(--dusty-rose), var(--gold));
-      border-radius: 4px;
-      animation: fillBar 1.5s ease 1s both;
-    }
-
-    @keyframes fillBar {
-      from { width: 0; }
-      to { width: 64%; }
-    }
-
-    .slots-text {
-      font-size: 12px;
-      color: var(--dusty-rose);
-      margin-top: 6px;
-      font-weight: 500;
-    }
-
-    .hero-right {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .hero-visual {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, #F0E8E0 0%, #E8D5C8 50%, #DCC8BC 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .mockup-container {
-      position: relative;
-      animation: floatUp 0.9s ease both, float 6s ease-in-out infinite 1s;
-    }
-
-    @keyframes floatUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-12px); }
-    }
-
-    .mockup-card {
-      background: white;
-      border-radius: 12px;
-      padding: 24px;
-      box-shadow: 0 40px 80px rgba(92, 61, 46, 0.15), 0 10px 30px rgba(92, 61, 46, 0.08);
-      width: 340px;
-    }
-
-    .mockup-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 20px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid #F0E8E0;
-    }
-
-    .mockup-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-    }
-
-    .mockup-title-bar {
-      font-size: 11px;
-      font-weight: 500;
-      color: var(--text-mid);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    .sheet-tabs {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-      margin-bottom: 16px;
-    }
-
-    .tab {
-      font-size: 10px;
-      padding: 4px 10px;
-      border-radius: 100px;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-    }
-
-    .tab.active {
-      background: var(--mauve);
-      color: white;
-    }
-
-    .tab.default {
-      background: #F5F0EC;
-      color: var(--text-mid);
-    }
-
-    .tab.highlight {
-      background: var(--blush);
-      color: var(--mauve);
-    }
-
-    .progress-list {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .progress-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 12px;
-    }
-
-    .progress-icon {
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 10px;
-      flex-shrink: 0;
-    }
-
-    .progress-icon.done {
-      background: #E8F5E9;
-      color: #4CAF50;
-    }
-
-    .progress-icon.active {
-      background: var(--blush);
-      color: var(--mauve);
-    }
-
-    .progress-icon.todo {
-      background: #F5F0EC;
-      color: var(--text-light);
-    }
-
-    .progress-bar-wrap {
-      flex: 1;
-      height: 4px;
-      background: #F0EAE4;
-      border-radius: 4px;
-      overflow: hidden;
-    }
-
-    .progress-bar-fill {
-      height: 100%;
-      border-radius: 4px;
-      background: linear-gradient(90deg, var(--blush-deep), var(--mauve));
-    }
-
-    .floating-badge {
-      position: absolute;
-      background: white;
-      border-radius: 10px;
-      padding: 12px 16px;
-      box-shadow: 0 8px 30px rgba(92, 61, 46, 0.15);
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--text-dark);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .fb-top {
-      top: 60px;
-      right: -20px;
-      animation: fadeLeft 1s ease 0.5s both;
-    }
-
-    .fb-bottom {
-      bottom: 80px;
-      left: -20px;
-      animation: fadeRight 1s ease 0.7s both;
-    }
-
-    @keyframes fadeLeft {
-      from { opacity: 0; transform: translateX(20px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-
-    @keyframes fadeRight {
-      from { opacity: 0; transform: translateX(-20px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-
-    .fb-icon {
-      width: 32px;
-      height: 32px;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-    }
+    .mockup-card { background: white; border-radius: 12px; padding: 24px; box-shadow: 0 40px 80px rgba(92,61,46,0.15), 0 10px 30px rgba(92,61,46,0.08); width: 340px; }
+    .mockup-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid #F0E8E0; }
+    .mockup-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .mockup-title-bar { font-size: 11px; font-weight: 500; color: var(--text-mid); letter-spacing: 1px; text-transform: uppercase; }
+    .sheet-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+    .tab { font-size: 10px; padding: 4px 10px; border-radius: 100px; font-weight: 500; letter-spacing: 0.5px; }
+    .tab.active { background: var(--mauve); color: white; }
+    .tab.default { background: #F5F0EC; color: var(--text-mid); }
+    .tab.highlight { background: var(--blush); color: var(--mauve); }
+    .progress-list { display: flex; flex-direction: column; gap: 10px; }
+    .progress-item { display: flex; align-items: center; gap: 10px; font-size: 12px; }
+    .progress-icon { width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; flex-shrink: 0; }
+    .progress-icon.done { background: #E8F5E9; color: #4CAF50; }
+    .progress-icon.active { background: var(--blush); color: var(--mauve); }
+    .progress-icon.todo { background: #F5F0EC; color: var(--text-light); }
+    .progress-bar-wrap { flex: 1; height: 4px; background: #F0EAE4; border-radius: 4px; overflow: hidden; }
+    .progress-bar-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, var(--blush-deep), var(--mauve)); }
+    .floating-badge { position: absolute; background: white; border-radius: 10px; padding: 12px 16px; box-shadow: 0 8px 30px rgba(92,61,46,0.15); font-size: 12px; font-weight: 500; color: var(--text-dark); display: flex; align-items: center; gap: 8px; }
+    .fb-top { top: 60px; right: -20px; animation: fadeLeft 1s ease 0.5s both; }
+    .fb-bottom { bottom: 80px; left: -20px; animation: fadeRight 1s ease 0.7s both; }
+    @keyframes fadeLeft { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes fadeRight { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
+    .fb-icon { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; }
 
     /* ── PAIN SECTION ── */
-    .pain-section {
-      background: var(--cream);
-      padding: 100px 80px;
-      position: relative;
-    }
-
-    .section-eyebrow {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 16px;
-      color: var(--dusty-rose);
-      text-align: center;
-      margin-bottom: 12px;
-    }
-
-    .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(32px, 4vw, 52px);
-      font-weight: 300;
-      text-align: center;
-      line-height: 1.2;
-      margin-bottom: 60px;
-      color: var(--text-dark);
-    }
-
-    .pain-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      max-width: 960px;
-      margin: 0 auto 60px;
-    }
-
-    .pain-card {
-      background: white;
-      border-radius: 12px;
-      padding: 32px 28px;
-      border-left: 3px solid var(--blush);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .pain-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 50px rgba(92, 61, 46, 0.1);
-    }
-
-    .pain-emoji {
-      font-size: 28px;
-      margin-bottom: 16px;
-      display: block;
-    }
-
-    .pain-card h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 20px;
-      font-weight: 600;
-      color: var(--text-dark);
-      margin-bottom: 10px;
-    }
-
-    .pain-card p {
-      font-size: 14px;
-      line-height: 1.7;
-      color: var(--text-mid);
-      font-weight: 300;
-    }
-
-    .pain-closer {
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 22px;
-      font-style: italic;
-      color: var(--mauve);
-      line-height: 1.6;
-    }
+    .pain-section { background: var(--cream); padding: 100px 80px; position: relative; }
+    .section-eyebrow { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 16px; color: var(--dusty-rose); text-align: center; margin-bottom: 12px; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px,4vw,52px); font-weight: 300; text-align: center; line-height: 1.2; margin-bottom: 60px; color: var(--text-dark); }
+    .pain-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; max-width: 960px; margin: 0 auto 60px; }
+    .pain-card { background: white; border-radius: 12px; padding: 32px 28px; border-left: 3px solid var(--blush); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .pain-card:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(92,61,46,0.1); }
+    .pain-emoji { font-size: 28px; margin-bottom: 16px; display: block; }
+    .pain-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; color: var(--text-dark); margin-bottom: 10px; }
+    .pain-card p { font-size: 14px; line-height: 1.7; color: var(--text-mid); font-weight: 300; }
+    .pain-closer { text-align: center; max-width: 600px; margin: 0 auto; font-family: 'Cormorant Garamond', serif; font-size: 22px; font-style: italic; color: var(--mauve); line-height: 1.6; }
 
     /* ── SOLUTION SECTION ── */
-    .solution-section {
-      background: var(--mauve);
-      padding: 100px 80px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .solution-section::before {
-      content: 'NIKAH';
-      position: absolute;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 300px;
-      font-weight: 600;
-      color: rgba(255, 255, 255, 0.04);
-      top: -40px;
-      left: -20px;
-      pointer-events: none;
-      line-height: 1;
-    }
-
-    .solution-inner {
-      max-width: 960px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-      position: relative;
-      z-index: 2;
-    }
-
-    .solution-left .section-eyebrow {
-      text-align: left;
-      color: var(--blush);
-    }
-
-    .solution-left .section-title {
-      text-align: left;
-      color: white;
-      font-size: clamp(28px, 3vw, 44px);
-    }
-
-    .solution-left p {
-      font-size: 15px;
-      line-height: 1.8;
-      color: rgba(255, 255, 255, 0.75);
-      font-weight: 300;
-      margin-bottom: 32px;
-    }
-
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: white;
-      color: var(--mauve);
-      font-family: 'Jost', sans-serif;
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      padding: 16px 36px;
-      border-radius: 4px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    .btn-secondary:hover {
-      background: var(--gold-light);
-      transform: translateY(-2px);
-    }
-
-    .solution-right {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .feature-card {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 12px;
-      padding: 20px 24px;
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      transition: background 0.3s ease;
-    }
-
-    .feature-card:hover {
-      background: rgba(255, 255, 255, 0.14);
-    }
-
-    .feature-icon {
-      width: 40px;
-      height: 40px;
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      flex-shrink: 0;
-    }
-
-    .feature-text h4 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 18px;
-      font-weight: 600;
-      color: white;
-      margin-bottom: 4px;
-    }
-
-    .feature-text p {
-      font-size: 13px;
-      color: rgba(255, 255, 255, 0.65);
-      line-height: 1.6;
-      font-weight: 300;
-    }
-
-    .usp-tag {
-      display: inline-block;
-      background: var(--gold);
-      color: white;
-      font-size: 9px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      padding: 3px 8px;
-      border-radius: 100px;
-      margin-left: 8px;
-      vertical-align: middle;
-      font-weight: 500;
-    }
+    .solution-section { background: var(--mauve); padding: 100px 80px; position: relative; overflow: hidden; }
+    .solution-section::before { content: 'NIKAH'; position: absolute; font-family: 'Cormorant Garamond', serif; font-size: 300px; font-weight: 600; color: rgba(255,255,255,0.04); top: -40px; left: -20px; pointer-events: none; line-height: 1; }
+    .solution-inner { max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; position: relative; z-index: 2; }
+    .solution-left .section-eyebrow { text-align: left; color: var(--blush); }
+    .solution-left .section-title { text-align: left; color: white; font-size: clamp(28px,3vw,44px); }
+    .solution-left p { font-size: 15px; line-height: 1.8; color: rgba(255,255,255,0.75); font-weight: 300; margin-bottom: 32px; }
+    .btn-secondary { display: inline-flex; align-items: center; gap: 10px; background: white; color: var(--mauve); font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; padding: 16px 36px; border-radius: 4px; text-decoration: none; transition: all 0.3s ease; }
+    .btn-secondary:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .solution-right { display: flex; flex-direction: column; gap: 16px; }
+    .feature-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 20px 24px; display: flex; align-items: flex-start; gap: 16px; transition: background 0.3s ease; }
+    .feature-card:hover { background: rgba(255,255,255,0.14); }
+    .feature-icon { width: 40px; height: 40px; background: rgba(255,255,255,0.15); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+    .feature-text h4 { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 600; color: white; margin-bottom: 4px; }
+    .feature-text p { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.6; font-weight: 300; }
+    .usp-tag { display: inline-block; background: var(--gold); color: white; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 8px; border-radius: 100px; margin-left: 8px; vertical-align: middle; font-weight: 500; }
 
     /* ── SHEETS SECTION ── */
-    .sheets-section {
-      background: var(--warm-white);
-      padding: 100px 80px;
-    }
+    .sheets-section { background: var(--warm-white); padding: 100px 80px; }
+    .sheets-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; max-width: 960px; margin: 0 auto 60px; }
+    .sheet-card { background: var(--cream); border-radius: 10px; padding: 20px 18px; border: 1px solid rgba(139,94,106,0.1); transition: all 0.3s ease; cursor: default; }
+    .sheet-card:hover { border-color: var(--blush); background: white; transform: translateY(-3px); box-shadow: 0 12px 30px rgba(139,94,106,0.08); }
+    .sheet-num { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--blush); font-weight: 300; line-height: 1; margin-bottom: 8px; }
+    .sheet-name { font-size: 13px; font-weight: 500; color: var(--text-dark); margin-bottom: 4px; }
+    .sheet-desc { font-size: 11px; color: var(--text-light); line-height: 1.5; }
+    .sheet-card.star { background: linear-gradient(135deg, #FAF0EC 0%, #F5E8E2 100%); border-color: var(--blush-deep); }
+    .sheet-card.star .sheet-num { color: var(--mauve); }
 
-    .sheets-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      max-width: 960px;
-      margin: 0 auto 60px;
-    }
-
-    .sheet-card {
-      background: var(--cream);
-      border-radius: 10px;
-      padding: 20px 18px;
-      border: 1px solid rgba(139, 94, 106, 0.1);
-      transition: all 0.3s ease;
-      cursor: default;
-    }
-
-    .sheet-card:hover {
-      border-color: var(--blush);
-      background: white;
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(139, 94, 106, 0.08);
-    }
-
-    .sheet-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 28px;
-      color: var(--blush);
-      font-weight: 300;
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-
-    .sheet-name {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--text-dark);
-      margin-bottom: 4px;
-    }
-
-    .sheet-desc {
-      font-size: 11px;
-      color: var(--text-light);
-      line-height: 1.5;
-    }
-
-    .sheet-card.star {
-      background: linear-gradient(135deg, #FAF0EC 0%, #F5E8E2 100%);
-      border-color: var(--blush-deep);
-    }
-
-    .sheet-card.star .sheet-num {
-      color: var(--mauve);
-    }
-
-    /* ── INTERACTIVE PREVIEW SECTION ── */
+    /* ── INTERACTIVE PREVIEW ── */
     .s { padding: 100px 80px; background: var(--warm); position: relative; overflow: hidden; }
-    .s::before { content: ''; position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(232, 196, 184, 0.3) 0%, transparent 70%); pointer-events: none; }
+    .s::before { content: ''; position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(232,196,184,0.3) 0%, transparent 70%); pointer-events: none; }
     .inn { max-width: 1000px; margin: 0 auto; position: relative; z-index: 2; }
     .eye { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 16px; color: var(--rose); text-align: center; margin-bottom: 12px; }
-    .ttl { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 4vw, 52px); font-weight: 300; color: var(--text); text-align: center; line-height: 1.2; margin-bottom: 14px; }
+    .ttl { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px,4vw,52px); font-weight: 300; color: var(--text); text-align: center; line-height: 1.2; margin-bottom: 14px; }
     .ttl em { font-style: italic; color: var(--mauve); }
     .sub { font-size: 14px; color: var(--light); font-weight: 300; text-align: center; max-width: 520px; margin: 0 auto 48px; line-height: 1.7; }
     .tabs { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
-    .tab-btn { padding: 9px 20px; border-radius: 100px; font-size: 12px; font-weight: 500; cursor: pointer; border: 1px solid rgba(139, 94, 106, 0.2); color: var(--light); background: transparent; font-family: 'Jost', sans-serif; transition: all .25s; }
+    .tab-btn { padding: 9px 20px; border-radius: 100px; font-size: 12px; font-weight: 500; cursor: pointer; border: 1px solid rgba(139,94,106,0.2); color: var(--light); background: transparent; font-family: 'Jost', sans-serif; transition: all .25s; }
     .tab-btn:hover { border-color: var(--mauve); color: var(--mauve); }
     .tab-btn.on { background: var(--mauve); border-color: var(--mauve); color: white; }
     .stage { display: none; animation: fu .4s ease both; }
     .stage.on { display: block; }
     @keyframes fu { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
-    .ew { background: #FDFAF6; border-radius: 16px; overflow: hidden; box-shadow: 0 30px 60px rgba(92, 61, 46, 0.12), 0 0 0 1px rgba(139, 94, 106, 0.1); }
-    .eb { background: #F5EEE6; padding: 12px 20px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid rgba(139, 94, 106, 0.1); }
+    .ew { background: #FDFAF6; border-radius: 16px; overflow: hidden; box-shadow: 0 30px 60px rgba(92,61,46,0.12), 0 0 0 1px rgba(139,94,106,0.1); }
+    .eb { background: #F5EEE6; padding: 12px 20px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid rgba(139,94,106,0.1); }
     .dots { display: flex; gap: 6px; }
     .dot { width: 12px; height: 12px; border-radius: 50%; }
     .fn { font-size: .75rem; color: var(--light); flex: 1; text-align: center; }
-    .est { background: #F0E8E0; padding: 0 20px; display: flex; gap: 2px; border-bottom: 1px solid rgba(139, 94, 106, 0.1); overflow-x: auto; }
-    .et { padding: 8px 14px; font-size: .7rem; font-weight: 600; border-radius: 4px 4px 0 0; white-space: nowrap; color: rgba(92, 61, 46, 0.4); cursor: default; }
+    .est { background: #F0E8E0; padding: 0 20px; display: flex; gap: 2px; border-bottom: 1px solid rgba(139,94,106,0.1); overflow-x: auto; }
+    .et { padding: 8px 14px; font-size: .7rem; font-weight: 600; border-radius: 4px 4px 0 0; white-space: nowrap; color: rgba(92,61,46,0.4); cursor: default; }
     .et.on { background: #FDFAF6; color: var(--mauve); border-top: 2px solid var(--mauve); }
     .sb2 { padding: 24px; min-height: 380px; }
-    .dh { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid rgba(139, 94, 106, 0.1); }
-    .krow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 20px; }
-    .kc { border-radius: 12px; padding: 16px; border: 1px solid rgba(139, 94, 106, 0.12); }
+    .dh { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid rgba(139,94,106,0.1); }
+    .krow { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-bottom: 20px; }
+    .kc { border-radius: 12px; padding: 16px; border: 1px solid rgba(139,94,106,0.12); }
     .kl { font-size: .6rem; color: var(--light); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
     .kv { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; line-height: 1; margin-bottom: 5px; }
     .kn { font-size: .62rem; font-weight: 500; }
     .pg2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .pb { background: rgba(139, 94, 106, 0.04); border: 1px solid rgba(139, 94, 106, 0.1); border-radius: 12px; padding: 16px; }
+    .pb { background: rgba(139,94,106,0.04); border: 1px solid rgba(139,94,106,0.1); border-radius: 12px; padding: 16px; }
     .pt { font-size: .68rem; color: var(--light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px; }
     .pr { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
     .pi { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; }
     .pn2 { font-size: .72rem; font-weight: 600; color: var(--mid); margin-bottom: 4px; }
-    .pw { height: 4px; background: rgba(139, 94, 106, 0.1); border-radius: 4px; overflow: hidden; }
+    .pw { height: 4px; background: rgba(139,94,106,0.1); border-radius: 4px; overflow: hidden; }
     .pf { height: 100%; border-radius: 4px; background: linear-gradient(90deg, var(--blush-d), var(--mauve)); }
     .pp { font-size: .65rem; color: var(--light); white-space: nowrap; }
     .tbl { width: 100%; border-collapse: collapse; font-size: .78rem; }
-    .tbl th { background: rgba(139, 94, 106, 0.08); color: var(--mauve); font-size: .62rem; letter-spacing: 1.5px; text-transform: uppercase; padding: 10px 12px; text-align: left; font-weight: 700; }
-    .tbl td { padding: 11px 12px; color: var(--mid); border-bottom: 1px solid rgba(139, 94, 106, 0.07); vertical-align: middle; }
-    .tbl tr:hover td { background: rgba(139, 94, 106, 0.03); }
+    .tbl th { background: rgba(139,94,106,0.08); color: var(--mauve); font-size: .62rem; letter-spacing: 1.5px; text-transform: uppercase; padding: 10px 12px; text-align: left; font-weight: 700; }
+    .tbl td { padding: 11px 12px; color: var(--mid); border-bottom: 1px solid rgba(139,94,106,0.07); vertical-align: middle; }
+    .tbl tr:hover td { background: rgba(139,94,106,0.03); }
     .inn2 { display: flex; align-items: center; gap: 8px; font-weight: 600; color: var(--text); }
     .id2 { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
     .pc { font-weight: 700; color: var(--mauve); }
     .bg { font-size: .62rem; font-weight: 700; padding: 3px 8px; border-radius: 100px; }
-    .tr-t { background: rgba(139, 94, 106, 0.06) !important; }
-    .tr-t td { font-weight: 700; color: var(--text); border-top: 2px solid rgba(139, 94, 106, 0.15) !important; }
-    .ks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
+    .tr-t { background: rgba(139,94,106,0.06) !important; }
+    .tr-t td { font-weight: 700; color: var(--text); border-top: 2px solid rgba(139,94,106,0.15) !important; }
+    .ks { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-bottom: 20px; }
     .kk { border-radius: 12px; padding: 16px; text-align: center; }
     .kkv { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 600; line-height: 1; margin-bottom: 4px; }
     .kkl { font-size: .65rem; color: var(--light); }
     .ktbl { width: 100%; border-collapse: collapse; font-size: .78rem; }
-    .ktbl th { background: rgba(201, 169, 110, 0.1); color: var(--gold); font-size: .62rem; letter-spacing: 1.5px; text-transform: uppercase; padding: 10px 12px; text-align: left; font-weight: 700; }
-    .ktbl td { padding: 10px 12px; color: var(--mid); border-bottom: 1px solid rgba(201, 169, 110, 0.08); vertical-align: middle; }
+    .ktbl th { background: rgba(201,169,110,0.1); color: var(--gold); font-size: .62rem; letter-spacing: 1.5px; text-transform: uppercase; padding: 10px 12px; text-align: left; font-weight: 700; }
+    .ktbl td { padding: 10px 12px; color: var(--mid); border-bottom: 1px solid rgba(201,169,110,0.08); vertical-align: middle; }
     .kt { display: flex; align-items: center; gap: 8px; }
     .av { font-weight: 700; color: var(--gold); }
     .ud { font-size: .65rem; color: var(--light); max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
     .btbl { width: 100%; border-collapse: collapse; font-size: .78rem; }
-    .btbl th { background: rgba(139, 94, 106, 0.08); color: var(--mauve); font-size: .62rem; letter-spacing: 1.5px; text-transform: uppercase; padding: 8px 12px; text-align: left; font-weight: 700; }
-    .btbl td { padding: 10px 12px; color: var(--mid); border-bottom: 1px solid rgba(139, 94, 106, 0.07); vertical-align: middle; }
-    .bw { width: 80px; height: 6px; background: rgba(139, 94, 106, 0.1); border-radius: 4px; overflow: hidden; }
+    .btbl th { background: rgba(139,94,106,0.08); color: var(--mauve); font-size: .62rem; letter-spacing: 1.5px; text-transform: uppercase; padding: 8px 12px; text-align: left; font-weight: 700; }
+    .btbl td { padding: 10px 12px; color: var(--mid); border-bottom: 1px solid rgba(139,94,106,0.07); vertical-align: middle; }
+    .bw { width: 80px; height: 6px; background: rgba(139,94,106,0.1); border-radius: 4px; overflow: hidden; }
     .bb { height: 100%; border-radius: 4px; }
     .ov { color: var(--rose) !important; font-weight: 700; }
     .ok { color: var(--sage); font-weight: 700; }
     .feats { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 32px; }
-    .feat { display: flex; align-items: center; gap: 8px; background: rgba(139, 94, 106, 0.06); border: 1px solid rgba(139, 94, 106, 0.15); border-radius: 100px; padding: 8px 16px; font-size: .8rem; color: var(--mid); }
+    .feat { display: flex; align-items: center; gap: 8px; background: rgba(139,94,106,0.06); border: 1px solid rgba(139,94,106,0.15); border-radius: 100px; padding: 8px 16px; font-size: .8rem; color: var(--mid); }
 
-    /* ── PRICING SECTION ── */
-    .pricing-section {
-      background: var(--cream);
+    /* ── TESTIMONI SECTION (NEW) ── */
+    .testi-section {
+      background: var(--warm-white);
       padding: 100px 80px;
-      text-align: center;
-    }
-
-    .pricing-card {
-      max-width: 520px;
-      margin: 0 auto;
-      background: white;
-      border-radius: 20px;
-      padding: 56px 48px;
-      box-shadow: 0 30px 80px rgba(92, 61, 46, 0.12);
       position: relative;
       overflow: hidden;
     }
-
-    .pricing-card::before {
+    .testi-section::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--blush), var(--mauve), var(--gold));
-    }
-
-    .early-bird-tag {
-      display: inline-block;
-      background: linear-gradient(135deg, var(--gold-light), var(--blush));
-      color: var(--brown);
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 8px 20px;
-      border-radius: 100px;
-      margin-bottom: 28px;
-      font-weight: 500;
-    }
-
-    .price-main {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 80px;
-      font-weight: 300;
-      color: var(--text-dark);
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-
-    .price-main sup {
-      font-size: 28px;
-      vertical-align: super;
-    }
-
-    .price-was {
-      font-size: 14px;
-      color: var(--text-light);
-      margin-bottom: 32px;
-    }
-
-    .price-was s {
-      text-decoration-color: var(--dusty-rose);
-    }
-
-    .include-list {
-      list-style: none;
-      margin-bottom: 40px;
-      text-align: left;
-    }
-
-    .include-list li {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 14px;
-      color: var(--text-mid);
-      padding: 10px 0;
-      border-bottom: 1px solid #F5F0EC;
-      font-weight: 300;
-    }
-
-    .include-list li:last-child {
-      border-bottom: none;
-    }
-
-    .check {
-      width: 20px;
-      height: 20px;
-      background: var(--blush);
+      bottom: -100px; left: -100px;
+      width: 500px; height: 500px;
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 10px;
-      flex-shrink: 0;
+      background: radial-gradient(circle, rgba(232,196,184,0.2) 0%, transparent 70%);
+      pointer-events: none;
     }
-
-    .urgency-note {
-      font-size: 13px;
-      color: var(--dusty-rose);
-      margin-top: 20px;
-      font-weight: 500;
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 24px;
+      max-width: 960px;
+      margin: 0 auto 48px;
     }
-
-    /* ── FAQ ── */
-    .faq-section {
-      background: var(--warm-white);
-      padding: 100px 80px;
+    .testi-card {
+      background: white;
+      border-radius: 16px;
+      padding: 32px 28px;
+      border: 1px solid rgba(139,94,106,0.1);
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
-    .faq-inner {
-      max-width: 700px;
-      margin: 0 auto;
+    .testi-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 50px rgba(92,61,46,0.1);
     }
-
-    .faq-item {
-      border-bottom: 1px solid rgba(139, 94, 106, 0.15);
-      padding: 24px 0;
-      cursor: pointer;
-    }
-
-    .faq-q {
+    .testi-quote-mark {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 20px;
-      font-weight: 600;
-      color: var(--text-dark);
+      font-size: 64px;
+      color: rgba(139,94,106,0.1);
+      line-height: 1;
+      position: absolute;
+      top: 16px; left: 20px;
+    }
+    .testi-stars {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
+      gap: 3px;
+      margin-bottom: 16px;
+      margin-top: 8px;
     }
-
-    .faq-arrow {
-      color: var(--mauve);
-      font-size: 18px;
-      transition: transform 0.3s ease;
-      flex-shrink: 0;
+    .testi-stars span {
+      color: var(--gold);
+      font-size: 14px;
     }
-
-    .faq-item.open .faq-arrow {
-      transform: rotate(45deg);
-    }
-
-    .faq-a {
+    .testi-text {
       font-size: 14px;
       line-height: 1.8;
       color: var(--text-mid);
       font-weight: 300;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.3s ease;
-    }
-
-    .faq-item.open .faq-a {
-      max-height: 200px;
-      padding-top: 16px;
-    }
-
-    /* ── FINAL CTA ── */
-    .final-cta {
-      background: linear-gradient(135deg, var(--brown) 0%, var(--mauve) 100%);
-      padding: 100px 80px;
-      text-align: center;
+      margin-bottom: 24px;
       position: relative;
-      overflow: hidden;
+      z-index: 1;
     }
-
-    .final-cta::before {
-      content: '♡';
-      position: absolute;
-      font-size: 400px;
-      color: rgba(255, 255, 255, 0.03);
-      top: -80px;
-      right: -40px;
-      pointer-events: none;
-    }
-
-    .final-cta .section-title {
-      color: white;
-      margin-bottom: 16px;
-    }
-
-    .final-cta .section-eyebrow {
-      color: var(--blush);
-    }
-
-    .final-cta p {
-      font-size: 15px;
-      color: rgba(255, 255, 255, 0.7);
-      margin-bottom: 48px;
-      font-weight: 300;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .final-price-inline {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 20px;
-      color: var(--gold-light);
-      margin-bottom: 32px;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--text-dark);
-      padding: 40px 80px;
+    .testi-author {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      gap: 12px;
+      border-top: 1px solid rgba(139,94,106,0.08);
+      padding-top: 20px;
     }
-
-    .footer-brand {
+    .testi-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .testi-name {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 22px;
-      color: white;
-      letter-spacing: 2px;
-      font-weight: 300;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 2px;
     }
-
-    .footer-note {
-      font-size: 12px;
-      color: rgba(255, 255, 255, 0.4);
+    .testi-meta { font-size: 12px; color: var(--text-light); font-weight: 300; }
+    .testi-verified {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(122,140,126,0.1);
+      border: 1px solid rgba(122,140,126,0.2);
+      color: var(--sage);
+      font-size: 10px;
+      font-weight: 500;
+      padding: 3px 10px;
+      border-radius: 100px;
+      margin-top: 8px;
       letter-spacing: 0.5px;
     }
+    .testi-stats {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 1px;
+      max-width: 600px;
+      margin: 0 auto;
+      background: rgba(139,94,106,0.1);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .tstat {
+      background: white;
+      padding: 28px 20px;
+      text-align: center;
+    }
+    .tstat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 40px;
+      font-weight: 300;
+      color: var(--mauve);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .tstat-label { font-size: 12px; color: var(--text-light); font-weight: 300; letter-spacing: 0.5px; }
+
+    /* ── PRICING SECTION ── */
+    .pricing-section { background: var(--cream); padding: 100px 80px; text-align: center; }
+    .pricing-card { max-width: 520px; margin: 0 auto; background: white; border-radius: 20px; padding: 56px 48px; box-shadow: 0 30px 80px rgba(92,61,46,0.12); position: relative; overflow: hidden; }
+    .pricing-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--blush), var(--mauve), var(--gold)); }
+    .early-bird-tag { display: inline-block; background: linear-gradient(135deg, var(--gold-light), var(--blush)); color: var(--brown); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; padding: 8px 20px; border-radius: 100px; margin-bottom: 28px; font-weight: 500; }
+    .price-main { font-family: 'Cormorant Garamond', serif; font-size: 80px; font-weight: 300; color: var(--text-dark); line-height: 1; margin-bottom: 4px; }
+    .price-main sup { font-size: 28px; vertical-align: super; }
+    .price-was { font-size: 14px; color: var(--text-light); margin-bottom: 32px; }
+    .price-was s { text-decoration-color: var(--dusty-rose); }
+    .include-list { list-style: none; margin-bottom: 40px; text-align: left; }
+    .include-list li { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--text-mid); padding: 10px 0; border-bottom: 1px solid #F5F0EC; font-weight: 300; }
+    .include-list li:last-child { border-bottom: none; }
+    .check { width: 20px; height: 20px; background: var(--blush); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 10px; flex-shrink: 0; }
+    .urgency-note { font-size: 13px; color: var(--dusty-rose); margin-top: 20px; font-weight: 500; }
+
+    /* ── FAQ ── */
+    .faq-section { background: var(--warm-white); padding: 100px 80px; }
+    .faq-inner { max-width: 700px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid rgba(139,94,106,0.15); padding: 24px 0; cursor: pointer; }
+    .faq-q { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; color: var(--text-dark); display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    .faq-arrow { color: var(--mauve); font-size: 18px; transition: transform 0.3s ease; flex-shrink: 0; }
+    .faq-item.open .faq-arrow { transform: rotate(45deg); }
+    .faq-a { font-size: 14px; line-height: 1.8; color: var(--text-mid); font-weight: 300; max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease; }
+    .faq-item.open .faq-a { max-height: 200px; padding-top: 16px; }
+
+    /* ── FINAL CTA ── */
+    .final-cta { background: linear-gradient(135deg, var(--brown) 0%, var(--mauve) 100%); padding: 100px 80px; text-align: center; position: relative; overflow: hidden; }
+    .final-cta::before { content: '♡'; position: absolute; font-size: 400px; color: rgba(255,255,255,0.03); top: -80px; right: -40px; pointer-events: none; }
+    .final-cta .section-title { color: white; margin-bottom: 16px; }
+    .final-cta .section-eyebrow { color: var(--blush); }
+    .final-cta p { font-size: 15px; color: rgba(255,255,255,0.7); margin-bottom: 48px; font-weight: 300; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .final-price-inline { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--gold-light); margin-bottom: 32px; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--text-dark); padding: 40px 80px; display: flex; justify-content: space-between; align-items: center; }
+    .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: white; letter-spacing: 2px; font-weight: 300; }
+    .footer-note { font-size: 12px; color: rgba(255,255,255,0.4); letter-spacing: 0.5px; }
 
     /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
 
     /* ── STICKY CTA ── */
-    .sticky-cta {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      background: var(--mauve);
-      color: white;
-      padding: 14px 28px;
-      border-radius: 100px;
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      text-decoration: none;
-      box-shadow: 0 8px 30px rgba(139, 94, 106, 0.4);
-      transition: all 0.3s ease;
-      z-index: 100;
-      display: none;
-    }
-
-    .sticky-cta.show {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .sticky-cta:hover {
-      background: var(--brown);
-      transform: translateY(-2px);
-    }
+    .sticky-cta { position: fixed; bottom: 24px; right: 24px; background: var(--mauve); color: white; padding: 14px 28px; border-radius: 100px; font-size: 13px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; box-shadow: 0 8px 30px rgba(139,94,106,0.4); transition: all 0.3s ease; z-index: 100; display: none; }
+    .sticky-cta.show { display: flex; align-items: center; gap: 8px; }
+    .sticky-cta:hover { background: var(--brown); transform: translateY(-2px); }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
       .hero-left { padding: 60px 40px 60px 60px; }
-      .hero-right { overflow: hidden; }
       .mockup-card { width: 280px; }
       .fb-top { right: -10px; }
       .fb-bottom { left: -10px; }
-      .pain-section, .solution-section, .sheets-section, .s, .pricing-section, .faq-section, .final-cta, footer { padding: 80px 40px; }
-      .sheets-grid { grid-template-columns: repeat(2, 1fr); }
+      .pain-section, .solution-section, .sheets-section, .s, .testi-section, .pricing-section, .faq-section, .final-cta, footer { padding: 80px 40px; }
+      .sheets-grid { grid-template-columns: repeat(2,1fr); }
+      .testi-grid { grid-template-columns: repeat(2,1fr); }
     }
-
     @media (max-width: 768px) {
       .hero { grid-template-columns: 1fr; min-height: auto; }
       .hero-right { display: none; }
       .hero-left { padding: 80px 24px 60px; }
-      .hero-title { font-size: clamp(36px, 8vw, 52px); }
-      .slots-track { width: 100%; max-width: 280px; }
-      .pain-section, .solution-section, .sheets-section, .s, .pricing-section, .faq-section, .final-cta { padding: 60px 24px; }
+      .hero-title { font-size: clamp(36px,8vw,52px); }
+      .pain-section, .solution-section, .sheets-section, .s, .testi-section, .pricing-section, .faq-section, .final-cta { padding: 60px 24px; }
       footer { padding: 32px 24px; flex-direction: column; gap: 12px; text-align: center; }
-      .pain-grid { grid-template-columns: 1fr; gap: 16px; }
+      .pain-grid, .testi-grid { grid-template-columns: 1fr; gap: 16px; }
       .solution-inner { grid-template-columns: 1fr; gap: 40px; }
-      .solution-section::before { font-size: 160px; }
-      .sheets-grid { grid-template-columns: repeat(2, 1fr); }
-      .krow { grid-template-columns: repeat(2, 1fr); }
+      .sheets-grid { grid-template-columns: repeat(2,1fr); }
+      .krow { grid-template-columns: repeat(2,1fr); }
       .pg2 { grid-template-columns: 1fr; }
       .ks { grid-template-columns: 1fr 1fr; }
       .pricing-card { padding: 40px 24px; }
       .price-main { font-size: 64px; }
-      .faq-inner { max-width: 100%; }
-      .faq-q { font-size: 17px; }
-      .section-title { font-size: clamp(26px, 7vw, 40px); }
+      .testi-stats { grid-template-columns: 1fr; }
     }
-
     @media (max-width: 480px) {
       .hero-left { padding: 70px 20px 50px; }
       .hero-title { font-size: 34px; }
-      .hero-sub { font-size: 14px; }
       .btn-primary { padding: 15px 28px; font-size: 13px; width: 100%; justify-content: center; }
-      .price-note { flex-wrap: wrap; font-size: 12px; }
-      .pain-section, .solution-section, .sheets-section, .s, .pricing-section, .faq-section, .final-cta { padding: 50px 20px; }
+      .pain-section, .solution-section, .sheets-section, .s, .testi-section, .pricing-section, .faq-section, .final-cta { padding: 50px 20px; }
       .sheets-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
-      .sheet-card { padding: 14px 12px; }
-      .sheet-num { font-size: 22px; }
-      .sheet-name { font-size: 11px; }
-      .sheet-desc { font-size: 10px; }
       .pricing-card { padding: 32px 20px; }
       .price-main { font-size: 56px; }
-      .include-list li { font-size: 13px; }
-      .sticky-cta { right: 12px; bottom: 12px; padding: 12px 20px; font-size: 12px; }
       footer { padding: 28px 20px; }
-      .footer-brand { font-size: 18px; }
-      .section-title { font-size: clamp(24px, 8vw, 36px); }
-      .faq-q { font-size: 15px; }
       .ks { grid-template-columns: 1fr; }
     }
   </style>
-  <!-- Facebook Pixel Code -->
   <script>
-    !function (f, b, e, v, n, t, s) {
-      if (f.fbq) return; n = f.fbq = function () {
-        n.callMethod ?
-          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-      };
-      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-      n.queue = []; t = b.createElement(e); t.async = !0;
-      t.src = v; s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s)
-    }(window, document, 'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1421929652865308');
-    fbq('track', 'PageView');
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','1421929652865308');fbq('track','PageView');
   </script>
-  <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1421929652865308&ev=PageView&noscript=1" /></noscript>
-  <!-- End Facebook Pixel Code -->
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1421929652865308&ev=PageView&noscript=1"/></noscript>
 </head>
 
 <body>
 
-  <!-- STICKY CTA -->
   <a href="https://entrepreneurai.myscalev.com/checkout-page" class="sticky-cta" id="stickyCta">
-    💍 Dapatkan Sekarang — Rp 99rb
+    💍 Dapatkan Sekarang — Rp 149rb
   </a>
 
   <!-- ══ HERO ══ -->
   <section class="hero">
     <div class="hero-left">
       <div class="badge">Wedding Planner Excel Premium</div>
-      <p class="hero-eyebrow">Untuk kamu yang ingin pernikahan impian tanpa drama</p>
+      <p class="hero-eyebrow">Untuk kamu yang mau nikah tanpa drama & panik</p>
       <h1 class="hero-title">
-        Rencanakan<br><em>Pernikahan Impian</em><br>dalam Satu File
+        Nikah Tanpa Drama —<br><em>Semua Detail</em><br>Terkontrol Rapi
       </h1>
       <p class="hero-sub">
         NIKAH RAPI adalah wedding planner Excel 19-in-1 yang membantu kamu mengatur budget, tamu, seserahan, kado &
@@ -1161,18 +571,14 @@
           💍 Mau Nikah Rapi? Mulai di Sini
         </a>
         <div class="price-note">
-          Harga Early Bird <strong>Rp 99rb</strong> &nbsp;
-          <s>Rp 149rb</s> &nbsp;·&nbsp; Untuk 50 pembeli pertama
+          Harga <strong>Rp 149rb</strong> &nbsp;·&nbsp; Wedding Planner Excel Premium
         </div>
       </div>
       <div class="slots-bar">
-        <div class="slots-label">Slot Early Bird Tersisa</div>
-        <div class="slots-track">
-          <div class="slots-fill"></div>
-        </div>
-        <div class="slots-text">⚡ 32 dari 50 slot sudah terisi</div>
+        <div class="slots-label">Dipercaya calon pengantin Indonesia</div>
+        <div class="slots-track"><div class="slots-fill"></div></div>
+        <div class="slots-text">💍 Sudah digunakan 32 calon pengantin</div>
       </div>
-
     </div>
     <div class="hero-right">
       <div class="hero-visual">
@@ -1184,7 +590,6 @@
               <div style="font-size:13px;color:#2C2218;font-weight:500;">Rp 48.500.000 tercatat</div>
             </div>
           </div>
-
           <div class="mockup-card">
             <div class="mockup-header">
               <div class="mockup-dot" style="background:#E8C4B8;"></div>
@@ -1203,38 +608,29 @@
               <div class="progress-item">
                 <div class="progress-icon done">✓</div>
                 <span style="font-size:12px;color:#5C4A3E;flex:1;">Budget pernikahan</span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar-fill" style="width:100%"></div>
-                </div>
+                <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:100%"></div></div>
                 <span style="font-size:11px;color:#8C7A6E;white-space:nowrap;">100%</span>
               </div>
               <div class="progress-item">
                 <div class="progress-icon done">✓</div>
                 <span style="font-size:12px;color:#5C4A3E;flex:1;">Daftar tamu undangan</span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar-fill" style="width:85%"></div>
-                </div>
+                <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:85%"></div></div>
                 <span style="font-size:11px;color:#8C7A6E;white-space:nowrap;">85%</span>
               </div>
               <div class="progress-item">
                 <div class="progress-icon active">●</div>
                 <span style="font-size:12px;color:#5C4A3E;flex:1;">Seserahan & hantaran</span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar-fill" style="width:60%"></div>
-                </div>
+                <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:60%"></div></div>
                 <span style="font-size:11px;color:#8C7A6E;white-space:nowrap;">60%</span>
               </div>
               <div class="progress-item">
                 <div class="progress-icon todo">○</div>
                 <span style="font-size:12px;color:#5C4A3E;flex:1;">Vendor & pembayaran</span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar-fill" style="width:30%"></div>
-                </div>
+                <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:30%"></div></div>
                 <span style="font-size:11px;color:#8C7A6E;white-space:nowrap;">30%</span>
               </div>
             </div>
           </div>
-
           <div class="floating-badge fb-bottom">
             <div class="fb-icon" style="background:#F0F4F0;">💍</div>
             <div>
@@ -1252,40 +648,14 @@
     <p class="section-eyebrow reveal">Cerita yang terlalu familiar...</p>
     <h2 class="section-title reveal">Persiapan nikah harusnya bahagia,<br>bukan bikin pusing</h2>
     <div class="pain-grid">
-      <div class="pain-card reveal">
-        <span class="pain-emoji">😰</span>
-        <h3>Budget Bocor Tanpa Sadar</h3>
-        <p>Udah ngerasa cukup, eh ternyata ada aja pengeluaran yang kelewatan. Notes HP berantakan, chat WA hilang.</p>
-      </div>
-      <div class="pain-card reveal">
-        <span class="pain-emoji">📋</span>
-        <h3>Seserahan Kacau Last Minute</h3>
-        <p>Mau beli apa aja? Harganya berapa? Barang mana yang belum ada? Semua dicatat manual dan gampang lupa.</p>
-      </div>
-      <div class="pain-card reveal">
-        <span class="pain-emoji">🎁</span>
-        <h3>Kado & Angpao Tidak Tercatat</h3>
-        <p>Siapa yang sudah kasih apa? Amplop dari siapa? Mau nulis ucapan terima kasih tapi datanya nggak ada.</p>
-      </div>
-      <div class="pain-card reveal">
-        <span class="pain-emoji">👥</span>
-        <h3>Tamu Undangan Melebihi Kapasitas</h3>
-        <p>Dikira 200 orang, ternyata udah 350. Konfirmasi hadir berantakan, meja kurang, catering kacau.</p>
-      </div>
-      <div class="pain-card reveal">
-        <span class="pain-emoji">🏢</span>
-        <h3>Vendor Susah Ditracking</h3>
-        <p>Bayar DP vendor mana dulu? Kontrak siapa yang belum ditandatangan? Semua tersebar di berbagai chat.</p>
-      </div>
-      <div class="pain-card reveal">
-        <span class="pain-emoji">😫</span>
-        <h3>Capek Sebelum Hari H</h3>
-        <p>Harusnya excited menjelang pernikahan, tapi malah stres karena data berantakan dan banyak yang belum beres.</p>
-      </div>
+      <div class="pain-card reveal"><span class="pain-emoji">😰</span><h3>Budget Bocor Tanpa Sadar</h3><p>Udah ngerasa cukup, eh ternyata ada aja pengeluaran yang kelewatan. Notes HP berantakan, chat WA hilang.</p></div>
+      <div class="pain-card reveal"><span class="pain-emoji">📋</span><h3>Seserahan Kacau Last Minute</h3><p>Mau beli apa aja? Harganya berapa? Barang mana yang belum ada? Semua dicatat manual dan gampang lupa.</p></div>
+      <div class="pain-card reveal"><span class="pain-emoji">🎁</span><h3>Kado & Angpao Tidak Tercatat</h3><p>Siapa yang sudah kasih apa? Amplop dari siapa? Mau nulis ucapan terima kasih tapi datanya nggak ada.</p></div>
+      <div class="pain-card reveal"><span class="pain-emoji">👥</span><h3>Tamu Undangan Melebihi Kapasitas</h3><p>Dikira 200 orang, ternyata udah 350. Konfirmasi hadir berantakan, meja kurang, catering kacau.</p></div>
+      <div class="pain-card reveal"><span class="pain-emoji">🏢</span><h3>Vendor Susah Ditracking</h3><p>Bayar DP vendor mana dulu? Kontrak siapa yang belum ditandatangan? Semua tersebar di berbagai chat.</p></div>
+      <div class="pain-card reveal"><span class="pain-emoji">😫</span><h3>Capek Sebelum Hari H</h3><p>Harusnya excited menjelang pernikahan, tapi malah stres karena data berantakan dan banyak yang belum beres.</p></div>
     </div>
-    <p class="pain-closer reveal">
-      "Aku ngerti banget rasanya. Makanya aku buat satu file yang bisa pegang semuanya."
-    </p>
+    <p class="pain-closer reveal">"Aku ngerti banget rasanya. Makanya aku buat satu file yang bisa pegang semuanya."</p>
   </section>
 
   <!-- ══ SOLUTION ══ -->
@@ -1294,40 +664,25 @@
       <div class="solution-left">
         <p class="section-eyebrow reveal">Solusi yang kamu butuhkan</p>
         <h2 class="section-title reveal">Satu file Excel.<br>Semua beres.</h2>
-        <p class="reveal">
-          NIKAH RAPI dirancang khusus untuk calon pengantin Indonesia — dengan 19 sheet terintegrasi yang saling
-          terhubung otomatis. Input sekali, semua terupdate.
-        </p>
+        <p class="reveal">NIKAH RAPI dirancang khusus untuk calon pengantin Indonesia — dengan 19 sheet terintegrasi yang saling terhubung otomatis. Input sekali, semua terupdate.</p>
         <a href="#pricing" class="btn-secondary reveal">Lihat Harga →</a>
       </div>
       <div class="solution-right">
         <div class="feature-card reveal">
           <div class="feature-icon">💍</div>
-          <div class="feature-text">
-            <h4>Seserahan Tracker <span class="usp-tag">Eksklusif</span></h4>
-            <p>Catat semua item seserahan, harga, status beli. Auto-hitung total dan yang belum terbeli. Nggak ada di produk manapun.</p>
-          </div>
+          <div class="feature-text"><h4>Seserahan Tracker <span class="usp-tag">Eksklusif</span></h4><p>Catat semua item seserahan, harga, status beli. Auto-hitung total dan yang belum terbeli. Nggak ada di produk manapun.</p></div>
         </div>
         <div class="feature-card reveal">
           <div class="feature-icon">🎁</div>
-          <div class="feature-text">
-            <h4>Kado & Angpao Tracker <span class="usp-tag">Eksklusif</span></h4>
-            <p>Rekap siapa beri apa, nominal angpao, ucapan terima kasih. Semua tertata rapi untuk follow up.</p>
-          </div>
+          <div class="feature-text"><h4>Kado & Angpao Tracker <span class="usp-tag">Eksklusif</span></h4><p>Rekap siapa beri apa, nominal angpao, ucapan terima kasih. Semua tertata rapi untuk follow up.</p></div>
         </div>
         <div class="feature-card reveal">
           <div class="feature-icon">💰</div>
-          <div class="feature-text">
-            <h4>Budget Planner Otomatis</h4>
-            <p>Rencana vs realisasi. Tahu persis berapa yang sudah keluar, berapa sisa, dan kategori mana yang overbudget.</p>
-          </div>
+          <div class="feature-text"><h4>Budget Planner Otomatis</h4><p>Rencana vs realisasi. Tahu persis berapa yang sudah keluar, berapa sisa, dan kategori mana yang overbudget.</p></div>
         </div>
         <div class="feature-card reveal">
           <div class="feature-icon">👥</div>
-          <div class="feature-text">
-            <h4>Guest List & RSVP Tracker</h4>
-            <p>Kelola undangan, konfirmasi hadir, kebutuhan meja, dan kupon makan — semua dari satu sheet.</p>
-          </div>
+          <div class="feature-text"><h4>Guest List & RSVP Tracker</h4><p>Kelola undangan, konfirmasi hadir, kebutuhan meja, dan kupon makan — semua dari satu sheet.</p></div>
         </div>
       </div>
     </div>
@@ -1360,7 +715,7 @@
     </div>
   </section>
 
-  <!-- ══ INTERACTIVE PREVIEW UI ══ -->
+  <!-- ══ INTERACTIVE PREVIEW ══ -->
   <section class="s reveal">
     <div class="inn">
       <p class="eye">✨ Lihat Isi Produknya</p>
@@ -1372,22 +727,13 @@
         <button class="tab-btn" onclick="sw(this,'n3')">🎁 Kado & Angpao</button>
         <button class="tab-btn" onclick="sw(this,'n4')">💰 Budget</button>
       </div>
-
       <!-- DASHBOARD -->
       <div class="stage on" id="n1">
         <div class="ew">
           <div class="eb"><div class="dots"><div class="dot" style="background:#ff5f57"></div><div class="dot" style="background:#febc2e"></div><div class="dot" style="background:#28c840"></div></div><div class="fn">NIKAH_RAPI_PREMIUM_FINAL.xlsx</div></div>
-          <div class="est">
-            <div class="et on">🏠 Dashboard</div><div class="et">💰 Budget</div>
-            <div class="et" style="color:rgba(139,94,106,0.7)">💍 Seserahan ✦</div>
-            <div class="et" style="color:rgba(201,169,110,0.7)">🎁 Kado & Angpao ✦</div>
-            <div class="et">👥 Guest List</div><div class="et">📋 RSVP</div><div class="et">🏢 Vendor</div>
-          </div>
+          <div class="est"><div class="et on">🏠 Dashboard</div><div class="et">💰 Budget</div><div class="et" style="color:rgba(139,94,106,0.7)">💍 Seserahan ✦</div><div class="et" style="color:rgba(201,169,110,0.7)">🎁 Kado & Angpao ✦</div><div class="et">👥 Guest List</div><div class="et">📋 RSVP</div><div class="et">🏢 Vendor</div></div>
           <div class="sb2">
-            <div class="dh">
-              <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--mauve)">NIKAH RAPI ✦</div>
-              <div style="font-size:.72rem;color:var(--light)">H-127 menuju Hari Bahagia 💍</div>
-            </div>
+            <div class="dh"><div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--mauve)">NIKAH RAPI ✦</div><div style="font-size:.72rem;color:var(--light)">H-127 menuju Hari Bahagia 💍</div></div>
             <div class="krow">
               <div class="kc" style="background:linear-gradient(135deg,#FFF0EC,#FAE8E2);border-color:rgba(212,160,144,0.3)"><div class="kl">Budget Total</div><div class="kv" style="color:var(--mauve)">Rp 85jt</div><div class="kn" style="color:var(--rose)">Terpakai 62%</div></div>
               <div class="kc" style="background:linear-gradient(135deg,#F0F4F0,#E8EEE8);border-color:rgba(122,140,126,0.3)"><div class="kl">Tamu</div><div class="kv" style="color:var(--sage)">248</div><div class="kn" style="color:var(--sage)">186 konfirmasi</div></div>
@@ -1415,7 +761,6 @@
           </div>
         </div>
       </div>
-
       <!-- SESERAHAN -->
       <div class="stage" id="n2">
         <div class="ew">
@@ -1440,7 +785,6 @@
           </div>
         </div>
       </div>
-
       <!-- KADO -->
       <div class="stage" id="n3">
         <div class="ew">
@@ -1465,7 +809,6 @@
           </div>
         </div>
       </div>
-
       <!-- BUDGET -->
       <div class="stage" id="n4">
         <div class="ew">
@@ -1480,7 +823,7 @@
               <thead><tr><th>Kategori</th><th>Rencana</th><th>Realisasi</th><th>Selisih</th><th>Progress</th><th>Status</th></tr></thead>
               <tbody>
                 <tr><td style="font-weight:600;color:var(--text)">🍽 Catering & Konsumsi</td><td>Rp 32.000.000</td><td style="font-weight:600">Rp 30.500.000</td><td class="ok">+Rp 1,5jt</td><td><div class="bw"><div class="bb" style="width:95%;background:linear-gradient(90deg,var(--sage),#5a8a5a)"></div></div></td><td><span style="font-size:.63rem;color:var(--sage);font-weight:700">✓ Hemat</span></td></tr>
-                <tr><td style="font-weight:600;color:var(--text)">🏛 Venue & Dekorasi</td><td>Rp 20.000.000</td><td style="font-weight:600">Rp 22.000.000</td><td class="ov">-Rp 2jt</td><td><div class="bw"><div class="bb" style="width:110%;background:linear-gradient(90deg,var(--rose),#c0392b)"></div></div></td><td><span style="font-size:.63rem;color:var(--rose);font-weight:700">⚠ Over</span></td></tr>
+                <tr><td style="font-weight:600;color:var(--text)">🏛 Venue & Dekorasi</td><td>Rp 20.000.000</td><td style="font-weight:600">Rp 22.000.000</td><td class="ov">-Rp 2jt</td><td><div class="bw"><div class="bb" style="width:100%;background:linear-gradient(90deg,var(--rose),#c0392b)"></div></div></td><td><span style="font-size:.63rem;color:var(--rose);font-weight:700">⚠ Over</span></td></tr>
                 <tr><td style="font-weight:600;color:var(--text)">📸 Foto & Video</td><td>Rp 8.000.000</td><td style="font-weight:600">Rp 7.500.000</td><td class="ok">+Rp 500rb</td><td><div class="bw"><div class="bb" style="width:94%;background:linear-gradient(90deg,var(--sage),#5a8a5a)"></div></div></td><td><span style="font-size:.63rem;color:var(--sage);font-weight:700">✓ Hemat</span></td></tr>
                 <tr><td style="font-weight:600;color:var(--text)">👗 Busana & MUA</td><td>Rp 12.000.000</td><td style="font-weight:600;color:var(--light)">Rp 0</td><td style="color:var(--light)">Belum</td><td><div class="bw"><div class="bb" style="width:0%"></div></div></td><td><span style="font-size:.63rem;color:var(--light)">○ Belum</span></td></tr>
                 <tr><td style="font-weight:600;color:var(--text)">💍 Seserahan</td><td>Rp 13.000.000</td><td style="font-weight:600">Rp 6.495.000</td><td style="color:var(--gold);font-weight:700">+Rp 6,5jt</td><td><div class="bw"><div class="bb" style="width:50%;background:linear-gradient(90deg,var(--gold),#b8902a)"></div></div></td><td><span style="font-size:.63rem;color:var(--gold);font-weight:700">⚡ Proses</span></td></tr>
@@ -1489,7 +832,6 @@
           </div>
         </div>
       </div>
-
       <div class="feats">
         <div class="feat"><span>💍</span> Seserahan Tracker</div>
         <div class="feat"><span>🎁</span> Kado & Angpao Tracker</div>
@@ -1500,27 +842,99 @@
     </div>
   </section>
 
+  <!-- ══ TESTIMONI (NEW) ══ -->
+  <section class="testi-section">
+    <p class="section-eyebrow reveal">Kata mereka yang sudah pakai</p>
+    <h2 class="section-title reveal">Pernikahan lebih tenang,<br>karena semua <em style="color:var(--mauve);">sudah tercatat</em></h2>
+    <div class="testi-grid">
+
+      <div class="testi-card reveal">
+        <div class="testi-quote-mark">"</div>
+        <div class="testi-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p class="testi-text">Seserahan Tracker-nya beneran game changer. Sebelumnya aku nyatat manual di kertas dan selalu ada yang kelewatan. Sekarang tinggal update di Excel, auto keitung semua. Worth banget!</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#E8C4B8,#D4A090);">🌸</div>
+          <div>
+            <div class="testi-name">Anisa R.</div>
+            <div class="testi-meta">Calon pengantin · Jakarta</div>
+            <div class="testi-verified">✓ Verified Purchase</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="testi-quote-mark">"</div>
+        <div class="testi-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p class="testi-text">Kado & Angpao Tracker yang bikin aku beli ini. Nikahan kakak aku sebelumnya banyak yang lupa diucapin terima kasih. Sekarang semua tercatat rapi, tinggal follow up satu-satu!</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#C4857A,#8B5E6A);">💐</div>
+          <div>
+            <div class="testi-name">Dewi S.</div>
+            <div class="testi-meta">Baru menikah · Bandung</div>
+            <div class="testi-verified">✓ Verified Purchase</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="testi-quote-mark">"</div>
+        <div class="testi-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p class="testi-text">Tadinya ragu karena harganya murah, takut isinya biasa aja. Ternyata 19 sheet semua fungsional dan saling nyambung! Budget planner-nya langsung update otomatis. Recommend banget!</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#C9A96E,#E8D5B0);">👑</div>
+          <div>
+            <div class="testi-name">Rina & Fajar</div>
+            <div class="testi-meta">Calon pengantin · Surabaya</div>
+            <div class="testi-verified">✓ Verified Purchase</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="testi-stats reveal">
+      <div class="tstat">
+        <div class="tstat-num">50+</div>
+        <div class="tstat-label">Calon Pengantin Terbantu</div>
+      </div>
+      <div class="tstat">
+        <div class="tstat-num">5★</div>
+        <div class="tstat-label">Rating Rata-rata</div>
+      </div>
+      <div class="tstat">
+        <div class="tstat-num">19</div>
+        <div class="tstat-label">Sheet Terintegrasi</div>
+      </div>
+    </div>
+  </section>
+
   <!-- ══ PRICING ══ -->
   <section class="pricing-section" id="pricing">
     <p class="section-eyebrow reveal">Investasi terkecil untuk pernikahan terbaik</p>
     <h2 class="section-title reveal">Pilih Paketmu</h2>
     <div class="pricing-card reveal">
-      <div class="early-bird-tag">✦ Early Bird — 50 Pembeli Pertama</div>
-      <div class="price-main"><sup>Rp</sup>99rb</div>
-      <div class="price-was">Harga normal <s>Rp 149.000</s> — hemat 33%</div>
+      <div class="early-bird-tag">✦ Bundle Lengkap — 3 Produk dalam 1 Harga</div>
+      <div class="price-main"><sup>Rp</sup>149rb</div>
+      <div class="price-was">Investasi terbaik untuk pernikahan sekali seumur hidup</div>
       <ul class="include-list">
         <li><div class="check">✓</div> File Excel NIKAH RAPI — 19 sheet lengkap</li>
         <li><div class="check">✓</div> Seserahan Tracker (fitur eksklusif)</li>
         <li><div class="check">✓</div> Kado & Angpao Tracker (fitur eksklusif)</li>
+        <li><div class="check">✓</div> Honeymoon Rapi — planner bulan madu lengkap</li>
+        <li><div class="check">✓</div> Honeymoon Anti Drama — ebook panduan honeymoon</li>
         <li><div class="check">✓</div> Sudah terproteksi & siap pakai langsung</li>
         <li><div class="check">✓</div> Panduan penggunaan PDF</li>
         <li><div class="check">✓</div> Update file gratis seumur hidup</li>
       </ul>
-      <a href="https://entrepreneurai.myscalev.com/checkout-page" class="btn-primary"
-        style="width:100%;justify-content:center;">
-        💍 Dapatkan Sekarang — Rp 99.000
+      <a href="https://entrepreneurai.myscalev.com/checkout-page" class="btn-primary" style="width:100%;justify-content:center;">
+        💍 Dapatkan Sekarang — Rp 149.000
       </a>
-      <p class="urgency-note">⚡ Sisa 18 slot early bird · Harga naik ke 149rb setelah habis</p>
+      <p class="urgency-note">💍 Garansi 7 hari · File langsung dikirim via WA</p>
     </div>
   </section>
 
@@ -1555,10 +969,9 @@
   <!-- ══ FINAL CTA ══ -->
   <section class="final-cta">
     <p class="section-eyebrow reveal">Sudah siap?</p>
-    <h2 class="section-title reveal">Mulai rencanakan pernikahanmu<br>dengan lebih <em
-        style="color:var(--gold-light);">tenang</em></h2>
+    <h2 class="section-title reveal">Mulai rencanakan pernikahanmu<br>dengan lebih <em style="color:var(--gold-light);">tenang</em></h2>
     <p class="reveal">Ratusan detail pernikahan dalam satu file. Supaya hari terbaikmu benar-benar terasa seperti hari terbaik.</p>
-    <div class="final-price-inline reveal">Early Bird Rp 99.000 · Sisa 18 slot · Harga naik setelah habis</div>
+    <div class="final-price-inline reveal">Rp 149.000 · Garansi 7 hari · File langsung dikirim</div>
     <a href="https://entrepreneurai.myscalev.com/checkout-page" class="btn-secondary reveal" style="margin:0 auto;">
       💍 Ambil Sekarang Sebelum Harga Naik
     </a>
@@ -1571,7 +984,6 @@
   </footer>
 
   <script>
-    // Scroll reveal
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
@@ -1582,18 +994,13 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     reveals.forEach(el => observer.observe(el));
 
-    // Sticky CTA
     const stickyCta = document.getElementById('stickyCta');
     window.addEventListener('scroll', () => {
       stickyCta.classList.toggle('show', window.scrollY > 600);
     });
 
-    // FAQ toggle
-    function toggleFaq(el) {
-      el.classList.toggle('open');
-    }
+    function toggleFaq(el) { el.classList.toggle('open'); }
 
-    // Interactive Preview Tabs
     function sw(btn, id) {
       document.querySelectorAll('.tab-btn').forEach(t => t.classList.remove('on'));
       document.querySelectorAll('.stage').forEach(s => s.classList.remove('on'));
@@ -1602,5 +1009,4 @@
     }
   </script>
 </body>
-
 </html>
