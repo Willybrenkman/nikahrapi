@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NIKAH RAPI — Wedding Planner Excel Premium</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --cream: #FAF7F2;
@@ -24,638 +21,689 @@
       --text-dark: #2C2218;
       --text-mid: #5C4A3E;
       --text-light: #8C7A6E;
-      
-      --warm: #FDFBF8;
-      --blush-d: #D4A090;
-      --rose: #C4857A;
-      --text: #2C2218;
-      --mid: #5C4A3E;
-      --light: #8C7A6E;
     }
-
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
+    body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--text-dark); overflow-x: hidden; }
 
-    body {
-      font-family: 'Jost', sans-serif;
-      background: var(--cream);
-      color: var(--text-dark);
-      overflow-x: hidden;
-    }
-
-    /* ── HERO ── */
+    /* ══ HERO — PRODUCT FIRST ══ */
     .hero {
       min-height: 100vh;
       background: var(--warm-white);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 40px 60px;
       position: relative;
       overflow: hidden;
+      text-align: center;
     }
-
     .hero::before {
       content: '';
       position: absolute;
-      top: -120px; right: -120px;
-      width: 600px; height: 600px;
+      top: -200px; right: -200px;
+      width: 700px; height: 700px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(232,196,184,0.35) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(232,196,184,0.3) 0%, transparent 70%);
       pointer-events: none;
     }
-
     .hero::after {
       content: '';
       position: absolute;
-      bottom: -80px; left: -80px;
-      width: 400px; height: 400px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(168,184,172,0.25) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .hero-left {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 80px 60px 80px 80px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--gold-light);
-      color: var(--brown);
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 8px 16px;
-      border-radius: 100px;
-      margin-bottom: 32px;
-      width: fit-content;
-      animation: fadeUp 0.6s ease both;
-    }
-
-    .badge::before { content: '✦'; color: var(--gold); }
-
-    .hero-eyebrow {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 18px;
-      color: var(--dusty-rose);
-      margin-bottom: 16px;
-      animation: fadeUp 0.7s ease both;
-    }
-
-    .hero-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(42px, 5vw, 68px);
-      font-weight: 300;
-      line-height: 1.1;
-      color: var(--text-dark);
-      margin-bottom: 24px;
-      animation: fadeUp 0.8s ease both;
-    }
-
-    .hero-title em { font-style: italic; color: var(--mauve); }
-
-    .hero-sub {
-      font-size: 15px;
-      line-height: 1.8;
-      color: var(--text-mid);
-      max-width: 420px;
-      margin-bottom: 40px;
-      font-weight: 300;
-      animation: fadeUp 0.9s ease both;
-    }
-
-    .hero-cta-group {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      animation: fadeUp 1s ease both;
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      background: var(--mauve);
-      color: white;
-      font-family: 'Jost', sans-serif;
-      font-size: 14px;
-      font-weight: 500;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      padding: 18px 40px;
-      border-radius: 4px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      width: fit-content;
-      border: none;
-      cursor: pointer;
-    }
-
-    .btn-primary:hover {
-      background: var(--brown);
-      transform: translateY(-2px);
-      box-shadow: 0 12px 40px rgba(139,94,106,0.3);
-    }
-
-    .price-note {
-      font-size: 13px;
-      color: var(--text-light);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .price-note strong { color: var(--mauve); font-size: 20px; font-family: 'Cormorant Garamond', serif; }
-    .price-note s { color: var(--text-light); font-size: 13px; }
-
-    .slots-bar { margin-top: 20px; animation: fadeUp 1.1s ease both; }
-    .slots-label { font-size: 12px; color: var(--text-light); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
-    .slots-track { height: 4px; background: var(--gold-light); border-radius: 4px; width: 280px; position: relative; overflow: hidden; }
-    .slots-fill { height: 100%; width: 64%; background: linear-gradient(90deg, var(--dusty-rose), var(--gold)); border-radius: 4px; animation: fillBar 1.5s ease 1s both; }
-    @keyframes fillBar { from { width: 0; } to { width: 64%; } }
-    .slots-text { font-size: 12px; color: var(--dusty-rose); margin-top: 6px; font-weight: 500; }
-
-    .hero-right { position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-    .hero-visual { position: relative; width: 100%; height: 100%; background: linear-gradient(135deg, #F0E8E0 0%, #E8D5C8 50%, #DCC8BC 100%); display: flex; align-items: center; justify-content: center; }
-    .mockup-container { position: relative; animation: floatUp 0.9s ease both, float 6s ease-in-out infinite 1s; }
-
-    @keyframes floatUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-12px); } }
-
-    .mockup-card { background: white; border-radius: 12px; padding: 24px; box-shadow: 0 40px 80px rgba(92,61,46,0.15), 0 10px 30px rgba(92,61,46,0.08); width: 340px; }
-    .mockup-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid #F0E8E0; }
-    .mockup-dot { width: 10px; height: 10px; border-radius: 50%; }
-    .mockup-title-bar { font-size: 11px; font-weight: 500; color: var(--text-mid); letter-spacing: 1px; text-transform: uppercase; }
-    .sheet-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
-    .tab { font-size: 10px; padding: 4px 10px; border-radius: 100px; font-weight: 500; letter-spacing: 0.5px; }
-    .tab.active { background: var(--mauve); color: white; }
-    .tab.default { background: #F5F0EC; color: var(--text-mid); }
-    .tab.highlight { background: var(--blush); color: var(--mauve); }
-    .progress-list { display: flex; flex-direction: column; gap: 10px; }
-    .progress-item { display: flex; align-items: center; gap: 10px; font-size: 12px; }
-    .progress-icon { width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; flex-shrink: 0; }
-    .progress-icon.done { background: #E8F5E9; color: #4CAF50; }
-    .progress-icon.active { background: var(--blush); color: var(--mauve); }
-    .progress-icon.todo { background: #F5F0EC; color: var(--text-light); }
-    .progress-bar-wrap { flex: 1; height: 4px; background: #F0EAE4; border-radius: 4px; overflow: hidden; }
-    .progress-bar-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, var(--blush-deep), var(--mauve)); }
-    .floating-badge { position: absolute; background: white; border-radius: 10px; padding: 12px 16px; box-shadow: 0 8px 30px rgba(92,61,46,0.15); font-size: 12px; font-weight: 500; color: var(--text-dark); display: flex; align-items: center; gap: 8px; }
-    .fb-top { top: 60px; right: -20px; animation: fadeLeft 1s ease 0.5s both; }
-    .fb-bottom { bottom: 80px; left: -20px; animation: fadeRight 1s ease 0.7s both; }
-    @keyframes fadeLeft { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
-    @keyframes fadeRight { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
-    .fb-icon { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; }
-
-    /* ── PAIN SECTION ── */
-    .pain-section { background: var(--cream); padding: 100px 80px; position: relative; }
-    .section-eyebrow { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 16px; color: var(--dusty-rose); text-align: center; margin-bottom: 12px; }
-    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px,4vw,52px); font-weight: 300; text-align: center; line-height: 1.2; margin-bottom: 60px; color: var(--text-dark); }
-    .pain-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; max-width: 960px; margin: 0 auto 60px; }
-    .pain-card { background: white; border-radius: 12px; padding: 32px 28px; border-left: 3px solid var(--blush); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-    .pain-card:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(92,61,46,0.1); }
-    .pain-emoji { font-size: 28px; margin-bottom: 16px; display: block; }
-    .pain-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; color: var(--text-dark); margin-bottom: 10px; }
-    .pain-card p { font-size: 14px; line-height: 1.7; color: var(--text-mid); font-weight: 300; }
-    .pain-closer { text-align: center; max-width: 600px; margin: 0 auto; font-family: 'Cormorant Garamond', serif; font-size: 22px; font-style: italic; color: var(--mauve); line-height: 1.6; }
-
-    /* ── SOLUTION SECTION ── */
-    .solution-section { background: var(--mauve); padding: 100px 80px; position: relative; overflow: hidden; }
-    .solution-section::before { content: 'NIKAH'; position: absolute; font-family: 'Cormorant Garamond', serif; font-size: 300px; font-weight: 600; color: rgba(255,255,255,0.04); top: -40px; left: -20px; pointer-events: none; line-height: 1; }
-    .solution-inner { max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; position: relative; z-index: 2; }
-    .solution-left .section-eyebrow { text-align: left; color: var(--blush); }
-    .solution-left .section-title { text-align: left; color: white; font-size: clamp(28px,3vw,44px); }
-    .solution-left p { font-size: 15px; line-height: 1.8; color: rgba(255,255,255,0.75); font-weight: 300; margin-bottom: 32px; }
-    .btn-secondary { display: inline-flex; align-items: center; gap: 10px; background: white; color: var(--mauve); font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; padding: 16px 36px; border-radius: 4px; text-decoration: none; transition: all 0.3s ease; }
-    .btn-secondary:hover { background: var(--gold-light); transform: translateY(-2px); }
-    .solution-right { display: flex; flex-direction: column; gap: 16px; }
-    .feature-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 20px 24px; display: flex; align-items: flex-start; gap: 16px; transition: background 0.3s ease; }
-    .feature-card:hover { background: rgba(255,255,255,0.14); }
-    .feature-icon { width: 40px; height: 40px; background: rgba(255,255,255,0.15); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
-    .feature-text h4 { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 600; color: white; margin-bottom: 4px; }
-    .feature-text p { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.6; font-weight: 300; }
-    .usp-tag { display: inline-block; background: var(--gold); color: white; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 8px; border-radius: 100px; margin-left: 8px; vertical-align: middle; font-weight: 500; }
-
-    /* ── SHEETS SECTION ── */
-    .sheets-section { background: var(--warm-white); padding: 100px 80px; }
-    .sheets-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; max-width: 960px; margin: 0 auto 60px; }
-    .sheet-card { background: var(--cream); border-radius: 10px; padding: 20px 18px; border: 1px solid rgba(139,94,106,0.1); transition: all 0.3s ease; cursor: default; }
-    .sheet-card:hover { border-color: var(--blush); background: white; transform: translateY(-3px); box-shadow: 0 12px 30px rgba(139,94,106,0.08); }
-    .sheet-num { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--blush); font-weight: 300; line-height: 1; margin-bottom: 8px; }
-    .sheet-name { font-size: 13px; font-weight: 500; color: var(--text-dark); margin-bottom: 4px; }
-    .sheet-desc { font-size: 11px; color: var(--text-light); line-height: 1.5; }
-    .sheet-card.star { background: linear-gradient(135deg, #FAF0EC 0%, #F5E8E2 100%); border-color: var(--blush-deep); }
-    .sheet-card.star .sheet-num { color: var(--mauve); }
-
-    /* ── INTERACTIVE PREVIEW ── */
-    .s { padding: 100px 80px; background: var(--warm); position: relative; overflow: hidden; }
-    .s::before { content: ''; position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(232,196,184,0.3) 0%, transparent 70%); pointer-events: none; }
-    .inn { max-width: 1000px; margin: 0 auto; position: relative; z-index: 2; }
-    .eye { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 16px; color: var(--rose); text-align: center; margin-bottom: 12px; }
-    .ttl { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px,4vw,52px); font-weight: 300; color: var(--text); text-align: center; line-height: 1.2; margin-bottom: 14px; }
-    .ttl em { font-style: italic; color: var(--mauve); }
-    .sub { font-size: 14px; color: var(--light); font-weight: 300; text-align: center; max-width: 520px; margin: 0 auto 48px; line-height: 1.7; }
-    .tabs { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
-    .tab-btn { padding: 9px 20px; border-radius: 100px; font-size: 12px; font-weight: 500; cursor: pointer; border: 1px solid rgba(139,94,106,0.2); color: var(--light); background: transparent; font-family: 'Jost', sans-serif; transition: all .25s; }
-    .tab-btn:hover { border-color: var(--mauve); color: var(--mauve); }
-    .tab-btn.on { background: var(--mauve); border-color: var(--mauve); color: white; }
-    .stage { display: none; animation: fu .4s ease both; }
-    .stage.on { display: block; }
-    @keyframes fu { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
-    .ew { background: #FDFAF6; border-radius: 16px; overflow: hidden; box-shadow: 0 30px 60px rgba(92,61,46,0.12), 0 0 0 1px rgba(139,94,106,0.1); }
-    .eb { background: #F5EEE6; padding: 12px 20px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid rgba(139,94,106,0.1); }
-    .dots { display: flex; gap: 6px; }
-    .dot { width: 12px; height: 12px; border-radius: 50%; }
-    .fn { font-size: .75rem; color: var(--light); flex: 1; text-align: center; }
-    .est { background: #F0E8E0; padding: 0 20px; display: flex; gap: 2px; border-bottom: 1px solid rgba(139,94,106,0.1); overflow-x: auto; }
-    .et { padding: 8px 14px; font-size: .7rem; font-weight: 600; border-radius: 4px 4px 0 0; white-space: nowrap; color: rgba(92,61,46,0.4); cursor: default; }
-    .et.on { background: #FDFAF6; color: var(--mauve); border-top: 2px solid var(--mauve); }
-    .sb2 { padding: 24px; min-height: 380px; }
-    .dh { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid rgba(139,94,106,0.1); }
-    .krow { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-bottom: 20px; }
-    .kc { border-radius: 12px; padding: 16px; border: 1px solid rgba(139,94,106,0.12); }
-    .kl { font-size: .6rem; color: var(--light); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
-    .kv { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; line-height: 1; margin-bottom: 5px; }
-    .kn { font-size: .62rem; font-weight: 500; }
-    .pg2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .pb { background: rgba(139,94,106,0.04); border: 1px solid rgba(139,94,106,0.1); border-radius: 12px; padding: 16px; }
-    .pt { font-size: .68rem; color: var(--light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px; }
-    .pr { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
-    .pi { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; }
-    .pn2 { font-size: .72rem; font-weight: 600; color: var(--mid); margin-bottom: 4px; }
-    .pw { height: 4px; background: rgba(139,94,106,0.1); border-radius: 4px; overflow: hidden; }
-    .pf { height: 100%; border-radius: 4px; background: linear-gradient(90deg, var(--blush-d), var(--mauve)); }
-    .pp { font-size: .65rem; color: var(--light); white-space: nowrap; }
-    .tbl { width: 100%; border-collapse: collapse; font-size: .78rem; }
-    .tbl th { background: rgba(139,94,106,0.08); color: var(--mauve); font-size: .62rem; letter-spacing: 1.5px; text-transform: uppercase; padding: 10px 12px; text-align: left; font-weight: 700; }
-    .tbl td { padding: 11px 12px; color: var(--mid); border-bottom: 1px solid rgba(139,94,106,0.07); vertical-align: middle; }
-    .tbl tr:hover td { background: rgba(139,94,106,0.03); }
-    .inn2 { display: flex; align-items: center; gap: 8px; font-weight: 600; color: var(--text); }
-    .id2 { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-    .pc { font-weight: 700; color: var(--mauve); }
-    .bg { font-size: .62rem; font-weight: 700; padding: 3px 8px; border-radius: 100px; }
-    .tr-t { background: rgba(139,94,106,0.06) !important; }
-    .tr-t td { font-weight: 700; color: var(--text); border-top: 2px solid rgba(139,94,106,0.15) !important; }
-    .ks { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-bottom: 20px; }
-    .kk { border-radius: 12px; padding: 16px; text-align: center; }
-    .kkv { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 600; line-height: 1; margin-bottom: 4px; }
-    .kkl { font-size: .65rem; color: var(--light); }
-    .ktbl { width: 100%; border-collapse: collapse; font-size: .78rem; }
-    .ktbl th { background: rgba(201,169,110,0.1); color: var(--gold); font-size: .62rem; letter-spacing: 1.5px; text-transform: uppercase; padding: 10px 12px; text-align: left; font-weight: 700; }
-    .ktbl td { padding: 10px 12px; color: var(--mid); border-bottom: 1px solid rgba(201,169,110,0.08); vertical-align: middle; }
-    .kt { display: flex; align-items: center; gap: 8px; }
-    .av { font-weight: 700; color: var(--gold); }
-    .ud { font-size: .65rem; color: var(--light); max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-    .btbl { width: 100%; border-collapse: collapse; font-size: .78rem; }
-    .btbl th { background: rgba(139,94,106,0.08); color: var(--mauve); font-size: .62rem; letter-spacing: 1.5px; text-transform: uppercase; padding: 8px 12px; text-align: left; font-weight: 700; }
-    .btbl td { padding: 10px 12px; color: var(--mid); border-bottom: 1px solid rgba(139,94,106,0.07); vertical-align: middle; }
-    .bw { width: 80px; height: 6px; background: rgba(139,94,106,0.1); border-radius: 4px; overflow: hidden; }
-    .bb { height: 100%; border-radius: 4px; }
-    .ov { color: var(--rose) !important; font-weight: 700; }
-    .ok { color: var(--sage); font-weight: 700; }
-    .feats { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 32px; }
-    .feat { display: flex; align-items: center; gap: 8px; background: rgba(139,94,106,0.06); border: 1px solid rgba(139,94,106,0.15); border-radius: 100px; padding: 8px 16px; font-size: .8rem; color: var(--mid); }
-
-    /* ── TESTIMONI SECTION (NEW) ── */
-    .testi-section {
-      background: var(--warm-white);
-      padding: 100px 80px;
-      position: relative;
-      overflow: hidden;
-    }
-    .testi-section::before {
-      content: '';
-      position: absolute;
-      bottom: -100px; left: -100px;
+      bottom: -150px; left: -150px;
       width: 500px; height: 500px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(232,196,184,0.2) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(168,184,172,0.2) 0%, transparent 70%);
       pointer-events: none;
     }
-    .testi-grid {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 24px;
-      max-width: 960px;
-      margin: 0 auto 48px;
-    }
-    .testi-card {
-      background: white;
-      border-radius: 16px;
-      padding: 32px 28px;
-      border: 1px solid rgba(139,94,106,0.1);
-      position: relative;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .testi-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 50px rgba(92,61,46,0.1);
-    }
-    .testi-quote-mark {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 64px;
-      color: rgba(139,94,106,0.1);
-      line-height: 1;
-      position: absolute;
-      top: 16px; left: 20px;
-    }
-    .testi-stars {
-      display: flex;
-      gap: 3px;
-      margin-bottom: 16px;
-      margin-top: 8px;
-    }
-    .testi-stars span {
-      color: var(--gold);
-      font-size: 14px;
-    }
-    .testi-text {
-      font-size: 14px;
-      line-height: 1.8;
-      color: var(--text-mid);
-      font-weight: 300;
-      margin-bottom: 24px;
-      position: relative;
-      z-index: 1;
-    }
-    .testi-author {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      border-top: 1px solid rgba(139,94,106,0.08);
-      padding-top: 20px;
-    }
-    .testi-avatar {
-      width: 44px; height: 44px;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 18px;
-      flex-shrink: 0;
-    }
-    .testi-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 17px;
-      font-weight: 600;
-      color: var(--text-dark);
-      margin-bottom: 2px;
-    }
-    .testi-meta { font-size: 12px; color: var(--text-light); font-weight: 300; }
-    .testi-verified {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      background: rgba(122,140,126,0.1);
-      border: 1px solid rgba(122,140,126,0.2);
-      color: var(--sage);
-      font-size: 10px;
-      font-weight: 500;
-      padding: 3px 10px;
-      border-radius: 100px;
-      margin-top: 8px;
-      letter-spacing: 0.5px;
-    }
-    .testi-stats {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 1px;
-      max-width: 600px;
-      margin: 0 auto;
-      background: rgba(139,94,106,0.1);
-      border-radius: 16px;
-      overflow: hidden;
-    }
-    .tstat {
-      background: white;
-      padding: 28px 20px;
-      text-align: center;
-    }
-    .tstat-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 40px;
-      font-weight: 300;
-      color: var(--mauve);
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-    .tstat-label { font-size: 12px; color: var(--text-light); font-weight: 300; letter-spacing: 0.5px; }
 
-    /* ── PRICING SECTION ── */
-    .pricing-section { background: var(--cream); padding: 100px 80px; text-align: center; }
-    .pricing-card { max-width: 520px; margin: 0 auto; background: white; border-radius: 20px; padding: 56px 48px; box-shadow: 0 30px 80px rgba(92,61,46,0.12); position: relative; overflow: hidden; }
+    /* Badge */
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--gold-light); color: var(--brown);
+      font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase;
+      padding: 8px 20px; border-radius: 100px; margin-bottom: 28px;
+      animation: fadeDown 0.6s ease both;
+    }
+    .badge::before { content: '✦'; color: var(--gold); }
+
+    /* Headline */
+    .hero-eyebrow {
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-size: 18px; color: var(--dusty-rose); margin-bottom: 14px;
+      animation: fadeDown 0.7s ease both;
+    }
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 5vw, 68px); font-weight: 300; line-height: 1.1;
+      color: var(--text-dark); margin-bottom: 12px;
+      animation: fadeDown 0.8s ease both; max-width: 800px;
+    }
+    .hero-title em { font-style: italic; color: var(--mauve); }
+    .hero-title-sub {
+      font-family: 'Cormorant Garamond', serif; font-size: clamp(14px, 2vw, 18px);
+      color: var(--text-mid); font-weight: 300; margin-bottom: 8px;
+      animation: fadeDown 0.85s ease both; max-width: 700px;
+    }
+    .drama-tags {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
+      margin-bottom: 36px; animation: fadeDown 0.9s ease both;
+    }
+    .drama-tag {
+      background: rgba(139,94,106,0.08); border: 1px solid rgba(139,94,106,0.2);
+      color: var(--mauve); font-size: 12px; padding: 6px 14px; border-radius: 100px;
+      font-weight: 400;
+    }
+
+    /* ══ PRODUCT MOCKUP — CENTER STAGE ══ */
+    .product-showcase {
+      position: relative; width: 100%; max-width: 900px; margin: 0 auto 48px;
+      animation: floatUp 1s ease both;
+    }
+    .showcase-glow {
+      position: absolute; inset: -40px;
+      background: radial-gradient(ellipse at center, rgba(139,94,106,0.12) 0%, transparent 70%);
+      pointer-events: none; border-radius: 50%;
+    }
+    .browser-frame {
+      background: white; border-radius: 16px;
+      box-shadow: 0 50px 100px rgba(92,61,46,0.18), 0 20px 40px rgba(92,61,46,0.1), 0 0 0 1px rgba(139,94,106,0.1);
+      overflow: hidden; position: relative; z-index: 2;
+    }
+    .browser-bar {
+      background: #F5EEE6; padding: 12px 20px;
+      display: flex; align-items: center; gap: 12px;
+      border-bottom: 1px solid rgba(139,94,106,0.1);
+    }
+    .browser-dots { display: flex; gap: 6px; }
+    .browser-dot { width: 12px; height: 12px; border-radius: 50%; }
+    .browser-url {
+      flex: 1; background: white; border-radius: 6px;
+      padding: 5px 12px; font-size: 11px; color: var(--text-light);
+      text-align: center; letter-spacing: 0.5px;
+      border: 1px solid rgba(139,94,106,0.1);
+    }
+    .sheet-tabs-bar {
+      background: #F0E8E0; padding: 0 20px;
+      display: flex; gap: 2px; border-bottom: 1px solid rgba(139,94,106,0.1);
+      overflow-x: auto;
+    }
+    .stab {
+      padding: 8px 16px; font-size: 11px; font-weight: 600;
+      border-radius: 4px 4px 0 0; white-space: nowrap; cursor: pointer;
+      color: rgba(92,61,46,0.4); transition: all 0.2s; font-family: 'Jost';
+      border: none; background: transparent;
+    }
+    .stab.on { background: white; color: var(--mauve); border-top: 2px solid var(--mauve); }
+    .stab.gold { color: rgba(201,169,110,0.6); }
+    .stab.gold.on { color: var(--gold); border-top-color: var(--gold); }
+
+    .preview-stage { display: none; }
+    .preview-stage.on { display: block; }
+
+    /* Dashboard preview */
+    .dash-body { padding: 28px 28px 24px; }
+    .dash-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+    .dash-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--mauve); }
+    .dash-countdown { background: rgba(139,94,106,0.08); border-radius: 8px; padding: 8px 16px; font-size: 12px; color: var(--mauve); font-weight: 500; }
+    .kpi-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; margin-bottom: 22px; }
+    .kpi { border-radius: 12px; padding: 16px; border: 1px solid rgba(139,94,106,0.1); }
+    .kpi-label { font-size: 10px; color: var(--text-light); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .kpi-val { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 600; line-height: 1; margin-bottom: 4px; }
+    .kpi-note { font-size: 11px; font-weight: 500; }
+    .dash-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .dash-panel { background: rgba(139,94,106,0.04); border: 1px solid rgba(139,94,106,0.1); border-radius: 12px; padding: 16px; }
+    .panel-title { font-size: 10px; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px; font-weight: 600; }
+    .prog-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .prog-icon { width: 26px; height: 26px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; }
+    .prog-name { font-size: 12px; font-weight: 500; color: var(--text-mid); flex: 1; }
+    .prog-bar { height: 4px; background: rgba(139,94,106,0.1); border-radius: 4px; overflow: hidden; flex: 1; }
+    .prog-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, var(--blush-deep), var(--mauve)); }
+    .prog-pct { font-size: 11px; color: var(--text-light); white-space: nowrap; }
+    .vendor-row { display: flex; justify-content: space-between; font-size: 12px; padding: 8px 0; border-bottom: 1px dashed rgba(139,94,106,0.1); }
+    .vendor-row:last-child { border: none; }
+
+    /* Seserahan preview */
+    .ses-body { padding: 24px; }
+    .ses-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
+    .ses-total { text-align: right; }
+    .ses-total-label { font-size: 10px; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+    .ses-total-val { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; color: var(--mauve); }
+    .data-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .data-table th { background: rgba(139,94,106,0.08); color: var(--mauve); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; padding: 10px 12px; text-align: left; font-weight: 700; }
+    .data-table td { padding: 11px 12px; color: var(--text-mid); border-bottom: 1px solid rgba(139,94,106,0.07); vertical-align: middle; }
+    .data-table tr:hover td { background: rgba(139,94,106,0.03); }
+    .item-name { display: flex; align-items: center; gap: 8px; font-weight: 600; color: var(--text-dark); }
+    .item-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .status-badge { font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 100px; }
+    .s-done { background: rgba(122,140,126,0.15); color: var(--sage); }
+    .s-pending { background: rgba(196,133,122,0.15); color: var(--dusty-rose); }
+    .s-later { background: rgba(201,169,110,0.15); color: var(--gold); }
+    .price-val { font-weight: 700; color: var(--mauve); }
+    .table-total { background: rgba(139,94,106,0.05) !important; }
+    .table-total td { font-weight: 700; color: var(--text-dark); border-top: 2px solid rgba(139,94,106,0.15) !important; }
+
+    /* Kado preview */
+    .kado-body { padding: 24px; }
+    .kado-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-bottom: 20px; }
+    .kado-stat { border-radius: 12px; padding: 14px; text-align: center; }
+    .kado-stat-val { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; line-height: 1; margin-bottom: 4px; }
+    .kado-stat-label { font-size: 10px; color: var(--text-light); }
+    .kado-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .kado-table th { background: rgba(201,169,110,0.1); color: var(--gold); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; padding: 10px 12px; text-align: left; font-weight: 700; }
+    .kado-table td { padding: 11px 12px; color: var(--text-mid); border-bottom: 1px solid rgba(201,169,110,0.08); vertical-align: middle; }
+    .kado-amount { font-weight: 700; color: var(--gold); }
+    .ucapan-sent { font-size: 11px; color: var(--sage); font-weight: 600; }
+    .ucapan-unsent { font-size: 11px; color: var(--dusty-rose); font-weight: 600; }
+
+    /* Budget preview */
+    .budget-body { padding: 24px; }
+    .budget-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
+    .budget-total { text-align: right; }
+    .budget-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .budget-table th { background: rgba(139,94,106,0.08); color: var(--mauve); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; padding: 10px 12px; text-align: left; font-weight: 700; }
+    .budget-table td { padding: 11px 12px; color: var(--text-mid); border-bottom: 1px solid rgba(139,94,106,0.07); vertical-align: middle; }
+    .pct-bar { width: 80px; height: 6px; background: rgba(139,94,106,0.1); border-radius: 4px; overflow: hidden; }
+    .pct-fill { height: 100%; border-radius: 4px; }
+    .over { color: var(--dusty-rose); font-weight: 700; }
+    .save { color: var(--sage); font-weight: 700; }
+
+    /* Floating badges on showcase */
+    .float-badge {
+      position: absolute; background: white; border-radius: 12px;
+      padding: 12px 16px; box-shadow: 0 10px 40px rgba(92,61,46,0.18);
+      display: flex; align-items: center; gap: 10px; z-index: 10;
+    }
+    .float-badge-top { top: -16px; right: 40px; animation: fadeLeft 1s ease 0.8s both; }
+    .float-badge-bot { bottom: -16px; left: 40px; animation: fadeRight 1s ease 1s both; }
+    .fb-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+    .fb-label { font-size: 10px; color: var(--text-light); font-weight: 300; margin-bottom: 2px; }
+    .fb-val { font-size: 13px; color: var(--text-dark); font-weight: 600; }
+
+    /* Preview tabs */
+    .preview-tabs { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; animation: fadeDown 0.95s ease both; }
+    .ptab { padding: 8px 18px; border-radius: 100px; font-size: 12px; font-weight: 500; cursor: pointer; border: 1px solid rgba(139,94,106,0.2); color: var(--text-light); background: transparent; font-family: 'Jost'; transition: all 0.2s; }
+    .ptab:hover { border-color: var(--mauve); color: var(--mauve); }
+    .ptab.on { background: var(--mauve); border-color: var(--mauve); color: white; }
+
+    /* CTA Block */
+    .hero-cta-block {
+      animation: fadeUp 1.1s ease both;
+      display: flex; flex-direction: column; align-items: center; gap: 16px;
+      margin-top: 48px;
+    }
+    .price-display { display: flex; align-items: baseline; gap: 12px; }
+    .price-new { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 300; color: var(--mauve); line-height: 1; }
+    .price-old { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--text-light); text-decoration: line-through; text-decoration-color: var(--dusty-rose); }
+    .price-save { background: linear-gradient(135deg, var(--dusty-rose), var(--mauve)); color: white; font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 100px; letter-spacing: 1px; }
+    .btn-primary {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      background: var(--mauve); color: white;
+      font-family: 'Jost'; font-size: 14px; font-weight: 500;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 20px 56px; border-radius: 4px; text-decoration: none;
+      transition: all 0.3s ease; border: none; cursor: pointer;
+    }
+    .btn-primary:hover { background: var(--brown); transform: translateY(-2px); box-shadow: 0 16px 50px rgba(139,94,106,0.35); }
+    .cta-notes { display: flex; align-items: center; gap: 20px; font-size: 12px; color: var(--text-light); }
+    .cta-note-item { display: flex; align-items: center; gap: 6px; }
+
+    .social-proof-bar {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      font-size: 13px; color: var(--text-light); margin-top: 8px;
+      animation: fadeUp 1.2s ease both;
+    }
+    .sp-avatars { display: flex; }
+    .sp-avatar { width: 28px; height: 28px; border-radius: 50%; border: 2px solid white; margin-left: -8px; display: flex; align-items: center; justify-content: center; font-size: 12px; }
+    .sp-avatar:first-child { margin-left: 0; }
+    .stars { color: var(--gold); letter-spacing: 1px; font-size: 14px; }
+
+    /* ══ DRAMA SECTION ══ */
+    .drama-section { background: var(--cream); padding: 100px 80px; }
+    .section-eyebrow { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 16px; color: var(--dusty-rose); text-align: center; margin-bottom: 12px; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px,4vw,48px); font-weight: 300; text-align: center; line-height: 1.2; margin-bottom: 60px; color: var(--text-dark); }
+    .section-title em { font-style: italic; color: var(--mauve); }
+    .drama-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; max-width: 960px; margin: 0 auto 60px; }
+    .drama-card { background: white; border-radius: 14px; padding: 32px 28px; border-left: 3px solid var(--blush); transition: all 0.3s ease; }
+    .drama-card:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(92,61,46,0.1); border-left-color: var(--mauve); }
+    .drama-icon { font-size: 32px; margin-bottom: 16px; display: block; }
+    .drama-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; color: var(--text-dark); margin-bottom: 8px; }
+    .drama-card p { font-size: 13px; line-height: 1.75; color: var(--text-mid); font-weight: 300; }
+    .drama-scenario { background: rgba(139,94,106,0.06); border-radius: 8px; padding: 8px 12px; margin-top: 10px; font-size: 12px; color: var(--mauve); font-style: italic; border-left: 2px solid var(--blush-deep); }
+    .drama-closer { text-align: center; max-width: 580px; margin: 0 auto; font-family: 'Cormorant Garamond', serif; font-size: 22px; font-style: italic; color: var(--mauve); line-height: 1.6; }
+
+    /* ══ SOLUTION ══ */
+    .solution-section { background: var(--mauve); padding: 100px 80px; position: relative; overflow: hidden; }
+    .solution-section::before { content: 'NIKAH'; position: absolute; font-family: 'Cormorant Garamond', serif; font-size: 280px; font-weight: 600; color: rgba(255,255,255,0.04); top: -30px; left: -20px; pointer-events: none; line-height: 1; }
+    .solution-inner { max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; position: relative; z-index: 2; }
+    .solution-left .section-eyebrow { text-align: left; color: var(--blush); }
+    .solution-left .section-title { text-align: left; color: white; font-size: clamp(26px,3vw,40px); margin-bottom: 20px; }
+    .solution-left p { font-size: 15px; line-height: 1.8; color: rgba(255,255,255,0.75); font-weight: 300; margin-bottom: 32px; }
+    .btn-secondary { display: inline-flex; align-items: center; gap: 10px; background: white; color: var(--mauve); font-family: 'Jost'; font-size: 13px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; padding: 16px 36px; border-radius: 4px; text-decoration: none; transition: all 0.3s ease; }
+    .btn-secondary:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .feature-cards { display: flex; flex-direction: column; gap: 14px; }
+    .feat-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 20px 24px; display: flex; align-items: flex-start; gap: 16px; transition: all 0.3s ease; }
+    .feat-card:hover { background: rgba(255,255,255,0.14); transform: translateX(4px); }
+    .feat-icon { width: 42px; height: 42px; background: rgba(255,255,255,0.15); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+    .feat-text h4 { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 600; color: white; margin-bottom: 4px; }
+    .feat-text p { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.6; font-weight: 300; }
+    .usp-tag { display: inline-block; background: var(--gold); color: white; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 8px; border-radius: 100px; margin-left: 8px; vertical-align: middle; font-weight: 500; }
+
+    /* ══ SHEETS ══ */
+    .sheets-section { background: var(--warm-white); padding: 100px 80px; }
+    .sheets-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; max-width: 960px; margin: 0 auto; }
+    .sheet-card { background: var(--cream); border-radius: 10px; padding: 18px 16px; border: 1px solid rgba(139,94,106,0.1); transition: all 0.3s ease; }
+    .sheet-card:hover { border-color: var(--blush); background: white; transform: translateY(-3px); box-shadow: 0 12px 30px rgba(139,94,106,0.08); }
+    .sheet-num { font-family: 'Cormorant Garamond', serif; font-size: 26px; color: var(--blush); font-weight: 300; line-height: 1; margin-bottom: 8px; }
+    .sheet-name { font-size: 12px; font-weight: 600; color: var(--text-dark); margin-bottom: 4px; }
+    .sheet-desc { font-size: 11px; color: var(--text-light); line-height: 1.5; }
+    .sheet-card.star { background: linear-gradient(135deg, #FAF0EC, #F5E8E2); border-color: var(--blush-deep); }
+    .sheet-card.star .sheet-num { color: var(--mauve); }
+
+    /* ══ TESTIMONI ══ */
+    .testi-section { background: var(--cream); padding: 100px 80px; position: relative; overflow: hidden; }
+    .testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; max-width: 960px; margin: 0 auto 48px; }
+    .testi-card { background: white; border-radius: 16px; padding: 32px 28px; border: 1px solid rgba(139,94,106,0.1); transition: all 0.3s ease; position: relative; }
+    .testi-card:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(92,61,46,0.1); }
+    .testi-quote { font-family: 'Cormorant Garamond', serif; font-size: 60px; color: rgba(139,94,106,0.1); line-height: 1; position: absolute; top: 16px; left: 20px; }
+    .testi-stars { display: flex; gap: 3px; margin-bottom: 14px; margin-top: 8px; }
+    .testi-stars span { color: var(--gold); font-size: 14px; }
+    .testi-text { font-size: 14px; line-height: 1.8; color: var(--text-mid); font-weight: 300; margin-bottom: 24px; position: relative; z-index: 1; }
+    .testi-author { display: flex; align-items: center; gap: 12px; border-top: 1px solid rgba(139,94,106,0.08); padding-top: 18px; }
+    .testi-avatar { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+    .testi-name { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 600; color: var(--text-dark); margin-bottom: 2px; }
+    .testi-meta { font-size: 12px; color: var(--text-light); }
+    .testi-verified { display: inline-flex; align-items: center; gap: 5px; background: rgba(122,140,126,0.1); border: 1px solid rgba(122,140,126,0.2); color: var(--sage); font-size: 10px; font-weight: 500; padding: 3px 10px; border-radius: 100px; margin-top: 6px; }
+    .testi-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; max-width: 600px; margin: 0 auto; background: rgba(139,94,106,0.1); border-radius: 16px; overflow: hidden; }
+    .tstat { background: white; padding: 28px 20px; text-align: center; }
+    .tstat-num { font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 300; color: var(--mauve); line-height: 1; margin-bottom: 8px; }
+    .tstat-label { font-size: 12px; color: var(--text-light); font-weight: 300; }
+
+    /* ══ PRICING ══ */
+    .pricing-section { background: var(--warm-white); padding: 100px 80px; text-align: center; }
+    .pricing-card { max-width: 540px; margin: 0 auto; background: white; border-radius: 20px; padding: 56px 48px; box-shadow: 0 40px 100px rgba(92,61,46,0.14); position: relative; overflow: hidden; }
     .pricing-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--blush), var(--mauve), var(--gold)); }
-    .early-bird-tag { display: inline-block; background: linear-gradient(135deg, var(--gold-light), var(--blush)); color: var(--brown); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; padding: 8px 20px; border-radius: 100px; margin-bottom: 28px; font-weight: 500; }
-    .price-main { font-family: 'Cormorant Garamond', serif; font-size: 80px; font-weight: 300; color: var(--text-dark); line-height: 1; margin-bottom: 4px; }
-    .price-main sup { font-size: 28px; vertical-align: super; }
-    .price-was { font-size: 14px; color: var(--text-light); margin-bottom: 32px; }
-    .price-was s { text-decoration-color: var(--dusty-rose); }
+    .pricing-card-badge { display: inline-block; background: linear-gradient(135deg, var(--gold-light), var(--blush)); color: var(--brown); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; padding: 8px 20px; border-radius: 100px; margin-bottom: 32px; font-weight: 500; }
+    .price-hero { display: flex; align-items: baseline; justify-content: center; gap: 16px; margin-bottom: 8px; }
+    .price-big { font-family: 'Cormorant Garamond', serif; font-size: 80px; font-weight: 300; color: var(--text-dark); line-height: 1; }
+    .price-big sup { font-size: 28px; vertical-align: super; }
+    .price-was-p { font-size: 22px; font-family: 'Cormorant Garamond', serif; color: var(--text-light); }
+    .price-was-p s { text-decoration-color: var(--dusty-rose); }
+    .price-save-badge { display: inline-block; background: linear-gradient(135deg, var(--dusty-rose), var(--mauve)); color: white; font-size: 12px; font-weight: 600; padding: 6px 16px; border-radius: 100px; margin-bottom: 36px; letter-spacing: 0.5px; }
     .include-list { list-style: none; margin-bottom: 40px; text-align: left; }
-    .include-list li { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--text-mid); padding: 10px 0; border-bottom: 1px solid #F5F0EC; font-weight: 300; }
+    .include-list li { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--text-mid); padding: 11px 0; border-bottom: 1px solid #F5F0EC; font-weight: 300; }
     .include-list li:last-child { border-bottom: none; }
     .check { width: 20px; height: 20px; background: var(--blush); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 10px; flex-shrink: 0; }
     .urgency-note { font-size: 13px; color: var(--dusty-rose); margin-top: 20px; font-weight: 500; }
+    .heat-run-bar { background: rgba(139,94,106,0.06); border: 1px solid rgba(139,94,106,0.15); border-radius: 10px; padding: 14px 20px; margin-top: 20px; display: flex; align-items: center; gap: 12px; text-align: left; }
+    .heat-run-text { font-size: 12px; color: var(--text-mid); line-height: 1.5; }
+    .heat-run-text strong { color: var(--mauve); }
 
-    /* ── FAQ ── */
-    .faq-section { background: var(--warm-white); padding: 100px 80px; }
+    /* ══ FAQ ══ */
+    .faq-section { background: var(--cream); padding: 100px 80px; }
     .faq-inner { max-width: 700px; margin: 0 auto; }
     .faq-item { border-bottom: 1px solid rgba(139,94,106,0.15); padding: 24px 0; cursor: pointer; }
     .faq-q { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; color: var(--text-dark); display: flex; justify-content: space-between; align-items: center; gap: 20px; }
-    .faq-arrow { color: var(--mauve); font-size: 18px; transition: transform 0.3s ease; flex-shrink: 0; }
+    .faq-arrow { color: var(--mauve); font-size: 20px; transition: transform 0.3s ease; flex-shrink: 0; line-height: 1; }
     .faq-item.open .faq-arrow { transform: rotate(45deg); }
     .faq-a { font-size: 14px; line-height: 1.8; color: var(--text-mid); font-weight: 300; max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease; }
     .faq-item.open .faq-a { max-height: 200px; padding-top: 16px; }
 
-    /* ── FINAL CTA ── */
+    /* ══ FINAL CTA ══ */
     .final-cta { background: linear-gradient(135deg, var(--brown) 0%, var(--mauve) 100%); padding: 100px 80px; text-align: center; position: relative; overflow: hidden; }
     .final-cta::before { content: '♡'; position: absolute; font-size: 400px; color: rgba(255,255,255,0.03); top: -80px; right: -40px; pointer-events: none; }
     .final-cta .section-title { color: white; margin-bottom: 16px; }
     .final-cta .section-eyebrow { color: var(--blush); }
     .final-cta p { font-size: 15px; color: rgba(255,255,255,0.7); margin-bottom: 48px; font-weight: 300; max-width: 500px; margin-left: auto; margin-right: auto; }
-    .final-price-inline { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--gold-light); margin-bottom: 32px; }
+    .final-price { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--gold-light); margin-bottom: 32px; }
 
-    /* ── FOOTER ── */
+    /* ══ FOOTER ══ */
     footer { background: var(--text-dark); padding: 40px 80px; display: flex; justify-content: space-between; align-items: center; }
     .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: white; letter-spacing: 2px; font-weight: 300; }
-    .footer-note { font-size: 12px; color: rgba(255,255,255,0.4); letter-spacing: 0.5px; }
+    .footer-note { font-size: 12px; color: rgba(255,255,255,0.4); }
 
-    /* ── ANIMATIONS ── */
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    /* ── STICKY CTA ── */
+    /* ══ STICKY CTA ══ */
     .sticky-cta { position: fixed; bottom: 24px; right: 24px; background: var(--mauve); color: white; padding: 14px 28px; border-radius: 100px; font-size: 13px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; box-shadow: 0 8px 30px rgba(139,94,106,0.4); transition: all 0.3s ease; z-index: 100; display: none; }
     .sticky-cta.show { display: flex; align-items: center; gap: 8px; }
     .sticky-cta:hover { background: var(--brown); transform: translateY(-2px); }
 
-    /* ── RESPONSIVE ── */
+    /* ══ ANIMATIONS ══ */
+    @keyframes fadeDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes floatUp { from { opacity: 0; transform: translateY(40px) scale(0.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+    @keyframes fadeLeft { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes fadeRight { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes gentleFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ══ RESPONSIVE ══ */
     @media (max-width: 1024px) {
-      .hero-left { padding: 60px 40px 60px 60px; }
-      .mockup-card { width: 280px; }
-      .fb-top { right: -10px; }
-      .fb-bottom { left: -10px; }
-      .pain-section, .solution-section, .sheets-section, .s, .testi-section, .pricing-section, .faq-section, .final-cta, footer { padding: 80px 40px; }
-      .sheets-grid { grid-template-columns: repeat(2,1fr); }
+      .drama-section, .solution-section, .sheets-section, .testi-section, .pricing-section, .faq-section, .final-cta, footer { padding: 80px 40px; }
+      .sheets-grid { grid-template-columns: repeat(3,1fr); }
       .testi-grid { grid-template-columns: repeat(2,1fr); }
+      .solution-inner { gap: 50px; }
     }
     @media (max-width: 768px) {
-      .hero { grid-template-columns: 1fr; min-height: auto; }
-      .hero-right { display: none; }
-      .hero-left { padding: 80px 24px 60px; }
-      .hero-title { font-size: clamp(36px,8vw,52px); }
-      .pain-section, .solution-section, .sheets-section, .s, .testi-section, .pricing-section, .faq-section, .final-cta { padding: 60px 24px; }
+      .hero { padding: 70px 20px 50px; }
+      .drama-section, .solution-section, .sheets-section, .testi-section, .pricing-section, .faq-section, .final-cta { padding: 60px 24px; }
       footer { padding: 32px 24px; flex-direction: column; gap: 12px; text-align: center; }
-      .pain-grid, .testi-grid { grid-template-columns: 1fr; gap: 16px; }
+      .drama-grid, .testi-grid { grid-template-columns: 1fr; }
       .solution-inner { grid-template-columns: 1fr; gap: 40px; }
       .sheets-grid { grid-template-columns: repeat(2,1fr); }
-      .krow { grid-template-columns: repeat(2,1fr); }
-      .pg2 { grid-template-columns: 1fr; }
-      .ks { grid-template-columns: 1fr 1fr; }
+      .kpi-row { grid-template-columns: repeat(2,1fr); }
+      .dash-bottom { grid-template-columns: 1fr; }
+      .kado-stats { grid-template-columns: 1fr 1fr 1fr; }
       .pricing-card { padding: 40px 24px; }
-      .price-main { font-size: 64px; }
+      .price-big { font-size: 60px; }
       .testi-stats { grid-template-columns: 1fr; }
+      .float-badge-top { display: none; }
+      .float-badge-bot { display: none; }
+      .hero-title { font-size: clamp(30px, 7vw, 46px); }
+      .cta-notes { flex-wrap: wrap; justify-content: center; }
     }
     @media (max-width: 480px) {
-      .hero-left { padding: 70px 20px 50px; }
-      .hero-title { font-size: 34px; }
-      .btn-primary { padding: 15px 28px; font-size: 13px; width: 100%; justify-content: center; }
-      .pain-section, .solution-section, .sheets-section, .s, .testi-section, .pricing-section, .faq-section, .final-cta { padding: 50px 20px; }
-      .sheets-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .sheets-grid { grid-template-columns: repeat(2,1fr); gap: 10px; }
       .pricing-card { padding: 32px 20px; }
-      .price-main { font-size: 56px; }
-      footer { padding: 28px 20px; }
-      .ks { grid-template-columns: 1fr; }
+      .price-big { font-size: 52px; }
+      .btn-primary { padding: 18px 32px; width: 100%; justify-content: center; }
     }
   </style>
   <script>
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
     fbq('init','1421929652865308');fbq('track','PageView');
   </script>
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1421929652865308&ev=PageView&noscript=1"/></noscript>
 </head>
-
 <body>
 
-  <a href="https://entrepreneurai.myscalev.com/checkout-page" class="sticky-cta" id="stickyCta">
-    💍 Dapatkan Sekarang — Rp 149rb
-  </a>
+  <a href="https://entrepreneurai.myscalev.com/checkout-page" class="sticky-cta" id="stickyCta">💍 Dapatkan Sekarang — Rp 149rb</a>
 
   <!-- ══ HERO ══ -->
   <section class="hero">
-    <div class="hero-left">
-      <div class="badge">Wedding Planner Excel Premium</div>
-      <p class="hero-eyebrow">Untuk kamu yang mau nikah tanpa drama & panik</p>
-      <h1 class="hero-title">
-        Nikah Tanpa Drama —<br><em>Semua Detail</em><br>Terkontrol Rapi
-      </h1>
-      <p class="hero-sub">
-        NIKAH RAPI adalah wedding planner Excel 19-in-1 yang membantu kamu mengatur budget, tamu, seserahan, kado &
-        angpao — semua terorganisir rapi, tanpa panik, tanpa ada yang terlewat.
-      </p>
-      <div class="hero-cta-group">
-        <a href="#pricing" class="btn-primary">
-          💍 Mau Nikah Rapi? Mulai di Sini
-        </a>
-        <div class="price-note">
-          Harga <strong>Rp 149rb</strong> &nbsp;·&nbsp; Wedding Planner Excel Premium
+    <div class="badge">Wedding Planner Excel Premium</div>
+    <p class="hero-eyebrow">Untuk kamu yang mau nikah tanpa drama & panik</p>
+    <h1 class="hero-title">
+      Nikah Tanpa <em>Drama Vendor Cabut,</em><br>Budget Jebol & Seserahan Ketinggalan
+    </h1>
+    <p class="hero-title-sub">Semua persiapan pernikahan — terkontrol rapi dalam 1 file Excel</p>
+    <div class="drama-tags">
+      <span class="drama-tag">😰 Drama Budget Bocor</span>
+      <span class="drama-tag">📋 Drama Seserahan Kacau</span>
+      <span class="drama-tag">💄 Drama MUA Double Booking</span>
+      <span class="drama-tag">🎁 Kado & Angpao Tak Tercatat</span>
+      <span class="drama-tag">🏢 Drama Vendor Susah Ditracking</span>
+    </div>
+
+    <!-- PRODUCT PREVIEW TABS -->
+    <div class="preview-tabs">
+      <button class="ptab on" onclick="switchPreview(this,'p-dash')">🏠 Dashboard</button>
+      <button class="ptab" onclick="switchPreview(this,'p-ses')">💍 Seserahan ✦</button>
+      <button class="ptab" onclick="switchPreview(this,'p-kado')">🎁 Kado & Angpao ✦</button>
+      <button class="ptab" onclick="switchPreview(this,'p-budget')">💰 Budget</button>
+    </div>
+
+    <!-- PRODUCT SHOWCASE -->
+    <div class="product-showcase">
+      <div class="showcase-glow"></div>
+
+      <!-- Floating badges -->
+      <div class="float-badge float-badge-top">
+        <div class="fb-icon" style="background:#FFF0EC;">🎁</div>
+        <div>
+          <div class="fb-label">Kado & Angpao Tracker</div>
+          <div class="fb-val">Rp 48.500.000 tercatat ✓</div>
         </div>
       </div>
-      <div class="slots-bar">
-        <div class="slots-label">Dipercaya calon pengantin Indonesia</div>
-        <div class="slots-track"><div class="slots-fill"></div></div>
-        <div class="slots-text">💍 Sudah digunakan 32 calon pengantin</div>
+      <div class="float-badge float-badge-bot">
+        <div class="fb-icon" style="background:#F0F4F0;">💍</div>
+        <div>
+          <div class="fb-label">Seserahan Tracker</div>
+          <div class="fb-val">12/15 item siap ✓</div>
+        </div>
+      </div>
+
+      <div class="browser-frame">
+        <div class="browser-bar">
+          <div class="browser-dots">
+            <div class="browser-dot" style="background:#ff5f57;"></div>
+            <div class="browser-dot" style="background:#febc2e;"></div>
+            <div class="browser-dot" style="background:#28c840;"></div>
+          </div>
+          <div class="browser-url">NIKAH_RAPI_PREMIUM_FINAL.xlsx ✦</div>
+        </div>
+        <div class="sheet-tabs-bar">
+          <button class="stab on" onclick="switchSheet(this,'p-dash',0)">🏠 Dashboard</button>
+          <button class="stab" onclick="switchSheet(this,'p-budget',1)">💰 Budget</button>
+          <button class="stab" onclick="switchSheet(this,'p-ses',2)">💍 Seserahan ✦</button>
+          <button class="stab gold" onclick="switchSheet(this,'p-kado',3)">🎁 Kado & Angpao ✦</button>
+          <button class="stab" onclick="switchSheet(this,'p-guest',4)">👥 Guest List</button>
+          <button class="stab" onclick="switchSheet(this,'p-vendor',5)">🏢 Vendor</button>
+        </div>
+
+        <!-- DASHBOARD -->
+        <div class="preview-stage on" id="p-dash">
+          <div class="dash-body">
+            <div class="dash-header">
+              <div class="dash-title">NIKAH RAPI ✦</div>
+              <div class="dash-countdown">💍 H-127 menuju Hari Bahagia</div>
+            </div>
+            <div class="kpi-row">
+              <div class="kpi" style="background:linear-gradient(135deg,#FFF0EC,#FAE8E2);border-color:rgba(212,160,144,0.3)">
+                <div class="kpi-label">Budget Total</div>
+                <div class="kpi-val" style="color:var(--mauve)">Rp 85jt</div>
+                <div class="kpi-note" style="color:var(--dusty-rose)">Terpakai 62%</div>
+              </div>
+              <div class="kpi" style="background:linear-gradient(135deg,#F0F4F0,#E8EEE8);border-color:rgba(122,140,126,0.3)">
+                <div class="kpi-label">Tamu Undangan</div>
+                <div class="kpi-val" style="color:var(--sage)">248</div>
+                <div class="kpi-note" style="color:var(--sage)">186 konfirmasi</div>
+              </div>
+              <div class="kpi" style="background:linear-gradient(135deg,#FFF8EC,#F5EEDD);border-color:rgba(201,169,110,0.3)">
+                <div class="kpi-label">Kado & Angpao</div>
+                <div class="kpi-val" style="color:var(--gold)">Rp 48,5jt</div>
+                <div class="kpi-note" style="color:var(--gold)">42 pemberi</div>
+              </div>
+              <div class="kpi" style="background:linear-gradient(135deg,#FAF0EC,#F0E4DC);border-color:rgba(139,94,106,0.2)">
+                <div class="kpi-label">Seserahan</div>
+                <div class="kpi-val" style="color:var(--mauve)">12/15</div>
+                <div class="kpi-note" style="color:var(--dusty-rose)">3 item pending</div>
+              </div>
+            </div>
+            <div class="dash-bottom">
+              <div class="dash-panel">
+                <div class="panel-title">Progress Persiapan</div>
+                <div class="prog-row"><div class="prog-icon" style="background:#E8F5E9">✅</div><div class="prog-name">Budget & Keuangan</div><div class="prog-bar"><div class="prog-fill" style="width:100%"></div></div><div class="prog-pct" style="color:var(--sage)">100%</div></div>
+                <div class="prog-row"><div class="prog-icon" style="background:#FFF0EC">🏢</div><div class="prog-name">Vendor & Catering</div><div class="prog-bar"><div class="prog-fill" style="width:85%"></div></div><div class="prog-pct">85%</div></div>
+                <div class="prog-row"><div class="prog-icon" style="background:#FFF8EC">💍</div><div class="prog-name">Seserahan</div><div class="prog-bar"><div class="prog-fill" style="width:60%"></div></div><div class="prog-pct">60%</div></div>
+                <div class="prog-row"><div class="prog-icon" style="background:#F0F4F0">👗</div><div class="prog-name">Busana & MUA</div><div class="prog-bar"><div class="prog-fill" style="width:40%"></div></div><div class="prog-pct">40%</div></div>
+              </div>
+              <div class="dash-panel">
+                <div class="panel-title">Status Vendor</div>
+                <div class="vendor-row"><span style="color:var(--text-mid)">📸 Fotografer</span><span style="color:var(--sage);font-weight:700;font-size:12px">✓ DP Lunas</span></div>
+                <div class="vendor-row"><span style="color:var(--text-mid)">🍽 Catering</span><span style="color:var(--sage);font-weight:700;font-size:12px">✓ DP Lunas</span></div>
+                <div class="vendor-row"><span style="color:var(--text-mid)">🌸 Dekorasi</span><span style="color:var(--gold);font-weight:700;font-size:12px">⚡ Nego</span></div>
+                <div class="vendor-row"><span style="color:var(--text-mid)">💄 MUA</span><span style="color:var(--dusty-rose);font-weight:700;font-size:12px">○ Belum</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SESERAHAN -->
+        <div class="preview-stage" id="p-ses">
+          <div class="ses-body">
+            <div class="ses-header">
+              <div>
+                <div style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--mauve)">Seserahan Tracker ✦</div>
+                <div style="font-size:11px;color:var(--text-light);margin-top:2px">Fitur Eksklusif NIKAH RAPI — Tidak ada di produk lain</div>
+              </div>
+              <div class="ses-total">
+                <div class="ses-total-label">Total Estimasi</div>
+                <div class="ses-total-val">Rp 12.450.000</div>
+              </div>
+            </div>
+            <table class="data-table">
+              <thead><tr><th>Item Seserahan</th><th>Kategori</th><th>Est. Harga</th><th>Harga Aktual</th><th>Tempat Beli</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td><div class="item-name"><div class="item-dot" style="background:var(--mauve)"></div>Al-Qur'an & Tasbih</div></td><td style="color:var(--text-light)">Ibadah</td><td>Rp 450.000</td><td class="price-val">Rp 420.000</td><td style="color:var(--text-light)">Gramedia</td><td><span class="status-badge s-done">✓ Sudah</span></td></tr>
+                <tr><td><div class="item-name"><div class="item-dot" style="background:var(--dusty-rose)"></div>Mukena Premium</div></td><td style="color:var(--text-light)">Ibadah</td><td>Rp 850.000</td><td class="price-val">Rp 875.000</td><td style="color:var(--text-light)">Tokopedia</td><td><span class="status-badge s-done">✓ Sudah</span></td></tr>
+                <tr><td><div class="item-name"><div class="item-dot" style="background:var(--gold)"></div>Perhiasan Emas</div></td><td style="color:var(--text-light)">Perhiasan</td><td>Rp 5.000.000</td><td class="price-val">Rp 5.200.000</td><td style="color:var(--text-light)">Toko Mas XYZ</td><td><span class="status-badge s-done">✓ Sudah</span></td></tr>
+                <tr><td><div class="item-name"><div class="item-dot" style="background:var(--blush-deep)"></div>Parfum Set</div></td><td style="color:var(--text-light)">Kecantikan</td><td>Rp 1.200.000</td><td class="price-val" style="color:var(--text-light)">—</td><td style="color:var(--text-light)">—</td><td><span class="status-badge s-pending">○ Belum</span></td></tr>
+                <tr><td><div class="item-name"><div class="item-dot" style="background:var(--sage)"></div>Buah-buahan</div></td><td style="color:var(--text-light)">Makanan</td><td>Rp 500.000</td><td class="price-val" style="color:var(--text-light)">—</td><td style="color:var(--text-light)">H-3 acara</td><td><span class="status-badge s-later">⏳ Nanti</span></td></tr>
+                <tr class="table-total"><td colspan="2"><strong>TOTAL</strong></td><td><strong>Rp 12.450.000</strong></td><td class="price-val"><strong>Rp 6.495.000</strong></td><td colspan="2" style="color:var(--dusty-rose);font-size:11px">Sisa Rp 5.955.000 belum dibeli</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- KADO -->
+        <div class="preview-stage" id="p-kado">
+          <div class="kado-body">
+            <div class="kado-stats">
+              <div class="kado-stat" style="background:linear-gradient(135deg,#FFF8EC,#F5EEDD);border:1px solid rgba(201,169,110,0.2);border-radius:12px">
+                <div class="kado-stat-val" style="color:var(--gold)">Rp 48,5jt</div>
+                <div class="kado-stat-label">Total Angpao</div>
+              </div>
+              <div class="kado-stat" style="background:linear-gradient(135deg,#FFF0EC,#FAE8E2);border:1px solid rgba(212,160,144,0.2);border-radius:12px">
+                <div class="kado-stat-val" style="color:var(--mauve)">42</div>
+                <div class="kado-stat-label">Total Pemberi</div>
+              </div>
+              <div class="kado-stat" style="background:linear-gradient(135deg,#F0F4F0,#E8EEE8);border:1px solid rgba(122,140,126,0.2);border-radius:12px">
+                <div class="kado-stat-val" style="color:var(--sage)">38/42</div>
+                <div class="kado-stat-label">Ucapan Terkirim</div>
+              </div>
+            </div>
+            <table class="kado-table">
+              <thead><tr><th>Nama Pemberi</th><th>Jenis</th><th>Nominal / Kado</th><th>Dari</th><th>Ucapan Terima Kasih</th></tr></thead>
+              <tbody>
+                <tr><td style="font-weight:600;color:var(--text-dark)">Keluarga Bapak Hendra</td><td>Angpao 💛</td><td class="kado-amount">Rp 2.000.000</td><td style="color:var(--text-light);font-size:11px">Keluarga</td><td><span class="ucapan-sent">✓ Terkirim via WA</span></td></tr>
+                <tr><td style="font-weight:600;color:var(--text-dark)">Ibu Sari & Keluarga</td><td>Kado 🎁</td><td style="color:var(--text-mid)">Rice Cooker Cosmos</td><td style="color:var(--text-light);font-size:11px">Teman kantor</td><td><span class="ucapan-sent">✓ Terkirim via WA</span></td></tr>
+                <tr><td style="font-weight:600;color:var(--text-dark)">Rombongan RT 05</td><td>Angpao 💛</td><td class="kado-amount">Rp 1.500.000</td><td style="color:var(--text-light);font-size:11px">Tetangga</td><td><span class="ucapan-sent">✓ Terkirim via WA</span></td></tr>
+                <tr><td style="font-weight:600;color:var(--text-dark)">Dinda & Rizky</td><td>Kado 🎁</td><td style="color:var(--text-mid)">Stand Mixer KitchenAid</td><td style="color:var(--text-light);font-size:11px">Sahabat kuliah</td><td><span class="ucapan-unsent">○ Belum dikirim</span></td></tr>
+                <tr><td style="font-weight:600;color:var(--text-dark)">Pak Budi (Atasan)</td><td>Angpao 💛</td><td class="kado-amount">Rp 500.000</td><td style="color:var(--text-light);font-size:11px">Bos kerja</td><td><span class="ucapan-unsent">○ Belum dikirim</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- BUDGET -->
+        <div class="preview-stage" id="p-budget">
+          <div class="budget-body">
+            <div class="budget-header">
+              <div>
+                <div style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--text-dark)">Budget Planner</div>
+                <div style="font-size:11px;color:var(--text-light);margin-top:2px">Rencana vs Realisasi — Update Otomatis</div>
+              </div>
+              <div class="budget-total" style="text-align:right">
+                <div style="font-size:10px;color:var(--text-light);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Total Budget</div>
+                <div style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--mauve)">Rp 85.000.000</div>
+                <div style="font-size:11px;color:var(--dusty-rose);margin-top:2px">Terpakai: Rp 52.750.000 (62%)</div>
+              </div>
+            </div>
+            <table class="budget-table">
+              <thead><tr><th>Kategori</th><th>Rencana</th><th>Realisasi</th><th>Selisih</th><th>Progress</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td style="font-weight:600">🍽 Catering & Konsumsi</td><td>Rp 32.000.000</td><td>Rp 30.500.000</td><td class="save">+Rp 1,5jt</td><td><div class="pct-bar"><div class="pct-fill" style="width:95%;background:linear-gradient(90deg,var(--sage),#5a8a5a)"></div></div></td><td style="color:var(--sage);font-size:11px;font-weight:700">✓ Hemat</td></tr>
+                <tr><td style="font-weight:600">🏛 Venue & Dekorasi</td><td>Rp 20.000.000</td><td>Rp 22.000.000</td><td class="over">-Rp 2jt</td><td><div class="pct-bar"><div class="pct-fill" style="width:100%;background:linear-gradient(90deg,var(--dusty-rose),#c0392b)"></div></div></td><td style="color:var(--dusty-rose);font-size:11px;font-weight:700">⚠ Over</td></tr>
+                <tr><td style="font-weight:600">📸 Foto & Video</td><td>Rp 8.000.000</td><td>Rp 7.500.000</td><td class="save">+Rp 500rb</td><td><div class="pct-bar"><div class="pct-fill" style="width:93%;background:linear-gradient(90deg,var(--sage),#5a8a5a)"></div></div></td><td style="color:var(--sage);font-size:11px;font-weight:700">✓ Hemat</td></tr>
+                <tr><td style="font-weight:600">👗 Busana & MUA</td><td>Rp 12.000.000</td><td style="color:var(--text-light)">Rp 0</td><td style="color:var(--text-light)">Belum</td><td><div class="pct-bar"><div class="pct-fill" style="width:0%"></div></div></td><td style="color:var(--text-light);font-size:11px">○ Belum</td></tr>
+                <tr><td style="font-weight:600">💍 Seserahan</td><td>Rp 13.000.000</td><td>Rp 6.495.000</td><td style="color:var(--gold);font-weight:700">+Rp 6,5jt</td><td><div class="pct-bar"><div class="pct-fill" style="width:50%;background:linear-gradient(90deg,var(--gold),#b8902a)"></div></div></td><td style="color:var(--gold);font-size:11px;font-weight:700">⚡ Proses</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- GUEST (placeholder) -->
+        <div class="preview-stage" id="p-guest">
+          <div style="padding:60px 24px;text-align:center;color:var(--text-light)">
+            <div style="font-size:40px;margin-bottom:16px">👥</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--text-mid);margin-bottom:8px">Guest List & RSVP Tracker</div>
+            <div style="font-size:13px">248 tamu · 186 konfirmasi · Kebutuhan meja otomatis</div>
+          </div>
+        </div>
+
+        <!-- VENDOR (placeholder) -->
+        <div class="preview-stage" id="p-vendor">
+          <div style="padding:60px 24px;text-align:center;color:var(--text-light)">
+            <div style="font-size:40px;margin-bottom:16px">🏢</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--text-mid);margin-bottom:8px">Vendor Manager</div>
+            <div style="font-size:13px">Kontak, kontrak, DP & pelunasan semua vendor dalam 1 sheet</div>
+          </div>
+        </div>
+
+      </div><!-- end browser-frame -->
+    </div><!-- end product-showcase -->
+
+    <!-- CTA -->
+    <div class="hero-cta-block">
+      <div class="price-display">
+        <div class="price-new"><sup style="font-size:22px">Rp</sup>149rb</div>
+        <div class="price-old"><s>Rp 349rb</s></div>
+        <div class="price-save">HEMAT 57%</div>
+      </div>
+      <a href="https://entrepreneurai.myscalev.com/checkout-page" class="btn-primary">💍 Dapatkan NIKAH RAPI Sekarang</a>
+      <div class="cta-notes">
+        <div class="cta-note-item">✓ Garansi 7 hari</div>
+        <div class="cta-note-item">✓ File dikirim via WA</div>
+        <div class="cta-note-item">✓ Akses seumur hidup</div>
       </div>
     </div>
-    <div class="hero-right">
-      <div class="hero-visual">
-        <div class="mockup-container">
-          <div class="floating-badge fb-top">
-            <div class="fb-icon" style="background:#FFF0EC;">💌</div>
-            <div>
-              <div style="font-size:11px;color:#8C7A6E;font-weight:300;">Kado & Angpao Tracker</div>
-              <div style="font-size:13px;color:#2C2218;font-weight:500;">Rp 48.500.000 tercatat</div>
-            </div>
-          </div>
-          <div class="mockup-card">
-            <div class="mockup-header">
-              <div class="mockup-dot" style="background:#E8C4B8;"></div>
-              <div class="mockup-dot" style="background:#D4A090;"></div>
-              <div class="mockup-dot" style="background:#8B5E6A;"></div>
-              <span class="mockup-title-bar" style="margin-left:8px;">NIKAH RAPI ✦ Dashboard</span>
-            </div>
-            <div class="sheet-tabs">
-              <div class="tab active">Dashboard</div>
-              <div class="tab highlight">Seserahan ✦</div>
-              <div class="tab highlight">Kado & Angpao ✦</div>
-              <div class="tab default">Budget</div>
-              <div class="tab default">Tamu</div>
-            </div>
-            <div class="progress-list">
-              <div class="progress-item">
-                <div class="progress-icon done">✓</div>
-                <span style="font-size:12px;color:#5C4A3E;flex:1;">Budget pernikahan</span>
-                <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:100%"></div></div>
-                <span style="font-size:11px;color:#8C7A6E;white-space:nowrap;">100%</span>
-              </div>
-              <div class="progress-item">
-                <div class="progress-icon done">✓</div>
-                <span style="font-size:12px;color:#5C4A3E;flex:1;">Daftar tamu undangan</span>
-                <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:85%"></div></div>
-                <span style="font-size:11px;color:#8C7A6E;white-space:nowrap;">85%</span>
-              </div>
-              <div class="progress-item">
-                <div class="progress-icon active">●</div>
-                <span style="font-size:12px;color:#5C4A3E;flex:1;">Seserahan & hantaran</span>
-                <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:60%"></div></div>
-                <span style="font-size:11px;color:#8C7A6E;white-space:nowrap;">60%</span>
-              </div>
-              <div class="progress-item">
-                <div class="progress-icon todo">○</div>
-                <span style="font-size:12px;color:#5C4A3E;flex:1;">Vendor & pembayaran</span>
-                <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:30%"></div></div>
-                <span style="font-size:11px;color:#8C7A6E;white-space:nowrap;">30%</span>
-              </div>
-            </div>
-          </div>
-          <div class="floating-badge fb-bottom">
-            <div class="fb-icon" style="background:#F0F4F0;">💍</div>
-            <div>
-              <div style="font-size:11px;color:#8C7A6E;font-weight:300;">Seserahan Tracker</div>
-              <div style="font-size:13px;color:#2C2218;font-weight:500;">12/15 item ✓ siap</div>
-            </div>
-          </div>
-        </div>
+
+    <div class="social-proof-bar">
+      <div class="sp-avatars">
+        <div class="sp-avatar" style="background:linear-gradient(135deg,#E8C4B8,#D4A090)">🌸</div>
+        <div class="sp-avatar" style="background:linear-gradient(135deg,#C4857A,#8B5E6A)">💐</div>
+        <div class="sp-avatar" style="background:linear-gradient(135deg,#C9A96E,#E8D5B0)">👑</div>
+        <div class="sp-avatar" style="background:linear-gradient(135deg,#A8B8AC,#7A8C7E)">🍃</div>
       </div>
+      <div class="stars">★★★★★</div>
+      <span>Dipercaya <strong>50+ calon pengantin</strong> Indonesia</span>
     </div>
   </section>
 
-  <!-- ══ PAIN ══ -->
-  <section class="pain-section">
+  <!-- ══ DRAMA SECTION ══ -->
+  <section class="drama-section">
     <p class="section-eyebrow reveal">Cerita yang terlalu familiar...</p>
-    <h2 class="section-title reveal">Persiapan nikah harusnya bahagia,<br>bukan bikin pusing</h2>
-    <div class="pain-grid">
-      <div class="pain-card reveal"><span class="pain-emoji">😰</span><h3>Budget Bocor Tanpa Sadar</h3><p>Udah ngerasa cukup, eh ternyata ada aja pengeluaran yang kelewatan. Notes HP berantakan, chat WA hilang.</p></div>
-      <div class="pain-card reveal"><span class="pain-emoji">📋</span><h3>Seserahan Kacau Last Minute</h3><p>Mau beli apa aja? Harganya berapa? Barang mana yang belum ada? Semua dicatat manual dan gampang lupa.</p></div>
-      <div class="pain-card reveal"><span class="pain-emoji">🎁</span><h3>Kado & Angpao Tidak Tercatat</h3><p>Siapa yang sudah kasih apa? Amplop dari siapa? Mau nulis ucapan terima kasih tapi datanya nggak ada.</p></div>
-      <div class="pain-card reveal"><span class="pain-emoji">👥</span><h3>Tamu Undangan Melebihi Kapasitas</h3><p>Dikira 200 orang, ternyata udah 350. Konfirmasi hadir berantakan, meja kurang, catering kacau.</p></div>
-      <div class="pain-card reveal"><span class="pain-emoji">🏢</span><h3>Vendor Susah Ditracking</h3><p>Bayar DP vendor mana dulu? Kontrak siapa yang belum ditandatangan? Semua tersebar di berbagai chat.</p></div>
-      <div class="pain-card reveal"><span class="pain-emoji">😫</span><h3>Capek Sebelum Hari H</h3><p>Harusnya excited menjelang pernikahan, tapi malah stres karena data berantakan dan banyak yang belum beres.</p></div>
+    <h2 class="section-title reveal">Drama Menuju Pernikahan<br>yang <em>Bikin Capek Sebelum Hari H</em></h2>
+    <div class="drama-grid">
+      <div class="drama-card reveal">
+        <span class="drama-icon">💰</span>
+        <h3>Drama Budget Jebol</h3>
+        <p>Estimasi Rp 80jt, realisasi Rp 120jt. Pengeluaran kecil-kecil yang tidak tercatat akhirnya numpuk tanpa disadari.</p>
+        <div class="drama-scenario">"Udah bayar DP katering, eh lupa dicatat. Sekarang gak tau sisa budget berapa."</div>
+      </div>
+      <div class="drama-card reveal">
+        <span class="drama-icon">💍</span>
+        <h3>Drama Seserahan Ketinggalan</h3>
+        <p>Daftar seserahan ditulis di kertas, di notes HP, di chat WA — tersebar mana-mana. Hari H ada barang yang ketinggalan.</p>
+        <div class="drama-scenario">"Sampai di lokasi baru sadar parfum seserahan ketinggalan di rumah. Panik!"</div>
+      </div>
+      <div class="drama-card reveal">
+        <span class="drama-icon">🏢</span>
+        <h3>Drama Vendor Tiba-tiba Cabut</h3>
+        <p>Vendor cancel H-7, nomor susah dihubungi, kontrak gak jelas. Semua info vendor tersebar di berbagai chat WA.</p>
+        <div class="drama-scenario">"WO tiba-tiba bilang ada double booking. Kontraknya mana? Sudah bayar berapa?"</div>
+      </div>
+      <div class="drama-card reveal">
+        <span class="drama-icon">💄</span>
+        <h3>Drama MUA Double Booking</h3>
+        <p>MUA impian ternyata sudah di-booking orang lain di tanggal yang sama. Baru ketahuan 2 minggu sebelum hari H.</p>
+        <div class="drama-scenario">"Udah fitting 3x, eh MUA-nya bilang double booking. Cari pengganti mendadak."</div>
+      </div>
+      <div class="drama-card reveal">
+        <span class="drama-icon">🎁</span>
+        <h3>Drama Kado & Angpao Kacau</h3>
+        <p>Siapa yang kasih kado apa? Amplop dari siapa? Mau kirim ucapan terima kasih tapi datanya sama sekali tidak ada.</p>
+        <div class="drama-scenario">"Mau WA ucapan terima kasih tapi lupa siapa yang kasih angpao berapa. Awkward."</div>
+      </div>
+      <div class="drama-card reveal">
+        <span class="drama-icon">😫</span>
+        <h3>Drama Tamu Melebihi Kapasitas</h3>
+        <p>Undangan 300 orang, kursi cuma 250. Konfirmasi hadir berantakan, catering kurang, meja tidak cukup.</p>
+        <div class="drama-scenario">"Tamu yang konfirmasi hadir ternyata lebih dari kapasitas gedung. Chaos!"</div>
+      </div>
     </div>
-    <p class="pain-closer reveal">"Aku ngerti banget rasanya. Makanya aku buat satu file yang bisa pegang semuanya."</p>
+    <p class="drama-closer reveal">"Semua drama ini bisa dihindari — kalau semua tercatat di satu tempat yang benar."</p>
   </section>
 
   <!-- ══ SOLUTION ══ -->
@@ -663,278 +711,130 @@
     <div class="solution-inner">
       <div class="solution-left">
         <p class="section-eyebrow reveal">Solusi yang kamu butuhkan</p>
-        <h2 class="section-title reveal">Satu file Excel.<br>Semua beres.</h2>
-        <p class="reveal">NIKAH RAPI dirancang khusus untuk calon pengantin Indonesia — dengan 19 sheet terintegrasi yang saling terhubung otomatis. Input sekali, semua terupdate.</p>
-        <a href="#pricing" class="btn-secondary reveal">Lihat Harga →</a>
+        <h2 class="section-title reveal">Satu file Excel.<br>Semua drama<br>bisa dicegah.</h2>
+        <p class="reveal">NIKAH RAPI dirancang khusus untuk calon pengantin Indonesia — 19 sheet terintegrasi yang saling terhubung otomatis. Input sekali, semua terupdate.</p>
+        <a href="#pricing" class="btn-secondary reveal">Lihat Harga & Paket →</a>
       </div>
-      <div class="solution-right">
-        <div class="feature-card reveal">
-          <div class="feature-icon">💍</div>
-          <div class="feature-text"><h4>Seserahan Tracker <span class="usp-tag">Eksklusif</span></h4><p>Catat semua item seserahan, harga, status beli. Auto-hitung total dan yang belum terbeli. Nggak ada di produk manapun.</p></div>
+      <div class="feature-cards">
+        <div class="feat-card reveal">
+          <div class="feat-icon">💍</div>
+          <div class="feat-text"><h4>Seserahan Tracker <span class="usp-tag">Eksklusif</span></h4><p>Catat semua item, harga, status beli. Auto-hitung total. Tidak ada di produk manapun di Indonesia.</p></div>
         </div>
-        <div class="feature-card reveal">
-          <div class="feature-icon">🎁</div>
-          <div class="feature-text"><h4>Kado & Angpao Tracker <span class="usp-tag">Eksklusif</span></h4><p>Rekap siapa beri apa, nominal angpao, ucapan terima kasih. Semua tertata rapi untuk follow up.</p></div>
+        <div class="feat-card reveal">
+          <div class="feat-icon">🎁</div>
+          <div class="feat-text"><h4>Kado & Angpao Tracker <span class="usp-tag">Eksklusif</span></h4><p>Rekap siapa beri apa, nominal angpao, status ucapan terima kasih. Tidak ada yang terlewat.</p></div>
         </div>
-        <div class="feature-card reveal">
-          <div class="feature-icon">💰</div>
-          <div class="feature-text"><h4>Budget Planner Otomatis</h4><p>Rencana vs realisasi. Tahu persis berapa yang sudah keluar, berapa sisa, dan kategori mana yang overbudget.</p></div>
+        <div class="feat-card reveal">
+          <div class="feat-icon">💰</div>
+          <div class="feat-text"><h4>Budget Planner Otomatis</h4><p>Rencana vs realisasi terupdate real-time. Tahu persis kategori mana yang overbudget sebelum terlambat.</p></div>
         </div>
-        <div class="feature-card reveal">
-          <div class="feature-icon">👥</div>
-          <div class="feature-text"><h4>Guest List & RSVP Tracker</h4><p>Kelola undangan, konfirmasi hadir, kebutuhan meja, dan kupon makan — semua dari satu sheet.</p></div>
+        <div class="feat-card reveal">
+          <div class="feat-icon">🏢</div>
+          <div class="feat-text"><h4>Vendor Manager Lengkap</h4><p>Kontak, kontrak, DP & pelunasan semua vendor. Tidak ada lagi vendor yang tiba-tiba "lupa" perjanjian.</p></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══ SHEETS ══ -->
+  <!-- ══ 19 SHEETS ══ -->
   <section class="sheets-section">
     <p class="section-eyebrow reveal">Yang kamu dapatkan</p>
-    <h2 class="section-title reveal">19 Sheet Lengkap,<br>Tidak Ada yang Terlewat</h2>
+    <h2 class="section-title reveal">19 Sheet Lengkap,<br><em>Tidak Ada yang Terlewat</em></h2>
     <div class="sheets-grid">
-      <div class="sheet-card star reveal"><div class="sheet-num">01</div><div class="sheet-name">Dashboard Utama ✦</div><div class="sheet-desc">Ringkasan semua progress pernikahan dalam satu tampilan</div></div>
-      <div class="sheet-card reveal"><div class="sheet-num">02</div><div class="sheet-name">Budget Planner</div><div class="sheet-desc">Rencana & realisasi pengeluaran per kategori</div></div>
-      <div class="sheet-card star reveal"><div class="sheet-num">03</div><div class="sheet-name">Seserahan Tracker ✦</div><div class="sheet-desc">Item, harga, status, total otomatis — eksklusif!</div></div>
-      <div class="sheet-card star reveal"><div class="sheet-num">04</div><div class="sheet-name">Kado & Angpao ✦</div><div class="sheet-desc">Rekap pemberi, nominal, follow up ucapan — eksklusif!</div></div>
-      <div class="sheet-card reveal"><div class="sheet-num">05</div><div class="sheet-name">Guest List</div><div class="sheet-desc">Daftar tamu lengkap dengan kategori & kapasitas</div></div>
-      <div class="sheet-card reveal"><div class="sheet-num">06</div><div class="sheet-name">RSVP Tracker</div><div class="sheet-desc">Konfirmasi hadir, kebutuhan meja, kupon makan</div></div>
-      <div class="sheet-card reveal"><div class="sheet-num">07</div><div class="sheet-name">Vendor Manager</div><div class="sheet-desc">Kontak, kontrak, DP & pelunasan semua vendor</div></div>
-      <div class="sheet-card reveal"><div class="sheet-num">08</div><div class="sheet-name">Timeline Acara</div><div class="sheet-desc">Rundown H-1 hingga hari pernikahan detail</div></div>
-      <div class="sheet-card reveal"><div class="sheet-num">09</div><div class="sheet-name">Checklist Persiapan</div><div class="sheet-desc">Master checklist agar tidak ada yang terlewat</div></div>
-      <div class="sheet-card reveal"><div class="sheet-num">10</div><div class="sheet-name">Dekorasi & Tema</div><div class="sheet-desc">Moodboard konsep, referensi warna & dekorasi</div></div>
-      <div class="sheet-card reveal"><div class="sheet-num">11</div><div class="sheet-name">Katering & Menu</div><div class="sheet-desc">Pilihan menu, estimasi porsi, tracking pembayaran</div></div>
-      <div class="sheet-card reveal"><div class="sheet-num">12</div><div class="sheet-name">Undangan & Desain</div><div class="sheet-desc">Tracking cetak, digital, pengiriman undangan</div></div>
-      <div class="sheet-card reveal"><div class="sheet-num">13</div><div class="sheet-name">MUA & Busana</div><div class="sheet-desc">Jadwal fitting, MUA, sewa/beli baju pengantin</div></div>
-      <div class="sheet-card reveal"><div class="sheet-num">14</div><div class="sheet-name">Foto & Video</div><div class="sheet-desc">Shot list, photographer/videographer brief</div></div>
-      <div class="sheet-card reveal"><div class="sheet-num">15</div><div class="sheet-name">Cincin & Mahar</div><div class="sheet-desc">Detail mahar, cincin, dan perlengkapan akad</div></div>
-      <div class="sheet-card reveal"><div class="sheet-num">16</div><div class="sheet-name">Honeymoon Planner</div><div class="sheet-desc">Itinerary, booking, budget bulan madu</div></div>
-      <div class="sheet-card reveal"><div class="sheet-num">17</div><div class="sheet-name">Souvenir & Hampers</div><div class="sheet-desc">Jumlah, desain, vendor, distribusi souvenir</div></div>
-      <div class="sheet-card reveal"><div class="sheet-num">18</div><div class="sheet-name">Catatan Penting</div><div class="sheet-desc">Notes, reminder, dan hal-hal kecil tapi penting</div></div>
-      <div class="sheet-card reveal"><div class="sheet-num">19</div><div class="sheet-name">Rekap Akhir</div><div class="sheet-desc">Summary total biaya, evaluasi, dan kenangan</div></div>
+      <div class="sheet-card star reveal"><div class="sheet-num">01</div><div class="sheet-name">Dashboard Utama ✦</div><div class="sheet-desc">Ringkasan semua progress pernikahan</div></div>
+      <div class="sheet-card reveal"><div class="sheet-num">02</div><div class="sheet-name">Budget Planner</div><div class="sheet-desc">Rencana & realisasi per kategori</div></div>
+      <div class="sheet-card star reveal"><div class="sheet-num">03</div><div class="sheet-name">Seserahan Tracker ✦</div><div class="sheet-desc">Item, harga, status — eksklusif!</div></div>
+      <div class="sheet-card star reveal"><div class="sheet-num">04</div><div class="sheet-name">Kado & Angpao ✦</div><div class="sheet-desc">Rekap pemberi & follow up — eksklusif!</div></div>
+      <div class="sheet-card reveal"><div class="sheet-num">05</div><div class="sheet-name">Guest List</div><div class="sheet-desc">Daftar tamu lengkap & kategori</div></div>
+      <div class="sheet-card reveal"><div class="sheet-num">06</div><div class="sheet-name">RSVP Tracker</div><div class="sheet-desc">Konfirmasi hadir & kebutuhan meja</div></div>
+      <div class="sheet-card reveal"><div class="sheet-num">07</div><div class="sheet-name">Vendor Manager</div><div class="sheet-desc">Kontak, kontrak, DP & pelunasan</div></div>
+      <div class="sheet-card reveal"><div class="sheet-num">08</div><div class="sheet-name">Timeline Acara</div><div class="sheet-desc">Rundown H-1 hingga hari H</div></div>
+      <div class="sheet-card reveal"><div class="sheet-num">09</div><div class="sheet-name">Checklist Persiapan</div><div class="sheet-desc">Master checklist anti-lupa</div></div>
+      <div class="sheet-card reveal"><div class="sheet-num">10</div><div class="sheet-name">Dekorasi & Tema</div><div class="sheet-desc">Moodboard, referensi warna & dekor</div></div>
+      <div class="sheet-card reveal"><div class="sheet-num">11</div><div class="sheet-name">Katering & Menu</div><div class="sheet-desc">Menu, porsi, tracking pembayaran</div></div>
+      <div class="sheet-card reveal"><div class="sheet-num">12</div><div class="sheet-name">Undangan & Desain</div><div class="sheet-desc">Cetak, digital, pengiriman</div></div>
+      <div class="sheet-card reveal"><div class="sheet-num">13</div><div class="sheet-name">MUA & Busana</div><div class="sheet-desc">Fitting, MUA, sewa/beli baju</div></div>
+      <div class="sheet-card reveal"><div class="sheet-num">14</div><div class="sheet-name">Foto & Video</div><div class="sheet-desc">Shot list & brief fotografer</div></div>
+      <div class="sheet-card reveal"><div class="sheet-num">15</div><div class="sheet-name">Cincin & Mahar</div><div class="sheet-desc">Detail mahar & perlengkapan akad</div></div>
+      <div class="sheet-card reveal"><div class="sheet-num">16</div><div class="sheet-name">Honeymoon Planner</div><div class="sheet-desc">Itinerary & budget bulan madu</div></div>
+      <div class="sheet-card reveal"><div class="sheet-num">17</div><div class="sheet-name">Souvenir & Hampers</div><div class="sheet-desc">Jumlah, vendor, distribusi souvenir</div></div>
+      <div class="sheet-card reveal"><div class="sheet-num">18</div><div class="sheet-name">Catatan Penting</div><div class="sheet-desc">Notes & reminder hal penting</div></div>
+      <div class="sheet-card reveal"><div class="sheet-num">19</div><div class="sheet-name">Rekap Akhir</div><div class="sheet-desc">Summary total biaya & kenangan</div></div>
     </div>
   </section>
 
-  <!-- ══ INTERACTIVE PREVIEW ══ -->
-  <section class="s reveal">
-    <div class="inn">
-      <p class="eye">✨ Lihat Isi Produknya</p>
-      <h2 class="ttl">Intip Dulu Sebelum Beli —<br><em>Ini yang Ada di Dalamnya</em></h2>
-      <p class="sub">19 sheet lengkap, saling terhubung otomatis. Tinggal isi data, semua terupdate sendiri.</p>
-      <div class="tabs">
-        <button class="tab-btn on" onclick="sw(this,'n1')">🏠 Dashboard</button>
-        <button class="tab-btn" onclick="sw(this,'n2')">💍 Seserahan</button>
-        <button class="tab-btn" onclick="sw(this,'n3')">🎁 Kado & Angpao</button>
-        <button class="tab-btn" onclick="sw(this,'n4')">💰 Budget</button>
-      </div>
-      <!-- DASHBOARD -->
-      <div class="stage on" id="n1">
-        <div class="ew">
-          <div class="eb"><div class="dots"><div class="dot" style="background:#ff5f57"></div><div class="dot" style="background:#febc2e"></div><div class="dot" style="background:#28c840"></div></div><div class="fn">NIKAH_RAPI_PREMIUM_FINAL.xlsx</div></div>
-          <div class="est"><div class="et on">🏠 Dashboard</div><div class="et">💰 Budget</div><div class="et" style="color:rgba(139,94,106,0.7)">💍 Seserahan ✦</div><div class="et" style="color:rgba(201,169,110,0.7)">🎁 Kado & Angpao ✦</div><div class="et">👥 Guest List</div><div class="et">📋 RSVP</div><div class="et">🏢 Vendor</div></div>
-          <div class="sb2">
-            <div class="dh"><div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--mauve)">NIKAH RAPI ✦</div><div style="font-size:.72rem;color:var(--light)">H-127 menuju Hari Bahagia 💍</div></div>
-            <div class="krow">
-              <div class="kc" style="background:linear-gradient(135deg,#FFF0EC,#FAE8E2);border-color:rgba(212,160,144,0.3)"><div class="kl">Budget Total</div><div class="kv" style="color:var(--mauve)">Rp 85jt</div><div class="kn" style="color:var(--rose)">Terpakai 62%</div></div>
-              <div class="kc" style="background:linear-gradient(135deg,#F0F4F0,#E8EEE8);border-color:rgba(122,140,126,0.3)"><div class="kl">Tamu</div><div class="kv" style="color:var(--sage)">248</div><div class="kn" style="color:var(--sage)">186 konfirmasi</div></div>
-              <div class="kc" style="background:linear-gradient(135deg,#FFF8EC,#F5EEDD);border-color:rgba(201,169,110,0.3)"><div class="kl">Kado & Angpao</div><div class="kv" style="color:var(--gold)">Rp 48,5jt</div><div class="kn" style="color:var(--gold)">42 pemberi</div></div>
-              <div class="kc" style="background:linear-gradient(135deg,#FAF0EC,#F0E4DC);border-color:rgba(139,94,106,0.2)"><div class="kl">Seserahan</div><div class="kv" style="color:var(--mauve)">12/15</div><div class="kn" style="color:var(--rose)">3 item pending</div></div>
-            </div>
-            <div class="pg2">
-              <div class="pb">
-                <div class="pt">Progress Persiapan</div>
-                <div class="pr"><div class="pi" style="background:#E8F5E9">✅</div><div style="flex:1"><div class="pn2">Budget & Keuangan</div><div class="pw"><div class="pf" style="width:100%"></div></div></div><div class="pp" style="color:var(--sage)">100%</div></div>
-                <div class="pr"><div class="pi" style="background:#FFF0EC">🏢</div><div style="flex:1"><div class="pn2">Vendor & Catering</div><div class="pw"><div class="pf" style="width:85%"></div></div></div><div class="pp" style="color:var(--sage)">85%</div></div>
-                <div class="pr"><div class="pi" style="background:#FFF8EC">💍</div><div style="flex:1"><div class="pn2">Seserahan & Hantaran</div><div class="pw"><div class="pf" style="width:60%"></div></div></div><div class="pp">60%</div></div>
-                <div class="pr"><div class="pi" style="background:#F0F4F0">👗</div><div style="flex:1"><div class="pn2">Busana & MUA</div><div class="pw"><div class="pf" style="width:40%"></div></div></div><div class="pp">40%</div></div>
-              </div>
-              <div class="pb">
-                <div class="pt">Vendor Status</div>
-                <div style="display:flex;flex-direction:column;gap:8px;margin-top:4px">
-                  <div style="display:flex;justify-content:space-between;font-size:.78rem;padding:8px 0;border-bottom:1px dashed rgba(139,94,106,0.1)"><span style="color:var(--mid)">📸 Fotografer</span><span style="color:var(--sage);font-weight:700">✓ Lunas DP</span></div>
-                  <div style="display:flex;justify-content:space-between;font-size:.78rem;padding:8px 0;border-bottom:1px dashed rgba(139,94,106,0.1)"><span style="color:var(--mid)">🍽 Catering</span><span style="color:var(--sage);font-weight:700">✓ Lunas DP</span></div>
-                  <div style="display:flex;justify-content:space-between;font-size:.78rem;padding:8px 0;border-bottom:1px dashed rgba(139,94,106,0.1)"><span style="color:var(--mid)">🌸 Dekorasi</span><span style="color:var(--gold);font-weight:700">⚡ Nego</span></div>
-                  <div style="display:flex;justify-content:space-between;font-size:.78rem;padding:8px 0"><span style="color:var(--mid)">💄 MUA</span><span style="color:var(--rose);font-weight:700">○ Belum</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- SESERAHAN -->
-      <div class="stage" id="n2">
-        <div class="ew">
-          <div class="eb"><div class="dots"><div class="dot" style="background:#ff5f57"></div><div class="dot" style="background:#febc2e"></div><div class="dot" style="background:#28c840"></div></div><div class="fn">NIKAH_RAPI_PREMIUM_FINAL.xlsx — Seserahan Tracker ✦</div></div>
-          <div class="est"><div class="et">🏠 Dashboard</div><div class="et">💰 Budget</div><div class="et on" style="color:var(--mauve)">💍 Seserahan ✦</div><div class="et">🎁 Kado & Angpao ✦</div><div class="et">👥 Guest List</div></div>
-          <div class="sb2">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
-              <div><div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--mauve)">Seserahan Tracker ✦</div><div style="font-size:.72rem;color:var(--light);margin-top:2px">Fitur Eksklusif NIKAH RAPI</div></div>
-              <div style="text-align:right"><div style="font-size:.68rem;color:var(--light)">Total Estimasi</div><div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:var(--mauve)">Rp 12.450.000</div></div>
-            </div>
-            <table class="tbl">
-              <thead><tr><th>Item Seserahan</th><th>Kategori</th><th>Est. Harga</th><th>Harga Aktual</th><th>Tempat Beli</th><th>Status</th></tr></thead>
-              <tbody>
-                <tr><td><div class="inn2"><div class="id2" style="background:var(--mauve)"></div>Al-Qur'an & Tasbih</div></td><td style="color:var(--light)">Ibadah</td><td>Rp 450.000</td><td class="pc">Rp 420.000</td><td style="color:var(--light)">Gramedia</td><td><span class="bg" style="background:rgba(122,140,126,0.15);color:var(--sage)">✓ Sudah</span></td></tr>
-                <tr><td><div class="inn2"><div class="id2" style="background:var(--rose)"></div>Mukena Premium</div></td><td style="color:var(--light)">Ibadah</td><td>Rp 850.000</td><td class="pc">Rp 875.000</td><td style="color:var(--light)">Tokopedia</td><td><span class="bg" style="background:rgba(122,140,126,0.15);color:var(--sage)">✓ Sudah</span></td></tr>
-                <tr><td><div class="inn2"><div class="id2" style="background:var(--gold)"></div>Perhiasan Emas</div></td><td style="color:var(--light)">Perhiasan</td><td>Rp 5.000.000</td><td class="pc">Rp 5.200.000</td><td style="color:var(--light)">Toko Mas XYZ</td><td><span class="bg" style="background:rgba(122,140,126,0.15);color:var(--sage)">✓ Sudah</span></td></tr>
-                <tr><td><div class="inn2"><div class="id2" style="background:var(--blush-d)"></div>Parfum Set</div></td><td style="color:var(--light)">Kecantikan</td><td>Rp 1.200.000</td><td class="pc">—</td><td style="color:var(--light)">—</td><td><span class="bg" style="background:rgba(196,133,122,0.15);color:var(--rose)">○ Belum</span></td></tr>
-                <tr><td><div class="inn2"><div class="id2" style="background:var(--sage)"></div>Buah-buahan</div></td><td style="color:var(--light)">Makanan</td><td>Rp 500.000</td><td class="pc">—</td><td style="color:var(--light)">H-3 acara</td><td><span class="bg" style="background:rgba(201,169,110,0.15);color:var(--gold)">⏳ Nanti</span></td></tr>
-                <tr class="tr-t"><td colspan="2"><strong>TOTAL</strong></td><td><strong>Rp 12.450.000</strong></td><td class="pc"><strong>Rp 6.495.000</strong></td><td colspan="2" style="color:var(--rose);font-size:.72rem">Sisa Rp 5.955.000 belum dibeli</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-      <!-- KADO -->
-      <div class="stage" id="n3">
-        <div class="ew">
-          <div class="eb"><div class="dots"><div class="dot" style="background:#ff5f57"></div><div class="dot" style="background:#febc2e"></div><div class="dot" style="background:#28c840"></div></div><div class="fn">NIKAH_RAPI_PREMIUM_FINAL.xlsx — Kado & Angpao Tracker ✦</div></div>
-          <div class="est"><div class="et">🏠 Dashboard</div><div class="et">💰 Budget</div><div class="et">💍 Seserahan ✦</div><div class="et on" style="color:var(--gold)">🎁 Kado & Angpao ✦</div><div class="et">👥 Guest List</div></div>
-          <div class="sb2">
-            <div class="ks">
-              <div class="kk" style="background:linear-gradient(135deg,#FFF8EC,#F5EEDD);border:1px solid rgba(201,169,110,0.2);border-radius:12px"><div class="kkv" style="color:var(--gold)">Rp 48,5jt</div><div class="kkl">Total Angpao</div></div>
-              <div class="kk" style="background:linear-gradient(135deg,#FFF0EC,#FAE8E2);border:1px solid rgba(212,160,144,0.2);border-radius:12px"><div class="kkv" style="color:var(--mauve)">42</div><div class="kkl">Total Pemberi</div></div>
-              <div class="kk" style="background:linear-gradient(135deg,#F0F4F0,#E8EEE8);border:1px solid rgba(122,140,126,0.2);border-radius:12px"><div class="kkv" style="color:var(--sage)">38/42</div><div class="kkl">Ucapan Terkirim</div></div>
-            </div>
-            <table class="ktbl">
-              <thead><tr><th>Nama Pemberi</th><th>Jenis</th><th>Nominal/Kado</th><th>Dari</th><th>Ucapan Terima Kasih</th></tr></thead>
-              <tbody>
-                <tr><td style="font-weight:600;color:var(--text)">Keluarga Bapak Hendra</td><td><div class="kt"><div class="id2" style="background:var(--gold)"></div>Angpao</div></td><td class="av">Rp 2.000.000</td><td style="color:var(--light)">Pihak keluarga</td><td><span class="ud" style="color:var(--sage)">✓ Sudah dikirim WA</span></td></tr>
-                <tr><td style="font-weight:600;color:var(--text)">Ibu Sari & Keluarga</td><td><div class="kt"><div class="id2" style="background:var(--mauve)"></div>Kado</div></td><td style="color:var(--mid)">Rice Cooker Cosmos</td><td style="color:var(--light)">Teman kantor</td><td><span class="ud" style="color:var(--sage)">✓ Sudah dikirim WA</span></td></tr>
-                <tr><td style="font-weight:600;color:var(--text)">Rombongan RT 05</td><td><div class="kt"><div class="id2" style="background:var(--gold)"></div>Angpao</div></td><td class="av">Rp 1.500.000</td><td style="color:var(--light)">Tetangga</td><td><span class="ud" style="color:var(--sage)">✓ Sudah dikirim WA</span></td></tr>
-                <tr><td style="font-weight:600;color:var(--text)">Dinda & Rizky</td><td><div class="kt"><div class="id2" style="background:var(--rose)"></div>Kado</div></td><td style="color:var(--mid)">Stand Mixer KitchenAid</td><td style="color:var(--light)">Sahabat kuliah</td><td><span class="ud" style="color:var(--rose)">○ Belum dikirim</span></td></tr>
-                <tr><td style="font-weight:600;color:var(--text)">Pak Budi (Bos)</td><td><div class="kt"><div class="id2" style="background:var(--gold)"></div>Angpao</div></td><td class="av">Rp 500.000</td><td style="color:var(--light)">Atasan kerja</td><td><span class="ud" style="color:var(--rose)">○ Belum dikirim</span></td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-      <!-- BUDGET -->
-      <div class="stage" id="n4">
-        <div class="ew">
-          <div class="eb"><div class="dots"><div class="dot" style="background:#ff5f57"></div><div class="dot" style="background:#febc2e"></div><div class="dot" style="background:#28c840"></div></div><div class="fn">NIKAH_RAPI_PREMIUM_FINAL.xlsx — Budget Planner</div></div>
-          <div class="est"><div class="et">🏠 Dashboard</div><div class="et on">💰 Budget</div><div class="et">💍 Seserahan ✦</div><div class="et">🎁 Kado & Angpao ✦</div><div class="et">👥 Guest List</div></div>
-          <div class="sb2">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
-              <div><div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--text)">Budget Planner Pernikahan</div><div style="font-size:.72rem;color:var(--light);margin-top:4px">Rencana vs Realisasi</div></div>
-              <div style="text-align:right"><div style="font-size:.68rem;color:var(--light)">Total Budget</div><div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:var(--mauve)">Rp 85.000.000</div><div style="font-size:.68rem;color:var(--rose);margin-top:2px">Terpakai: Rp 52.750.000 (62%)</div></div>
-            </div>
-            <table class="btbl">
-              <thead><tr><th>Kategori</th><th>Rencana</th><th>Realisasi</th><th>Selisih</th><th>Progress</th><th>Status</th></tr></thead>
-              <tbody>
-                <tr><td style="font-weight:600;color:var(--text)">🍽 Catering & Konsumsi</td><td>Rp 32.000.000</td><td style="font-weight:600">Rp 30.500.000</td><td class="ok">+Rp 1,5jt</td><td><div class="bw"><div class="bb" style="width:95%;background:linear-gradient(90deg,var(--sage),#5a8a5a)"></div></div></td><td><span style="font-size:.63rem;color:var(--sage);font-weight:700">✓ Hemat</span></td></tr>
-                <tr><td style="font-weight:600;color:var(--text)">🏛 Venue & Dekorasi</td><td>Rp 20.000.000</td><td style="font-weight:600">Rp 22.000.000</td><td class="ov">-Rp 2jt</td><td><div class="bw"><div class="bb" style="width:100%;background:linear-gradient(90deg,var(--rose),#c0392b)"></div></div></td><td><span style="font-size:.63rem;color:var(--rose);font-weight:700">⚠ Over</span></td></tr>
-                <tr><td style="font-weight:600;color:var(--text)">📸 Foto & Video</td><td>Rp 8.000.000</td><td style="font-weight:600">Rp 7.500.000</td><td class="ok">+Rp 500rb</td><td><div class="bw"><div class="bb" style="width:94%;background:linear-gradient(90deg,var(--sage),#5a8a5a)"></div></div></td><td><span style="font-size:.63rem;color:var(--sage);font-weight:700">✓ Hemat</span></td></tr>
-                <tr><td style="font-weight:600;color:var(--text)">👗 Busana & MUA</td><td>Rp 12.000.000</td><td style="font-weight:600;color:var(--light)">Rp 0</td><td style="color:var(--light)">Belum</td><td><div class="bw"><div class="bb" style="width:0%"></div></div></td><td><span style="font-size:.63rem;color:var(--light)">○ Belum</span></td></tr>
-                <tr><td style="font-weight:600;color:var(--text)">💍 Seserahan</td><td>Rp 13.000.000</td><td style="font-weight:600">Rp 6.495.000</td><td style="color:var(--gold);font-weight:700">+Rp 6,5jt</td><td><div class="bw"><div class="bb" style="width:50%;background:linear-gradient(90deg,var(--gold),#b8902a)"></div></div></td><td><span style="font-size:.63rem;color:var(--gold);font-weight:700">⚡ Proses</span></td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-      <div class="feats">
-        <div class="feat"><span>💍</span> Seserahan Tracker</div>
-        <div class="feat"><span>🎁</span> Kado & Angpao Tracker</div>
-        <div class="feat"><span>💰</span> Budget vs Realisasi</div>
-        <div class="feat"><span>👥</span> Guest List & RSVP</div>
-        <div class="feat"><span>19</span> Sheet Lengkap</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ TESTIMONI (NEW) ══ -->
+  <!-- ══ TESTIMONI ══ -->
   <section class="testi-section">
     <p class="section-eyebrow reveal">Kata mereka yang sudah pakai</p>
-    <h2 class="section-title reveal">Pernikahan lebih tenang,<br>karena semua <em style="color:var(--mauve);">sudah tercatat</em></h2>
+    <h2 class="section-title reveal">Pernikahan lebih tenang,<br>karena semua <em>sudah tercatat</em></h2>
     <div class="testi-grid">
-
       <div class="testi-card reveal">
-        <div class="testi-quote-mark">"</div>
-        <div class="testi-stars">
-          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-        </div>
-        <p class="testi-text">Seserahan Tracker-nya beneran game changer. Sebelumnya aku nyatat manual di kertas dan selalu ada yang kelewatan. Sekarang tinggal update di Excel, auto keitung semua. Worth banget!</p>
+        <div class="testi-quote">"</div>
+        <div class="testi-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="testi-text">Seserahan Tracker-nya beneran game changer. Sebelumnya nyatat manual di kertas dan selalu ada yang kelewatan. Sekarang tinggal update di Excel, auto keitung semua. Worth banget!</p>
         <div class="testi-author">
-          <div class="testi-avatar" style="background:linear-gradient(135deg,#E8C4B8,#D4A090);">🌸</div>
-          <div>
-            <div class="testi-name">Anisa R.</div>
-            <div class="testi-meta">Calon pengantin · Jakarta</div>
-            <div class="testi-verified">✓ Verified Purchase</div>
-          </div>
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#E8C4B8,#D4A090)">🌸</div>
+          <div><div class="testi-name">Anisa R.</div><div class="testi-meta">Calon pengantin · Jakarta</div><div class="testi-verified">✓ Verified Purchase</div></div>
         </div>
       </div>
-
       <div class="testi-card reveal">
-        <div class="testi-quote-mark">"</div>
-        <div class="testi-stars">
-          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-        </div>
-        <p class="testi-text">Kado & Angpao Tracker yang bikin aku beli ini. Nikahan kakak aku sebelumnya banyak yang lupa diucapin terima kasih. Sekarang semua tercatat rapi, tinggal follow up satu-satu!</p>
+        <div class="testi-quote">"</div>
+        <div class="testi-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="testi-text">Kado & Angpao Tracker yang bikin aku beli ini. Nikahan kakak sebelumnya banyak yang lupa diucapin terima kasih. Sekarang semua tercatat rapi, tinggal follow up satu-satu!</p>
         <div class="testi-author">
-          <div class="testi-avatar" style="background:linear-gradient(135deg,#C4857A,#8B5E6A);">💐</div>
-          <div>
-            <div class="testi-name">Dewi S.</div>
-            <div class="testi-meta">Baru menikah · Bandung</div>
-            <div class="testi-verified">✓ Verified Purchase</div>
-          </div>
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#C4857A,#8B5E6A)">💐</div>
+          <div><div class="testi-name">Dewi S.</div><div class="testi-meta">Baru menikah · Bandung</div><div class="testi-verified">✓ Verified Purchase</div></div>
         </div>
       </div>
-
       <div class="testi-card reveal">
-        <div class="testi-quote-mark">"</div>
-        <div class="testi-stars">
-          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-        </div>
-        <p class="testi-text">Tadinya ragu karena harganya murah, takut isinya biasa aja. Ternyata 19 sheet semua fungsional dan saling nyambung! Budget planner-nya langsung update otomatis. Recommend banget!</p>
+        <div class="testi-quote">"</div>
+        <div class="testi-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="testi-text">Tadinya ragu karena harganya murah, takut isinya biasa aja. Ternyata 19 sheet semua fungsional dan saling nyambung! Budget planner-nya langsung update otomatis. Recommend!</p>
         <div class="testi-author">
-          <div class="testi-avatar" style="background:linear-gradient(135deg,#C9A96E,#E8D5B0);">👑</div>
-          <div>
-            <div class="testi-name">Rina & Fajar</div>
-            <div class="testi-meta">Calon pengantin · Surabaya</div>
-            <div class="testi-verified">✓ Verified Purchase</div>
-          </div>
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#C9A96E,#E8D5B0)">👑</div>
+          <div><div class="testi-name">Rina & Fajar</div><div class="testi-meta">Calon pengantin · Surabaya</div><div class="testi-verified">✓ Verified Purchase</div></div>
         </div>
       </div>
-
     </div>
     <div class="testi-stats reveal">
-      <div class="tstat">
-        <div class="tstat-num">50+</div>
-        <div class="tstat-label">Calon Pengantin Terbantu</div>
-      </div>
-      <div class="tstat">
-        <div class="tstat-num">5★</div>
-        <div class="tstat-label">Rating Rata-rata</div>
-      </div>
-      <div class="tstat">
-        <div class="tstat-num">19</div>
-        <div class="tstat-label">Sheet Terintegrasi</div>
-      </div>
+      <div class="tstat"><div class="tstat-num">50+</div><div class="tstat-label">Calon Pengantin Terbantu</div></div>
+      <div class="tstat"><div class="tstat-num">5★</div><div class="tstat-label">Rating Rata-rata</div></div>
+      <div class="tstat"><div class="tstat-num">19</div><div class="tstat-label">Sheet Terintegrasi</div></div>
     </div>
   </section>
 
   <!-- ══ PRICING ══ -->
   <section class="pricing-section" id="pricing">
     <p class="section-eyebrow reveal">Investasi terkecil untuk pernikahan terbaik</p>
-    <h2 class="section-title reveal">Pilih Paketmu</h2>
+    <h2 class="section-title reveal">Dapatkan NIKAH RAPI Sekarang</h2>
     <div class="pricing-card reveal">
-      <div class="early-bird-tag">✦ Bundle Lengkap — 3 Produk dalam 1 Harga</div>
-      <div class="price-main"><sup>Rp</sup>149rb</div>
-      <div class="price-was">Investasi terbaik untuk pernikahan sekali seumur hidup</div>
+      <div class="pricing-card-badge">✦ Bundle Lengkap — 3 Produk dalam 1 Harga</div>
+      <div class="price-hero">
+        <div class="price-big"><sup>Rp</sup>149rb</div>
+      </div>
+      <div class="price-was-p"><s>Rp 349rb</s></div>
+      <div class="price-save-badge">🔥 Hemat 57% — Harga Akan Naik!</div>
       <ul class="include-list">
-        <li><div class="check">✓</div> File Excel NIKAH RAPI — 19 sheet lengkap</li>
-        <li><div class="check">✓</div> Seserahan Tracker (fitur eksklusif)</li>
-        <li><div class="check">✓</div> Kado & Angpao Tracker (fitur eksklusif)</li>
-        <li><div class="check">✓</div> Honeymoon Rapi — planner bulan madu lengkap</li>
-        <li><div class="check">✓</div> Honeymoon Anti Drama — ebook panduan honeymoon</li>
-        <li><div class="check">✓</div> Sudah terproteksi & siap pakai langsung</li>
-        <li><div class="check">✓</div> Panduan penggunaan PDF</li>
-        <li><div class="check">✓</div> Update file gratis seumur hidup</li>
+        <li><div class="check">✓</div>File Excel NIKAH RAPI — 19 sheet lengkap & terintegrasi</li>
+        <li><div class="check">✓</div>Seserahan Tracker eksklusif — tidak ada di produk lain!</li>
+        <li><div class="check">✓</div>Kado & Angpao Tracker eksklusif — follow up terima kasih mudah</li>
+        <li><div class="check">✓</div>Honeymoon Rapi — planner bulan madu lengkap</li>
+        <li><div class="check">✓</div>Honeymoon Anti Drama — ebook panduan honeymoon</li>
+        <li><div class="check">✓</div>Panduan penggunaan PDF — langsung bisa dipakai</li>
+        <li><div class="check">✓</div>Update file gratis seumur hidup</li>
+        <li><div class="check">✓</div>File terproteksi & siap pakai</li>
       </ul>
-      <a href="https://entrepreneurai.myscalev.com/checkout-page" class="btn-primary" style="width:100%;justify-content:center;">
+      <a href="https://entrepreneurai.myscalev.com/checkout-page" class="btn-primary" style="width:100%;justify-content:center;font-size:15px;padding:22px;">
         💍 Dapatkan Sekarang — Rp 149.000
       </a>
-      <p class="urgency-note">💍 Garansi 7 hari · File langsung dikirim via WA</p>
+      <p class="urgency-note">⏰ Harga segera naik ke Rp 349.000 · Garansi 7 hari · File langsung via WA</p>
+      <div class="heat-run-bar">
+        <span style="font-size:24px">🔥</span>
+        <div class="heat-run-text">
+          <strong>Produk digital — jangan tunda!</strong><br>
+          Keputusan yang ditunda hari ini = persiapan nikah yang makin kacau esok hari. File langsung dikirim setelah bayar.
+        </div>
+      </div>
     </div>
   </section>
 
@@ -945,23 +845,27 @@
     <div class="faq-inner">
       <div class="faq-item reveal" onclick="toggleFaq(this)">
         <div class="faq-q">Harus bisa Excel dulu tidak? <span class="faq-arrow">+</span></div>
-        <div class="faq-a">Tidak perlu jago Excel sama sekali! NIKAH RAPI sudah dirancang agar tinggal isi data, semua kalkulasi dan dashboard berjalan otomatis. Kalau bisa ngetik di HP, kamu bisa pakai ini.</div>
+        <div class="faq-a">Tidak perlu jago Excel! NIKAH RAPI dirancang agar tinggal isi data — semua kalkulasi dan dashboard berjalan otomatis. Kalau bisa ngetik di HP, kamu bisa pakai ini.</div>
       </div>
       <div class="faq-item reveal" onclick="toggleFaq(this)">
-        <div class="faq-q">Bisa dibuka di HP atau hanya laptop? <span class="faq-arrow">+</span></div>
-        <div class="faq-a">Bisa dibuka di keduanya! Paling nyaman di laptop atau PC dengan Microsoft Excel atau Google Sheets. Di HP bisa pakai aplikasi Excel/Google Sheets gratis.</div>
+        <div class="faq-q">Bisa dibuka di HP atau hanya di laptop? <span class="faq-arrow">+</span></div>
+        <div class="faq-a">Bisa di keduanya! Paling nyaman di laptop dengan Microsoft Excel atau Google Sheets. Di HP bisa pakai aplikasi Excel/Google Sheets gratis — tanpa install apapun di browser.</div>
       </div>
       <div class="faq-item reveal" onclick="toggleFaq(this)">
-        <div class="faq-q">Setelah bayar, file dikirim ke mana? <span class="faq-arrow">+</span></div>
-        <div class="faq-a">File dikirim langsung ke WhatsApp atau email kamu dalam waktu maksimal 1x24 jam (biasanya langsung). Disertai panduan singkat cara penggunaan.</div>
+        <div class="faq-q">Setelah bayar, file dikirim ke mana dan berapa lama? <span class="faq-arrow">+</span></div>
+        <div class="faq-a">File dikirim langsung ke WhatsApp atau email dalam waktu maksimal 1x24 jam (biasanya langsung). Disertai panduan singkat cara penggunaan.</div>
       </div>
       <div class="faq-item reveal" onclick="toggleFaq(this)">
-        <div class="faq-q">Apakah ada garansi uang kembali? <span class="faq-arrow">+</span></div>
-        <div class="faq-a">Ada garansi 7 hari. Jika kamu merasa file tidak sesuai deskripsi, hubungi kami dan kami akan proses refund penuh tanpa pertanyaan berlebihan.</div>
+        <div class="faq-q">Ada garansi uang kembali tidak? <span class="faq-arrow">+</span></div>
+        <div class="faq-a">Ada garansi 7 hari. Jika file tidak sesuai deskripsi, hubungi kami dan proses refund penuh tanpa pertanyaan berlebihan.</div>
       </div>
       <div class="faq-item reveal" onclick="toggleFaq(this)">
         <div class="faq-q">Bisa untuk pernikahan adat apa saja? <span class="faq-arrow">+</span></div>
         <div class="faq-a">Bisa untuk semua adat — Jawa, Sunda, Minang, Betawi, Modern, dan lainnya. Sheet seserahan bisa disesuaikan dengan tradisi masing-masing daerah.</div>
+      </div>
+      <div class="faq-item reveal" onclick="toggleFaq(this)">
+        <div class="faq-q">Apa bedanya dengan wedding planner lain? <span class="faq-arrow">+</span></div>
+        <div class="faq-a">NIKAH RAPI adalah satu-satunya wedding planner Excel yang punya Seserahan Tracker & Kado/Angpao Tracker yang detail — dua fitur yang paling dibutuhkan calon pengantin Indonesia tapi tidak ada di produk manapun.</div>
       </div>
     </div>
   </section>
@@ -969,9 +873,9 @@
   <!-- ══ FINAL CTA ══ -->
   <section class="final-cta">
     <p class="section-eyebrow reveal">Sudah siap?</p>
-    <h2 class="section-title reveal">Mulai rencanakan pernikahanmu<br>dengan lebih <em style="color:var(--gold-light);">tenang</em></h2>
-    <p class="reveal">Ratusan detail pernikahan dalam satu file. Supaya hari terbaikmu benar-benar terasa seperti hari terbaik.</p>
-    <div class="final-price-inline reveal">Rp 149.000 · Garansi 7 hari · File langsung dikirim</div>
+    <h2 class="section-title reveal">Mulai rencanakan pernikahanmu<br>dengan lebih <em style="color:var(--gold-light)">tenang & rapi</em></h2>
+    <p class="reveal">Ratusan detail pernikahan dalam satu file. Supaya hari terbaikmu benar-benar terasa seperti hari terbaik — tanpa drama, tanpa panik.</p>
+    <div class="final-price reveal">Rp 149.000 · Hemat 57% dari Rp 349.000 · Garansi 7 hari</div>
     <a href="https://entrepreneurai.myscalev.com/checkout-page" class="btn-secondary reveal" style="margin:0 auto;">
       💍 Ambil Sekarang Sebelum Harga Naik
     </a>
@@ -984,28 +888,48 @@
   </footer>
 
   <script>
+    // Reveal on scroll
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
         if (entry.isIntersecting) {
-          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          setTimeout(() => entry.target.classList.add('visible'), i * 60);
         }
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     reveals.forEach(el => observer.observe(el));
 
+    // Sticky CTA
     const stickyCta = document.getElementById('stickyCta');
     window.addEventListener('scroll', () => {
-      stickyCta.classList.toggle('show', window.scrollY > 600);
+      stickyCta.classList.toggle('show', window.scrollY > 700);
     });
 
+    // FAQ
     function toggleFaq(el) { el.classList.toggle('open'); }
 
-    function sw(btn, id) {
-      document.querySelectorAll('.tab-btn').forEach(t => t.classList.remove('on'));
-      document.querySelectorAll('.stage').forEach(s => s.classList.remove('on'));
+    // Preview switcher (tabs above + sheet tabs inside browser)
+    function switchPreview(btn, id) {
+      document.querySelectorAll('.ptab').forEach(t => t.classList.remove('on'));
+      document.querySelectorAll('.preview-stage').forEach(s => s.classList.remove('on'));
       btn.classList.add('on');
-      document.getElementById(id).classList.add('on');
+      const el = document.getElementById(id);
+      if (el) el.classList.add('on');
+      // sync sheet tabs
+      const map = {'p-dash':0,'p-budget':1,'p-ses':2,'p-kado':3,'p-guest':4,'p-vendor':5};
+      const idx = map[id];
+      document.querySelectorAll('.stab').forEach((t,i) => t.classList.toggle('on', i===idx));
+    }
+
+    function switchSheet(btn, id, idx) {
+      document.querySelectorAll('.stab').forEach(t => t.classList.remove('on'));
+      document.querySelectorAll('.preview-stage').forEach(s => s.classList.remove('on'));
+      btn.classList.add('on');
+      const el = document.getElementById(id);
+      if (el) el.classList.add('on');
+      // sync preview tabs
+      const ids = ['p-dash','p-budget','p-ses','p-kado','p-guest','p-vendor'];
+      document.querySelectorAll('.ptab').forEach((t,i) => t.classList.toggle('on', ids[i]===id || (i===0&&idx===0) || (i===1&&idx===2) || (i===2&&idx===3) || (i===3&&idx===1)));
     }
   </script>
 </body>
