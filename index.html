@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NIKAH RAPI — Wedding Planner Excel Premium</title>
+  <title>NIKAH RAPI — Wedding Planner Premium, Nikah Tanpa Drama!</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -14,7 +14,6 @@
       --dusty-rose: #C4857A;
       --mauve: #8B5E6A;
       --sage: #7A8C7E;
-      --sage-light: #A8B8AC;
       --brown: #5C3D2E;
       --gold: #C9A96E;
       --gold-light: #E8D5B0;
@@ -26,7 +25,7 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--text-dark); overflow-x: hidden; }
 
-    /* ══ HERO — PRODUCT FIRST ══ */
+    /* ══ HERO ══ */
     .hero {
       min-height: 100vh;
       background: var(--warm-white);
@@ -58,7 +57,6 @@
       pointer-events: none;
     }
 
-    /* Badge */
     .badge {
       display: inline-flex; align-items: center; gap: 8px;
       background: var(--gold-light); color: var(--brown);
@@ -68,7 +66,6 @@
     }
     .badge::before { content: '✦'; color: var(--gold); }
 
-    /* Headline */
     .hero-eyebrow {
       font-family: 'Cormorant Garamond', serif; font-style: italic;
       font-size: 18px; color: var(--dusty-rose); margin-bottom: 14px;
@@ -81,9 +78,19 @@
       animation: fadeDown 0.8s ease both; max-width: 800px;
     }
     .hero-title em { font-style: italic; color: var(--mauve); }
+
+    /* ══ EMOTIONAL HOOK TAGLINE ══ */
+    .hero-hook {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(15px, 2vw, 20px); font-weight: 300;
+      color: var(--text-mid); margin-bottom: 16px;
+      animation: fadeDown 0.83s ease both; max-width: 650px;
+      font-style: italic; line-height: 1.6;
+    }
+
     .hero-title-sub {
-      font-family: 'Cormorant Garamond', serif; font-size: clamp(14px, 2vw, 18px);
-      color: var(--text-mid); font-weight: 300; margin-bottom: 8px;
+      font-size: clamp(13px, 1.6vw, 15px);
+      color: var(--text-light); font-weight: 300; margin-bottom: 8px;
       animation: fadeDown 0.85s ease both; max-width: 700px;
     }
     .drama-tags {
@@ -96,7 +103,7 @@
       font-weight: 400;
     }
 
-    /* ══ PRODUCT MOCKUP — CENTER STAGE ══ */
+    /* ══ PRODUCT MOCKUP ══ */
     .product-showcase {
       position: relative; width: 100%; max-width: 900px; margin: 0 auto 48px;
       animation: floatUp 1s ease both;
@@ -138,11 +145,10 @@
     .stab.on { background: white; color: var(--mauve); border-top: 2px solid var(--mauve); }
     .stab.gold { color: rgba(201,169,110,0.6); }
     .stab.gold.on { color: var(--gold); border-top-color: var(--gold); }
-
     .preview-stage { display: none; }
     .preview-stage.on { display: block; }
 
-    /* Dashboard preview */
+    /* Dashboard */
     .dash-body { padding: 28px 28px 24px; }
     .dash-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
     .dash-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--mauve); }
@@ -164,7 +170,7 @@
     .vendor-row { display: flex; justify-content: space-between; font-size: 12px; padding: 8px 0; border-bottom: 1px dashed rgba(139,94,106,0.1); }
     .vendor-row:last-child { border: none; }
 
-    /* Seserahan preview */
+    /* Seserahan */
     .ses-body { padding: 24px; }
     .ses-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
     .ses-total { text-align: right; }
@@ -184,7 +190,7 @@
     .table-total { background: rgba(139,94,106,0.05) !important; }
     .table-total td { font-weight: 700; color: var(--text-dark); border-top: 2px solid rgba(139,94,106,0.15) !important; }
 
-    /* Kado preview */
+    /* Kado */
     .kado-body { padding: 24px; }
     .kado-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-bottom: 20px; }
     .kado-stat { border-radius: 12px; padding: 14px; text-align: center; }
@@ -197,7 +203,7 @@
     .ucapan-sent { font-size: 11px; color: var(--sage); font-weight: 600; }
     .ucapan-unsent { font-size: 11px; color: var(--dusty-rose); font-weight: 600; }
 
-    /* Budget preview */
+    /* Budget */
     .budget-body { padding: 24px; }
     .budget-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
     .budget-total { text-align: right; }
@@ -209,7 +215,7 @@
     .over { color: var(--dusty-rose); font-weight: 700; }
     .save { color: var(--sage); font-weight: 700; }
 
-    /* Floating badges on showcase */
+    /* Floating badges */
     .float-badge {
       position: absolute; background: white; border-radius: 12px;
       padding: 12px 16px; box-shadow: 0 10px 40px rgba(92,61,46,0.18);
@@ -221,7 +227,6 @@
     .fb-label { font-size: 10px; color: var(--text-light); font-weight: 300; margin-bottom: 2px; }
     .fb-val { font-size: 13px; color: var(--text-dark); font-weight: 600; }
 
-    /* Preview tabs */
     .preview-tabs { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; animation: fadeDown 0.95s ease both; }
     .ptab { padding: 8px 18px; border-radius: 100px; font-size: 12px; font-weight: 500; cursor: pointer; border: 1px solid rgba(139,94,106,0.2); color: var(--text-light); background: transparent; font-family: 'Jost'; transition: all 0.2s; }
     .ptab:hover { border-color: var(--mauve); color: var(--mauve); }
@@ -290,6 +295,21 @@
     .feat-text p { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.6; font-weight: 300; }
     .usp-tag { display: inline-block; background: var(--gold); color: white; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 8px; border-radius: 100px; margin-left: 8px; vertical-align: middle; font-weight: 500; }
 
+    /* ══ NIKAH RAPI vs OTHERS ══ */
+    .diff-section { background: var(--warm-white); padding: 100px 80px; }
+    .diff-table-wrap { max-width: 780px; margin: 0 auto; }
+    .diff-table { width: 100%; border-collapse: collapse; }
+    .diff-table thead th { padding: 16px 20px; font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+    .diff-table thead th:first-child { text-align: left; color: var(--text-light); width: 40%; }
+    .diff-table thead th:nth-child(2) { color: var(--text-light); text-align: center; background: rgba(139,94,106,0.05); }
+    .diff-table thead th:nth-child(3) { color: var(--mauve); text-align: center; background: rgba(139,94,106,0.08); border-radius: 8px 8px 0 0; }
+    .diff-table tbody td { padding: 14px 20px; font-size: 13px; border-bottom: 1px solid rgba(139,94,106,0.08); }
+    .diff-table tbody td:first-child { color: var(--text-mid); font-weight: 400; }
+    .diff-table tbody td:nth-child(2) { text-align: center; color: var(--text-light); background: rgba(139,94,106,0.03); }
+    .diff-table tbody td:nth-child(3) { text-align: center; background: rgba(139,94,106,0.06); font-weight: 600; color: var(--mauve); }
+    .diff-yes { color: var(--sage) !important; font-size: 16px; }
+    .diff-no { color: #ddd; font-size: 16px; }
+
     /* ══ SHEETS ══ */
     .sheets-section { background: var(--warm-white); padding: 100px 80px; }
     .sheets-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; max-width: 960px; margin: 0 auto; }
@@ -302,7 +322,7 @@
     .sheet-card.star .sheet-num { color: var(--mauve); }
 
     /* ══ TESTIMONI ══ */
-    .testi-section { background: var(--cream); padding: 100px 80px; position: relative; overflow: hidden; }
+    .testi-section { background: var(--cream); padding: 100px 80px; }
     .testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; max-width: 960px; margin: 0 auto 48px; }
     .testi-card { background: white; border-radius: 16px; padding: 32px 28px; border: 1px solid rgba(139,94,106,0.1); transition: all 0.3s ease; position: relative; }
     .testi-card:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(92,61,46,0.1); }
@@ -374,34 +394,33 @@
     @keyframes floatUp { from { opacity: 0; transform: translateY(40px) scale(0.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
     @keyframes fadeLeft { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
     @keyframes fadeRight { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
-    @keyframes gentleFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
     /* ══ RESPONSIVE ══ */
     @media (max-width: 1024px) {
-      .drama-section, .solution-section, .sheets-section, .testi-section, .pricing-section, .faq-section, .final-cta, footer { padding: 80px 40px; }
+      .drama-section, .solution-section, .sheets-section, .diff-section, .testi-section, .pricing-section, .faq-section, .final-cta, footer { padding: 80px 40px; }
       .sheets-grid { grid-template-columns: repeat(3,1fr); }
       .testi-grid { grid-template-columns: repeat(2,1fr); }
       .solution-inner { gap: 50px; }
     }
     @media (max-width: 768px) {
       .hero { padding: 70px 20px 50px; }
-      .drama-section, .solution-section, .sheets-section, .testi-section, .pricing-section, .faq-section, .final-cta { padding: 60px 24px; }
+      .drama-section, .solution-section, .diff-section, .sheets-section, .testi-section, .pricing-section, .faq-section, .final-cta { padding: 60px 24px; }
       footer { padding: 32px 24px; flex-direction: column; gap: 12px; text-align: center; }
       .drama-grid, .testi-grid { grid-template-columns: 1fr; }
       .solution-inner { grid-template-columns: 1fr; gap: 40px; }
       .sheets-grid { grid-template-columns: repeat(2,1fr); }
       .kpi-row { grid-template-columns: repeat(2,1fr); }
       .dash-bottom { grid-template-columns: 1fr; }
-      .kado-stats { grid-template-columns: 1fr 1fr 1fr; }
       .pricing-card { padding: 40px 24px; }
       .price-big { font-size: 60px; }
       .testi-stats { grid-template-columns: 1fr; }
-      .float-badge-top { display: none; }
-      .float-badge-bot { display: none; }
+      .float-badge-top, .float-badge-bot { display: none; }
       .hero-title { font-size: clamp(30px, 7vw, 46px); }
       .cta-notes { flex-wrap: wrap; justify-content: center; }
+      .diff-table { font-size: 12px; }
+      .diff-table thead th, .diff-table tbody td { padding: 10px 12px; }
     }
     @media (max-width: 480px) {
       .sheets-grid { grid-template-columns: repeat(2,1fr); gap: 10px; }
@@ -417,16 +436,23 @@
 </head>
 <body>
 
-  <a href="https://entrepreneurai.myscalev.com/checkout-page" class="sticky-cta" id="stickyCta">💍 Dapatkan Sekarang — Rp 149rb</a>
+  <a href="https://entrepreneurai.myscalev.com/checkout-page" class="sticky-cta" id="stickyCta">💍 Dapatkan Sekarang — Rp 129rb</a>
 
   <!-- ══ HERO ══ -->
   <section class="hero">
-    <div class="badge">Wedding Planner Excel Premium</div>
+    <div class="badge">Wedding Planner Premium</div>
     <p class="hero-eyebrow">Untuk kamu yang mau nikah tanpa drama & panik</p>
     <h1 class="hero-title">
       Nikah Tanpa <em>Drama Vendor Cabut,</em><br>Budget Jebol & Seserahan Ketinggalan
     </h1>
-    <p class="hero-title-sub">Semua persiapan pernikahan — terkontrol rapi dalam 1 file Excel</p>
+
+    <!-- EMOTIONAL HOOK -->
+    <p class="hero-hook">
+      "Kamu berhak menikmati setiap detik persiapan nikahmu —<br>
+      bukan menghabiskannya untuk panik, cari-cari catatan, dan khawatir ada yang terlupa."
+    </p>
+
+    <p class="hero-title-sub">Semua persiapan pernikahan — terkontrol rapi dalam 1 platform. Cukup isi datanya, sistem yang bekerja.</p>
     <div class="drama-tags">
       <span class="drama-tag">😰 Drama Budget Bocor</span>
       <span class="drama-tag">📋 Drama Seserahan Kacau</span>
@@ -435,7 +461,6 @@
       <span class="drama-tag">🏢 Drama Vendor Susah Ditracking</span>
     </div>
 
-    <!-- PRODUCT PREVIEW TABS -->
     <div class="preview-tabs">
       <button class="ptab on" onclick="switchPreview(this,'p-dash')">🏠 Dashboard</button>
       <button class="ptab" onclick="switchPreview(this,'p-ses')">💍 Seserahan ✦</button>
@@ -443,11 +468,8 @@
       <button class="ptab" onclick="switchPreview(this,'p-budget')">💰 Budget</button>
     </div>
 
-    <!-- PRODUCT SHOWCASE -->
     <div class="product-showcase">
       <div class="showcase-glow"></div>
-
-      <!-- Floating badges -->
       <div class="float-badge float-badge-top">
         <div class="fb-icon" style="background:#FFF0EC;">🎁</div>
         <div>
@@ -481,7 +503,6 @@
           <button class="stab" onclick="switchSheet(this,'p-vendor',5)">🏢 Vendor</button>
         </div>
 
-        <!-- DASHBOARD -->
         <div class="preview-stage on" id="p-dash">
           <div class="dash-body">
             <div class="dash-header">
@@ -529,7 +550,6 @@
           </div>
         </div>
 
-        <!-- SESERAHAN -->
         <div class="preview-stage" id="p-ses">
           <div class="ses-body">
             <div class="ses-header">
@@ -556,7 +576,6 @@
           </div>
         </div>
 
-        <!-- KADO -->
         <div class="preview-stage" id="p-kado">
           <div class="kado-body">
             <div class="kado-stats">
@@ -586,7 +605,6 @@
           </div>
         </div>
 
-        <!-- BUDGET -->
         <div class="preview-stage" id="p-budget">
           <div class="budget-body">
             <div class="budget-header">
@@ -594,7 +612,7 @@
                 <div style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--text-dark)">Budget Planner</div>
                 <div style="font-size:11px;color:var(--text-light);margin-top:2px">Rencana vs Realisasi — Update Otomatis</div>
               </div>
-              <div class="budget-total" style="text-align:right">
+              <div class="budget-total">
                 <div style="font-size:10px;color:var(--text-light);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Total Budget</div>
                 <div style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--mauve)">Rp 85.000.000</div>
                 <div style="font-size:11px;color:var(--dusty-rose);margin-top:2px">Terpakai: Rp 52.750.000 (62%)</div>
@@ -613,7 +631,6 @@
           </div>
         </div>
 
-        <!-- GUEST (placeholder) -->
         <div class="preview-stage" id="p-guest">
           <div style="padding:60px 24px;text-align:center;color:var(--text-light)">
             <div style="font-size:40px;margin-bottom:16px">👥</div>
@@ -622,7 +639,6 @@
           </div>
         </div>
 
-        <!-- VENDOR (placeholder) -->
         <div class="preview-stage" id="p-vendor">
           <div style="padding:60px 24px;text-align:center;color:var(--text-light)">
             <div style="font-size:40px;margin-bottom:16px">🏢</div>
@@ -631,20 +647,19 @@
           </div>
         </div>
 
-      </div><!-- end browser-frame -->
-    </div><!-- end product-showcase -->
+      </div>
+    </div>
 
-    <!-- CTA -->
     <div class="hero-cta-block">
       <div class="price-display">
-        <div class="price-new"><sup style="font-size:22px">Rp</sup>149rb</div>
+        <div class="price-new"><sup style="font-size:22px">Rp</sup>129rb</div>
         <div class="price-old"><s>Rp 349rb</s></div>
-        <div class="price-save">HEMAT 57%</div>
+        <div class="price-save">HEMAT 63%</div>
       </div>
       <a href="https://entrepreneurai.myscalev.com/checkout-page" class="btn-primary">💍 Dapatkan NIKAH RAPI Sekarang</a>
       <div class="cta-notes">
         <div class="cta-note-item">✓ Garansi 7 hari</div>
-        <div class="cta-note-item">✓ File dikirim via WA</div>
+        <div class="cta-note-item">✓ File dikirim via email</div>
         <div class="cta-note-item">✓ Akses seumur hidup</div>
       </div>
     </div>
@@ -661,7 +676,7 @@
     </div>
   </section>
 
-  <!-- ══ DRAMA SECTION ══ -->
+  <!-- ══ DRAMA ══ -->
   <section class="drama-section">
     <p class="section-eyebrow reveal">Cerita yang terlalu familiar...</p>
     <h2 class="section-title reveal">Drama Menuju Pernikahan<br>yang <em>Bikin Capek Sebelum Hari H</em></h2>
@@ -675,13 +690,13 @@
       <div class="drama-card reveal">
         <span class="drama-icon">💍</span>
         <h3>Drama Seserahan Ketinggalan</h3>
-        <p>Daftar seserahan ditulis di kertas, di notes HP, di chat WA — tersebar mana-mana. Hari H ada barang yang ketinggalan.</p>
+        <p>Daftar seserahan ditulis di kertas, notes HP, chat WA — tersebar mana-mana. Hari H ada barang yang ketinggalan.</p>
         <div class="drama-scenario">"Sampai di lokasi baru sadar parfum seserahan ketinggalan di rumah. Panik!"</div>
       </div>
       <div class="drama-card reveal">
         <span class="drama-icon">🏢</span>
         <h3>Drama Vendor Tiba-tiba Cabut</h3>
-        <p>Vendor cancel H-7, nomor susah dihubungi, kontrak gak jelas. Semua info vendor tersebar di berbagai chat WA.</p>
+        <p>Vendor cancel H-7, nomor susah dihubungi, kontrak tidak jelas. Semua info vendor tersebar di berbagai chat WA.</p>
         <div class="drama-scenario">"WO tiba-tiba bilang ada double booking. Kontraknya mana? Sudah bayar berapa?"</div>
       </div>
       <div class="drama-card reveal">
@@ -693,7 +708,7 @@
       <div class="drama-card reveal">
         <span class="drama-icon">🎁</span>
         <h3>Drama Kado & Angpao Kacau</h3>
-        <p>Siapa yang kasih kado apa? Amplop dari siapa? Mau kirim ucapan terima kasih tapi datanya sama sekali tidak ada.</p>
+        <p>Siapa yang kasih kado apa? Amplop dari siapa? Mau kirim ucapan terima kasih tapi datanya tidak ada sama sekali.</p>
         <div class="drama-scenario">"Mau WA ucapan terima kasih tapi lupa siapa yang kasih angpao berapa. Awkward."</div>
       </div>
       <div class="drama-card reveal">
@@ -711,8 +726,8 @@
     <div class="solution-inner">
       <div class="solution-left">
         <p class="section-eyebrow reveal">Solusi yang kamu butuhkan</p>
-        <h2 class="section-title reveal">Satu file Excel.<br>Semua drama<br>bisa dicegah.</h2>
-        <p class="reveal">NIKAH RAPI dirancang khusus untuk calon pengantin Indonesia — 19 sheet terintegrasi yang saling terhubung otomatis. Input sekali, semua terupdate.</p>
+        <h2 class="section-title reveal">Satu platform.<br>Semua drama<br>bisa dicegah.</h2>
+        <p class="reveal">NIKAH RAPI dirancang khusus untuk calon pengantin Indonesia — 19 sheet terintegrasi yang saling terhubung otomatis. Input sekali, semua terupdate. Kamu bisa fokus pada hal yang penting: menikmati prosesnya.</p>
         <a href="#pricing" class="btn-secondary reveal">Lihat Harga & Paket →</a>
       </div>
       <div class="feature-cards">
@@ -733,6 +748,60 @@
           <div class="feat-text"><h4>Vendor Manager Lengkap</h4><p>Kontak, kontrak, DP & pelunasan semua vendor. Tidak ada lagi vendor yang tiba-tiba "lupa" perjanjian.</p></div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ══ NIKAH RAPI vs KOMPETITOR ══ -->
+  <section class="diff-section">
+    <p class="section-eyebrow reveal">Kenapa NIKAH RAPI?</p>
+    <h2 class="section-title reveal">Beda dari yang lain —<br><em>Dibuat untuk Pernikahan Indonesia</em></h2>
+    <div class="diff-table-wrap reveal">
+      <table class="diff-table">
+        <thead>
+          <tr>
+            <th>Fitur</th>
+            <th>Wedding Planner Biasa</th>
+            <th>NIKAH RAPI ✦</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Seserahan Tracker</td>
+            <td><span class="diff-no">✕</span> Tidak ada</td>
+            <td><span class="diff-yes">✓</span> Lengkap & eksklusif</td>
+          </tr>
+          <tr>
+            <td>Kado & Angpao Tracker</td>
+            <td><span class="diff-no">✕</span> Tidak ada</td>
+            <td><span class="diff-yes">✓</span> Lengkap & eksklusif</td>
+          </tr>
+          <tr>
+            <td>Budget real-time otomatis</td>
+            <td><span class="diff-no">✕</span> Manual & terpisah</td>
+            <td><span class="diff-yes">✓</span> Auto-update terintegrasi</td>
+          </tr>
+          <tr>
+            <td>Dashboard visual progress</td>
+            <td><span class="diff-no">✕</span> Tidak ada</td>
+            <td><span class="diff-yes">✓</span> Grafik & KPI lengkap</td>
+          </tr>
+          <tr>
+            <td>Disesuaikan adat Indonesia</td>
+            <td><span class="diff-no">✕</span> Template generik barat</td>
+            <td><span class="diff-yes">✓</span> Khusus pernikahan Indonesia</td>
+          </tr>
+          <tr>
+            <td>19 sheet terintegrasi</td>
+            <td><span class="diff-no">✕</span> 5–8 sheet terpisah</td>
+            <td><span class="diff-yes">✓</span> 19 sheet saling terhubung</td>
+          </tr>
+          <tr>
+            <td>Honeymoon Planner</td>
+            <td><span class="diff-no">✕</span> Tidak termasuk</td>
+            <td><span class="diff-yes">✓</span> Bonus gratis</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </section>
 
@@ -808,12 +877,12 @@
     <p class="section-eyebrow reveal">Investasi terkecil untuk pernikahan terbaik</p>
     <h2 class="section-title reveal">Dapatkan NIKAH RAPI Sekarang</h2>
     <div class="pricing-card reveal">
-      <div class="pricing-card-badge">✦ Bundle Lengkap — 3 Produk dalam 1 Harga</div>
+      <div class="pricing-card-badge">✦ Bundle Lengkap — Semua dalam 1 Harga</div>
       <div class="price-hero">
-        <div class="price-big"><sup>Rp</sup>149rb</div>
+        <div class="price-big"><sup>Rp</sup>129rb</div>
       </div>
       <div class="price-was-p"><s>Rp 349rb</s></div>
-      <div class="price-save-badge">🔥 Hemat 57% — Harga Akan Naik!</div>
+      <div class="price-save-badge">🔥 Hemat 63% — Harga Promo Terbatas!</div>
       <ul class="include-list">
         <li><div class="check">✓</div>File Excel NIKAH RAPI — 19 sheet lengkap & terintegrasi</li>
         <li><div class="check">✓</div>Seserahan Tracker eksklusif — tidak ada di produk lain!</li>
@@ -822,17 +891,17 @@
         <li><div class="check">✓</div>Honeymoon Anti Drama — ebook panduan honeymoon</li>
         <li><div class="check">✓</div>Panduan penggunaan PDF — langsung bisa dipakai</li>
         <li><div class="check">✓</div>Update file gratis seumur hidup</li>
-        <li><div class="check">✓</div>File terproteksi & siap pakai</li>
+        <li><div class="check">✓</div>File dikirim ke email setelah pembayaran dikonfirmasi</li>
       </ul>
       <a href="https://entrepreneurai.myscalev.com/checkout-page" class="btn-primary" style="width:100%;justify-content:center;font-size:15px;padding:22px;">
-        💍 Dapatkan Sekarang — Rp 149.000
+        💍 Dapatkan Sekarang — Rp 129.000
       </a>
-      <p class="urgency-note">⏰ Harga segera naik ke Rp 349.000 · Garansi 7 hari · File langsung via WA</p>
+      <p class="urgency-note">⏰ Harga segera naik ke Rp 349.000 · Garansi 7 hari · File langsung via email</p>
       <div class="heat-run-bar">
         <span style="font-size:24px">🔥</span>
         <div class="heat-run-text">
-          <strong>Produk digital — jangan tunda!</strong><br>
-          Keputusan yang ditunda hari ini = persiapan nikah yang makin kacau esok hari. File langsung dikirim setelah bayar.
+          <strong>Jangan tunda persiapan nikahmu!</strong><br>
+          Setiap hari tanpa sistem yang rapi = satu hari lebih dekat ke drama yang bisa dihindari. Mulai sekarang, mulai rapi.
         </div>
       </div>
     </div>
@@ -849,11 +918,11 @@
       </div>
       <div class="faq-item reveal" onclick="toggleFaq(this)">
         <div class="faq-q">Bisa dibuka di HP atau hanya di laptop? <span class="faq-arrow">+</span></div>
-        <div class="faq-a">Bisa di keduanya! Paling nyaman di laptop dengan Microsoft Excel atau Google Sheets. Di HP bisa pakai aplikasi Excel/Google Sheets gratis — tanpa install apapun di browser.</div>
+        <div class="faq-a">Bisa di keduanya! Paling nyaman di laptop dengan Microsoft Excel atau Google Sheets. Di HP bisa pakai aplikasi Excel/Google Sheets gratis — langsung bisa dipakai.</div>
       </div>
       <div class="faq-item reveal" onclick="toggleFaq(this)">
         <div class="faq-q">Setelah bayar, file dikirim ke mana dan berapa lama? <span class="faq-arrow">+</span></div>
-        <div class="faq-a">File dikirim langsung ke WhatsApp atau email dalam waktu maksimal 1x24 jam (biasanya langsung). Disertai panduan singkat cara penggunaan.</div>
+        <div class="faq-a">File dikirim langsung ke email kamu dalam waktu maksimal 1x24 jam (biasanya langsung setelah pembayaran dikonfirmasi). Akses seumur hidup!</div>
       </div>
       <div class="faq-item reveal" onclick="toggleFaq(this)">
         <div class="faq-q">Ada garansi uang kembali tidak? <span class="faq-arrow">+</span></div>
@@ -873,22 +942,20 @@
   <!-- ══ FINAL CTA ══ -->
   <section class="final-cta">
     <p class="section-eyebrow reveal">Sudah siap?</p>
-    <h2 class="section-title reveal">Mulai rencanakan pernikahanmu<br>dengan lebih <em style="color:var(--gold-light)">tenang & rapi</em></h2>
-    <p class="reveal">Ratusan detail pernikahan dalam satu file. Supaya hari terbaikmu benar-benar terasa seperti hari terbaik — tanpa drama, tanpa panik.</p>
-    <div class="final-price reveal">Rp 149.000 · Hemat 57% dari Rp 349.000 · Garansi 7 hari</div>
+    <h2 class="section-title reveal">Hari pernikahanmu<br>layak terasa seperti <em style="color:var(--gold-light)">hari terbaik hidupmu</em></h2>
+    <p class="reveal">Bukan hari yang penuh panik, cari-cari catatan, dan khawatir ada yang terlupa. Dengan NIKAH RAPI, semua terencana rapi — dan kamu bisa sepenuhnya hadir menikmati momen berharga ini.</p>
+    <div class="final-price reveal">Rp 129.000 · Hemat 63% dari Rp 349.000 · Garansi 7 hari</div>
     <a href="https://entrepreneurai.myscalev.com/checkout-page" class="btn-secondary reveal" style="margin:0 auto;">
       💍 Ambil Sekarang Sebelum Harga Naik
     </a>
   </section>
 
-  <!-- ══ FOOTER ══ -->
   <footer>
     <div class="footer-brand">NIKAH RAPI ✦</div>
     <div class="footer-note">© 2025 NIKAH RAPI · Wedding Planner Excel Premium · Made with love 🤍</div>
   </footer>
 
   <script>
-    // Reveal on scroll
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
@@ -899,23 +966,19 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     reveals.forEach(el => observer.observe(el));
 
-    // Sticky CTA
     const stickyCta = document.getElementById('stickyCta');
     window.addEventListener('scroll', () => {
       stickyCta.classList.toggle('show', window.scrollY > 700);
     });
 
-    // FAQ
     function toggleFaq(el) { el.classList.toggle('open'); }
 
-    // Preview switcher (tabs above + sheet tabs inside browser)
     function switchPreview(btn, id) {
       document.querySelectorAll('.ptab').forEach(t => t.classList.remove('on'));
       document.querySelectorAll('.preview-stage').forEach(s => s.classList.remove('on'));
       btn.classList.add('on');
       const el = document.getElementById(id);
       if (el) el.classList.add('on');
-      // sync sheet tabs
       const map = {'p-dash':0,'p-budget':1,'p-ses':2,'p-kado':3,'p-guest':4,'p-vendor':5};
       const idx = map[id];
       document.querySelectorAll('.stab').forEach((t,i) => t.classList.toggle('on', i===idx));
@@ -927,7 +990,6 @@
       btn.classList.add('on');
       const el = document.getElementById(id);
       if (el) el.classList.add('on');
-      // sync preview tabs
       const ids = ['p-dash','p-budget','p-ses','p-kado','p-guest','p-vendor'];
       document.querySelectorAll('.ptab').forEach((t,i) => t.classList.toggle('on', ids[i]===id || (i===0&&idx===0) || (i===1&&idx===2) || (i===2&&idx===3) || (i===3&&idx===1)));
     }
