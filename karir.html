@@ -1,0 +1,2598 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIKAH RAPI — Untuk Wanita Karir yang Mau Nikah Tanpa Chaos</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --cream: #FAF7F2;
+            --warm-white: #FDFBF8;
+            --blush: #E8C4B8;
+            --blush-deep: #D4A090;
+            --dusty-rose: #C4857A;
+            --mauve: #8B5E6A;
+            --sage: #7A8C7E;
+            --brown: #5C3D2E;
+            --gold: #C9A96E;
+            --gold-light: #E8D5B0;
+            --text-dark: #2C2218;
+            --text-mid: #5C4A3E;
+            --text-light: #8C7A6E;
+            --slate: #6B7B8D;
+            --slate-light: #E8EDF2;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Jost', sans-serif;
+            background: var(--cream);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* ══ HERO ══ */
+        .hero {
+            min-height: 100vh;
+            background: var(--warm-white);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 40px 60px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 700px;
+            height: 700px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(232, 196, 184, 0.25) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -150px;
+            left: -150px;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(107, 123, 141, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        /* ── Badge ── */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--slate-light);
+            color: var(--slate);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 8px 20px;
+            border-radius: 100px;
+            margin-bottom: 28px;
+            border: 1px solid rgba(107, 123, 141, 0.2);
+            animation: fadeDown 0.6s ease both;
+        }
+
+        /* ── REVISED: Eyebrow lebih visceral ── */
+        .hero-eyebrow {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 18px;
+            color: var(--dusty-rose);
+            margin-bottom: 14px;
+            animation: fadeDown 0.7s ease both;
+        }
+
+        /* ── REVISED: Hero Title lebih spesifik & tajam ── */
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(34px, 5vw, 64px);
+            font-weight: 300;
+            line-height: 1.1;
+            color: var(--text-dark);
+            margin-bottom: 14px;
+            animation: fadeDown 0.8s ease both;
+            max-width: 820px;
+        }
+
+        .hero-title em {
+            font-style: italic;
+            color: var(--mauve);
+        }
+
+        .hero-title strong {
+            font-weight: 600;
+        }
+
+        /* ── NEW: Emotional hook paragraph ── */
+        .hero-hook {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(15px, 1.8vw, 19px);
+            font-style: italic;
+            font-weight: 300;
+            color: var(--text-mid);
+            max-width: 620px;
+            line-height: 1.7;
+            margin-bottom: 32px;
+            animation: fadeDown 0.83s ease both;
+        }
+
+        /* ── Tension bar ── */
+        .tension-bar {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 16px;
+            max-width: 700px;
+            width: 100%;
+            margin-bottom: 36px;
+            animation: fadeDown 0.9s ease both;
+        }
+
+        .tension-side {
+            background: rgba(139, 94, 106, 0.06);
+            border: 1px solid rgba(139, 94, 106, 0.15);
+            border-radius: 12px;
+            padding: 14px 18px;
+            text-align: left;
+        }
+
+        .tension-label {
+            font-size: 10px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .tension-item {
+            font-size: 12px;
+            color: var(--text-mid);
+            padding: 3px 0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .tension-vs {
+            width: 44px;
+            height: 44px;
+            background: var(--mauve);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            flex-shrink: 0;
+            box-shadow: 0 8px 20px rgba(139, 94, 106, 0.3);
+        }
+
+        /* ── Product showcase ── */
+        .product-showcase {
+            position: relative;
+            width: 100%;
+            max-width: 860px;
+            margin: 0 auto 44px;
+            animation: floatUp 1s ease both;
+        }
+
+        .showcase-glow {
+            position: absolute;
+            inset: -40px;
+            background: radial-gradient(ellipse at center, rgba(139, 94, 106, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+            border-radius: 50%;
+        }
+
+        .browser-frame {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 50px 100px rgba(92, 61, 46, 0.16), 0 0 0 1px rgba(139, 94, 106, 0.1);
+            overflow: hidden;
+            position: relative;
+            z-index: 2;
+        }
+
+        .browser-bar {
+            background: #F5EEE6;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid rgba(139, 94, 106, 0.1);
+        }
+
+        .browser-dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .browser-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .browser-url {
+            flex: 1;
+            background: white;
+            border-radius: 6px;
+            padding: 5px 12px;
+            font-size: 11px;
+            color: var(--text-light);
+            text-align: center;
+            border: 1px solid rgba(139, 94, 106, 0.1);
+        }
+
+        .sheet-tabs-bar {
+            background: #F0E8E0;
+            padding: 0 20px;
+            display: flex;
+            gap: 2px;
+            border-bottom: 1px solid rgba(139, 94, 106, 0.1);
+            overflow-x: auto;
+        }
+
+        .stab {
+            padding: 8px 14px;
+            font-size: 11px;
+            font-weight: 600;
+            border-radius: 4px 4px 0 0;
+            white-space: nowrap;
+            cursor: pointer;
+            color: rgba(92, 61, 46, 0.4);
+            border: none;
+            background: transparent;
+            font-family: 'Jost';
+            transition: all 0.2s;
+        }
+
+        .stab.on {
+            background: white;
+            color: var(--mauve);
+            border-top: 2px solid var(--mauve);
+        }
+
+        .preview-stage {
+            display: none;
+        }
+
+        .preview-stage.on {
+            display: block;
+        }
+
+        /* ── Floating badges ── */
+        .float-badge {
+            position: absolute;
+            background: white;
+            border-radius: 12px;
+            padding: 12px 16px;
+            box-shadow: 0 10px 40px rgba(92, 61, 46, 0.18);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .float-badge-top {
+            top: -16px;
+            right: 30px;
+            animation: fadeLeft 1s ease 0.8s both;
+        }
+
+        .float-badge-bot {
+            bottom: -16px;
+            left: 30px;
+            animation: fadeRight 1s ease 1s both;
+        }
+
+        .fb-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .fb-label {
+            font-size: 10px;
+            color: var(--text-light);
+            margin-bottom: 2px;
+        }
+
+        .fb-val {
+            font-size: 13px;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .preview-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            animation: fadeDown 0.95s ease both;
+        }
+
+        .ptab {
+            padding: 8px 18px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            border: 1px solid rgba(139, 94, 106, 0.2);
+            color: var(--text-light);
+            background: transparent;
+            font-family: 'Jost';
+            transition: all 0.2s;
+        }
+
+        .ptab:hover {
+            border-color: var(--mauve);
+            color: var(--mauve);
+        }
+
+        .ptab.on {
+            background: var(--mauve);
+            border-color: var(--mauve);
+            color: white;
+        }
+
+        /* ── CTA Block ── */
+        .hero-cta-block {
+            animation: fadeUp 1.1s ease both;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            margin-top: 44px;
+        }
+
+        .price-display {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+        }
+
+        .price-new {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 52px;
+            font-weight: 300;
+            color: var(--mauve);
+            line-height: 1;
+        }
+
+        .price-old {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            color: var(--text-light);
+            text-decoration: line-through;
+            text-decoration-color: var(--dusty-rose);
+        }
+
+        .price-save {
+            background: linear-gradient(135deg, var(--dusty-rose), var(--mauve));
+            color: white;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 100px;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--mauve);
+            color: white;
+            font-family: 'Jost';
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 20px 56px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: var(--brown);
+            transform: translateY(-2px);
+            box-shadow: 0 16px 50px rgba(139, 94, 106, 0.35);
+        }
+
+        .cta-notes {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 12px;
+            color: var(--text-light);
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .social-proof-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 13px;
+            color: var(--text-light);
+            margin-top: 8px;
+            animation: fadeUp 1.2s ease both;
+        }
+
+        .sp-avatars {
+            display: flex;
+        }
+
+        .sp-avatar {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 2px solid white;
+            margin-left: -8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .sp-avatar:first-child {
+            margin-left: 0;
+        }
+
+        .stars {
+            color: var(--gold);
+            font-size: 14px;
+        }
+
+        /* ══ VIDEO SECTION ══ */
+        .video-section {
+            background: var(--cream);
+            padding: 100px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-section::before {
+            content: '';
+            position: absolute;
+            top: -120px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 900px;
+            height: 900px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(139, 94, 106, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .video-container {
+            max-width: 780px;
+            margin: 0 auto 56px;
+            position: relative;
+        }
+
+        .video-frame {
+            position: relative;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #F5EEE6 0%, #E8EDF2 50%, #E8C4B8 100%);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 40px 80px rgba(92, 61, 46, 0.14), 0 0 0 1px rgba(139, 94, 106, 0.1);
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .video-frame:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 50px 100px rgba(92, 61, 46, 0.2), 0 0 0 1px rgba(139, 94, 106, 0.15);
+        }
+
+        .video-play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 88px;
+            height: 88px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 8px 40px rgba(92, 61, 46, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+
+        .video-frame:hover .video-play-btn {
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .play-triangle {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 14px 0 14px 24px;
+            border-color: transparent transparent transparent var(--mauve);
+            margin-left: 4px;
+        }
+
+        .video-play-btn::after {
+            content: '';
+            position: absolute;
+            inset: -8px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            animation: playPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes playPulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: scale(1.15);
+                opacity: 0;
+            }
+        }
+
+        .video-label {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            border-radius: 100px;
+            padding: 8px 20px;
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-mid);
+            white-space: nowrap;
+            border: 1px solid rgba(139, 94, 106, 0.1);
+            z-index: 2;
+        }
+
+        .video-highlights {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 780px;
+            margin: 0 auto;
+        }
+
+        .vh-card {
+            background: white;
+            border-radius: 16px;
+            padding: 28px 24px;
+            border: 1px solid rgba(139, 94, 106, 0.08);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .vh-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(92, 61, 46, 0.08);
+        }
+
+        .vh-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin: 0 auto 14px;
+        }
+
+        .vh-card h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+        }
+
+        .vh-card p {
+            font-size: 12px;
+            color: var(--text-mid);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* ══ LETTER SECTION ══ */
+        .letter-section {
+            background: var(--slate-light);
+            padding: 80px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .letter-section::before {
+            content: '💼';
+            position: absolute;
+            font-size: 300px;
+            top: -60px;
+            right: -40px;
+            opacity: 0.06;
+            pointer-events: none;
+        }
+
+        .letter-card {
+            max-width: 680px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 56px 52px;
+            box-shadow: 0 30px 80px rgba(92, 61, 46, 0.1);
+            position: relative;
+        }
+
+        .letter-card::before {
+            content: '"';
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 120px;
+            color: rgba(139, 94, 106, 0.1);
+            position: absolute;
+            top: 10px;
+            left: 24px;
+            line-height: 1;
+        }
+
+        .letter-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(18px, 2.5vw, 24px);
+            font-weight: 300;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 32px;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        .letter-text strong {
+            font-style: normal;
+            font-weight: 600;
+            color: var(--mauve);
+        }
+
+        .letter-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+        }
+
+        .letter-avatar {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--blush), var(--mauve));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+
+        .letter-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .letter-desc {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        /* ══ PAIN SECTION ══ */
+        .pain-section {
+            background: var(--cream);
+            padding: 100px 80px;
+        }
+
+        .section-eyebrow {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 16px;
+            color: var(--dusty-rose);
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(28px, 4vw, 48px);
+            font-weight: 300;
+            text-align: center;
+            line-height: 1.2;
+            margin-bottom: 60px;
+            color: var(--text-dark);
+        }
+
+        .section-title em {
+            font-style: italic;
+            color: var(--mauve);
+        }
+
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 960px;
+            margin: 0 auto 60px;
+        }
+
+        .pain-card {
+            background: white;
+            border-radius: 14px;
+            padding: 28px 24px;
+            border-left: 3px solid var(--blush);
+            transition: all 0.3s ease;
+        }
+
+        .pain-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 50px rgba(92, 61, 46, 0.1);
+            border-left-color: var(--mauve);
+        }
+
+        .pain-icon {
+            font-size: 28px;
+            margin-bottom: 14px;
+            display: block;
+        }
+
+        .pain-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 19px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .pain-card p {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-mid);
+            font-weight: 300;
+        }
+
+        .pain-scenario {
+            background: rgba(139, 94, 106, 0.06);
+            border-radius: 8px;
+            padding: 8px 12px;
+            margin-top: 10px;
+            font-size: 12px;
+            color: var(--mauve);
+            font-style: italic;
+            border-left: 2px solid var(--blush-deep);
+        }
+
+        .pain-closer {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-style: italic;
+            color: var(--mauve);
+            line-height: 1.6;
+        }
+
+        /* ══ EFFICIENCY SECTION ══ */
+        .efficiency-section {
+            background: var(--mauve);
+            padding: 100px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .efficiency-section::before {
+            content: 'RAPI';
+            position: absolute;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 280px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.04);
+            top: -20px;
+            right: -20px;
+            pointer-events: none;
+        }
+
+        .efficiency-inner {
+            max-width: 960px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .eff-left .section-eyebrow {
+            text-align: left;
+            color: var(--blush);
+        }
+
+        .eff-left .section-title {
+            text-align: left;
+            color: white;
+            font-size: clamp(24px, 3vw, 40px);
+            margin-bottom: 16px;
+        }
+
+        .eff-left p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.75);
+            font-weight: 300;
+            margin-bottom: 32px;
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            color: var(--mauve);
+            font-family: 'Jost';
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 16px 36px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+        }
+
+        .feat-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .feat-card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 18px 22px;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .feat-card:hover {
+            background: rgba(255, 255, 255, 0.14);
+            transform: translateX(4px);
+        }
+
+        .feat-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .feat-text h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 17px;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 3px;
+        }
+
+        .feat-text p {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.65);
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        .usp-tag {
+            display: inline-block;
+            background: var(--gold);
+            color: white;
+            font-size: 9px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 3px 8px;
+            border-radius: 100px;
+            margin-left: 8px;
+            vertical-align: middle;
+            font-weight: 500;
+        }
+
+        /* ══ TIME SAVER SECTION ══ */
+        .time-section {
+            background: var(--warm-white);
+            padding: 100px 80px;
+        }
+
+        .time-inner {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .time-comparison {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 32px;
+            align-items: center;
+            margin-top: 48px;
+        }
+
+        .time-col {
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .time-col-header {
+            padding: 20px 24px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .time-col-header.before {
+            background: rgba(196, 133, 122, 0.15);
+            color: var(--dusty-rose);
+        }
+
+        .time-col-header.after {
+            background: rgba(122, 140, 126, 0.15);
+            color: var(--sage);
+        }
+
+        .time-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 14px 20px;
+            border-bottom: 1px solid rgba(139, 94, 106, 0.07);
+            background: white;
+        }
+
+        .time-item:last-child {
+            border: none;
+        }
+
+        .time-icon {
+            font-size: 16px;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .time-text {
+            font-size: 13px;
+            color: var(--text-mid);
+            line-height: 1.5;
+        }
+
+        .time-text strong {
+            display: block;
+            font-size: 12px;
+            color: var(--text-light);
+            font-weight: 400;
+            margin-top: 2px;
+        }
+
+        .time-arrow {
+            text-align: center;
+        }
+
+        .time-arrow-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--mauve);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 22px;
+            margin: 0 auto;
+            box-shadow: 0 8px 24px rgba(139, 94, 106, 0.3);
+        }
+
+        /* ══ SHEETS SECTION ══ */
+        .sheets-section {
+            background: var(--cream);
+            padding: 100px 80px;
+        }
+
+        .sheets-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .sheet-card {
+            background: white;
+            border-radius: 10px;
+            padding: 18px 16px;
+            border: 1px solid rgba(139, 94, 106, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .sheet-card:hover {
+            border-color: var(--blush);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(139, 94, 106, 0.08);
+        }
+
+        .sheet-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            color: var(--blush);
+            font-weight: 300;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .sheet-name {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+        }
+
+        .sheet-desc {
+            font-size: 11px;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        .sheet-card.star {
+            background: linear-gradient(135deg, #FAF0EC, #F5E8E2);
+            border-color: var(--blush-deep);
+        }
+
+        .sheet-card.star .sheet-num {
+            color: var(--mauve);
+        }
+
+        /* ══ TESTIMONI ══ */
+        .testi-section {
+            background: var(--warm-white);
+            padding: 100px 80px;
+        }
+
+        .testi-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            max-width: 960px;
+            margin: 0 auto 48px;
+        }
+
+        .testi-card {
+            background: white;
+            border-radius: 16px;
+            padding: 28px 24px;
+            border: 1px solid rgba(139, 94, 106, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .testi-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 50px rgba(92, 61, 46, 0.1);
+        }
+
+        .testi-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 56px;
+            color: rgba(139, 94, 106, 0.1);
+            line-height: 1;
+            position: absolute;
+            top: 14px;
+            left: 18px;
+        }
+
+        .testi-stars {
+            display: flex;
+            gap: 3px;
+            margin-bottom: 12px;
+            margin-top: 6px;
+        }
+
+        .testi-stars span {
+            color: var(--gold);
+            font-size: 13px;
+        }
+
+        .testi-tag {
+            display: inline-block;
+            background: var(--slate-light);
+            color: var(--slate);
+            font-size: 10px;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 100px;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .testi-text {
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--text-mid);
+            font-weight: 300;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* NEW: karir detail highlight */
+        .testi-karir-detail {
+            background: rgba(107, 123, 141, 0.07);
+            border: 1px solid rgba(107, 123, 141, 0.15);
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 12px;
+            color: var(--slate);
+            font-weight: 500;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .testi-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-top: 1px solid rgba(139, 94, 106, 0.08);
+            padding-top: 16px;
+        }
+
+        .testi-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .testi-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 1px;
+        }
+
+        .testi-meta {
+            font-size: 11px;
+            color: var(--text-light);
+        }
+
+        .testi-verified {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(122, 140, 126, 0.1);
+            border: 1px solid rgba(122, 140, 126, 0.2);
+            color: var(--sage);
+            font-size: 10px;
+            font-weight: 500;
+            padding: 3px 10px;
+            border-radius: 100px;
+            margin-top: 5px;
+        }
+
+        .testi-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(139, 94, 106, 0.1);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .tstat {
+            background: white;
+            padding: 24px 20px;
+            text-align: center;
+        }
+
+        .tstat-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 40px;
+            font-weight: 300;
+            color: var(--mauve);
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .tstat-label {
+            font-size: 12px;
+            color: var(--text-light);
+            font-weight: 300;
+        }
+
+        /* ══ PRICING ══ */
+        .pricing-section {
+            background: var(--cream);
+            padding: 100px 80px;
+            text-align: center;
+        }
+
+        .pricing-card {
+            max-width: 540px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 52px 44px;
+            box-shadow: 0 40px 100px rgba(92, 61, 46, 0.14);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--blush), var(--mauve), var(--gold));
+        }
+
+        .pricing-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold-light), var(--blush));
+            color: var(--brown);
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 8px 20px;
+            border-radius: 100px;
+            margin-bottom: 28px;
+            font-weight: 500;
+        }
+
+        .price-hero {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 6px;
+        }
+
+        .price-big {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 76px;
+            font-weight: 300;
+            color: var(--text-dark);
+            line-height: 1;
+        }
+
+        .price-big sup {
+            font-size: 26px;
+            vertical-align: super;
+        }
+
+        .price-was-p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            color: var(--text-light);
+            margin-bottom: 6px;
+        }
+
+        .price-was-p s {
+            text-decoration-color: var(--dusty-rose);
+        }
+
+        .price-save-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--dusty-rose), var(--mauve));
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 6px 16px;
+            border-radius: 100px;
+            margin-bottom: 32px;
+        }
+
+        .include-list {
+            list-style: none;
+            margin-bottom: 36px;
+            text-align: left;
+        }
+
+        .include-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            color: var(--text-mid);
+            padding: 10px 0;
+            border-bottom: 1px solid #F5F0EC;
+            font-weight: 300;
+        }
+
+        .include-list li:last-child {
+            border: none;
+        }
+
+        .check {
+            width: 20px;
+            height: 20px;
+            background: var(--blush);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 10px;
+            flex-shrink: 0;
+        }
+
+        .urgency-note {
+            font-size: 13px;
+            color: var(--dusty-rose);
+            margin-top: 18px;
+            font-weight: 500;
+        }
+
+        .efficiency-note {
+            background: rgba(107, 123, 141, 0.08);
+            border: 1px solid rgba(107, 123, 141, 0.2);
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin-top: 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-align: left;
+        }
+
+        .eff-note-text {
+            font-size: 12px;
+            color: var(--text-mid);
+            line-height: 1.5;
+        }
+
+        .eff-note-text strong {
+            color: var(--slate);
+        }
+
+        /* ══ FAQ ══ */
+        .faq-section {
+            background: var(--warm-white);
+            padding: 100px 80px;
+        }
+
+        .faq-inner {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(139, 94, 106, 0.15);
+            padding: 22px 0;
+            cursor: pointer;
+        }
+
+        .faq-q {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 19px;
+            font-weight: 600;
+            color: var(--text-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .faq-arrow {
+            color: var(--mauve);
+            font-size: 20px;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .faq-item.open .faq-arrow {
+            transform: rotate(45deg);
+        }
+
+        .faq-a {
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--text-mid);
+            font-weight: 300;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+        }
+
+        .faq-item.open .faq-a {
+            max-height: 200px;
+            padding-top: 14px;
+        }
+
+        /* NEW: FAQ tag untuk karir-spesifik */
+        .faq-karir-tag {
+            display: inline-block;
+            background: var(--slate-light);
+            color: var(--slate);
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 2px 8px;
+            border-radius: 100px;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        /* ══ FINAL CTA ══ */
+        .final-cta {
+            background: linear-gradient(135deg, var(--brown) 0%, var(--mauve) 100%);
+            padding: 100px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '✦';
+            position: absolute;
+            font-size: 400px;
+            color: rgba(255, 255, 255, 0.03);
+            top: -80px;
+            right: -40px;
+            pointer-events: none;
+        }
+
+        .final-cta .section-title {
+            color: white;
+            margin-bottom: 16px;
+        }
+
+        .final-cta .section-eyebrow {
+            color: var(--blush);
+        }
+
+        .final-cta p {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.75);
+            margin-bottom: 44px;
+            font-weight: 300;
+            max-width: 520px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .final-price {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            color: var(--gold-light);
+            margin-bottom: 32px;
+        }
+
+        /* ══ FOOTER ══ */
+        footer {
+            background: var(--text-dark);
+            padding: 40px 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            color: white;
+            letter-spacing: 2px;
+            font-weight: 300;
+        }
+
+        .footer-note {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* ══ STICKY CTA ══ */
+        .sticky-cta {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: var(--mauve);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            box-shadow: 0 8px 30px rgba(139, 94, 106, 0.4);
+            transition: all 0.3s ease;
+            z-index: 100;
+            display: none;
+        }
+
+        .sticky-cta.show {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sticky-cta:hover {
+            background: var(--brown);
+            transform: translateY(-2px);
+        }
+
+        /* ══ ANIMATIONS ══ */
+        @keyframes fadeDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes floatUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px) scale(0.98);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes fadeLeft {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeRight {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ══ RESPONSIVE ══ */
+        @media (max-width: 1024px) {
+
+            .pain-section,
+            .efficiency-section,
+            .time-section,
+            .sheets-section,
+            .testi-section,
+            .pricing-section,
+            .faq-section,
+            .final-cta,
+            footer {
+                padding: 80px 40px;
+            }
+
+            .sheets-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 70px 20px 50px;
+            }
+
+            .pain-section,
+            .efficiency-section,
+            .time-section,
+            .sheets-section,
+            .testi-section,
+            .pricing-section,
+            .faq-section,
+            .final-cta {
+                padding: 60px 24px;
+            }
+
+            footer {
+                padding: 32px 24px;
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+
+            .pain-grid,
+            .testi-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .efficiency-inner {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .time-comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .time-arrow {
+                transform: rotate(90deg);
+            }
+
+            .sheets-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .tension-bar {
+                grid-template-columns: 1fr;
+            }
+
+            .tension-vs {
+                display: none;
+            }
+
+            .pricing-card {
+                padding: 36px 20px;
+            }
+
+            .price-big {
+                font-size: 60px;
+            }
+
+            .testi-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .float-badge-top,
+            .float-badge-bot {
+                display: none;
+            }
+
+            .letter-card {
+                padding: 40px 28px;
+            }
+
+            .video-highlights {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sheets-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .btn-primary {
+                padding: 18px 28px;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .price-big {
+                font-size: 52px;
+            }
+        }
+    </style>
+    <script>
+        !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s) }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '4326987370876034'); fbq('track', 'PageView');
+    </script>
+</head>
+
+<body>
+
+    <!-- ══ REVISED: Sticky CTA — format harga konsisten ══ -->
+    <a href="https://entrepreneurai.myscalev.com/checkout-page" class="sticky-cta" id="stickyCta">
+        ⚡ Dapatkan Sekarang — Rp 129.000
+    </a>
+
+    <!-- ══ HERO ══ -->
+    <section class="hero">
+
+        <!-- REVISED: Badge lebih spesifik -->
+        <div class="badge">⚡ Untuk Wanita Karir yang Mau Nikah Tanpa Chaos</div>
+
+        <!-- REVISED: Eyebrow lebih visceral & spesifik -->
+        <p class="hero-eyebrow">Kerja 9-to-5, rapat back-to-back — tapi persiapan nikah tidak bisa nunggu</p>
+
+        <!-- REVISED: Title lebih tajam & spesifik ke kondisi wanita karir -->
+        <h1 class="hero-title">
+            Kerja Full Time.<br><em>Persiapan Nikah</em> Tetap<br><strong>Zero Chaos, Zero Panik.</strong>
+        </h1>
+
+        <!-- NEW: Emotional hook paragraph -->
+        <p class="hero-hook">
+            "Kamu berhak punya pernikahan yang indah — tanpa harus mengorbankan
+            performa kerja atau tidur malammu untuk ngurusin semuanya sendirian."
+        </p>
+
+        <!-- Tension bar — tetap ada karena kuat -->
+        <div class="tension-bar">
+            <div class="tension-side">
+                <div class="tension-label">💼 Hari Ini di Kantor</div>
+                <div class="tension-item">📊 Deadline project jam 5 sore</div>
+                <div class="tension-item">📧 Inbox 200+ email belum dibaca</div>
+                <div class="tension-item">🤝 Meeting dari pagi sampai sore</div>
+            </div>
+            <div class="tension-vs">VS</div>
+            <div class="tension-side">
+                <div class="tension-label">💍 Yang Harus Diurus</div>
+                <div class="tension-item">📋 Seserahan belum semua ada</div>
+                <div class="tension-item">🏢 Vendor belum semua di-follow up</div>
+                <div class="tension-item">💰 Budget belum ke-track dengan baik</div>
+            </div>
+        </div>
+
+        <!-- Preview tabs -->
+        <div class="preview-tabs">
+            <button class="ptab on" onclick="switchPreview(this,'p-dash')">📊 Dashboard</button>
+            <button class="ptab" onclick="switchPreview(this,'p-check')">✅ Checklist</button>
+            <button class="ptab" onclick="switchPreview(this,'p-budget')">💰 Budget</button>
+        </div>
+
+        <!-- PRODUCT SHOWCASE -->
+        <div class="product-showcase">
+            <div class="showcase-glow"></div>
+
+            <div class="float-badge float-badge-top">
+                <div class="fb-icon" style="background:#E8EDF2;">⚡</div>
+                <div>
+                    <div class="fb-label">Update dari Mana Saja</div>
+                    <div class="fb-val">HP saat lunch break, laptop di rumah</div>
+                </div>
+            </div>
+            <div class="float-badge float-badge-bot">
+                <div class="fb-icon" style="background:#F0F4F0;">✅</div>
+                <div>
+                    <div class="fb-label">Progress Persiapan</div>
+                    <div class="fb-val">73% selesai · H-89 hari lagi</div>
+                </div>
+            </div>
+
+            <div class="browser-frame">
+                <div class="browser-bar">
+                    <div class="browser-dots">
+                        <div class="browser-dot" style="background:#ff5f57;"></div>
+                        <div class="browser-dot" style="background:#febc2e;"></div>
+                        <div class="browser-dot" style="background:#28c840;"></div>
+                    </div>
+                    <div class="browser-url">app.nikahrapi.com 🔒</div>
+                </div>
+                <div class="sheet-tabs-bar">
+                    <button class="stab on" onclick="switchSheet(this,'p-dash')">📊 Dashboard</button>
+                    <button class="stab" onclick="switchSheet(this,'p-check')">✅ Checklist</button>
+                    <button class="stab" onclick="switchSheet(this,'p-budget')">💰 Budget</button>
+                    <button class="stab" onclick="switchSheet(this,'p-vendor')">🏢 Vendor</button>
+                    <button class="stab" onclick="switchSheet(this,'p-time')">⏱️ Timeline</button>
+                    <button class="stab" onclick="switchSheet(this,'p-rsvp')">💌 RSVP</button>
+                </div>
+
+                <div class="preview-stage on" id="p-dash">
+                    <img src="assets/Dashboard .png" alt="Dashboard" style="width: 100%; display: block; height: auto;">
+                </div>
+                <div class="preview-stage" id="p-check">
+                    <img src="assets/Persiapan.png" alt="Checklist Persiapan"
+                        style="width: 100%; display: block; height: auto;">
+                </div>
+                <div class="preview-stage" id="p-budget">
+                    <img src="assets/budget.png" alt="Budget Tracker"
+                        style="width: 100%; display: block; height: auto;">
+                </div>
+                <div class="preview-stage" id="p-vendor">
+                    <img src="assets/Vendor.png" alt="Vendor Manager"
+                        style="width: 100%; display: block; height: auto;">
+                </div>
+                <div class="preview-stage" id="p-time">
+                    <img src="assets/Timeline Acara.png" alt="Timeline Acara"
+                        style="width: 100%; display: block; height: auto;">
+                </div>
+                <div class="preview-stage" id="p-rsvp">
+                    <img src="assets/RSVP.png" alt="RSVP Tracker" style="width: 100%; display: block; height: auto;">
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA — REVISED: format harga konsisten Rp 129.000 -->
+        <div class="hero-cta-block">
+            <div class="price-display">
+                <div class="price-new"><sup style="font-size:22px">Rp</sup>129.000</div>
+                <div class="price-old"><s>Rp 349.000</s></div>
+                <div class="price-save">HEMAT 63%</div>
+            </div>
+            <a href="https://entrepreneurai.myscalev.com/checkout-page" class="btn-primary">
+                ⚡ Dapatkan NIKAH RAPI Sekarang
+            </a>
+            <div class="cta-notes">
+                <div>✓ Garansi 7 hari</div>
+                <div>✓ Akses dikirim via WA</div>
+                <div>✓ Update dari HP kapan saja</div>
+            </div>
+        </div>
+
+        <div class="social-proof-bar">
+            <div class="sp-avatars">
+                <div class="sp-avatar" style="background:linear-gradient(135deg,#E8C4B8,#D4A090)">🌸</div>
+                <div class="sp-avatar" style="background:linear-gradient(135deg,#C4857A,#8B5E6A)">💼</div>
+                <div class="sp-avatar" style="background:linear-gradient(135deg,#C9A96E,#E8D5B0)">⚡</div>
+                <div class="sp-avatar" style="background:linear-gradient(135deg,#6B7B8D,#8B9BAD)">✨</div>
+            </div>
+            <div class="stars">★★★★★</div>
+            <span>Dipakai <strong>50+ wanita karir</strong> calon pengantin Indonesia</span>
+        </div>
+    </section>
+
+    <!-- ══ VIDEO SECTION ══ -->
+    <section class="video-section">
+        <p class="section-eyebrow reveal">Lihat sebelum membeli</p>
+        <h2 class="section-title reveal">Setup 15 Menit di Lunch Break —<br><em>Pakai Sampai Hari H</em></h2>
+        <p class="reveal"
+            style="font-size:15px;color:var(--text-mid);font-weight:300;max-width:540px;margin:0 auto 48px;line-height:1.8;">
+            Tidak perlu blok waktu berjam-jam. Buka saat makan siang, update cepat 5 menit, tutup — semua sudah
+            tersimpan dan terkalkulasi otomatis.
+        </p>
+
+        <div class="video-container reveal">
+            <div class="video-frame"
+                onclick="this.innerHTML='<iframe src=&quot;https://www.youtube.com/embed/VIDEO_ID?autoplay=1&quot; style=&quot;position:absolute;inset:0;width:100%;height:100%;border:none;&quot; allow=&quot;autoplay;encrypted-media&quot; allowfullscreen></iframe>';this.style.cursor='default'"
+                aria-label="Putar video demo NIKAH RAPI">
+                <div
+                    style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:1;">
+                    <div
+                        style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--mauve);letter-spacing:3px;margin-bottom:4px;opacity:0.6;">
+                        NIKAH RAPI</div>
+                    <div
+                        style="font-size:11px;color:var(--text-light);letter-spacing:2px;text-transform:uppercase;opacity:0.5;">
+                        Demo Video</div>
+                </div>
+                <div class="video-play-btn">
+                    <div class="play-triangle"></div>
+                </div>
+                <div class="video-label">▶ Tonton demo 2 menit — cukup 15 menit setup awal</div>
+            </div>
+        </div>
+
+        <div class="video-highlights">
+            <div class="vh-card reveal">
+                <div class="vh-icon" style="background:linear-gradient(135deg,#FFF0EC,#FAE8E2);">⚡</div>
+                <h4>Input Sekali, Semua Update</h4>
+                <p>Tidak ada input ganda di banyak tempat. Satu data masuk, semua sheet terhubung otomatis.</p>
+            </div>
+            <div class="vh-card reveal">
+                <div class="vh-icon" style="background:linear-gradient(135deg,#E8EDF2,#D8E4EE);">📱</div>
+                <h4>Akses dari HP Saat Commute</h4>
+                <p>Update vendor, cek budget, atau centang checklist dari mana saja — tidak butuh laptop.</p>
+            </div>
+            <div class="vh-card reveal">
+                <div class="vh-icon" style="background:linear-gradient(135deg,#F0F4F0,#E8EEE8);">💍</div>
+                <h4>Seserahan & Kado Tracker</h4>
+                <p>Dua fitur eksklusif yang tidak ada di mana pun — auto-hitung, anti-lupa hari H.</p>
+            </div>
+        </div>
+
+        <div style="margin-top:48px;" class="reveal">
+            <a href="https://entrepreneurai.myscalev.com/checkout-page" class="btn-primary">
+                🤍 Dapatkan NIKAH RAPI — Rp 129.000
+            </a>
+        </div>
+    </section>
+
+    <!-- ══ LETTER ══ -->
+    <section class="letter-section">
+        <div class="letter-card reveal">
+            <p class="letter-text">
+                Sebagai wanita karir, harimu sudah dipenuhi <strong>meeting, deadline, dan target kerja.</strong>
+                Menambahkan persiapan pernikahan rasanya seperti mengambil pekerjaan full-time kedua.
+                <br><br>
+                Mencatat di notes, mencari chat vendor yang tenggelam, atau menebak sisa budget...
+                itu sangat <strong>menguras energi dan bikin overthinking di tengah rapat.</strong>
+                <br><br>
+                <strong>NIKAH RAPI dirancang khusus untukmu.</strong>
+                Sistematis, ringkas, dan saling terhubung. Agar kamu tetap bisa menjadi
+                <strong>profesional di kantor, sekaligus calon pengantin yang tenang saat mempersiapkan hari
+                    besarmu.</strong>
+            </p>
+            <div class="letter-author">
+                <div class="letter-avatar">💼</div>
+                <div>
+                    <div class="letter-name">Untuk Wanita Karir yang Super Sibuk</div>
+                    <div class="letter-desc">— NIKAH RAPI, Wedding Planner Digital Premium</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ PAIN SECTION ══ -->
+    <section class="pain-section">
+        <p class="section-eyebrow reveal">Kamu pasti kenal banget rasanya...</p>
+        <h2 class="section-title reveal">Kerja Full Time +<br>Urus Nikah Sendiri = <em>Overwhelmed</em></h2>
+        <div class="pain-grid">
+            <div class="pain-card reveal">
+                <span class="pain-icon">⏰</span>
+                <h3>Waktu Habis di Kantor</h3>
+                <p>Senin–Jumat 9 to 5 (atau lebih), weekend baru bisa urus persiapan. Tapi weekend juga ada acara
+                    keluarga, kumpul teman, istirahat.</p>
+                <div class="pain-scenario">"Mau ke vendor tapi baru bisa weekend. Pas weekend, eh vendor tutup atau ada
+                    keperluan lain."</div>
+            </div>
+            <div class="pain-card reveal">
+                <span class="pain-icon">🧠</span>
+                <h3>Mental Load yang Berat</h3>
+                <p>Di kantor mikirin deadline. Di rumah mikirin vendor, budget, seserahan, tamu. Otak tidak pernah
+                    benar-benar istirahat.</p>
+                <div class="pain-scenario">"Lagi rapat penting, eh tiba-tiba ingat belum follow up MUA. Konsentrasi
+                    buyar."</div>
+            </div>
+            <div class="pain-card reveal">
+                <span class="pain-icon">📱</span>
+                <h3>Data Tersebar di Mana-mana</h3>
+                <p>Notes di HP, spreadsheet di laptop, screenshot di galeri, chat WA dengan vendor — semuanya terpisah
+                    dan susah dicari.</p>
+                <div class="pain-scenario">"WO nanya kontrak vendor, aku kelabakan nyari di 5 tempat berbeda. Malu
+                    banget."</div>
+            </div>
+            <div class="pain-card reveal">
+                <span class="pain-icon">💸</span>
+                <h3>Budget Tidak Ter-track</h3>
+                <p>DP sana-sini, bayar ini-itu, tapi tidak tahu persis total yang sudah keluar dan yang masih harus
+                    dibayar.</p>
+                <div class="pain-scenario">"Di akhir bulan baru sadar budget nikah sudah habis duluan sebelum gajian
+                    berikutnya."</div>
+            </div>
+            <div class="pain-card reveal">
+                <span class="pain-icon">😰</span>
+                <h3>Takut Ada yang Ketinggalan</h3>
+                <p>Karena waktu terbatas, selalu ada kekhawatiran ada hal penting yang terlewat. Seserahan kurang,
+                    vendor belum dikonfirmasi.</p>
+                <div class="pain-scenario">"Malam sebelum akad tiba-tiba ingat ada sesuatu yang belum beres. Panik
+                    tengah malam."</div>
+            </div>
+            <div class="pain-card reveal">
+                <span class="pain-icon">😤</span>
+                <h3>Pasangan Juga Sibuk</h3>
+                <p>Dua-duanya kerja, sulit koordinasi. Siapa tanggung jawab apa? Progress mana yang sudah selesai?
+                    Sering salah paham.</p>
+                <div class="pain-scenario">"Ternyata kami bayar DP vendor yang sama dua kali karena komunikasi tidak
+                    sinkron."</div>
+            </div>
+        </div>
+        <p class="pain-closer reveal">"Persiapan nikah tidak harus memakan semua energimu. Ada cara yang lebih efisien."
+        </p>
+    </section>
+
+    <!-- ══ EFFICIENCY SECTION ══ -->
+    <section class="efficiency-section">
+        <div class="efficiency-inner">
+            <div class="eff-left">
+                <p class="section-eyebrow reveal">Solusi untuk wanita karir</p>
+                <h2 class="section-title reveal">Sistem yang<br>Kerja Otomatis,<br>Biar Kamu Fokus<br>ke Karir & Nikah.
+                </h2>
+                <p class="reveal">NIKAH RAPI dirancang agar kamu cukup input data sekali — semua kalkulasi, tracking,
+                    dan summary berjalan otomatis. Cocok untuk kamu yang tidak punya banyak waktu tapi ingin semua
+                    terkontrol — bahkan dari HP saat jam makan siang.</p>
+                <a href="#pricing" class="btn-secondary reveal">Lihat Harga & Paket →</a>
+            </div>
+            <div class="feat-cards">
+                <div class="feat-card reveal">
+                    <div class="feat-icon">⚡</div>
+                    <div class="feat-text">
+                        <h4>Input Sekali, Semua Update</h4>
+                        <p>Tidak perlu update manual di banyak tempat. Isi 1 data, dashboard & summary otomatis
+                            terupdate.</p>
+                    </div>
+                </div>
+                <div class="feat-card reveal">
+                    <div class="feat-icon">✅</div>
+                    <div class="feat-text">
+                        <h4>Master Checklist Anti-Lupa</h4>
+                        <p>Semua yang perlu disiapkan sudah ada. Tinggal centang, progress otomatis terhitung.</p>
+                    </div>
+                </div>
+                <div class="feat-card reveal">
+                    <div class="feat-icon">💍</div>
+                    <div class="feat-text">
+                        <h4>Seserahan Tracker <span class="usp-tag">Eksklusif</span></h4>
+                        <p>Item, harga, status, total — auto-hitung. Tidak ada yang ketinggalan hari H.</p>
+                    </div>
+                </div>
+                <div class="feat-card reveal">
+                    <div class="feat-icon">🎁</div>
+                    <div class="feat-text">
+                        <h4>Kado & Angpao Tracker <span class="usp-tag">Eksklusif</span></h4>
+                        <p>Rekap siapa beri apa, follow up ucapan terima kasih. Tidak perlu ingat-ingatan lagi.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ TIME SAVER COMPARISON ══ -->
+    <section class="time-section">
+        <div class="time-inner">
+            <p class="section-eyebrow reveal">Sebelum vs Sesudah</p>
+            <h2 class="section-title reveal">Hemat Waktu & Energi,<br><em>Fokus ke Hal yang Benar-benar Penting</em>
+            </h2>
+            <div class="time-comparison">
+                <div class="time-col reveal">
+                    <div class="time-col-header before">😰 Tanpa NIKAH RAPI</div>
+                    <div class="time-item">
+                        <div class="time-icon">❌</div>
+                        <div class="time-text">Data tersebar di notes, spreadsheet, dan WA<strong>Nyari info butuh 10-15
+                                menit</strong></div>
+                    </div>
+                    <div class="time-item">
+                        <div class="time-icon">❌</div>
+                        <div class="time-text">Budget dihitung manual di kalkulator<strong>Sering salah hitung, selalu
+                                khawatir</strong></div>
+                    </div>
+                    <div class="time-item">
+                        <div class="time-icon">❌</div>
+                        <div class="time-text">Tidak ada checklist sistematis<strong>Selalu takut ada yang
+                                ketinggalan</strong></div>
+                    </div>
+                    <div class="time-item">
+                        <div class="time-icon">❌</div>
+                        <div class="time-text">Seserahan dicatat di kertas/notes terpisah<strong>Hari H panik cek ulang
+                                satu-satu</strong></div>
+                    </div>
+                </div>
+                <div class="time-arrow">
+                    <div class="time-arrow-icon">→</div>
+                </div>
+                <div class="time-col reveal">
+                    <div class="time-col-header after">✨ Dengan NIKAH RAPI</div>
+                    <div class="time-item">
+                        <div class="time-icon">✅</div>
+                        <div class="time-text">Semua data di 1 file, terstruktur rapi<strong>Info langsung ketemu, hemat
+                                waktu</strong></div>
+                    </div>
+                    <div class="time-item">
+                        <div class="time-icon">✅</div>
+                        <div class="time-text">Budget auto-kalkulasi, real-time<strong>Tahu persis angka tanpa hitung
+                                manual</strong></div>
+                    </div>
+                    <div class="time-item">
+                        <div class="time-icon">✅</div>
+                        <div class="time-text">19 fitur checklist lengkap & terintegrasi<strong>Progress terlihat jelas,
+                                tidak ada yang ketinggalan</strong></div>
+                    </div>
+                    <div class="time-item">
+                        <div class="time-icon">✅</div>
+                        <div class="time-text">Seserahan Tracker eksklusif & detail<strong>Hari H tenang, semua sudah
+                                tercatat ✓</strong></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ 19 SHEETS ══ -->
+    <section class="sheets-section">
+        <p class="section-eyebrow reveal">Yang kamu dapatkan</p>
+        <h2 class="section-title reveal">19 Sheet Lengkap —<br><em>Sistem Kerja untuk Pernikahanmu</em></h2>
+        <div class="sheets-grid">
+            <div class="sheet-card star reveal">
+                <div class="sheet-num">01</div>
+                <div class="sheet-name">Dashboard Utama ✦</div>
+                <div class="sheet-desc">Semua progress dalam 1 tampilan</div>
+            </div>
+            <div class="sheet-card reveal">
+                <div class="sheet-num">02</div>
+                <div class="sheet-name">Budget Planner</div>
+                <div class="sheet-desc">Rencana vs realisasi auto-update</div>
+            </div>
+            <div class="sheet-card star reveal">
+                <div class="sheet-num">03</div>
+                <div class="sheet-name">Seserahan Tracker ✦</div>
+                <div class="sheet-desc">Item, harga, status — eksklusif!</div>
+            </div>
+            <div class="sheet-card star reveal">
+                <div class="sheet-num">04</div>
+                <div class="sheet-name">Kado & Angpao ✦</div>
+                <div class="sheet-desc">Rekap pemberi & ucapan — eksklusif!</div>
+            </div>
+            <div class="sheet-card reveal">
+                <div class="sheet-num">05</div>
+                <div class="sheet-name">Guest List</div>
+                <div class="sheet-desc">Daftar tamu & kapasitas</div>
+            </div>
+            <div class="sheet-card reveal">
+                <div class="sheet-num">06</div>
+                <div class="sheet-name">RSVP Tracker</div>
+                <div class="sheet-desc">Konfirmasi hadir otomatis</div>
+            </div>
+            <div class="sheet-card reveal">
+                <div class="sheet-num">07</div>
+                <div class="sheet-name">Vendor Manager</div>
+                <div class="sheet-desc">Kontak, kontrak, DP & pelunasan</div>
+            </div>
+            <div class="sheet-card reveal">
+                <div class="sheet-num">08</div>
+                <div class="sheet-name">Timeline Acara</div>
+                <div class="sheet-desc">Rundown detail H-1 hingga hari H</div>
+            </div>
+            <div class="sheet-card reveal">
+                <div class="sheet-num">09</div>
+                <div class="sheet-name">Checklist Persiapan</div>
+                <div class="sheet-desc">Master checklist 100+ item</div>
+            </div>
+            <div class="sheet-card reveal">
+                <div class="sheet-num">10</div>
+                <div class="sheet-name">Dekorasi & Tema</div>
+                <div class="sheet-desc">Referensi warna & konsep dekor</div>
+            </div>
+            <div class="sheet-card reveal">
+                <div class="sheet-num">11</div>
+                <div class="sheet-name">Katering & Menu</div>
+                <div class="sheet-desc">Porsi, menu, tracking bayar</div>
+            </div>
+            <div class="sheet-card reveal">
+                <div class="sheet-num">12</div>
+                <div class="sheet-name">Undangan & Desain</div>
+                <div class="sheet-desc">Cetak, digital, pengiriman</div>
+            </div>
+            <div class="sheet-card reveal">
+                <div class="sheet-num">13</div>
+                <div class="sheet-name">MUA & Busana</div>
+                <div class="sheet-desc">Jadwal fitting & MUA</div>
+            </div>
+            <div class="sheet-card reveal">
+                <div class="sheet-num">14</div>
+                <div class="sheet-name">Foto & Video</div>
+                <div class="sheet-desc">Shot list & brief lengkap</div>
+            </div>
+            <div class="sheet-card reveal">
+                <div class="sheet-num">15</div>
+                <div class="sheet-name">Cincin & Mahar</div>
+                <div class="sheet-desc">Detail mahar & akad</div>
+            </div>
+            <div class="sheet-card reveal">
+                <div class="sheet-num">16</div>
+                <div class="sheet-name">Honeymoon Planner</div>
+                <div class="sheet-desc">Itinerary bulan madu efisien</div>
+            </div>
+            <div class="sheet-card reveal">
+                <div class="sheet-num">17</div>
+                <div class="sheet-name">Souvenir & Hampers</div>
+                <div class="sheet-desc">Jumlah, vendor, distribusi</div>
+            </div>
+            <div class="sheet-card reveal">
+                <div class="sheet-num">18</div>
+                <div class="sheet-name">Catatan Penting</div>
+                <div class="sheet-desc">Notes & reminder hal kritis</div>
+            </div>
+            <div class="sheet-card reveal">
+                <div class="sheet-num">19</div>
+                <div class="sheet-name">Rekap Akhir</div>
+                <div class="sheet-desc">Summary biaya & kenangan</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ TESTIMONI — REVISED ══ -->
+    <section class="testi-section">
+        <p class="section-eyebrow reveal">Dari sesama wanita karir yang sudah pakai</p>
+        <h2 class="section-title reveal">Sibuk Kerja, Pernikahan<br>Tetap <em>Terkontrol Sempurna</em></h2>
+
+        <!-- REVISED: Grid 2 kolom + 4 testimoni dengan detail karir spesifik -->
+        <div class="testi-grid">
+
+            <!-- Testimoni 1 — REVISED dengan detail karir spesifik -->
+            <div class="testi-card reveal">
+                <div class="testi-quote">"</div>
+                <div class="testi-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                <div class="testi-tag">💼 Marketing Manager · Jakarta</div>
+                <p class="testi-text">Aku kerja di startup, jam kerja tidak menentu. NIKAH RAPI literally penyelamat —
+                    semua tercatat rapi. Pas makan siang aku buka dari HP, update 5 menit, tutup. Sore kerja lagi dengan
+                    tenang karena tahu semuanya sudah tercatat. Tidak ada yang ketinggalan!</p>
+                <!-- NEW: karir detail highlight -->
+                <div class="testi-karir-detail">
+                    ⏱️ Rutin update 5–10 menit saat lunch break di kantor
+                </div>
+                <div class="testi-author">
+                    <div class="testi-avatar" style="background:linear-gradient(135deg,#E8C4B8,#D4A090)">💼</div>
+                    <div>
+                        <div class="testi-name">Sarah K.</div>
+                        <div class="testi-meta">Menikah Maret 2025 · Jakarta</div>
+                        <div class="testi-verified">✓ Verified Purchase</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimoni 2 — REVISED dengan detail Finance Analyst -->
+            <div class="testi-card reveal">
+                <div class="testi-quote">"</div>
+                <div class="testi-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                <div class="testi-tag">💼 Finance Analyst · Surabaya</div>
+                <p class="testi-text">Seserahan Tracker & Kado Tracker yang bikin aku beli. Sebagai orang finance, aku
+                    suka banget semua auto-kalkulasi. Setiap Jumat malam aku review 10 menit — dan itu cukup untuk tahu
+                    semua persiapan on track. Budget planner-nya detail banget, rencana vs realisasi langsung keliatan.
+                </p>
+                <!-- NEW: karir detail highlight -->
+                <div class="testi-karir-detail">
+                    📊 Review mingguan 10 menit setiap Jumat malam, sudah cukup
+                </div>
+                <div class="testi-author">
+                    <div class="testi-avatar" style="background:linear-gradient(135deg,#6B7B8D,#8B9BAD)">📊</div>
+                    <div>
+                        <div class="testi-name">Nadia W.</div>
+                        <div class="testi-meta">Menikah April 2025 · Surabaya</div>
+                        <div class="testi-verified">✓ Verified Purchase</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimoni 3 — REVISED dengan detail koordinasi dua orang kerja -->
+            <div class="testi-card reveal">
+                <div class="testi-quote">"</div>
+                <div class="testi-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                <div class="testi-tag">💼 Software Engineer · Bandung</div>
+                <p class="testi-text">Aku dan pasangan dua-duanya kerja fulltime di perusahaan berbeda. NIKAH RAPI bantu
+                    kami koordinasi tanpa perlu ketemu dulu — kami share file yang sama, siapa update apa keliatan
+                    real-time. Tidak ada lagi salah komunikasi soal persiapan nikah!</p>
+                <!-- NEW: karir detail highlight -->
+                <div class="testi-karir-detail">
+                    🔗 Share 1 file dengan pasangan — update dari masing-masing device
+                </div>
+                <div class="testi-author">
+                    <div class="testi-avatar" style="background:linear-gradient(135deg,#C4857A,#8B5E6A)">⚡</div>
+                    <div>
+                        <div class="testi-name">Riana & Dimas</div>
+                        <div class="testi-meta">Menikah Mei 2025 · Bandung</div>
+                        <div class="testi-verified">✓ Verified Purchase</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEW: Testimoni 4 — UX Designer, update saat commute -->
+            <div class="testi-card reveal">
+                <div class="testi-quote">"</div>
+                <div class="testi-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                <div class="testi-tag">💼 UX Designer · Jakarta</div>
+                <p class="testi-text">Commute aku 1,5 jam pulang-pergi. Waktu itulah aku pakai untuk update NIKAH RAPI
+                    dari HP. Cek vendor, update checklist, review budget — semua bisa di KRL. Pas sampai rumah tinggal
+                    istirahat, tidak ada lagi mikirin "ini tadi udah diupdate belum ya". Recommended banget!</p>
+                <!-- NEW: karir detail highlight -->
+                <div class="testi-karir-detail">
+                    🚇 Update dari HP saat di KRL — waktu commute tidak terbuang sia-sia
+                </div>
+                <div class="testi-author">
+                    <div class="testi-avatar" style="background:linear-gradient(135deg,#7A8C7E,#A8B8AC)">🎨</div>
+                    <div>
+                        <div class="testi-name">Anisa R.</div>
+                        <div class="testi-meta">Menikah Juni 2025 · Jakarta</div>
+                        <div class="testi-verified">✓ Verified Purchase</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="testi-stats reveal">
+            <div class="tstat">
+                <div class="tstat-num">50+</div>
+                <div class="tstat-label">Wanita Karir Terbantu</div>
+            </div>
+            <div class="tstat">
+                <div class="tstat-num">5★</div>
+                <div class="tstat-label">Rating Rata-rata</div>
+            </div>
+            <div class="tstat">
+                <div class="tstat-num">19</div>
+                <div class="tstat-label">Fitur Terintegrasi</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ PRICING ══ -->
+    <section class="pricing-section" id="pricing">
+        <p class="section-eyebrow reveal">Investasi paling worth it untuk pernikahanmu</p>
+        <h2 class="section-title reveal">Dapatkan NIKAH RAPI Sekarang</h2>
+        <div class="pricing-card reveal">
+            <div class="pricing-badge">✦ Bundle Lengkap — 3 Produk dalam 1 Harga</div>
+            <div class="price-hero">
+                <!-- REVISED: format harga konsisten -->
+                <div class="price-big"><sup>Rp</sup>129.000</div>
+            </div>
+            <div class="price-was-p"><s>Rp 349.000</s></div>
+            <div class="price-save-badge">🔥 Hemat 63% — Harga Akan Naik!</div>
+            <ul class="include-list">
+                <li>
+                    <div class="check">✓</div>Akses Web App NIKAH RAPI — 19 fitur lengkap & terintegrasi
+                </li>
+                <li>
+                    <div class="check">✓</div>Seserahan Tracker eksklusif — tidak ada di produk lain!
+                </li>
+                <li>
+                    <div class="check">✓</div>Kado & Angpao Tracker eksklusif — follow up terima kasih mudah
+                </li>
+                <li>
+                    <div class="check">✓</div>Honeymoon Rapi — planner bulan madu efisien
+                </li>
+                <li>
+                    <div class="check">✓</div>Honeymoon Anti Drama — ebook panduan honeymoon
+                </li>
+                <li>
+                    <div class="check">✓</div>Panduan penggunaan PDF — setup 15 menit, langsung pakai
+                </li>
+                <li>
+                    <div class="check">✓</div>Update akses gratis seumur hidup
+                </li>
+                <li>
+                    <div class="check">✓</div>Dashboard auto-update tanpa input ulang
+                </li>
+            </ul>
+            <a href="https://entrepreneurai.myscalev.com/checkout-page" class="btn-primary"
+                style="width:100%;justify-content:center;font-size:15px;padding:22px;">
+                ⚡ Dapatkan Sekarang — Rp 129.000
+            </a>
+            <!-- REVISED: format harga konsisten -->
+            <p class="urgency-note">⏰ Harga segera naik ke Rp 349.000 · Garansi 7 hari · Akses langsung via WA</p>
+            <div class="efficiency-note">
+                <span style="font-size:24px">⚡</span>
+                <div class="eff-note-text">
+                    <strong>Setup 15 menit saat lunch break, pakai seumur hidup.</strong><br>
+                    Waktu kamu terlalu berharga untuk dicatat manual. Akses langsung dikirim setelah bayar.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ FAQ — REVISED dengan pertanyaan karir-spesifik ══ -->
+    <section class="faq-section">
+        <p class="section-eyebrow reveal">Pertanyaan yang sering ditanya</p>
+        <h2 class="section-title reveal">FAQ</h2>
+        <div class="faq-inner">
+
+            <!-- NEW: Pertanyaan karir-spesifik #1 — di urutan pertama -->
+            <div class="faq-item reveal" onclick="toggleFaq(this)">
+                <div class="faq-q">
+                    Bisa update dari HP pas jam istirahat atau di jalan?
+                    <span class="faq-karir-tag">Wanita Karir</span>
+                    <span class="faq-arrow">+</span>
+                </div>
+                <div class="faq-a">Bisa banget! Ini adalah Web App responsif yang dioptimalkan untuk HP. Banyak pengguna
+                    kami yang update 5–10 menit saat lunch break, atau di KRL saat commute pulang. Tidak perlu laptop —
+                    semua fitur berfungsi penuh dari HP kamu.</div>
+            </div>
+
+            <!-- NEW: Pertanyaan karir-spesifik #2 -->
+            <div class="faq-item reveal" onclick="toggleFaq(this)">
+                <div class="faq-q">
+                    Gimana kalau aku terlalu capek setelah kerja untuk input data?
+                    <span class="faq-karir-tag">Wanita Karir</span>
+                    <span class="faq-arrow">+</span>
+                </div>
+                <div class="faq-a">Itulah kenapa NIKAH RAPI dirancang agar input sesedikit mungkin. Kamu tidak harus
+                    update setiap hari — banyak pengguna cukup update 1x seminggu, 10–15 menit saja. Sistem akan
+                    kalkulasi otomatis sehingga datamu selalu akurat meski jarang disentuh.</div>
+            </div>
+
+            <!-- NEW: Pertanyaan karir-spesifik #3 — koordinasi pasangan -->
+            <div class="faq-item reveal" onclick="toggleFaq(this)">
+                <div class="faq-q">
+                    Bisa dipakai bareng pasangan yang juga sibuk kerja?
+                    <span class="faq-karir-tag">Wanita Karir</span>
+                    <span class="faq-arrow">+</span>
+                </div>
+                <div class="faq-a">Tentu! Simpan di Google Drive dan bagikan ke pasangan. Kalian bisa update dari
+                    masing-masing perangkat secara bersamaan. Tidak perlu ketemu dulu untuk sinkronisasi — siapa yang
+                    update apa langsung kelihatan. Koordinasi jadi jauh lebih mudah.</div>
+            </div>
+
+            <!-- Pertanyaan umum -->
+            <div class="faq-item reveal" onclick="toggleFaq(this)">
+                <div class="faq-q">Harus jago Excel atau IT dulu tidak? <span class="faq-arrow">+</span></div>
+                <div class="faq-a">Sama sekali tidak! Tampilannya sangat familiar dan semudah mengisi form. Semuanya
+                    otomatis dihitung oleh sistem. Tidak perlu jago IT — kalau bisa pakai WhatsApp, kamu bisa pakai
+                    NIKAH RAPI.</div>
+            </div>
+
+            <div class="faq-item reveal" onclick="toggleFaq(this)">
+                <div class="faq-q">Berapa lama setup awalnya? <span class="faq-arrow">+</span></div>
+                <div class="faq-a">Hanya butuh 15 menit untuk setup awal — cukup isi tanggal nikah & budget. Setelah itu
+                    tinggal pakai sampai hari H. Update berkala hanya butuh 5–10 menit per sesi, bisa dilakukan dari
+                    mana saja.</div>
+            </div>
+
+            <div class="faq-item reveal" onclick="toggleFaq(this)">
+                <div class="faq-q">Akses login dikirim ke mana & berapa lama? <span class="faq-arrow">+</span></div>
+                <div class="faq-a">Akses Web App dikirim otomatis via WhatsApp segera setelah pembayaran terkonfirmasi.
+                    Kamu langsung bisa setup di sela-sela waktu luang hari itu juga.</div>
+            </div>
+
+            <div class="faq-item reveal" onclick="toggleFaq(this)">
+                <div class="faq-q">Ada garansi uang kembali? <span class="faq-arrow">+</span></div>
+                <div class="faq-a">Pasti! Jika kamu merasa sistem ini tidak menghemat waktumu, kami akan kembalikan
+                    uangmu 100% tanpa pertanyaan dalam 7 hari pertama.</div>
+            </div>
+
+            <!-- NEW: Adat — relevan untuk semua LP -->
+            <div class="faq-item reveal" onclick="toggleFaq(this)">
+                <div class="faq-q">Bisa untuk pernikahan adat Jawa, Sunda, Minang, dll? <span class="faq-arrow">+</span>
+                </div>
+                <div class="faq-a">Bisa untuk semua adat! Sheet seserahan bisa disesuaikan dengan tradisi masing-masing
+                    daerah. Sudah dipakai untuk pernikahan adat Jawa, Sunda, Minang, Betawi, dan Modern.</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ══ FINAL CTA ══ -->
+    <section class="final-cta">
+        <p class="section-eyebrow reveal">Sudah siap?</p>
+        <h2 class="section-title reveal">Karir Tetap Produktif,<br>Nikah Tetap <em
+                style="color:var(--gold-light)">Sempurna Terkontrol</em></h2>
+        <p class="reveal">Kamu tidak harus memilih antara performa kerja dan persiapan nikah yang rapi. Dengan sistem
+            yang benar, keduanya bisa jalan bareng — tanpa chaos, tanpa overwhelmed, tanpa harus begadang.</p>
+        <div class="final-price reveal">Rp 129.000 · Hemat 63% · Setup 15 menit · Garansi 7 hari</div>
+        <a href="https://entrepreneurai.myscalev.com/checkout-page" class="btn-secondary reveal" style="margin:0 auto;">
+            ⚡ Ambil Sekarang Sebelum Harga Naik
+        </a>
+    </section>
+
+    <!-- ══ FOOTER ══ -->
+    <footer>
+        <div class="footer-brand">NIKAH RAPI ✦</div>
+        <div class="footer-note">© 2025 NIKAH RAPI · Web App Wedding Planner Premium · Made with love 🤍</div>
+    </footer>
+
+    <script>
+        // Reveal on scroll
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => entry.target.classList.add('visible'), i * 60);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        reveals.forEach(el => observer.observe(el));
+
+        // Sticky CTA
+        const stickyCta = document.getElementById('stickyCta');
+        window.addEventListener('scroll', () => {
+            stickyCta.classList.toggle('show', window.scrollY > 700);
+        });
+
+        function toggleFaq(el) { el.classList.toggle('open'); }
+
+        function switchPreview(btn, id) {
+            document.querySelectorAll('.ptab').forEach(t => t.classList.remove('on'));
+            document.querySelectorAll('.preview-stage').forEach(s => s.classList.remove('on'));
+            btn.classList.add('on');
+            const el = document.getElementById(id);
+            if (el) el.classList.add('on');
+            const map = { 'p-dash': 0, 'p-check': 1, 'p-budget': 2, 'p-vendor': 3, 'p-time': 4, 'p-rsvp': 5 };
+            const idx = map[id];
+            document.querySelectorAll('.stab').forEach((t, i) => t.classList.toggle('on', i === idx));
+        }
+
+        function switchSheet(btn, id) {
+            document.querySelectorAll('.stab').forEach(t => t.classList.remove('on'));
+            document.querySelectorAll('.preview-stage').forEach(s => s.classList.remove('on'));
+            btn.classList.add('on');
+            const el = document.getElementById(id);
+            if (el) el.classList.add('on');
+            const ids = ['p-dash', 'p-check', 'p-budget', 'p-vendor', 'p-time', 'p-rsvp'];
+            document.querySelectorAll('.ptab').forEach((t, i) => t.classList.toggle('on', ids[i] === id));
+        }
+    </script>
+</body>
+
+</html>
