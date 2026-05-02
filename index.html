@@ -147,6 +147,7 @@
     .stab.gold.on { color: var(--gold); border-top-color: var(--gold); }
     .preview-stage { display: none; }
     .preview-stage.on { display: block; }
+    .preview-stage img { width: 100%; display: block; }
 
     /* Dashboard */
     .dash-body { padding: 28px 28px 24px; }
@@ -263,6 +264,56 @@
     .sp-avatar { width: 28px; height: 28px; border-radius: 50%; border: 2px solid white; margin-left: -8px; display: flex; align-items: center; justify-content: center; font-size: 12px; }
     .sp-avatar:first-child { margin-left: 0; }
     .stars { color: var(--gold); letter-spacing: 1px; font-size: 14px; }
+
+    /* ══ VIDEO SECTION ══ */
+    .video-section { background: var(--cream); padding: 100px 80px; }
+    .video-sub { font-size: 15px; color: var(--text-mid); text-align: center; max-width: 500px; margin: 0 auto 48px; font-weight: 300; line-height: 1.7; }
+    .video-wrapper { max-width: 760px; margin: 0 auto 48px; }
+    .video-placeholder {
+      position: relative; width: 100%; aspect-ratio: 16/9; border-radius: 16px; overflow: hidden; cursor: pointer;
+      background: linear-gradient(135deg, var(--brown) 0%, var(--mauve) 50%, var(--blush-deep) 100%);
+      box-shadow: 0 40px 80px rgba(92,61,46,0.2), 0 0 0 1px rgba(139,94,106,0.15);
+      display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 16px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .video-placeholder:hover { transform: translateY(-4px) scale(1.01); box-shadow: 0 50px 100px rgba(92,61,46,0.28); }
+    .video-glow {
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at center, rgba(255,255,255,0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .video-play-btn {
+      width: 80px; height: 80px; border-radius: 50%;
+      background: rgba(255,255,255,0.2); backdrop-filter: blur(8px);
+      border: 2px solid rgba(255,255,255,0.35);
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.3s ease; z-index: 2;
+      animation: pulse-play 2s ease-in-out infinite;
+    }
+    .video-placeholder:hover .video-play-btn { background: rgba(255,255,255,0.3); transform: scale(1.1); }
+    .video-play-btn svg { margin-left: 4px; }
+    .video-overlay-text { z-index: 2; }
+    .video-badge-tag {
+      background: rgba(255,255,255,0.15); backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: white; font-size: 12px; font-weight: 500; letter-spacing: 1px;
+      padding: 6px 18px; border-radius: 100px;
+    }
+    @keyframes pulse-play {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.3); }
+      50% { box-shadow: 0 0 0 18px rgba(255,255,255,0); }
+    }
+    .video-features { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; max-width: 760px; margin: 0 auto; }
+    .vf-card {
+      background: white; border-radius: 14px; padding: 24px 20px;
+      display: flex; align-items: flex-start; gap: 14px;
+      border: 1px solid rgba(139,94,106,0.1);
+      transition: all 0.3s ease;
+    }
+    .vf-card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(92,61,46,0.08); border-color: var(--blush); }
+    .vf-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+    .vf-text h4 { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 600; color: var(--text-dark); margin-bottom: 4px; }
+    .vf-text p { font-size: 12px; color: var(--text-light); line-height: 1.6; font-weight: 300; }
 
     /* ══ DRAMA SECTION ══ */
     .drama-section { background: var(--cream); padding: 100px 80px; }
@@ -399,16 +450,17 @@
 
     /* ══ RESPONSIVE ══ */
     @media (max-width: 1024px) {
-      .drama-section, .solution-section, .sheets-section, .diff-section, .testi-section, .pricing-section, .faq-section, .final-cta, footer { padding: 80px 40px; }
+      .video-section, .drama-section, .solution-section, .sheets-section, .diff-section, .testi-section, .pricing-section, .faq-section, .final-cta, footer { padding: 80px 40px; }
       .sheets-grid { grid-template-columns: repeat(3,1fr); }
       .testi-grid { grid-template-columns: repeat(2,1fr); }
       .solution-inner { gap: 50px; }
     }
     @media (max-width: 768px) {
       .hero { padding: 70px 20px 50px; }
-      .drama-section, .solution-section, .diff-section, .sheets-section, .testi-section, .pricing-section, .faq-section, .final-cta { padding: 60px 24px; }
+      .video-section, .drama-section, .solution-section, .diff-section, .sheets-section, .testi-section, .pricing-section, .faq-section, .final-cta { padding: 60px 24px; }
       footer { padding: 32px 24px; flex-direction: column; gap: 12px; text-align: center; }
       .drama-grid, .testi-grid { grid-template-columns: 1fr; }
+      .video-features { grid-template-columns: 1fr; max-width: 400px; }
       .solution-inner { grid-template-columns: 1fr; gap: 40px; }
       .sheets-grid { grid-template-columns: repeat(2,1fr); }
       .kpi-row { grid-template-columns: repeat(2,1fr); }
@@ -466,6 +518,8 @@
       <button class="ptab" onclick="switchPreview(this,'p-ses')">💍 Seserahan ✦</button>
       <button class="ptab" onclick="switchPreview(this,'p-kado')">🎁 Kado & Angpao ✦</button>
       <button class="ptab" onclick="switchPreview(this,'p-budget')">💰 Budget</button>
+      <button class="ptab" onclick="switchPreview(this,'p-guest')">👥 Guest List</button>
+      <button class="ptab" onclick="switchPreview(this,'p-vendor')">🏢 Vendor</button>
     </div>
 
     <div class="product-showcase">
@@ -492,7 +546,7 @@
             <div class="browser-dot" style="background:#febc2e;"></div>
             <div class="browser-dot" style="background:#28c840;"></div>
           </div>
-          <div class="browser-url">NIKAH_RAPI_PREMIUM_FINAL.xlsx ✦</div>
+          <div class="browser-url">app.nikahrapi.com ✦</div>
         </div>
         <div class="sheet-tabs-bar">
           <button class="stab on" onclick="switchSheet(this,'p-dash',0)">🏠 Dashboard</button>
@@ -504,147 +558,27 @@
         </div>
 
         <div class="preview-stage on" id="p-dash">
-          <div class="dash-body">
-            <div class="dash-header">
-              <div class="dash-title">NIKAH RAPI ✦</div>
-              <div class="dash-countdown">💍 H-127 menuju Hari Bahagia</div>
-            </div>
-            <div class="kpi-row">
-              <div class="kpi" style="background:linear-gradient(135deg,#FFF0EC,#FAE8E2);border-color:rgba(212,160,144,0.3)">
-                <div class="kpi-label">Budget Total</div>
-                <div class="kpi-val" style="color:var(--mauve)">Rp 85jt</div>
-                <div class="kpi-note" style="color:var(--dusty-rose)">Terpakai 62%</div>
-              </div>
-              <div class="kpi" style="background:linear-gradient(135deg,#F0F4F0,#E8EEE8);border-color:rgba(122,140,126,0.3)">
-                <div class="kpi-label">Tamu Undangan</div>
-                <div class="kpi-val" style="color:var(--sage)">248</div>
-                <div class="kpi-note" style="color:var(--sage)">186 konfirmasi</div>
-              </div>
-              <div class="kpi" style="background:linear-gradient(135deg,#FFF8EC,#F5EEDD);border-color:rgba(201,169,110,0.3)">
-                <div class="kpi-label">Kado & Angpao</div>
-                <div class="kpi-val" style="color:var(--gold)">Rp 48,5jt</div>
-                <div class="kpi-note" style="color:var(--gold)">42 pemberi</div>
-              </div>
-              <div class="kpi" style="background:linear-gradient(135deg,#FAF0EC,#F0E4DC);border-color:rgba(139,94,106,0.2)">
-                <div class="kpi-label">Seserahan</div>
-                <div class="kpi-val" style="color:var(--mauve)">12/15</div>
-                <div class="kpi-note" style="color:var(--dusty-rose)">3 item pending</div>
-              </div>
-            </div>
-            <div class="dash-bottom">
-              <div class="dash-panel">
-                <div class="panel-title">Progress Persiapan</div>
-                <div class="prog-row"><div class="prog-icon" style="background:#E8F5E9">✅</div><div class="prog-name">Budget & Keuangan</div><div class="prog-bar"><div class="prog-fill" style="width:100%"></div></div><div class="prog-pct" style="color:var(--sage)">100%</div></div>
-                <div class="prog-row"><div class="prog-icon" style="background:#FFF0EC">🏢</div><div class="prog-name">Vendor & Catering</div><div class="prog-bar"><div class="prog-fill" style="width:85%"></div></div><div class="prog-pct">85%</div></div>
-                <div class="prog-row"><div class="prog-icon" style="background:#FFF8EC">💍</div><div class="prog-name">Seserahan</div><div class="prog-bar"><div class="prog-fill" style="width:60%"></div></div><div class="prog-pct">60%</div></div>
-                <div class="prog-row"><div class="prog-icon" style="background:#F0F4F0">👗</div><div class="prog-name">Busana & MUA</div><div class="prog-bar"><div class="prog-fill" style="width:40%"></div></div><div class="prog-pct">40%</div></div>
-              </div>
-              <div class="dash-panel">
-                <div class="panel-title">Status Vendor</div>
-                <div class="vendor-row"><span style="color:var(--text-mid)">📸 Fotografer</span><span style="color:var(--sage);font-weight:700;font-size:12px">✓ DP Lunas</span></div>
-                <div class="vendor-row"><span style="color:var(--text-mid)">🍽 Catering</span><span style="color:var(--sage);font-weight:700;font-size:12px">✓ DP Lunas</span></div>
-                <div class="vendor-row"><span style="color:var(--text-mid)">🌸 Dekorasi</span><span style="color:var(--gold);font-weight:700;font-size:12px">⚡ Nego</span></div>
-                <div class="vendor-row"><span style="color:var(--text-mid)">💄 MUA</span><span style="color:var(--dusty-rose);font-weight:700;font-size:12px">○ Belum</span></div>
-              </div>
-            </div>
-          </div>
+          <img src="assets/Dashboard.png" alt="Dashboard Utama — Countdown, KPI, Charts, Progress Persiapan" loading="lazy">
         </div>
 
         <div class="preview-stage" id="p-ses">
-          <div class="ses-body">
-            <div class="ses-header">
-              <div>
-                <div style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--mauve)">Seserahan Tracker ✦</div>
-                <div style="font-size:11px;color:var(--text-light);margin-top:2px">Fitur Eksklusif NIKAH RAPI — Tidak ada di produk lain</div>
-              </div>
-              <div class="ses-total">
-                <div class="ses-total-label">Total Estimasi</div>
-                <div class="ses-total-val">Rp 12.450.000</div>
-              </div>
-            </div>
-            <table class="data-table">
-              <thead><tr><th>Item Seserahan</th><th>Kategori</th><th>Est. Harga</th><th>Harga Aktual</th><th>Tempat Beli</th><th>Status</th></tr></thead>
-              <tbody>
-                <tr><td><div class="item-name"><div class="item-dot" style="background:var(--mauve)"></div>Al-Qur'an & Tasbih</div></td><td style="color:var(--text-light)">Ibadah</td><td>Rp 450.000</td><td class="price-val">Rp 420.000</td><td style="color:var(--text-light)">Gramedia</td><td><span class="status-badge s-done">✓ Sudah</span></td></tr>
-                <tr><td><div class="item-name"><div class="item-dot" style="background:var(--dusty-rose)"></div>Mukena Premium</div></td><td style="color:var(--text-light)">Ibadah</td><td>Rp 850.000</td><td class="price-val">Rp 875.000</td><td style="color:var(--text-light)">Tokopedia</td><td><span class="status-badge s-done">✓ Sudah</span></td></tr>
-                <tr><td><div class="item-name"><div class="item-dot" style="background:var(--gold)"></div>Perhiasan Emas</div></td><td style="color:var(--text-light)">Perhiasan</td><td>Rp 5.000.000</td><td class="price-val">Rp 5.200.000</td><td style="color:var(--text-light)">Toko Mas XYZ</td><td><span class="status-badge s-done">✓ Sudah</span></td></tr>
-                <tr><td><div class="item-name"><div class="item-dot" style="background:var(--blush-deep)"></div>Parfum Set</div></td><td style="color:var(--text-light)">Kecantikan</td><td>Rp 1.200.000</td><td class="price-val" style="color:var(--text-light)">—</td><td style="color:var(--text-light)">—</td><td><span class="status-badge s-pending">○ Belum</span></td></tr>
-                <tr><td><div class="item-name"><div class="item-dot" style="background:var(--sage)"></div>Buah-buahan</div></td><td style="color:var(--text-light)">Makanan</td><td>Rp 500.000</td><td class="price-val" style="color:var(--text-light)">—</td><td style="color:var(--text-light)">H-3 acara</td><td><span class="status-badge s-later">⏳ Nanti</span></td></tr>
-                <tr class="table-total"><td colspan="2"><strong>TOTAL</strong></td><td><strong>Rp 12.450.000</strong></td><td class="price-val"><strong>Rp 6.495.000</strong></td><td colspan="2" style="color:var(--dusty-rose);font-size:11px">Sisa Rp 5.955.000 belum dibeli</td></tr>
-              </tbody>
-            </table>
-          </div>
+          <img src="assets/Seserahan%20Tracker.png" alt="Seserahan Tracker — Item, Harga, Status, Progress" loading="lazy">
         </div>
 
         <div class="preview-stage" id="p-kado">
-          <div class="kado-body">
-            <div class="kado-stats">
-              <div class="kado-stat" style="background:linear-gradient(135deg,#FFF8EC,#F5EEDD);border:1px solid rgba(201,169,110,0.2);border-radius:12px">
-                <div class="kado-stat-val" style="color:var(--gold)">Rp 48,5jt</div>
-                <div class="kado-stat-label">Total Angpao</div>
-              </div>
-              <div class="kado-stat" style="background:linear-gradient(135deg,#FFF0EC,#FAE8E2);border:1px solid rgba(212,160,144,0.2);border-radius:12px">
-                <div class="kado-stat-val" style="color:var(--mauve)">42</div>
-                <div class="kado-stat-label">Total Pemberi</div>
-              </div>
-              <div class="kado-stat" style="background:linear-gradient(135deg,#F0F4F0,#E8EEE8);border:1px solid rgba(122,140,126,0.2);border-radius:12px">
-                <div class="kado-stat-val" style="color:var(--sage)">38/42</div>
-                <div class="kado-stat-label">Ucapan Terkirim</div>
-              </div>
-            </div>
-            <table class="kado-table">
-              <thead><tr><th>Nama Pemberi</th><th>Jenis</th><th>Nominal / Kado</th><th>Dari</th><th>Ucapan Terima Kasih</th></tr></thead>
-              <tbody>
-                <tr><td style="font-weight:600;color:var(--text-dark)">Keluarga Bapak Hendra</td><td>Angpao 💛</td><td class="kado-amount">Rp 2.000.000</td><td style="color:var(--text-light);font-size:11px">Keluarga</td><td><span class="ucapan-sent">✓ Terkirim via WA</span></td></tr>
-                <tr><td style="font-weight:600;color:var(--text-dark)">Ibu Sari & Keluarga</td><td>Kado 🎁</td><td style="color:var(--text-mid)">Rice Cooker Cosmos</td><td style="color:var(--text-light);font-size:11px">Teman kantor</td><td><span class="ucapan-sent">✓ Terkirim via WA</span></td></tr>
-                <tr><td style="font-weight:600;color:var(--text-dark)">Rombongan RT 05</td><td>Angpao 💛</td><td class="kado-amount">Rp 1.500.000</td><td style="color:var(--text-light);font-size:11px">Tetangga</td><td><span class="ucapan-sent">✓ Terkirim via WA</span></td></tr>
-                <tr><td style="font-weight:600;color:var(--text-dark)">Dinda & Rizky</td><td>Kado 🎁</td><td style="color:var(--text-mid)">Stand Mixer KitchenAid</td><td style="color:var(--text-light);font-size:11px">Sahabat kuliah</td><td><span class="ucapan-unsent">○ Belum dikirim</span></td></tr>
-                <tr><td style="font-weight:600;color:var(--text-dark)">Pak Budi (Atasan)</td><td>Angpao 💛</td><td class="kado-amount">Rp 500.000</td><td style="color:var(--text-light);font-size:11px">Bos kerja</td><td><span class="ucapan-unsent">○ Belum dikirim</span></td></tr>
-              </tbody>
-            </table>
-          </div>
+          <img src="assets/Kado%20Angpao.png" alt="Kado & Angpao Tracker — Statistik, Charts, Follow Up Ucapan" loading="lazy">
         </div>
 
         <div class="preview-stage" id="p-budget">
-          <div class="budget-body">
-            <div class="budget-header">
-              <div>
-                <div style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--text-dark)">Budget Planner</div>
-                <div style="font-size:11px;color:var(--text-light);margin-top:2px">Rencana vs Realisasi — Update Otomatis</div>
-              </div>
-              <div class="budget-total">
-                <div style="font-size:10px;color:var(--text-light);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Total Budget</div>
-                <div style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--mauve)">Rp 85.000.000</div>
-                <div style="font-size:11px;color:var(--dusty-rose);margin-top:2px">Terpakai: Rp 52.750.000 (62%)</div>
-              </div>
-            </div>
-            <table class="budget-table">
-              <thead><tr><th>Kategori</th><th>Rencana</th><th>Realisasi</th><th>Selisih</th><th>Progress</th><th>Status</th></tr></thead>
-              <tbody>
-                <tr><td style="font-weight:600">🍽 Catering & Konsumsi</td><td>Rp 32.000.000</td><td>Rp 30.500.000</td><td class="save">+Rp 1,5jt</td><td><div class="pct-bar"><div class="pct-fill" style="width:95%;background:linear-gradient(90deg,var(--sage),#5a8a5a)"></div></div></td><td style="color:var(--sage);font-size:11px;font-weight:700">✓ Hemat</td></tr>
-                <tr><td style="font-weight:600">🏛 Venue & Dekorasi</td><td>Rp 20.000.000</td><td>Rp 22.000.000</td><td class="over">-Rp 2jt</td><td><div class="pct-bar"><div class="pct-fill" style="width:100%;background:linear-gradient(90deg,var(--dusty-rose),#c0392b)"></div></div></td><td style="color:var(--dusty-rose);font-size:11px;font-weight:700">⚠ Over</td></tr>
-                <tr><td style="font-weight:600">📸 Foto & Video</td><td>Rp 8.000.000</td><td>Rp 7.500.000</td><td class="save">+Rp 500rb</td><td><div class="pct-bar"><div class="pct-fill" style="width:93%;background:linear-gradient(90deg,var(--sage),#5a8a5a)"></div></div></td><td style="color:var(--sage);font-size:11px;font-weight:700">✓ Hemat</td></tr>
-                <tr><td style="font-weight:600">👗 Busana & MUA</td><td>Rp 12.000.000</td><td style="color:var(--text-light)">Rp 0</td><td style="color:var(--text-light)">Belum</td><td><div class="pct-bar"><div class="pct-fill" style="width:0%"></div></div></td><td style="color:var(--text-light);font-size:11px">○ Belum</td></tr>
-                <tr><td style="font-weight:600">💍 Seserahan</td><td>Rp 13.000.000</td><td>Rp 6.495.000</td><td style="color:var(--gold);font-weight:700">+Rp 6,5jt</td><td><div class="pct-bar"><div class="pct-fill" style="width:50%;background:linear-gradient(90deg,var(--gold),#b8902a)"></div></div></td><td style="color:var(--gold);font-size:11px;font-weight:700">⚡ Proses</td></tr>
-              </tbody>
-            </table>
-          </div>
+          <img src="assets/Budget%20planner.png" alt="Budget Planner — Estimasi vs Realisasi, Charts, Rincian" loading="lazy">
         </div>
 
         <div class="preview-stage" id="p-guest">
-          <div style="padding:60px 24px;text-align:center;color:var(--text-light)">
-            <div style="font-size:40px;margin-bottom:16px">👥</div>
-            <div style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--text-mid);margin-bottom:8px">Guest List & RSVP Tracker</div>
-            <div style="font-size:13px">248 tamu · 186 konfirmasi · Kebutuhan meja otomatis</div>
-          </div>
+          <img src="assets/GuestList.png" alt="Guest List — Daftar Tamu, Kategori, Nomor Meja" loading="lazy">
         </div>
 
         <div class="preview-stage" id="p-vendor">
-          <div style="padding:60px 24px;text-align:center;color:var(--text-light)">
-            <div style="font-size:40px;margin-bottom:16px">🏢</div>
-            <div style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--text-mid);margin-bottom:8px">Vendor Manager</div>
-            <div style="font-size:13px">Kontak, kontrak, DP & pelunasan semua vendor dalam 1 sheet</div>
-          </div>
+          <img src="assets/Vendor.png" alt="Vendor Manager — Kontrak, DP, Deadline, Status" loading="lazy">
         </div>
 
       </div>
@@ -659,8 +593,8 @@
       <a href="https://entrepreneurai.myscalev.com/checkout-page" class="btn-primary">💍 Dapatkan NIKAH RAPI Sekarang</a>
       <div class="cta-notes">
         <div class="cta-note-item">✓ Garansi 7 hari</div>
-        <div class="cta-note-item">✓ File dikirim via email</div>
-        <div class="cta-note-item">✓ Akses seumur hidup</div>
+        <div class="cta-note-item">✓ Akses instan Web App</div>
+        <div class="cta-note-item">✓ Tersimpan aman di Cloud</div>
       </div>
     </div>
 
@@ -673,6 +607,47 @@
       </div>
       <div class="stars">★★★★★</div>
       <span>Dipercaya <strong>50+ calon pengantin</strong> Indonesia</span>
+    </div>
+  </section>
+
+  <!-- ══ VIDEO SECTION ══ -->
+  <section class="video-section">
+    <p class="section-eyebrow reveal">✨ Intip Dulu Sebelum Beli</p>
+    <h2 class="section-title reveal">Lihat <em>Cara Kerjanya</em></h2>
+    <p class="video-sub reveal">Tidak perlu install aplikasi. Akses langsung via browser, data otomatis tersinkronisasi secara real-time.</p>
+    <div class="video-wrapper reveal">
+      <div class="video-placeholder" id="videoPlaceholder">
+        <div class="video-glow"></div>
+        <div class="video-play-btn">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+        </div>
+        <div class="video-overlay-text">
+          <span class="video-badge-tag">▶ Preview Demo</span>
+        </div>
+      </div>
+    </div>
+    <div class="video-features reveal">
+      <div class="vf-card">
+        <div class="vf-icon">💍</div>
+        <div class="vf-text">
+          <h4>Seserahan Tracker <span class="usp-tag">Eksklusif</span></h4>
+          <p>Catat item, harga, status, auto-hitung total.</p>
+        </div>
+      </div>
+      <div class="vf-card">
+        <div class="vf-icon">🎁</div>
+        <div class="vf-text">
+          <h4>Kado & Angpao Tracker <span class="usp-tag">Eksklusif</span></h4>
+          <p>Siapa beri apa, nominal, follow up ucapan.</p>
+        </div>
+      </div>
+      <div class="vf-card">
+        <div class="vf-icon">💰</div>
+        <div class="vf-text">
+          <h4>Budget Planner</h4>
+          <p>Rencana vs realisasi, update otomatis real-time.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -727,7 +702,7 @@
       <div class="solution-left">
         <p class="section-eyebrow reveal">Solusi yang kamu butuhkan</p>
         <h2 class="section-title reveal">Satu platform.<br>Semua drama<br>bisa dicegah.</h2>
-        <p class="reveal">NIKAH RAPI dirancang khusus untuk calon pengantin Indonesia — 19 sheet terintegrasi yang saling terhubung otomatis. Input sekali, semua terupdate. Kamu bisa fokus pada hal yang penting: menikmati prosesnya.</p>
+        <p class="reveal">NIKAH RAPI dirancang khusus untuk calon pengantin Indonesia — 22+ modul Web App terintegrasi yang saling terhubung otomatis. Input sekali, semua terupdate. Tersinkronisasi cloud, aman, dan bisa diakses dari perangkat manapun.</p>
         <a href="#pricing" class="btn-secondary reveal">Lihat Harga & Paket →</a>
       </div>
       <div class="feature-cards">
@@ -791,9 +766,24 @@
             <td><span class="diff-yes">✓</span> Khusus pernikahan Indonesia</td>
           </tr>
           <tr>
-            <td>19 sheet terintegrasi</td>
-            <td><span class="diff-no">✕</span> 5–8 sheet terpisah</td>
-            <td><span class="diff-yes">✓</span> 19 sheet saling terhubung</td>
+            <td>22+ modul terintegrasi</td>
+            <td><span class="diff-no">✕</span> 5–8 aplikasi terpisah</td>
+            <td><span class="diff-yes">✓</span> 22+ modul dalam 1 tempat</td>
+          </tr>
+          <tr>
+            <td>Akses PWA & Offline Support</td>
+            <td><span class="diff-no">✕</span> Tergantung sinyal</td>
+            <td><span class="diff-yes">✓</span> Cache-first & sangat cepat</td>
+          </tr>
+          <tr>
+            <td>Notifikasi WA/Telegram</td>
+            <td><span class="diff-no">✕</span> Manual & merepotkan</td>
+            <td><span class="diff-yes">✓</span> Notif ucapan & reminder (Segera)</td>
+          </tr>
+          <tr>
+            <td>Export & Import Data</td>
+            <td><span class="diff-no">✕</span> Data terkunci / manual</td>
+            <td><span class="diff-yes">✓</span> Export/Import CSV & Excel</td>
           </tr>
           <tr>
             <td>Honeymoon Planner</td>
@@ -805,10 +795,10 @@
     </div>
   </section>
 
-  <!-- ══ 19 SHEETS ══ -->
+  <!-- ══ 22+ MODULES ══ -->
   <section class="sheets-section">
     <p class="section-eyebrow reveal">Yang kamu dapatkan</p>
-    <h2 class="section-title reveal">19 Sheet Lengkap,<br><em>Tidak Ada yang Terlewat</em></h2>
+    <h2 class="section-title reveal">22+ Modul Web App Lengkap,<br><em>Tidak Ada yang Terlewat</em></h2>
     <div class="sheets-grid">
       <div class="sheet-card star reveal"><div class="sheet-num">01</div><div class="sheet-name">Dashboard Utama ✦</div><div class="sheet-desc">Ringkasan semua progress pernikahan</div></div>
       <div class="sheet-card reveal"><div class="sheet-num">02</div><div class="sheet-name">Budget Planner</div><div class="sheet-desc">Rencana & realisasi per kategori</div></div>
@@ -891,7 +881,7 @@
         <li><div class="check">✓</div>Honeymoon Anti Drama — ebook panduan honeymoon</li>
         <li><div class="check">✓</div>Panduan penggunaan PDF — langsung bisa dipakai</li>
         <li><div class="check">✓</div>Update file gratis seumur hidup</li>
-        <li><div class="check">✓</div>File dikirim ke email setelah pembayaran dikonfirmasi</li>
+        <li><div class="check">✓</div>File terproteksi & siap pakai</li>
       </ul>
       <a href="https://entrepreneurai.myscalev.com/checkout-page" class="btn-primary" style="width:100%;justify-content:center;font-size:15px;padding:22px;">
         💍 Dapatkan Sekarang — Rp 129.000
@@ -900,8 +890,8 @@
       <div class="heat-run-bar">
         <span style="font-size:24px">🔥</span>
         <div class="heat-run-text">
-          <strong>Jangan tunda persiapan nikahmu!</strong><br>
-          Setiap hari tanpa sistem yang rapi = satu hari lebih dekat ke drama yang bisa dihindari. Mulai sekarang, mulai rapi.
+          <strong>Produk digital — jangan tunda!</strong><br>
+          Keputusan yang ditunda hari ini = persiapan nikah yang makin kacau esok hari.
         </div>
       </div>
     </div>
@@ -922,7 +912,7 @@
       </div>
       <div class="faq-item reveal" onclick="toggleFaq(this)">
         <div class="faq-q">Setelah bayar, file dikirim ke mana dan berapa lama? <span class="faq-arrow">+</span></div>
-        <div class="faq-a">File dikirim langsung ke email kamu dalam waktu maksimal 1x24 jam (biasanya langsung setelah pembayaran dikonfirmasi). Akses seumur hidup!</div>
+        <div class="faq-a">File dikirim langsung ke email kamu setelah pembayaran dikonfirmasi. Akses seumur hidup!</div>
       </div>
       <div class="faq-item reveal" onclick="toggleFaq(this)">
         <div class="faq-q">Ada garansi uang kembali tidak? <span class="faq-arrow">+</span></div>
@@ -942,9 +932,9 @@
   <!-- ══ FINAL CTA ══ -->
   <section class="final-cta">
     <p class="section-eyebrow reveal">Sudah siap?</p>
-    <h2 class="section-title reveal">Hari pernikahanmu<br>layak terasa seperti <em style="color:var(--gold-light)">hari terbaik hidupmu</em></h2>
-    <p class="reveal">Bukan hari yang penuh panik, cari-cari catatan, dan khawatir ada yang terlupa. Dengan NIKAH RAPI, semua terencana rapi — dan kamu bisa sepenuhnya hadir menikmati momen berharga ini.</p>
-    <div class="final-price reveal">Rp 129.000 · Hemat 63% dari Rp 349.000 · Garansi 7 hari</div>
+    <h2 class="section-title reveal">Mulai rencanakan pernikahanmu<br>dengan lebih <em style="color:var(--gold-light)">tenang & rapi</em></h2>
+    <p class="reveal">Ratusan detail pernikahan dalam satu file. Supaya hari terbaikmu benar-benar terasa seperti hari terbaik.</p>
+    <div class="final-price reveal">Rp 129.000 · Hemat 63% · Garansi 7 hari · File langsung dikirim</div>
     <a href="https://entrepreneurai.myscalev.com/checkout-page" class="btn-secondary reveal" style="margin:0 auto;">
       💍 Ambil Sekarang Sebelum Harga Naik
     </a>
