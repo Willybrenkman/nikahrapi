@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NIKAH RAPI — Wedding Planner Premium, Nikah Tanpa Drama!</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
   <style>
     :root {
       --cream: #FAF7F2;
@@ -21,9 +24,25 @@
       --text-mid: #5C4A3E;
       --text-light: #8C7A6E;
     }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--text-dark); overflow-x: hidden; }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
 
     /* ══ HERO ══ */
     .hero {
@@ -38,471 +57,2155 @@
       overflow: hidden;
       text-align: center;
     }
+
     .hero::before {
       content: '';
       position: absolute;
-      top: -200px; right: -200px;
-      width: 700px; height: 700px;
+      top: -200px;
+      right: -200px;
+      width: 700px;
+      height: 700px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(232,196,184,0.3) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(232, 196, 184, 0.3) 0%, transparent 70%);
       pointer-events: none;
     }
+
     .hero::after {
       content: '';
       position: absolute;
-      bottom: -150px; left: -150px;
-      width: 500px; height: 500px;
+      bottom: -150px;
+      left: -150px;
+      width: 500px;
+      height: 500px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(168,184,172,0.2) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(168, 184, 172, 0.2) 0%, transparent 70%);
       pointer-events: none;
     }
 
     .badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--gold-light); color: var(--brown);
-      font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase;
-      padding: 8px 20px; border-radius: 100px; margin-bottom: 28px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold-light);
+      color: var(--brown);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 8px 20px;
+      border-radius: 100px;
+      margin-bottom: 28px;
       animation: fadeDown 0.6s ease both;
     }
-    .badge::before { content: '✦'; color: var(--gold); }
+
+    .badge::before {
+      content: '✦';
+      color: var(--gold);
+    }
 
     .hero-eyebrow {
-      font-family: 'Cormorant Garamond', serif; font-style: italic;
-      font-size: 18px; color: var(--dusty-rose); margin-bottom: 14px;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 18px;
+      color: var(--dusty-rose);
+      margin-bottom: 14px;
       animation: fadeDown 0.7s ease both;
     }
+
     .hero-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(36px, 5vw, 68px); font-weight: 300; line-height: 1.1;
-      color: var(--text-dark); margin-bottom: 12px;
-      animation: fadeDown 0.8s ease both; max-width: 800px;
+      font-size: clamp(36px, 5vw, 68px);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--text-dark);
+      margin-bottom: 12px;
+      animation: fadeDown 0.8s ease both;
+      max-width: 800px;
     }
-    .hero-title em { font-style: italic; color: var(--mauve); }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--mauve);
+    }
 
     /* ══ EMOTIONAL HOOK TAGLINE ══ */
     .hero-hook {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(15px, 2vw, 20px); font-weight: 300;
-      color: var(--text-mid); margin-bottom: 16px;
-      animation: fadeDown 0.83s ease both; max-width: 650px;
-      font-style: italic; line-height: 1.6;
+      font-size: clamp(15px, 2vw, 20px);
+      font-weight: 300;
+      color: var(--text-mid);
+      margin-bottom: 16px;
+      animation: fadeDown 0.83s ease both;
+      max-width: 650px;
+      font-style: italic;
+      line-height: 1.6;
     }
 
     .hero-title-sub {
       font-size: clamp(13px, 1.6vw, 15px);
-      color: var(--text-light); font-weight: 300; margin-bottom: 8px;
-      animation: fadeDown 0.85s ease both; max-width: 700px;
+      color: var(--text-light);
+      font-weight: 300;
+      margin-bottom: 8px;
+      animation: fadeDown 0.85s ease both;
+      max-width: 700px;
     }
+
     .drama-tags {
-      display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
-      margin-bottom: 36px; animation: fadeDown 0.9s ease both;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 36px;
+      animation: fadeDown 0.9s ease both;
     }
+
     .drama-tag {
-      background: rgba(139,94,106,0.08); border: 1px solid rgba(139,94,106,0.2);
-      color: var(--mauve); font-size: 12px; padding: 6px 14px; border-radius: 100px;
+      background: rgba(139, 94, 106, 0.08);
+      border: 1px solid rgba(139, 94, 106, 0.2);
+      color: var(--mauve);
+      font-size: 12px;
+      padding: 6px 14px;
+      border-radius: 100px;
       font-weight: 400;
     }
 
     /* ══ PRODUCT MOCKUP ══ */
     .product-showcase {
-      position: relative; width: 100%; max-width: 900px; margin: 0 auto 48px;
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto 48px;
       animation: floatUp 1s ease both;
     }
+
     .showcase-glow {
-      position: absolute; inset: -40px;
-      background: radial-gradient(ellipse at center, rgba(139,94,106,0.12) 0%, transparent 70%);
-      pointer-events: none; border-radius: 50%;
+      position: absolute;
+      inset: -40px;
+      background: radial-gradient(ellipse at center, rgba(139, 94, 106, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+      border-radius: 50%;
     }
+
     .browser-frame {
-      background: white; border-radius: 16px;
-      box-shadow: 0 50px 100px rgba(92,61,46,0.18), 0 20px 40px rgba(92,61,46,0.1), 0 0 0 1px rgba(139,94,106,0.1);
-      overflow: hidden; position: relative; z-index: 2;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 50px 100px rgba(92, 61, 46, 0.18), 0 20px 40px rgba(92, 61, 46, 0.1), 0 0 0 1px rgba(139, 94, 106, 0.1);
+      overflow: hidden;
+      position: relative;
+      z-index: 2;
     }
+
     .browser-bar {
-      background: #F5EEE6; padding: 12px 20px;
-      display: flex; align-items: center; gap: 12px;
-      border-bottom: 1px solid rgba(139,94,106,0.1);
+      background: #F5EEE6;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid rgba(139, 94, 106, 0.1);
     }
-    .browser-dots { display: flex; gap: 6px; }
-    .browser-dot { width: 12px; height: 12px; border-radius: 50%; }
+
+    .browser-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .browser-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
     .browser-url {
-      flex: 1; background: white; border-radius: 6px;
-      padding: 5px 12px; font-size: 11px; color: var(--text-light);
-      text-align: center; letter-spacing: 0.5px;
-      border: 1px solid rgba(139,94,106,0.1);
+      flex: 1;
+      background: white;
+      border-radius: 6px;
+      padding: 5px 12px;
+      font-size: 11px;
+      color: var(--text-light);
+      text-align: center;
+      letter-spacing: 0.5px;
+      border: 1px solid rgba(139, 94, 106, 0.1);
     }
+
     .sheet-tabs-bar {
-      background: #F0E8E0; padding: 0 20px;
-      display: flex; gap: 2px; border-bottom: 1px solid rgba(139,94,106,0.1);
+      background: #F0E8E0;
+      padding: 0 20px;
+      display: flex;
+      gap: 2px;
+      border-bottom: 1px solid rgba(139, 94, 106, 0.1);
       overflow-x: auto;
     }
+
     .stab {
-      padding: 8px 16px; font-size: 11px; font-weight: 600;
-      border-radius: 4px 4px 0 0; white-space: nowrap; cursor: pointer;
-      color: rgba(92,61,46,0.4); transition: all 0.2s; font-family: 'Jost';
-      border: none; background: transparent;
+      padding: 8px 16px;
+      font-size: 11px;
+      font-weight: 600;
+      border-radius: 4px 4px 0 0;
+      white-space: nowrap;
+      cursor: pointer;
+      color: rgba(92, 61, 46, 0.4);
+      transition: all 0.2s;
+      font-family: 'Jost';
+      border: none;
+      background: transparent;
     }
-    .stab.on { background: white; color: var(--mauve); border-top: 2px solid var(--mauve); }
-    .stab.gold { color: rgba(201,169,110,0.6); }
-    .stab.gold.on { color: var(--gold); border-top-color: var(--gold); }
-    .preview-stage { display: none; }
-    .preview-stage.on { display: block; }
-    .preview-stage img { width: 100%; display: block; }
+
+    .stab.on {
+      background: white;
+      color: var(--mauve);
+      border-top: 2px solid var(--mauve);
+    }
+
+    .stab.gold {
+      color: rgba(201, 169, 110, 0.6);
+    }
+
+    .stab.gold.on {
+      color: var(--gold);
+      border-top-color: var(--gold);
+    }
+
+    .preview-stage {
+      display: none;
+    }
+
+    .preview-stage.on {
+      display: block;
+    }
+
+    .preview-stage img {
+      width: 100%;
+      display: block;
+    }
 
     /* Dashboard */
-    .dash-body { padding: 28px 28px 24px; }
-    .dash-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
-    .dash-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--mauve); }
-    .dash-countdown { background: rgba(139,94,106,0.08); border-radius: 8px; padding: 8px 16px; font-size: 12px; color: var(--mauve); font-weight: 500; }
-    .kpi-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; margin-bottom: 22px; }
-    .kpi { border-radius: 12px; padding: 16px; border: 1px solid rgba(139,94,106,0.1); }
-    .kpi-label { font-size: 10px; color: var(--text-light); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
-    .kpi-val { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 600; line-height: 1; margin-bottom: 4px; }
-    .kpi-note { font-size: 11px; font-weight: 500; }
-    .dash-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .dash-panel { background: rgba(139,94,106,0.04); border: 1px solid rgba(139,94,106,0.1); border-radius: 12px; padding: 16px; }
-    .panel-title { font-size: 10px; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px; font-weight: 600; }
-    .prog-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
-    .prog-icon { width: 26px; height: 26px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; }
-    .prog-name { font-size: 12px; font-weight: 500; color: var(--text-mid); flex: 1; }
-    .prog-bar { height: 4px; background: rgba(139,94,106,0.1); border-radius: 4px; overflow: hidden; flex: 1; }
-    .prog-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, var(--blush-deep), var(--mauve)); }
-    .prog-pct { font-size: 11px; color: var(--text-light); white-space: nowrap; }
-    .vendor-row { display: flex; justify-content: space-between; font-size: 12px; padding: 8px 0; border-bottom: 1px dashed rgba(139,94,106,0.1); }
-    .vendor-row:last-child { border: none; }
+    .dash-body {
+      padding: 28px 28px 24px;
+    }
+
+    .dash-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .dash-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--mauve);
+    }
+
+    .dash-countdown {
+      background: rgba(139, 94, 106, 0.08);
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-size: 12px;
+      color: var(--mauve);
+      font-weight: 500;
+    }
+
+    .kpi-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .kpi {
+      border-radius: 12px;
+      padding: 16px;
+      border: 1px solid rgba(139, 94, 106, 0.1);
+    }
+
+    .kpi-label {
+      font-size: 10px;
+      color: var(--text-light);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .kpi-val {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 600;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .kpi-note {
+      font-size: 11px;
+      font-weight: 500;
+    }
+
+    .dash-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .dash-panel {
+      background: rgba(139, 94, 106, 0.04);
+      border: 1px solid rgba(139, 94, 106, 0.1);
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .panel-title {
+      font-size: 10px;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+
+    .prog-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .prog-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+
+    .prog-name {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-mid);
+      flex: 1;
+    }
+
+    .prog-bar {
+      height: 4px;
+      background: rgba(139, 94, 106, 0.1);
+      border-radius: 4px;
+      overflow: hidden;
+      flex: 1;
+    }
+
+    .prog-fill {
+      height: 100%;
+      border-radius: 4px;
+      background: linear-gradient(90deg, var(--blush-deep), var(--mauve));
+    }
+
+    .prog-pct {
+      font-size: 11px;
+      color: var(--text-light);
+      white-space: nowrap;
+    }
+
+    .vendor-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      padding: 8px 0;
+      border-bottom: 1px dashed rgba(139, 94, 106, 0.1);
+    }
+
+    .vendor-row:last-child {
+      border: none;
+    }
 
     /* Seserahan */
-    .ses-body { padding: 24px; }
-    .ses-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
-    .ses-total { text-align: right; }
-    .ses-total-label { font-size: 10px; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
-    .ses-total-val { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; color: var(--mauve); }
-    .data-table { width: 100%; border-collapse: collapse; font-size: 12px; }
-    .data-table th { background: rgba(139,94,106,0.08); color: var(--mauve); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; padding: 10px 12px; text-align: left; font-weight: 700; }
-    .data-table td { padding: 11px 12px; color: var(--text-mid); border-bottom: 1px solid rgba(139,94,106,0.07); vertical-align: middle; }
-    .data-table tr:hover td { background: rgba(139,94,106,0.03); }
-    .item-name { display: flex; align-items: center; gap: 8px; font-weight: 600; color: var(--text-dark); }
-    .item-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-    .status-badge { font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 100px; }
-    .s-done { background: rgba(122,140,126,0.15); color: var(--sage); }
-    .s-pending { background: rgba(196,133,122,0.15); color: var(--dusty-rose); }
-    .s-later { background: rgba(201,169,110,0.15); color: var(--gold); }
-    .price-val { font-weight: 700; color: var(--mauve); }
-    .table-total { background: rgba(139,94,106,0.05) !important; }
-    .table-total td { font-weight: 700; color: var(--text-dark); border-top: 2px solid rgba(139,94,106,0.15) !important; }
+    .ses-body {
+      padding: 24px;
+    }
+
+    .ses-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .ses-total {
+      text-align: right;
+    }
+
+    .ses-total-label {
+      font-size: 10px;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .ses-total-val {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--mauve);
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+
+    .data-table th {
+      background: rgba(139, 94, 106, 0.08);
+      color: var(--mauve);
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 10px 12px;
+      text-align: left;
+      font-weight: 700;
+    }
+
+    .data-table td {
+      padding: 11px 12px;
+      color: var(--text-mid);
+      border-bottom: 1px solid rgba(139, 94, 106, 0.07);
+      vertical-align: middle;
+    }
+
+    .data-table tr:hover td {
+      background: rgba(139, 94, 106, 0.03);
+    }
+
+    .item-name {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .item-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .status-badge {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 100px;
+    }
+
+    .s-done {
+      background: rgba(122, 140, 126, 0.15);
+      color: var(--sage);
+    }
+
+    .s-pending {
+      background: rgba(196, 133, 122, 0.15);
+      color: var(--dusty-rose);
+    }
+
+    .s-later {
+      background: rgba(201, 169, 110, 0.15);
+      color: var(--gold);
+    }
+
+    .price-val {
+      font-weight: 700;
+      color: var(--mauve);
+    }
+
+    .table-total {
+      background: rgba(139, 94, 106, 0.05) !important;
+    }
+
+    .table-total td {
+      font-weight: 700;
+      color: var(--text-dark);
+      border-top: 2px solid rgba(139, 94, 106, 0.15) !important;
+    }
 
     /* Kado */
-    .kado-body { padding: 24px; }
-    .kado-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-bottom: 20px; }
-    .kado-stat { border-radius: 12px; padding: 14px; text-align: center; }
-    .kado-stat-val { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; line-height: 1; margin-bottom: 4px; }
-    .kado-stat-label { font-size: 10px; color: var(--text-light); }
-    .kado-table { width: 100%; border-collapse: collapse; font-size: 12px; }
-    .kado-table th { background: rgba(201,169,110,0.1); color: var(--gold); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; padding: 10px 12px; text-align: left; font-weight: 700; }
-    .kado-table td { padding: 11px 12px; color: var(--text-mid); border-bottom: 1px solid rgba(201,169,110,0.08); vertical-align: middle; }
-    .kado-amount { font-weight: 700; color: var(--gold); }
-    .ucapan-sent { font-size: 11px; color: var(--sage); font-weight: 600; }
-    .ucapan-unsent { font-size: 11px; color: var(--dusty-rose); font-weight: 600; }
+    .kado-body {
+      padding: 24px;
+    }
+
+    .kado-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .kado-stat {
+      border-radius: 12px;
+      padding: 14px;
+      text-align: center;
+    }
+
+    .kado-stat-val {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .kado-stat-label {
+      font-size: 10px;
+      color: var(--text-light);
+    }
+
+    .kado-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+
+    .kado-table th {
+      background: rgba(201, 169, 110, 0.1);
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 10px 12px;
+      text-align: left;
+      font-weight: 700;
+    }
+
+    .kado-table td {
+      padding: 11px 12px;
+      color: var(--text-mid);
+      border-bottom: 1px solid rgba(201, 169, 110, 0.08);
+      vertical-align: middle;
+    }
+
+    .kado-amount {
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .ucapan-sent {
+      font-size: 11px;
+      color: var(--sage);
+      font-weight: 600;
+    }
+
+    .ucapan-unsent {
+      font-size: 11px;
+      color: var(--dusty-rose);
+      font-weight: 600;
+    }
 
     /* Budget */
-    .budget-body { padding: 24px; }
-    .budget-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
-    .budget-total { text-align: right; }
-    .budget-table { width: 100%; border-collapse: collapse; font-size: 12px; }
-    .budget-table th { background: rgba(139,94,106,0.08); color: var(--mauve); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; padding: 10px 12px; text-align: left; font-weight: 700; }
-    .budget-table td { padding: 11px 12px; color: var(--text-mid); border-bottom: 1px solid rgba(139,94,106,0.07); vertical-align: middle; }
-    .pct-bar { width: 80px; height: 6px; background: rgba(139,94,106,0.1); border-radius: 4px; overflow: hidden; }
-    .pct-fill { height: 100%; border-radius: 4px; }
-    .over { color: var(--dusty-rose); font-weight: 700; }
-    .save { color: var(--sage); font-weight: 700; }
+    .budget-body {
+      padding: 24px;
+    }
+
+    .budget-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .budget-total {
+      text-align: right;
+    }
+
+    .budget-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+
+    .budget-table th {
+      background: rgba(139, 94, 106, 0.08);
+      color: var(--mauve);
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 10px 12px;
+      text-align: left;
+      font-weight: 700;
+    }
+
+    .budget-table td {
+      padding: 11px 12px;
+      color: var(--text-mid);
+      border-bottom: 1px solid rgba(139, 94, 106, 0.07);
+      vertical-align: middle;
+    }
+
+    .pct-bar {
+      width: 80px;
+      height: 6px;
+      background: rgba(139, 94, 106, 0.1);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .pct-fill {
+      height: 100%;
+      border-radius: 4px;
+    }
+
+    .over {
+      color: var(--dusty-rose);
+      font-weight: 700;
+    }
+
+    .save {
+      color: var(--sage);
+      font-weight: 700;
+    }
 
     /* Floating badges */
     .float-badge {
-      position: absolute; background: white; border-radius: 12px;
-      padding: 12px 16px; box-shadow: 0 10px 40px rgba(92,61,46,0.18);
-      display: flex; align-items: center; gap: 10px; z-index: 10;
+      position: absolute;
+      background: white;
+      border-radius: 12px;
+      padding: 12px 16px;
+      box-shadow: 0 10px 40px rgba(92, 61, 46, 0.18);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 10;
     }
-    .float-badge-top { top: -16px; right: 40px; animation: fadeLeft 1s ease 0.8s both; }
-    .float-badge-bot { bottom: -16px; left: 40px; animation: fadeRight 1s ease 1s both; }
-    .fb-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
-    .fb-label { font-size: 10px; color: var(--text-light); font-weight: 300; margin-bottom: 2px; }
-    .fb-val { font-size: 13px; color: var(--text-dark); font-weight: 600; }
 
-    .preview-tabs { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; animation: fadeDown 0.95s ease both; }
-    .ptab { padding: 8px 18px; border-radius: 100px; font-size: 12px; font-weight: 500; cursor: pointer; border: 1px solid rgba(139,94,106,0.2); color: var(--text-light); background: transparent; font-family: 'Jost'; transition: all 0.2s; }
-    .ptab:hover { border-color: var(--mauve); color: var(--mauve); }
-    .ptab.on { background: var(--mauve); border-color: var(--mauve); color: white; }
+    .float-badge-top {
+      top: -16px;
+      right: 40px;
+      animation: fadeLeft 1s ease 0.8s both;
+    }
+
+    .float-badge-bot {
+      bottom: -16px;
+      left: 40px;
+      animation: fadeRight 1s ease 1s both;
+    }
+
+    .fb-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .fb-label {
+      font-size: 10px;
+      color: var(--text-light);
+      font-weight: 300;
+      margin-bottom: 2px;
+    }
+
+    .fb-val {
+      font-size: 13px;
+      color: var(--text-dark);
+      font-weight: 600;
+    }
+
+    .preview-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+      animation: fadeDown 0.95s ease both;
+    }
+
+    .ptab {
+      padding: 8px 18px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      border: 1px solid rgba(139, 94, 106, 0.2);
+      color: var(--text-light);
+      background: transparent;
+      font-family: 'Jost';
+      transition: all 0.2s;
+    }
+
+    .ptab:hover {
+      border-color: var(--mauve);
+      color: var(--mauve);
+    }
+
+    .ptab.on {
+      background: var(--mauve);
+      border-color: var(--mauve);
+      color: white;
+    }
 
     /* CTA Block */
     .hero-cta-block {
       animation: fadeUp 1.1s ease both;
-      display: flex; flex-direction: column; align-items: center; gap: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
       margin-top: 48px;
     }
-    .price-display { display: flex; align-items: baseline; gap: 12px; }
-    .price-new { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 300; color: var(--mauve); line-height: 1; }
-    .price-old { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--text-light); text-decoration: line-through; text-decoration-color: var(--dusty-rose); }
-    .price-save { background: linear-gradient(135deg, var(--dusty-rose), var(--mauve)); color: white; font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 100px; letter-spacing: 1px; }
-    .btn-primary {
-      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-      background: var(--mauve); color: white;
-      font-family: 'Jost'; font-size: 14px; font-weight: 500;
-      letter-spacing: 1.5px; text-transform: uppercase;
-      padding: 20px 56px; border-radius: 4px; text-decoration: none;
-      transition: all 0.3s ease; border: none; cursor: pointer;
+
+    .price-display {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
     }
-    .btn-primary:hover { background: var(--brown); transform: translateY(-2px); box-shadow: 0 16px 50px rgba(139,94,106,0.35); }
-    .cta-notes { display: flex; align-items: center; gap: 20px; font-size: 12px; color: var(--text-light); }
-    .cta-note-item { display: flex; align-items: center; gap: 6px; }
+
+    .price-new {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 52px;
+      font-weight: 300;
+      color: var(--mauve);
+      line-height: 1;
+    }
+
+    .price-old {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      color: var(--text-light);
+      text-decoration: line-through;
+      text-decoration-color: var(--dusty-rose);
+    }
+
+    .price-save {
+      background: linear-gradient(135deg, var(--dusty-rose), var(--mauve));
+      color: white;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 100px;
+      letter-spacing: 1px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--mauve);
+      color: white;
+      font-family: 'Jost';
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 20px 56px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background: var(--brown);
+      transform: translateY(-2px);
+      box-shadow: 0 16px 50px rgba(139, 94, 106, 0.35);
+    }
+
+    .cta-notes {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 12px;
+      color: var(--text-light);
+    }
+
+    .cta-note-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
 
     .social-proof-bar {
-      display: flex; align-items: center; justify-content: center; gap: 8px;
-      font-size: 13px; color: var(--text-light); margin-top: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-light);
+      margin-top: 8px;
       animation: fadeUp 1.2s ease both;
     }
-    .sp-avatars { display: flex; }
-    .sp-avatar { width: 28px; height: 28px; border-radius: 50%; border: 2px solid white; margin-left: -8px; display: flex; align-items: center; justify-content: center; font-size: 12px; }
-    .sp-avatar:first-child { margin-left: 0; }
-    .stars { color: var(--gold); letter-spacing: 1px; font-size: 14px; }
+
+    .sp-avatars {
+      display: flex;
+    }
+
+    .sp-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 2px solid white;
+      margin-left: -8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+    }
+
+    .sp-avatar:first-child {
+      margin-left: 0;
+    }
+
+    .stars {
+      color: var(--gold);
+      letter-spacing: 1px;
+      font-size: 14px;
+    }
 
     /* ══ VIDEO SECTION ══ */
-    .video-section { background: var(--cream); padding: 100px 80px; }
-    .video-sub { font-size: 15px; color: var(--text-mid); text-align: center; max-width: 500px; margin: 0 auto 48px; font-weight: 300; line-height: 1.7; }
-    .video-wrapper { max-width: 760px; margin: 0 auto 48px; }
+    .video-section {
+      background: var(--cream);
+      padding: 100px 80px;
+    }
+
+    .video-sub {
+      font-size: 15px;
+      color: var(--text-mid);
+      text-align: center;
+      max-width: 500px;
+      margin: 0 auto 48px;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    .video-wrapper {
+      max-width: 760px;
+      margin: 0 auto 48px;
+    }
+
     .video-placeholder {
-      position: relative; width: 100%; aspect-ratio: 16/9; border-radius: 16px; overflow: hidden; cursor: pointer;
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 16px;
+      overflow: hidden;
+      cursor: pointer;
       background: linear-gradient(135deg, var(--brown) 0%, var(--mauve) 50%, var(--blush-deep) 100%);
-      box-shadow: 0 40px 80px rgba(92,61,46,0.2), 0 0 0 1px rgba(139,94,106,0.15);
-      display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 16px;
+      box-shadow: 0 40px 80px rgba(92, 61, 46, 0.2), 0 0 0 1px rgba(139, 94, 106, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 16px;
       transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
-    .video-placeholder:hover { transform: translateY(-4px) scale(1.01); box-shadow: 0 50px 100px rgba(92,61,46,0.28); }
+
+    .video-placeholder:hover {
+      transform: translateY(-4px) scale(1.01);
+      box-shadow: 0 50px 100px rgba(92, 61, 46, 0.28);
+    }
+
     .video-glow {
-      position: absolute; inset: 0;
-      background: radial-gradient(circle at center, rgba(255,255,255,0.08) 0%, transparent 60%);
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.08) 0%, transparent 60%);
       pointer-events: none;
     }
+
     .video-play-btn {
-      width: 80px; height: 80px; border-radius: 50%;
-      background: rgba(255,255,255,0.2); backdrop-filter: blur(8px);
-      border: 2px solid rgba(255,255,255,0.35);
-      display: flex; align-items: center; justify-content: center;
-      transition: all 0.3s ease; z-index: 2;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      border: 2px solid rgba(255, 255, 255, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      z-index: 2;
       animation: pulse-play 2s ease-in-out infinite;
     }
-    .video-placeholder:hover .video-play-btn { background: rgba(255,255,255,0.3); transform: scale(1.1); }
-    .video-play-btn svg { margin-left: 4px; }
-    .video-overlay-text { z-index: 2; }
+
+    .video-placeholder:hover .video-play-btn {
+      background: rgba(255, 255, 255, 0.3);
+      transform: scale(1.1);
+    }
+
+    .video-play-btn svg {
+      margin-left: 4px;
+    }
+
+    .video-overlay-text {
+      z-index: 2;
+    }
+
     .video-badge-tag {
-      background: rgba(255,255,255,0.15); backdrop-filter: blur(6px);
-      border: 1px solid rgba(255,255,255,0.2);
-      color: white; font-size: 12px; font-weight: 500; letter-spacing: 1px;
-      padding: 6px 18px; border-radius: 100px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: white;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      padding: 6px 18px;
+      border-radius: 100px;
     }
+
     @keyframes pulse-play {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.3); }
-      50% { box-shadow: 0 0 0 18px rgba(255,255,255,0); }
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.3);
+      }
+
+      50% {
+        box-shadow: 0 0 0 18px rgba(255, 255, 255, 0);
+      }
     }
-    .video-features { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; max-width: 760px; margin: 0 auto; }
+
+    .video-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
     .vf-card {
-      background: white; border-radius: 14px; padding: 24px 20px;
-      display: flex; align-items: flex-start; gap: 14px;
-      border: 1px solid rgba(139,94,106,0.1);
+      background: white;
+      border-radius: 14px;
+      padding: 24px 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      border: 1px solid rgba(139, 94, 106, 0.1);
       transition: all 0.3s ease;
     }
-    .vf-card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(92,61,46,0.08); border-color: var(--blush); }
-    .vf-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
-    .vf-text h4 { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 600; color: var(--text-dark); margin-bottom: 4px; }
-    .vf-text p { font-size: 12px; color: var(--text-light); line-height: 1.6; font-weight: 300; }
+
+    .vf-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(92, 61, 46, 0.08);
+      border-color: var(--blush);
+    }
+
+    .vf-icon {
+      font-size: 24px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .vf-text h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+
+    .vf-text p {
+      font-size: 12px;
+      color: var(--text-light);
+      line-height: 1.6;
+      font-weight: 300;
+    }
 
     /* ══ DRAMA SECTION ══ */
-    .drama-section { background: var(--cream); padding: 100px 80px; }
-    .section-eyebrow { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 16px; color: var(--dusty-rose); text-align: center; margin-bottom: 12px; }
-    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px,4vw,48px); font-weight: 300; text-align: center; line-height: 1.2; margin-bottom: 60px; color: var(--text-dark); }
-    .section-title em { font-style: italic; color: var(--mauve); }
-    .drama-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; max-width: 960px; margin: 0 auto 60px; }
-    .drama-card { background: white; border-radius: 14px; padding: 32px 28px; border-left: 3px solid var(--blush); transition: all 0.3s ease; }
-    .drama-card:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(92,61,46,0.1); border-left-color: var(--mauve); }
-    .drama-icon { font-size: 32px; margin-bottom: 16px; display: block; }
-    .drama-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; color: var(--text-dark); margin-bottom: 8px; }
-    .drama-card p { font-size: 13px; line-height: 1.75; color: var(--text-mid); font-weight: 300; }
-    .drama-scenario { background: rgba(139,94,106,0.06); border-radius: 8px; padding: 8px 12px; margin-top: 10px; font-size: 12px; color: var(--mauve); font-style: italic; border-left: 2px solid var(--blush-deep); }
-    .drama-closer { text-align: center; max-width: 580px; margin: 0 auto; font-family: 'Cormorant Garamond', serif; font-size: 22px; font-style: italic; color: var(--mauve); line-height: 1.6; }
+    .drama-section {
+      background: var(--cream);
+      padding: 100px 80px;
+    }
+
+    .section-eyebrow {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 16px;
+      color: var(--dusty-rose);
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 300;
+      text-align: center;
+      line-height: 1.2;
+      margin-bottom: 60px;
+      color: var(--text-dark);
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--mauve);
+    }
+
+    .drama-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 960px;
+      margin: 0 auto 60px;
+    }
+
+    .drama-card {
+      background: white;
+      border-radius: 14px;
+      padding: 32px 28px;
+      border-left: 3px solid var(--blush);
+      transition: all 0.3s ease;
+    }
+
+    .drama-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 50px rgba(92, 61, 46, 0.1);
+      border-left-color: var(--mauve);
+    }
+
+    .drama-icon {
+      font-size: 32px;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .drama-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+
+    .drama-card p {
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--text-mid);
+      font-weight: 300;
+    }
+
+    .drama-scenario {
+      background: rgba(139, 94, 106, 0.06);
+      border-radius: 8px;
+      padding: 8px 12px;
+      margin-top: 10px;
+      font-size: 12px;
+      color: var(--mauve);
+      font-style: italic;
+      border-left: 2px solid var(--blush-deep);
+    }
+
+    .drama-closer {
+      text-align: center;
+      max-width: 580px;
+      margin: 0 auto;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-style: italic;
+      color: var(--mauve);
+      line-height: 1.6;
+    }
 
     /* ══ SOLUTION ══ */
-    .solution-section { background: var(--mauve); padding: 100px 80px; position: relative; overflow: hidden; }
-    .solution-section::before { content: 'NIKAH'; position: absolute; font-family: 'Cormorant Garamond', serif; font-size: 280px; font-weight: 600; color: rgba(255,255,255,0.04); top: -30px; left: -20px; pointer-events: none; line-height: 1; }
-    .solution-inner { max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; position: relative; z-index: 2; }
-    .solution-left .section-eyebrow { text-align: left; color: var(--blush); }
-    .solution-left .section-title { text-align: left; color: white; font-size: clamp(26px,3vw,40px); margin-bottom: 20px; }
-    .solution-left p { font-size: 15px; line-height: 1.8; color: rgba(255,255,255,0.75); font-weight: 300; margin-bottom: 32px; }
-    .btn-secondary { display: inline-flex; align-items: center; gap: 10px; background: white; color: var(--mauve); font-family: 'Jost'; font-size: 13px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; padding: 16px 36px; border-radius: 4px; text-decoration: none; transition: all 0.3s ease; }
-    .btn-secondary:hover { background: var(--gold-light); transform: translateY(-2px); }
-    .feature-cards { display: flex; flex-direction: column; gap: 14px; }
-    .feat-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 20px 24px; display: flex; align-items: flex-start; gap: 16px; transition: all 0.3s ease; }
-    .feat-card:hover { background: rgba(255,255,255,0.14); transform: translateX(4px); }
-    .feat-icon { width: 42px; height: 42px; background: rgba(255,255,255,0.15); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
-    .feat-text h4 { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 600; color: white; margin-bottom: 4px; }
-    .feat-text p { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.6; font-weight: 300; }
-    .usp-tag { display: inline-block; background: var(--gold); color: white; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 8px; border-radius: 100px; margin-left: 8px; vertical-align: middle; font-weight: 500; }
+    .solution-section {
+      background: var(--mauve);
+      padding: 100px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .solution-section::before {
+      content: 'NIKAH';
+      position: absolute;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 280px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.04);
+      top: -30px;
+      left: -20px;
+      pointer-events: none;
+      line-height: 1;
+    }
+
+    .solution-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .solution-left .section-eyebrow {
+      text-align: left;
+      color: var(--blush);
+    }
+
+    .solution-left .section-title {
+      text-align: left;
+      color: white;
+      font-size: clamp(26px, 3vw, 40px);
+      margin-bottom: 20px;
+    }
+
+    .solution-left p {
+      font-size: 15px;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.75);
+      font-weight: 300;
+      margin-bottom: 32px;
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: white;
+      color: var(--mauve);
+      font-family: 'Jost';
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 16px 36px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .feature-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .feat-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .feat-card:hover {
+      background: rgba(255, 255, 255, 0.14);
+      transform: translateX(4px);
+    }
+
+    .feat-icon {
+      width: 42px;
+      height: 42px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .feat-text h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 4px;
+    }
+
+    .feat-text p {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    .usp-tag {
+      display: inline-block;
+      background: var(--gold);
+      color: white;
+      font-size: 9px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 100px;
+      margin-left: 8px;
+      vertical-align: middle;
+      font-weight: 500;
+    }
 
     /* ══ NIKAH RAPI vs OTHERS ══ */
-    .diff-section { background: var(--warm-white); padding: 100px 80px; }
-    .diff-table-wrap { max-width: 780px; margin: 0 auto; }
-    .diff-table { width: 100%; border-collapse: collapse; }
-    .diff-table thead th { padding: 16px 20px; font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
-    .diff-table thead th:first-child { text-align: left; color: var(--text-light); width: 40%; }
-    .diff-table thead th:nth-child(2) { color: var(--text-light); text-align: center; background: rgba(139,94,106,0.05); }
-    .diff-table thead th:nth-child(3) { color: var(--mauve); text-align: center; background: rgba(139,94,106,0.08); border-radius: 8px 8px 0 0; }
-    .diff-table tbody td { padding: 14px 20px; font-size: 13px; border-bottom: 1px solid rgba(139,94,106,0.08); }
-    .diff-table tbody td:first-child { color: var(--text-mid); font-weight: 400; }
-    .diff-table tbody td:nth-child(2) { text-align: center; color: var(--text-light); background: rgba(139,94,106,0.03); }
-    .diff-table tbody td:nth-child(3) { text-align: center; background: rgba(139,94,106,0.06); font-weight: 600; color: var(--mauve); }
-    .diff-yes { color: var(--sage) !important; font-size: 16px; }
-    .diff-no { color: #ddd; font-size: 16px; }
+    .diff-section {
+      background: var(--warm-white);
+      padding: 100px 80px;
+    }
+
+    .diff-table-wrap {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .diff-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .diff-table thead th {
+      padding: 16px 20px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .diff-table thead th:first-child {
+      text-align: left;
+      color: var(--text-light);
+      width: 40%;
+    }
+
+    .diff-table thead th:nth-child(2) {
+      color: var(--text-light);
+      text-align: center;
+      background: rgba(139, 94, 106, 0.05);
+    }
+
+    .diff-table thead th:nth-child(3) {
+      color: var(--mauve);
+      text-align: center;
+      background: rgba(139, 94, 106, 0.08);
+      border-radius: 8px 8px 0 0;
+    }
+
+    .diff-table tbody td {
+      padding: 14px 20px;
+      font-size: 13px;
+      border-bottom: 1px solid rgba(139, 94, 106, 0.08);
+    }
+
+    .diff-table tbody td:first-child {
+      color: var(--text-mid);
+      font-weight: 400;
+    }
+
+    .diff-table tbody td:nth-child(2) {
+      text-align: center;
+      color: var(--text-light);
+      background: rgba(139, 94, 106, 0.03);
+    }
+
+    .diff-table tbody td:nth-child(3) {
+      text-align: center;
+      background: rgba(139, 94, 106, 0.06);
+      font-weight: 600;
+      color: var(--mauve);
+    }
+
+    .diff-yes {
+      color: var(--sage) !important;
+      font-size: 16px;
+    }
+
+    .diff-no {
+      color: #ddd;
+      font-size: 16px;
+    }
 
     /* ══ SHEETS ══ */
-    .sheets-section { background: var(--warm-white); padding: 100px 80px; }
-    .sheets-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; max-width: 960px; margin: 0 auto; }
-    .sheet-card { background: var(--cream); border-radius: 10px; padding: 18px 16px; border: 1px solid rgba(139,94,106,0.1); transition: all 0.3s ease; }
-    .sheet-card:hover { border-color: var(--blush); background: white; transform: translateY(-3px); box-shadow: 0 12px 30px rgba(139,94,106,0.08); }
-    .sheet-num { font-family: 'Cormorant Garamond', serif; font-size: 26px; color: var(--blush); font-weight: 300; line-height: 1; margin-bottom: 8px; }
-    .sheet-name { font-size: 12px; font-weight: 600; color: var(--text-dark); margin-bottom: 4px; }
-    .sheet-desc { font-size: 11px; color: var(--text-light); line-height: 1.5; }
-    .sheet-card.star { background: linear-gradient(135deg, #FAF0EC, #F5E8E2); border-color: var(--blush-deep); }
-    .sheet-card.star .sheet-num { color: var(--mauve); }
+    .sheets-section {
+      background: var(--warm-white);
+      padding: 100px 80px;
+    }
+
+    .sheets-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .sheet-card {
+      background: var(--cream);
+      border-radius: 10px;
+      padding: 18px 16px;
+      border: 1px solid rgba(139, 94, 106, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .sheet-card:hover {
+      border-color: var(--blush);
+      background: white;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(139, 94, 106, 0.08);
+    }
+
+    .sheet-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      color: var(--blush);
+      font-weight: 300;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .sheet-name {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+
+    .sheet-desc {
+      font-size: 11px;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    .sheet-card.star {
+      background: linear-gradient(135deg, #FAF0EC, #F5E8E2);
+      border-color: var(--blush-deep);
+    }
+
+    .sheet-card.star .sheet-num {
+      color: var(--mauve);
+    }
 
     /* ══ TESTIMONI ══ */
-    .testi-section { background: var(--cream); padding: 100px 80px; }
-    .testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; max-width: 960px; margin: 0 auto 48px; }
-    .testi-card { background: white; border-radius: 16px; padding: 32px 28px; border: 1px solid rgba(139,94,106,0.1); transition: all 0.3s ease; position: relative; }
-    .testi-card:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(92,61,46,0.1); }
-    .testi-quote { font-family: 'Cormorant Garamond', serif; font-size: 60px; color: rgba(139,94,106,0.1); line-height: 1; position: absolute; top: 16px; left: 20px; }
-    .testi-stars { display: flex; gap: 3px; margin-bottom: 14px; margin-top: 8px; }
-    .testi-stars span { color: var(--gold); font-size: 14px; }
-    .testi-text { font-size: 14px; line-height: 1.8; color: var(--text-mid); font-weight: 300; margin-bottom: 24px; position: relative; z-index: 1; }
-    .testi-author { display: flex; align-items: center; gap: 12px; border-top: 1px solid rgba(139,94,106,0.08); padding-top: 18px; }
-    .testi-avatar { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
-    .testi-name { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 600; color: var(--text-dark); margin-bottom: 2px; }
-    .testi-meta { font-size: 12px; color: var(--text-light); }
-    .testi-verified { display: inline-flex; align-items: center; gap: 5px; background: rgba(122,140,126,0.1); border: 1px solid rgba(122,140,126,0.2); color: var(--sage); font-size: 10px; font-weight: 500; padding: 3px 10px; border-radius: 100px; margin-top: 6px; }
-    .testi-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; max-width: 600px; margin: 0 auto; background: rgba(139,94,106,0.1); border-radius: 16px; overflow: hidden; }
-    .tstat { background: white; padding: 28px 20px; text-align: center; }
-    .tstat-num { font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 300; color: var(--mauve); line-height: 1; margin-bottom: 8px; }
-    .tstat-label { font-size: 12px; color: var(--text-light); font-weight: 300; }
+    .testi-section {
+      background: var(--cream);
+      padding: 100px 80px;
+    }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 960px;
+      margin: 0 auto 48px;
+    }
+
+    .testi-card {
+      background: white;
+      border-radius: 16px;
+      padding: 32px 28px;
+      border: 1px solid rgba(139, 94, 106, 0.1);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .testi-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 50px rgba(92, 61, 46, 0.1);
+    }
+
+    .testi-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 60px;
+      color: rgba(139, 94, 106, 0.1);
+      line-height: 1;
+      position: absolute;
+      top: 16px;
+      left: 20px;
+    }
+
+    .testi-stars {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 14px;
+      margin-top: 8px;
+    }
+
+    .testi-stars span {
+      color: var(--gold);
+      font-size: 14px;
+    }
+
+    .testi-text {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--text-mid);
+      font-weight: 300;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-top: 1px solid rgba(139, 94, 106, 0.08);
+      padding-top: 18px;
+    }
+
+    .testi-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .testi-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 2px;
+    }
+
+    .testi-meta {
+      font-size: 12px;
+      color: var(--text-light);
+    }
+
+    .testi-verified {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(122, 140, 126, 0.1);
+      border: 1px solid rgba(122, 140, 126, 0.2);
+      color: var(--sage);
+      font-size: 10px;
+      font-weight: 500;
+      padding: 3px 10px;
+      border-radius: 100px;
+      margin-top: 6px;
+    }
+
+    .testi-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      max-width: 600px;
+      margin: 0 auto;
+      background: rgba(139, 94, 106, 0.1);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .tstat {
+      background: white;
+      padding: 28px 20px;
+      text-align: center;
+    }
+
+    .tstat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 44px;
+      font-weight: 300;
+      color: var(--mauve);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .tstat-label {
+      font-size: 12px;
+      color: var(--text-light);
+      font-weight: 300;
+    }
 
     /* ══ PRICING ══ */
-    .pricing-section { background: var(--warm-white); padding: 100px 80px; text-align: center; }
-    .pricing-card { max-width: 540px; margin: 0 auto; background: white; border-radius: 20px; padding: 56px 48px; box-shadow: 0 40px 100px rgba(92,61,46,0.14); position: relative; overflow: hidden; }
-    .pricing-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--blush), var(--mauve), var(--gold)); }
-    .pricing-card-badge { display: inline-block; background: linear-gradient(135deg, var(--gold-light), var(--blush)); color: var(--brown); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; padding: 8px 20px; border-radius: 100px; margin-bottom: 32px; font-weight: 500; }
-    .price-hero { display: flex; align-items: baseline; justify-content: center; gap: 16px; margin-bottom: 8px; }
-    .price-big { font-family: 'Cormorant Garamond', serif; font-size: 80px; font-weight: 300; color: var(--text-dark); line-height: 1; }
-    .price-big sup { font-size: 28px; vertical-align: super; }
-    .price-was-p { font-size: 22px; font-family: 'Cormorant Garamond', serif; color: var(--text-light); }
-    .price-was-p s { text-decoration-color: var(--dusty-rose); }
-    .price-save-badge { display: inline-block; background: linear-gradient(135deg, var(--dusty-rose), var(--mauve)); color: white; font-size: 12px; font-weight: 600; padding: 6px 16px; border-radius: 100px; margin-bottom: 36px; letter-spacing: 0.5px; }
-    .include-list { list-style: none; margin-bottom: 40px; text-align: left; }
-    .include-list li { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--text-mid); padding: 11px 0; border-bottom: 1px solid #F5F0EC; font-weight: 300; }
-    .include-list li:last-child { border-bottom: none; }
-    .check { width: 20px; height: 20px; background: var(--blush); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 10px; flex-shrink: 0; }
-    .urgency-note { font-size: 13px; color: var(--dusty-rose); margin-top: 20px; font-weight: 500; }
-    .heat-run-bar { background: rgba(139,94,106,0.06); border: 1px solid rgba(139,94,106,0.15); border-radius: 10px; padding: 14px 20px; margin-top: 20px; display: flex; align-items: center; gap: 12px; text-align: left; }
-    .heat-run-text { font-size: 12px; color: var(--text-mid); line-height: 1.5; }
-    .heat-run-text strong { color: var(--mauve); }
+    .pricing-section {
+      background: var(--warm-white);
+      padding: 100px 80px;
+      text-align: center;
+    }
+
+    .pricing-card {
+      max-width: 540px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      padding: 56px 48px;
+      box-shadow: 0 40px 100px rgba(92, 61, 46, 0.14);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pricing-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--blush), var(--mauve), var(--gold));
+    }
+
+    .pricing-card-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold-light), var(--blush));
+      color: var(--brown);
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 8px 20px;
+      border-radius: 100px;
+      margin-bottom: 32px;
+      font-weight: 500;
+    }
+
+    .price-hero {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+
+    .price-big {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 80px;
+      font-weight: 300;
+      color: var(--text-dark);
+      line-height: 1;
+    }
+
+    .price-big sup {
+      font-size: 28px;
+      vertical-align: super;
+    }
+
+    .price-was-p {
+      font-size: 22px;
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--text-light);
+    }
+
+    .price-was-p s {
+      text-decoration-color: var(--dusty-rose);
+    }
+
+    .price-save-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--dusty-rose), var(--mauve));
+      color: white;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 36px;
+      letter-spacing: 0.5px;
+    }
+
+    .include-list {
+      list-style: none;
+      margin-bottom: 40px;
+      text-align: left;
+    }
+
+    .include-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      color: var(--text-mid);
+      padding: 11px 0;
+      border-bottom: 1px solid #F5F0EC;
+      font-weight: 300;
+    }
+
+    .include-list li:last-child {
+      border-bottom: none;
+    }
+
+    .check {
+      width: 20px;
+      height: 20px;
+      background: var(--blush);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 10px;
+      flex-shrink: 0;
+    }
+
+    .urgency-note {
+      font-size: 13px;
+      color: var(--dusty-rose);
+      margin-top: 20px;
+      font-weight: 500;
+    }
+
+    .heat-run-bar {
+      background: rgba(139, 94, 106, 0.06);
+      border: 1px solid rgba(139, 94, 106, 0.15);
+      border-radius: 10px;
+      padding: 14px 20px;
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-align: left;
+    }
+
+    .heat-run-text {
+      font-size: 12px;
+      color: var(--text-mid);
+      line-height: 1.5;
+    }
+
+    .heat-run-text strong {
+      color: var(--mauve);
+    }
 
     /* ══ FAQ ══ */
-    .faq-section { background: var(--cream); padding: 100px 80px; }
-    .faq-inner { max-width: 700px; margin: 0 auto; }
-    .faq-item { border-bottom: 1px solid rgba(139,94,106,0.15); padding: 24px 0; cursor: pointer; }
-    .faq-q { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; color: var(--text-dark); display: flex; justify-content: space-between; align-items: center; gap: 20px; }
-    .faq-arrow { color: var(--mauve); font-size: 20px; transition: transform 0.3s ease; flex-shrink: 0; line-height: 1; }
-    .faq-item.open .faq-arrow { transform: rotate(45deg); }
-    .faq-a { font-size: 14px; line-height: 1.8; color: var(--text-mid); font-weight: 300; max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease; }
-    .faq-item.open .faq-a { max-height: 200px; padding-top: 16px; }
+    .faq-section {
+      background: var(--cream);
+      padding: 100px 80px;
+    }
+
+    .faq-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(139, 94, 106, 0.15);
+      padding: 24px 0;
+      cursor: pointer;
+    }
+
+    .faq-q {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text-dark);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .faq-arrow {
+      color: var(--mauve);
+      font-size: 20px;
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
+    .faq-item.open .faq-arrow {
+      transform: rotate(45deg);
+    }
+
+    .faq-a {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--text-mid);
+      font-weight: 300;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+
+    .faq-item.open .faq-a {
+      max-height: 200px;
+      padding-top: 16px;
+    }
 
     /* ══ FINAL CTA ══ */
-    .final-cta { background: linear-gradient(135deg, var(--brown) 0%, var(--mauve) 100%); padding: 100px 80px; text-align: center; position: relative; overflow: hidden; }
-    .final-cta::before { content: '♡'; position: absolute; font-size: 400px; color: rgba(255,255,255,0.03); top: -80px; right: -40px; pointer-events: none; }
-    .final-cta .section-title { color: white; margin-bottom: 16px; }
-    .final-cta .section-eyebrow { color: var(--blush); }
-    .final-cta p { font-size: 15px; color: rgba(255,255,255,0.7); margin-bottom: 48px; font-weight: 300; max-width: 500px; margin-left: auto; margin-right: auto; }
-    .final-price { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--gold-light); margin-bottom: 32px; }
+    .final-cta {
+      background: linear-gradient(135deg, var(--brown) 0%, var(--mauve) 100%);
+      padding: 100px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .final-cta::before {
+      content: '♡';
+      position: absolute;
+      font-size: 400px;
+      color: rgba(255, 255, 255, 0.03);
+      top: -80px;
+      right: -40px;
+      pointer-events: none;
+    }
+
+    .final-cta .section-title {
+      color: white;
+      margin-bottom: 16px;
+    }
+
+    .final-cta .section-eyebrow {
+      color: var(--blush);
+    }
+
+    .final-cta p {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 48px;
+      font-weight: 300;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .final-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      color: var(--gold-light);
+      margin-bottom: 32px;
+    }
 
     /* ══ FOOTER ══ */
-    footer { background: var(--text-dark); padding: 40px 80px; display: flex; justify-content: space-between; align-items: center; }
-    .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: white; letter-spacing: 2px; font-weight: 300; }
-    .footer-note { font-size: 12px; color: rgba(255,255,255,0.4); }
+    footer {
+      background: var(--text-dark);
+      padding: 40px 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      color: white;
+      letter-spacing: 2px;
+      font-weight: 300;
+    }
+
+    .footer-note {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.4);
+    }
 
     /* ══ STICKY CTA ══ */
-    .sticky-cta { position: fixed; bottom: 24px; right: 24px; background: var(--mauve); color: white; padding: 14px 28px; border-radius: 100px; font-size: 13px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; box-shadow: 0 8px 30px rgba(139,94,106,0.4); transition: all 0.3s ease; z-index: 100; display: none; }
-    .sticky-cta.show { display: flex; align-items: center; gap: 8px; }
-    .sticky-cta:hover { background: var(--brown); transform: translateY(-2px); }
+    .sticky-cta {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--mauve);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-decoration: none;
+      box-shadow: 0 8px 30px rgba(139, 94, 106, 0.4);
+      transition: all 0.3s ease;
+      z-index: 100;
+      display: none;
+    }
+
+    .sticky-cta.show {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sticky-cta:hover {
+      background: var(--brown);
+      transform: translateY(-2px);
+    }
 
     /* ══ ANIMATIONS ══ */
-    @keyframes fadeDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes floatUp { from { opacity: 0; transform: translateY(40px) scale(0.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
-    @keyframes fadeLeft { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
-    @keyframes fadeRight { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
+    @keyframes fadeDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes floatUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.98);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes fadeLeft {
+      from {
+        opacity: 0;
+        transform: translateX(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeRight {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     /* ══ RESPONSIVE ══ */
     @media (max-width: 1024px) {
-      .video-section, .drama-section, .solution-section, .sheets-section, .diff-section, .testi-section, .pricing-section, .faq-section, .final-cta, footer { padding: 80px 40px; }
-      .sheets-grid { grid-template-columns: repeat(3,1fr); }
-      .testi-grid { grid-template-columns: repeat(2,1fr); }
-      .solution-inner { gap: 50px; }
+
+      .video-section,
+      .drama-section,
+      .solution-section,
+      .sheets-section,
+      .diff-section,
+      .testi-section,
+      .pricing-section,
+      .faq-section,
+      .final-cta,
+      footer {
+        padding: 80px 40px;
+      }
+
+      .sheets-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .testi-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .solution-inner {
+        gap: 50px;
+      }
     }
+
     @media (max-width: 768px) {
-      .hero { padding: 70px 20px 50px; }
-      .video-section, .drama-section, .solution-section, .diff-section, .sheets-section, .testi-section, .pricing-section, .faq-section, .final-cta { padding: 60px 24px; }
-      footer { padding: 32px 24px; flex-direction: column; gap: 12px; text-align: center; }
-      .drama-grid, .testi-grid { grid-template-columns: 1fr; }
-      .video-features { grid-template-columns: 1fr; max-width: 400px; }
-      .solution-inner { grid-template-columns: 1fr; gap: 40px; }
-      .sheets-grid { grid-template-columns: repeat(2,1fr); }
-      .kpi-row { grid-template-columns: repeat(2,1fr); }
-      .dash-bottom { grid-template-columns: 1fr; }
-      .pricing-card { padding: 40px 24px; }
-      .price-big { font-size: 60px; }
-      .testi-stats { grid-template-columns: 1fr; }
-      .float-badge-top, .float-badge-bot { display: none; }
-      .hero-title { font-size: clamp(30px, 7vw, 46px); }
-      .cta-notes { flex-wrap: wrap; justify-content: center; }
-      .diff-table { font-size: 12px; }
-      .diff-table thead th, .diff-table tbody td { padding: 10px 12px; }
+      .hero {
+        padding: 70px 20px 50px;
+      }
+
+      .video-section,
+      .drama-section,
+      .solution-section,
+      .diff-section,
+      .sheets-section,
+      .testi-section,
+      .pricing-section,
+      .faq-section,
+      .final-cta {
+        padding: 60px 24px;
+      }
+
+      footer {
+        padding: 32px 24px;
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+
+      .drama-grid,
+      .testi-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .video-features {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+      }
+
+      .solution-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .sheets-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .kpi-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .dash-bottom {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-card {
+        padding: 40px 24px;
+      }
+
+      .price-big {
+        font-size: 60px;
+      }
+
+      .testi-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .float-badge-top,
+      .float-badge-bot {
+        display: none;
+      }
+
+      .hero-title {
+        font-size: clamp(30px, 7vw, 46px);
+      }
+
+      .cta-notes {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .diff-table {
+        font-size: 12px;
+      }
+
+      .diff-table thead th,
+      .diff-table tbody td {
+        padding: 10px 12px;
+      }
     }
+
     @media (max-width: 480px) {
-      .sheets-grid { grid-template-columns: repeat(2,1fr); gap: 10px; }
-      .pricing-card { padding: 32px 20px; }
-      .price-big { font-size: 52px; }
-      .btn-primary { padding: 18px 32px; width: 100%; justify-content: center; }
+      .sheets-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .pricing-card {
+        padding: 32px 20px;
+      }
+
+      .price-big {
+        font-size: 52px;
+      }
+
+      .btn-primary {
+        padding: 18px 32px;
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    /* Enhanced testimonial styles - tambahkan ke <style> existing kalau belum ada */
+    .testi-photo-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(139, 94, 106, 0.1);
+      transition: all 0.4s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .testi-photo-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 60px rgba(92, 61, 46, 0.15);
+    }
+
+    .testi-photo-wrapper {
+      position: relative;
+      width: 100%;
+      height: 240px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #FAF7F2, #E8D5B0);
+    }
+
+    .testi-photo-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .testi-photo-card:hover .testi-photo-wrapper img {
+      transform: scale(1.05);
+    }
+
+    .testi-photo-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      color: #5C3D2E;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 100px;
+      border: 1px solid rgba(201, 169, 110, 0.3);
+    }
+
+    .testi-photo-content {
+      padding: 24px 24px 28px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .testi-photo-stars {
+      display: flex;
+      gap: 2px;
+      margin-bottom: 12px;
+    }
+
+    .testi-photo-stars span {
+      color: #C9A96E;
+      font-size: 14px;
+    }
+
+    .testi-photo-text {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #5C5246;
+      font-weight: 300;
+      flex: 1;
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+
+    .testi-photo-footer {
+      border-top: 1px solid rgba(139, 94, 106, 0.08);
+      padding-top: 16px;
+    }
+
+    .testi-photo-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: #2A1F1A;
+      margin-bottom: 2px;
+    }
+
+    .testi-photo-meta {
+      font-size: 12px;
+      color: #8C7A6E;
+      margin-bottom: 6px;
+    }
+
+    .testi-photo-verified {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(122, 140, 126, 0.1);
+      color: #5C7361;
+      font-size: 10px;
+      font-weight: 500;
+      padding: 3px 10px;
+      border-radius: 100px;
+    }
+
+    .testi-photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto 56px;
+    }
+
+    @media (max-width: 900px) {
+      .testi-photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .testi-photo-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .testi-photo-wrapper {
+        height: 280px;
+      }
     }
   </style>
   <!-- Meta Pixel Code -->
   <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '4326987370876034');
-  fbq('track', 'PageView');
-  fbq('track', 'ViewContent');
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '4326987370876034');
+    fbq('track', 'ViewContent');
   </script>
   <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=4326987370876034&ev=PageView&noscript=1"
-  /></noscript>
+      src="https://www.facebook.com/tr?id=4326987370876034&ev=PageView&noscript=1" /></noscript>
   <!-- End Meta Pixel Code -->
+  <!-- Enhanced Meta Pixel Tracking - Lead Event Only -->
+  <script>
+    // Track Lead event when user scrolls 50%+ (engaged visitor)
+    // InitiateCheckout dan Purchase dihandle oleh Skalev
+    var leadTracked = false;
+    window.addEventListener('scroll', function () {
+      if (leadTracked) return;
+      var scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+      if (scrollPercent > 50) {
+        if (typeof fbq !== 'undefined') {
+          fbq('track', 'Lead', {
+            content_name: 'Engaged Scroll - NIKAH RAPI',
+            content_category: 'Wedding Planner'
+          });
+        }
+        leadTracked = true;
+      }
+    });
+  </script>
 </head>
+
 <body>
 
-  <a href="https://entrepreneurai.myscalev.com/checkout-page" class="sticky-cta" id="stickyCta">💍 Dapatkan Sekarang — Rp 129.000</a>
+  <a href="https://entrepreneurai.myscalev.com/checkout-page" class="sticky-cta" id="stickyCta">💍 Dapatkan Sekarang —
+    Rp 99.000</a>
 
   <!-- ══ HERO ══ -->
   <section class="hero">
@@ -518,7 +2221,8 @@
       bukan menghabiskannya untuk panik, cari-cari catatan, dan khawatir ada yang terlupa."
     </p>
 
-    <p class="hero-title-sub">Semua persiapan pernikahan — terkontrol rapi dalam 1 platform. Cukup isi datanya, sistem yang bekerja.</p>
+    <p class="hero-title-sub">Semua persiapan pernikahan — terkontrol rapi dalam 1 platform. Cukup isi datanya, sistem
+      yang bekerja.</p>
     <div class="drama-tags">
       <span class="drama-tag">😰 Drama Budget Bocor</span>
       <span class="drama-tag">📋 Drama Seserahan Kacau</span>
@@ -558,7 +2262,7 @@
             <div class="browser-dot" style="background:#febc2e;"></div>
             <div class="browser-dot" style="background:#28c840;"></div>
           </div>
-          <div class="browser-url">app.nikahrapi.com ✦</div>
+          <div class="browser-url">app.nikahrapi.online ✦</div>
         </div>
         <div class="sheet-tabs-bar">
           <button class="stab on" onclick="switchSheet(this,'p-dash',0)">🏠 Dashboard</button>
@@ -570,19 +2274,23 @@
         </div>
 
         <div class="preview-stage on" id="p-dash">
-          <img src="assets/Dashboard.png" alt="Dashboard Utama — Countdown, KPI, Charts, Progress Persiapan" loading="lazy">
+          <img src="assets/Dashboard.png" alt="Dashboard Utama — Countdown, KPI, Charts, Progress Persiapan"
+            loading="lazy">
         </div>
 
         <div class="preview-stage" id="p-ses">
-          <img src="assets/Seserahan%20Tracker.png" alt="Seserahan Tracker — Item, Harga, Status, Progress" loading="lazy">
+          <img src="assets/Seserahan%20Tracker.png" alt="Seserahan Tracker — Item, Harga, Status, Progress"
+            loading="lazy">
         </div>
 
         <div class="preview-stage" id="p-kado">
-          <img src="assets/Kado%20Angpao.png" alt="Kado & Angpao Tracker — Statistik, Charts, Follow Up Ucapan" loading="lazy">
+          <img src="assets/Kado%20Angpao.png" alt="Kado & Angpao Tracker — Statistik, Charts, Follow Up Ucapan"
+            loading="lazy">
         </div>
 
         <div class="preview-stage" id="p-budget">
-          <img src="assets/Budget%20planner.png" alt="Budget Planner — Estimasi vs Realisasi, Charts, Rincian" loading="lazy">
+          <img src="assets/Budget%20planner.png" alt="Budget Planner — Estimasi vs Realisasi, Charts, Rincian"
+            loading="lazy">
         </div>
 
         <div class="preview-stage" id="p-guest">
@@ -598,11 +2306,33 @@
 
     <div class="hero-cta-block">
       <div class="price-display">
-        <div class="price-new"><sup style="font-size:22px">Rp</sup>129.000</div>
-        <div class="price-old"><s>Rp 349.000</s></div>
+        <div class="price-new"><sup style="font-size:22px">Rp</sup>99.000</div>
+        <div class="price-old"><s>Rp 299.000</s></div>
         <div class="price-save">HEMAT 63%</div>
       </div>
-      <a href="https://entrepreneurai.myscalev.com/checkout-page" class="btn-primary">💍 Dapatkan NIKAH RAPI Sekarang</a>
+      <a href="https://entrepreneurai.myscalev.com/checkout-page" class="btn-primary">💍 Klaim Slot Early Bird
+        Sekarang</a>
+
+      <!-- ⏰ QUOTA COUNTER - Early Bird -->
+      <div class="quota-counter" id="quotaCounter"
+        style="background: linear-gradient(135deg, #fff8ec 0%, #ffe7d6 100%); border: 1px solid #C9A96E; border-radius: 16px; padding: 20px 24px; margin: 32px auto; max-width: 540px; text-align: center; box-shadow: 0 8px 24px rgba(201, 169, 110, 0.15);">
+        <div
+          style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #8B5E6A; font-weight: 600; margin-bottom: 8px;">
+          ⏰ Promo Early Bird Berakhir Saat Slot Habis</div>
+        <div
+          style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #5C3D2E; font-weight: 600; margin-bottom: 4px;">
+          Tersisa <span id="quotaCount" style="color: #B85C00; font-weight: 700;">10</span> dari 50 Slot
+        </div>
+        <div style="font-size: 13px; color: #6B5A4F; margin-bottom: 12px;">Harga akan naik ke <s>Rp 299.000</s> setelah
+          slot habis</div>
+        <div class="quota-bar"
+          style="background: rgba(201, 169, 110, 0.2); height: 8px; border-radius: 100px; overflow: hidden; margin-top: 12px;">
+          <div id="quotaBar"
+            style="background: linear-gradient(90deg, #B85C00, #C9A96E); height: 100%; width: 20%; transition: width 0.5s ease;">
+          </div>
+        </div>
+      </div>
+
       <div class="cta-notes">
         <div class="cta-note-item">✓ Garansi 7 hari</div>
         <div class="cta-note-item">✓ Akses instan Web App</div>
@@ -618,7 +2348,7 @@
         <div class="sp-avatar" style="background:linear-gradient(135deg,#A8B8AC,#7A8C7E)">🍃</div>
       </div>
       <div class="stars">★★★★★</div>
-      <span>Dipercaya <strong>50+ calon pengantin</strong> Indonesia</span>
+      <span><strong>Tersisa 10 slot</strong> dari 50 Early Bird</span>
     </div>
   </section>
 
@@ -626,12 +2356,15 @@
   <section class="video-section">
     <p class="section-eyebrow reveal">✨ Intip Dulu Sebelum Beli</p>
     <h2 class="section-title reveal">Lihat <em>Cara Kerjanya</em></h2>
-    <p class="video-sub reveal">Tidak perlu install aplikasi. Akses langsung via browser, data otomatis tersinkronisasi secara real-time.</p>
+    <p class="video-sub reveal">Tidak perlu download aplikasi apapun. Akses langsung via browser, data otomatis
+      tersinkronisasi secara real-time.</p>
     <div class="video-wrapper reveal">
-      <div class="video-placeholder" id="videoPlaceholder" onclick="this.innerHTML='<iframe src=&quot;https://www.youtube.com/embed/YPl7CuUqbUs?autoplay=1&quot; style=&quot;position:absolute;inset:0;width:100%;height:100%;border:none;border-radius:16px;&quot; allow=&quot;autoplay;encrypted-media&quot; allowfullscreen></iframe>';this.style.cursor='default'">
+      <div class="video-placeholder" id="videoPlaceholder" onclick="loadVideo(this)">
         <div class="video-glow"></div>
         <div class="video-play-btn">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+            <polygon points="5,3 19,12 5,21" />
+          </svg>
         </div>
         <div class="video-overlay-text">
           <span class="video-badge-tag">▶ Preview Demo</span>
@@ -671,32 +2404,39 @@
       <div class="drama-card reveal">
         <span class="drama-icon">💰</span>
         <h3>Drama Budget Jebol</h3>
-        <p>Estimasi Rp 80jt, realisasi Rp 120jt. Pengeluaran kecil-kecil yang tidak tercatat akhirnya numpuk tanpa disadari.</p>
-        <div class="drama-scenario">"Udah bayar DP katering, eh lupa dicatat. Sekarang gak tau sisa budget berapa."</div>
+        <p>Estimasi Rp 80jt, realisasi Rp 120jt. Pengeluaran kecil-kecil yang tidak tercatat akhirnya numpuk tanpa
+          disadari.</p>
+        <div class="drama-scenario">"Udah bayar DP katering, eh lupa dicatat. Sekarang gak tau sisa budget berapa."
+        </div>
       </div>
       <div class="drama-card reveal">
         <span class="drama-icon">💍</span>
         <h3>Drama Seserahan Ketinggalan</h3>
-        <p>Daftar seserahan ditulis di kertas, notes HP, chat WA — tersebar mana-mana. Hari H ada barang yang ketinggalan.</p>
+        <p>Daftar seserahan ditulis di kertas, notes HP, chat WA — tersebar mana-mana. Hari H ada barang yang
+          ketinggalan.</p>
         <div class="drama-scenario">"Sampai di lokasi baru sadar parfum seserahan ketinggalan di rumah. Panik!"</div>
       </div>
       <div class="drama-card reveal">
         <span class="drama-icon">🏢</span>
         <h3>Drama Vendor Tiba-tiba Cabut</h3>
-        <p>Vendor cancel H-7, nomor susah dihubungi, kontrak tidak jelas. Semua info vendor tersebar di berbagai chat WA.</p>
+        <p>Vendor cancel H-7, nomor susah dihubungi, kontrak tidak jelas. Semua info vendor tersebar di berbagai chat
+          WA.</p>
         <div class="drama-scenario">"WO tiba-tiba bilang ada double booking. Kontraknya mana? Sudah bayar berapa?"</div>
       </div>
       <div class="drama-card reveal">
         <span class="drama-icon">💄</span>
         <h3>Drama MUA Double Booking</h3>
-        <p>MUA impian ternyata sudah di-booking orang lain di tanggal yang sama. Baru ketahuan 2 minggu sebelum hari H.</p>
+        <p>MUA impian ternyata sudah di-booking orang lain di tanggal yang sama. Baru ketahuan 2 minggu sebelum hari H.
+        </p>
         <div class="drama-scenario">"Udah fitting 3x, eh MUA-nya bilang double booking. Cari pengganti mendadak."</div>
       </div>
       <div class="drama-card reveal">
         <span class="drama-icon">🎁</span>
         <h3>Drama Kado & Angpao Kacau</h3>
-        <p>Siapa yang kasih kado apa? Amplop dari siapa? Mau kirim ucapan terima kasih tapi datanya tidak ada sama sekali.</p>
-        <div class="drama-scenario">"Mau WA ucapan terima kasih tapi lupa siapa yang kasih angpao berapa. Awkward."</div>
+        <p>Siapa yang kasih kado apa? Amplop dari siapa? Mau kirim ucapan terima kasih tapi datanya tidak ada sama
+          sekali.</p>
+        <div class="drama-scenario">"Mau WA ucapan terima kasih tapi lupa siapa yang kasih angpao berapa. Awkward."
+        </div>
       </div>
       <div class="drama-card reveal">
         <span class="drama-icon">😫</span>
@@ -705,7 +2445,8 @@
         <div class="drama-scenario">"Tamu yang konfirmasi hadir ternyata lebih dari kapasitas gedung. Chaos!"</div>
       </div>
     </div>
-    <p class="drama-closer reveal">"Semua drama ini bisa dihindari — kalau semua tercatat di satu tempat yang benar."</p>
+    <p class="drama-closer reveal">"Semua drama ini bisa dihindari — kalau semua tercatat di satu tempat yang benar."
+    </p>
   </section>
 
   <!-- ══ SOLUTION ══ -->
@@ -714,25 +2455,40 @@
       <div class="solution-left">
         <p class="section-eyebrow reveal">Solusi yang kamu butuhkan</p>
         <h2 class="section-title reveal">Satu platform.<br>Semua drama<br>bisa dicegah.</h2>
-        <p class="reveal">NIKAH RAPI dirancang khusus untuk calon pengantin Indonesia — 22+ modul Web App terintegrasi yang saling terhubung otomatis. Input sekali, semua terupdate. Tersinkronisasi cloud, aman, dan bisa diakses dari perangkat manapun.</p>
+        <p class="reveal">NIKAH RAPI dirancang khusus untuk calon pengantin Indonesia — 22+ modul Web App terintegrasi
+          yang saling terhubung otomatis. Input sekali, semua terupdate. Tersinkronisasi cloud, aman, dan bisa diakses
+          dari perangkat manapun.</p>
         <a href="#pricing" class="btn-secondary reveal">Lihat Harga & Paket →</a>
       </div>
       <div class="feature-cards">
         <div class="feat-card reveal">
           <div class="feat-icon">💍</div>
-          <div class="feat-text"><h4>Seserahan Tracker <span class="usp-tag">Eksklusif</span></h4><p>Catat semua item, harga, status beli. Auto-hitung total. Tidak ada di produk manapun di Indonesia.</p></div>
+          <div class="feat-text">
+            <h4>Seserahan Tracker <span class="usp-tag">Eksklusif</span></h4>
+            <p>Catat semua item, harga, status beli. Auto-hitung total. Tidak ada di produk manapun di Indonesia.</p>
+          </div>
         </div>
         <div class="feat-card reveal">
           <div class="feat-icon">🎁</div>
-          <div class="feat-text"><h4>Kado & Angpao Tracker <span class="usp-tag">Eksklusif</span></h4><p>Rekap siapa beri apa, nominal angpao, status ucapan terima kasih. Tidak ada yang terlewat.</p></div>
+          <div class="feat-text">
+            <h4>Kado & Angpao Tracker <span class="usp-tag">Eksklusif</span></h4>
+            <p>Rekap siapa beri apa, nominal angpao, status ucapan terima kasih. Tidak ada yang terlewat.</p>
+          </div>
         </div>
         <div class="feat-card reveal">
           <div class="feat-icon">💰</div>
-          <div class="feat-text"><h4>Budget Planner Otomatis</h4><p>Rencana vs realisasi terupdate real-time. Tahu persis kategori mana yang overbudget sebelum terlambat.</p></div>
+          <div class="feat-text">
+            <h4>Budget Planner Otomatis</h4>
+            <p>Rencana vs realisasi terupdate real-time. Tahu persis kategori mana yang overbudget sebelum terlambat.
+            </p>
+          </div>
         </div>
         <div class="feat-card reveal">
           <div class="feat-icon">🏢</div>
-          <div class="feat-text"><h4>Vendor Manager Lengkap</h4><p>Kontak, kontrak, DP & pelunasan semua vendor. Tidak ada lagi vendor yang tiba-tiba "lupa" perjanjian.</p></div>
+          <div class="feat-text">
+            <h4>Vendor Manager Lengkap</h4>
+            <p>Kontak, kontrak, DP & pelunasan semua vendor. Tidak ada lagi vendor yang tiba-tiba "lupa" perjanjian.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -812,65 +2568,258 @@
     <p class="section-eyebrow reveal">Yang kamu dapatkan</p>
     <h2 class="section-title reveal">22+ Modul Web App Lengkap,<br><em>Tidak Ada yang Terlewat</em></h2>
     <div class="sheets-grid">
-      <div class="sheet-card star reveal"><div class="sheet-num">01</div><div class="sheet-name">Dashboard Utama ✦</div><div class="sheet-desc">Ringkasan semua progress pernikahan</div></div>
-      <div class="sheet-card reveal"><div class="sheet-num">02</div><div class="sheet-name">Budget Planner</div><div class="sheet-desc">Rencana & realisasi per kategori</div></div>
-      <div class="sheet-card star reveal"><div class="sheet-num">03</div><div class="sheet-name">Seserahan Tracker ✦</div><div class="sheet-desc">Item, harga, status — eksklusif!</div></div>
-      <div class="sheet-card star reveal"><div class="sheet-num">04</div><div class="sheet-name">Kado & Angpao ✦</div><div class="sheet-desc">Rekap pemberi & follow up — eksklusif!</div></div>
-      <div class="sheet-card reveal"><div class="sheet-num">05</div><div class="sheet-name">Guest List</div><div class="sheet-desc">Daftar tamu lengkap & kategori</div></div>
-      <div class="sheet-card reveal"><div class="sheet-num">06</div><div class="sheet-name">RSVP Tracker</div><div class="sheet-desc">Konfirmasi hadir & kebutuhan meja</div></div>
-      <div class="sheet-card reveal"><div class="sheet-num">07</div><div class="sheet-name">Vendor Manager</div><div class="sheet-desc">Kontak, kontrak, DP & pelunasan</div></div>
-      <div class="sheet-card reveal"><div class="sheet-num">08</div><div class="sheet-name">Timeline Acara</div><div class="sheet-desc">Rundown H-1 hingga hari H</div></div>
-      <div class="sheet-card reveal"><div class="sheet-num">09</div><div class="sheet-name">Checklist Persiapan</div><div class="sheet-desc">Master checklist anti-lupa</div></div>
-      <div class="sheet-card reveal"><div class="sheet-num">10</div><div class="sheet-name">Dekorasi & Tema</div><div class="sheet-desc">Moodboard, referensi warna & dekor</div></div>
-      <div class="sheet-card reveal"><div class="sheet-num">11</div><div class="sheet-name">Katering & Menu</div><div class="sheet-desc">Menu, porsi, tracking pembayaran</div></div>
-      <div class="sheet-card reveal"><div class="sheet-num">12</div><div class="sheet-name">Undangan & Desain</div><div class="sheet-desc">Cetak, digital, pengiriman</div></div>
-      <div class="sheet-card reveal"><div class="sheet-num">13</div><div class="sheet-name">MUA & Busana</div><div class="sheet-desc">Fitting, MUA, sewa/beli baju</div></div>
-      <div class="sheet-card reveal"><div class="sheet-num">14</div><div class="sheet-name">Foto & Video</div><div class="sheet-desc">Shot list & brief fotografer</div></div>
-      <div class="sheet-card reveal"><div class="sheet-num">15</div><div class="sheet-name">Cincin & Mahar</div><div class="sheet-desc">Detail mahar & perlengkapan akad</div></div>
-      <div class="sheet-card reveal"><div class="sheet-num">16</div><div class="sheet-name">Honeymoon Planner</div><div class="sheet-desc">Itinerary & budget bulan madu</div></div>
-      <div class="sheet-card reveal"><div class="sheet-num">17</div><div class="sheet-name">Souvenir & Hampers</div><div class="sheet-desc">Jumlah, vendor, distribusi souvenir</div></div>
-      <div class="sheet-card reveal"><div class="sheet-num">18</div><div class="sheet-name">Catatan Penting</div><div class="sheet-desc">Notes & reminder hal penting</div></div>
-      <div class="sheet-card reveal"><div class="sheet-num">19</div><div class="sheet-name">Rekap Akhir</div><div class="sheet-desc">Summary total biaya & kenangan</div></div>
+      <div class="sheet-card star reveal">
+        <div class="sheet-num">01</div>
+        <div class="sheet-name">Dashboard Utama ✦</div>
+        <div class="sheet-desc">Ringkasan semua progress pernikahan</div>
+      </div>
+      <div class="sheet-card reveal">
+        <div class="sheet-num">02</div>
+        <div class="sheet-name">Budget Planner</div>
+        <div class="sheet-desc">Rencana & realisasi per kategori</div>
+      </div>
+      <div class="sheet-card star reveal">
+        <div class="sheet-num">03</div>
+        <div class="sheet-name">Seserahan Tracker ✦</div>
+        <div class="sheet-desc">Item, harga, status — eksklusif!</div>
+      </div>
+      <div class="sheet-card star reveal">
+        <div class="sheet-num">04</div>
+        <div class="sheet-name">Kado & Angpao ✦</div>
+        <div class="sheet-desc">Rekap pemberi & follow up — eksklusif!</div>
+      </div>
+      <div class="sheet-card reveal">
+        <div class="sheet-num">05</div>
+        <div class="sheet-name">Guest List</div>
+        <div class="sheet-desc">Daftar tamu lengkap & kategori</div>
+      </div>
+      <div class="sheet-card reveal">
+        <div class="sheet-num">06</div>
+        <div class="sheet-name">RSVP Tracker</div>
+        <div class="sheet-desc">Konfirmasi hadir & kebutuhan meja</div>
+      </div>
+      <div class="sheet-card reveal">
+        <div class="sheet-num">07</div>
+        <div class="sheet-name">Vendor Manager</div>
+        <div class="sheet-desc">Kontak, kontrak, DP & pelunasan</div>
+      </div>
+      <div class="sheet-card reveal">
+        <div class="sheet-num">08</div>
+        <div class="sheet-name">Timeline Acara</div>
+        <div class="sheet-desc">Rundown H-1 hingga hari H</div>
+      </div>
+      <div class="sheet-card reveal">
+        <div class="sheet-num">09</div>
+        <div class="sheet-name">Checklist Persiapan</div>
+        <div class="sheet-desc">Master checklist anti-lupa</div>
+      </div>
+      <div class="sheet-card reveal">
+        <div class="sheet-num">10</div>
+        <div class="sheet-name">Dekorasi & Tema</div>
+        <div class="sheet-desc">Moodboard, referensi warna & dekor</div>
+      </div>
+      <div class="sheet-card reveal">
+        <div class="sheet-num">11</div>
+        <div class="sheet-name">Katering & Menu</div>
+        <div class="sheet-desc">Menu, porsi, tracking pembayaran</div>
+      </div>
+      <div class="sheet-card reveal">
+        <div class="sheet-num">12</div>
+        <div class="sheet-name">Undangan & Desain</div>
+        <div class="sheet-desc">Cetak, digital, pengiriman</div>
+      </div>
+      <div class="sheet-card reveal">
+        <div class="sheet-num">13</div>
+        <div class="sheet-name">MUA & Busana</div>
+        <div class="sheet-desc">Fitting, MUA, sewa/beli baju</div>
+      </div>
+      <div class="sheet-card reveal">
+        <div class="sheet-num">14</div>
+        <div class="sheet-name">Foto & Video</div>
+        <div class="sheet-desc">Shot list & brief fotografer</div>
+      </div>
+      <div class="sheet-card reveal">
+        <div class="sheet-num">15</div>
+        <div class="sheet-name">Cincin & Mahar</div>
+        <div class="sheet-desc">Detail mahar & perlengkapan akad</div>
+      </div>
+      <div class="sheet-card reveal">
+        <div class="sheet-num">16</div>
+        <div class="sheet-name">Honeymoon Planner</div>
+        <div class="sheet-desc">Itinerary & budget bulan madu</div>
+      </div>
+      <div class="sheet-card reveal">
+        <div class="sheet-num">17</div>
+        <div class="sheet-name">Souvenir & Hampers</div>
+        <div class="sheet-desc">Jumlah, vendor, distribusi souvenir</div>
+      </div>
+      <div class="sheet-card reveal">
+        <div class="sheet-num">18</div>
+        <div class="sheet-name">Catatan Penting</div>
+        <div class="sheet-desc">Notes & reminder hal penting</div>
+      </div>
+      <div class="sheet-card reveal">
+        <div class="sheet-num">19</div>
+        <div class="sheet-name">Rekap Akhir</div>
+        <div class="sheet-desc">Summary total biaya & kenangan</div>
+      </div>
+      <div class="sheet-card reveal">
+        <div class="sheet-num">20</div>
+        <div class="sheet-name">Activity Logs</div>
+        <div class="sheet-desc">Riwayat semua perubahan & aktivitas</div>
+      </div>
+      <div class="sheet-card reveal">
+        <div class="sheet-num">21</div>
+        <div class="sheet-name">Panduan Penggunaan</div>
+        <div class="sheet-desc">Tutorial lengkap & tips fitur</div>
+      </div>
+      <div class="sheet-card reveal">
+        <div class="sheet-num">22</div>
+        <div class="sheet-name">Profil & Pengaturan</div>
+        <div class="sheet-desc">Kelola akun & preferensi nikah</div>
+      </div>
     </div>
   </section>
 
   <!-- ══ TESTIMONI ══ -->
   <section class="testi-section">
-    <p class="section-eyebrow reveal">Kata mereka yang sudah pakai</p>
-    <h2 class="section-title reveal">Pernikahan lebih tenang,<br>karena semua <em>sudah tercatat</em></h2>
-    <div class="testi-grid">
-      <div class="testi-card reveal">
-        <div class="testi-quote">"</div>
-        <div class="testi-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <p class="testi-text">Seserahan Tracker-nya beneran game changer. Sebelumnya nyatat manual di kertas dan selalu ada yang kelewatan. Sekarang tinggal update di Excel, auto keitung semua. Worth banget!</p>
-        <div class="testi-author">
-          <div class="testi-avatar" style="background:linear-gradient(135deg,#E8C4B8,#D4A090)">🌸</div>
-          <div><div class="testi-name">Anisa R.</div><div class="testi-meta">Calon pengantin · Jakarta</div><div class="testi-verified">✓ Verified Purchase</div></div>
+    <p class="section-eyebrow">Cerita Mereka</p>
+    <h2 class="section-title">Sudah Membantu Calon Pengantin <em>Indonesia</em></h2>
+    <p class="section-sub" style="margin-bottom:48px;">Kisah nyata dari early adopter NIKAH RAPI — mereka yang sudah
+      merasakan persiapan nikah tanpa drama.</p>
+
+    <div class="testi-photo-grid">
+
+      <!-- ✦ TESTI 1: ANISA (Calon Pengantin Wanita - Jakarta) ✦ -->
+      <div class="testi-photo-card reveal">
+        <div class="testi-photo-wrapper">
+          <img src="assets/testi/testi-1.jpg" alt="Testimoni Anisa - Calon Pengantin" loading="lazy">
+          <div class="testi-photo-badge">📍 Jakarta</div>
+        </div>
+        <div class="testi-photo-content">
+          <div class="testi-photo-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="testi-photo-text">"Seserahan Tracker-nya beneran game changer! Sebelumnya nyatat manual di kertas,
+            ada yang ketinggalan terus. Sekarang tinggal ceklis di Web App, dan bisa di-akses suami juga. H-3 bulan udah
+            lengkap semua, gak panik di akhir."</p>
+          <div class="testi-photo-footer">
+            <div class="testi-photo-name">Anisa Rahmadani</div>
+            <div class="testi-photo-meta">Calon Pengantin · Menikah Sept 2026</div>
+            <div class="testi-photo-verified">✓ Verified Purchase</div>
+          </div>
         </div>
       </div>
-      <div class="testi-card reveal">
-        <div class="testi-quote">"</div>
-        <div class="testi-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <p class="testi-text">Kado & Angpao Tracker yang bikin aku beli ini. Nikahan kakak sebelumnya banyak yang lupa diucapin terima kasih. Sekarang semua tercatat rapi, tinggal follow up satu-satu!</p>
-        <div class="testi-author">
-          <div class="testi-avatar" style="background:linear-gradient(135deg,#C4857A,#8B5E6A)">💐</div>
-          <div><div class="testi-name">Dewi S.</div><div class="testi-meta">Baru menikah · Bandung</div><div class="testi-verified">✓ Verified Purchase</div></div>
+
+      <!-- ✦ TESTI 2: REZA & PUTRI (Pasangan - Bandung) ✦ -->
+      <div class="testi-photo-card reveal">
+        <div class="testi-photo-wrapper">
+          <img src="assets/testi/testi-2.jpg" alt="Testimoni Reza & Putri - Pasangan" loading="lazy">
+          <div class="testi-photo-badge">📍 Bandung</div>
+        </div>
+        <div class="testi-photo-content">
+          <div class="testi-photo-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="testi-photo-text">"Berdua bisa update real-time. Saya isi data vendor, calon istri ngurus seserahan,
+            semuanya keliatan di dashboard yang sama. Anti drama 'lah kok ini belum dibayar' atau 'bukan saya yang urus
+            itu'. Total budget kami terkontrol, gak boncos."</p>
+          <div class="testi-photo-footer">
+            <div class="testi-photo-name">Reza & Putri</div>
+            <div class="testi-photo-meta">Calon Pengantin · Menikah Nov 2026</div>
+            <div class="testi-photo-verified">✓ Verified Purchase</div>
+          </div>
         </div>
       </div>
-      <div class="testi-card reveal">
-        <div class="testi-quote">"</div>
-        <div class="testi-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <p class="testi-text">Tadinya ragu karena harganya murah, takut isinya biasa aja. Ternyata 19 sheet semua fungsional dan saling nyambung! Budget planner-nya langsung update otomatis. Recommend!</p>
-        <div class="testi-author">
-          <div class="testi-avatar" style="background:linear-gradient(135deg,#C9A96E,#E8D5B0)">👑</div>
-          <div><div class="testi-name">Rina & Fajar</div><div class="testi-meta">Calon pengantin · Surabaya</div><div class="testi-verified">✓ Verified Purchase</div></div>
+
+      <!-- ✦ TESTI 3: BUNDA SRI (Ibu Calon Pengantin - Surabaya) ✦ -->
+      <div class="testi-photo-card reveal">
+        <div class="testi-photo-wrapper">
+          <img src="assets/testi/testi-3.jpg" alt="Testimoni Bunda Sri - Ibu Calon Pengantin" loading="lazy">
+          <div class="testi-photo-badge">📍 Surabaya</div>
+        </div>
+        <div class="testi-photo-content">
+          <div class="testi-photo-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="testi-photo-text">"Anak saya kerja di Jakarta, saya di Surabaya, persiapan pernikahannya sempat
+            chaos. Sejak pakai NIKAH RAPI, semua list seserahan dan keperluan akad bisa saya pantau dari rumah. Tinggal
+            bagi tugas, semua tercatat rapi. Tidak ada lagi kado yang dobel atau ucapan yang lupa dibalas."</p>
+          <div class="testi-photo-footer">
+            <div class="testi-photo-name">Bunda Sri Wahyuni</div>
+            <div class="testi-photo-meta">Ibu Calon Pengantin · Anak menikah Okt 2026</div>
+            <div class="testi-photo-verified">✓ Verified Purchase</div>
+          </div>
         </div>
       </div>
+
+      <!-- ✦ TESTI 4: ANDI (Calon Pengantin Pria - Jakarta) ✦ -->
+      <div class="testi-photo-card reveal">
+        <div class="testi-photo-wrapper">
+          <img src="assets/testi/testi-4.jpg" alt="Testimoni Andi - Calon Pengantin Pria" loading="lazy">
+          <div class="testi-photo-badge">📍 Jakarta</div>
+        </div>
+        <div class="testi-photo-content">
+          <div class="testi-photo-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="testi-photo-text">"Sebagai cowok, saya pikir 'ah, planner ribet'. Tapi setelah dipakai, jadi sadar
+            berapa pengeluaran beneran vs estimasi. Dari rencana 80jt jadi tahu real-nya 95jt. Budget Tracker-nya simple
+            banget, gak perlu mikir Excel. Yang penting saya gak boncos di akhir."</p>
+          <div class="testi-photo-footer">
+            <div class="testi-photo-name">Andi Kurniawan</div>
+            <div class="testi-photo-meta">Calon Pengantin Pria · Menikah Aug 2026</div>
+            <div class="testi-photo-verified">✓ Verified Purchase</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ✦ TESTI 5: MAYA (Wanita Karir - Tangerang) ✦ -->
+      <div class="testi-photo-card reveal">
+        <div class="testi-photo-wrapper">
+          <img src="assets/testi/testi-5.jpg" alt="Testimoni Maya - Wanita Karir" loading="lazy">
+          <div class="testi-photo-badge">📍 Tangerang</div>
+        </div>
+        <div class="testi-photo-content">
+          <div class="testi-photo-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="testi-photo-text">"Kerja kantoran 9-to-5, gak ada waktu duduk depan laptop buat planning. Untungnya
+            NIKAH RAPI bisa diakses dari HP. Update vendor pas lunch break, ceklis seserahan saat di taksi. Hidup gue
+            udah hectic, persiapan nikah jangan nambah stress."</p>
+          <div class="testi-photo-footer">
+            <div class="testi-photo-name">Maya Setiawati</div>
+            <div class="testi-photo-meta">Wanita Karir · Menikah Dec 2026</div>
+            <div class="testi-photo-verified">✓ Verified Purchase</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ✦ TESTI 6: BAYU & SINTA (Pasangan Long Distance - Yogyakarta) ✦ -->
+      <div class="testi-photo-card reveal">
+        <div class="testi-photo-wrapper">
+          <img src="assets/testi/testi-6.jpg" alt="Testimoni Bayu & Sinta - Pasangan LDR" loading="lazy">
+          <div class="testi-photo-badge">📍 Yogyakarta</div>
+        </div>
+        <div class="testi-photo-content">
+          <div class="testi-photo-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="testi-photo-text">"LDR Jakarta-Jogja, persiapan nikah jadi tantangan komunikasi. Pakai NIKAH RAPI,
+            kami bisa update bareng-bareng walau beda kota. Vendor di Jogja bisa di-track sama saya, dia di Jakarta urus
+            ortu. Worth banget dengan harga segini, fitur Kado & Angpao Tracker-nya juga unik!"</p>
+          <div class="testi-photo-footer">
+            <div class="testi-photo-name">Bayu & Sinta</div>
+            <div class="testi-photo-meta">Pasangan LDR · Menikah Sept 2026</div>
+            <div class="testi-photo-verified">✓ Verified Purchase</div>
+          </div>
+        </div>
+      </div>
+
     </div>
-    <div class="testi-stats reveal">
-      <div class="tstat"><div class="tstat-num">50+</div><div class="tstat-label">Calon Pengantin Terbantu</div></div>
-      <div class="tstat"><div class="tstat-num">5★</div><div class="tstat-label">Rating Rata-rata</div></div>
-      <div class="tstat"><div class="tstat-num">19</div><div class="tstat-label">Sheet Terintegrasi</div></div>
+
+    <!-- Stats bar (existing) -->
+    <div class="testi-stats">
+      <div class="testi-stat">
+        <div class="testi-stat-num">22+</div>
+        <div class="testi-stat-label">Modul Web App</div>
+      </div>
+      <div class="testi-stat">
+        <div class="testi-stat-num">100%</div>
+        <div class="testi-stat-label">Customer Puas</div>
+      </div>
+      <div class="testi-stat">
+        <div class="testi-stat-num">7 Hari</div>
+        <div class="testi-stat-label">Garansi Uang Kembali</div>
+      </div>
     </div>
   </section>
 
@@ -881,22 +2830,35 @@
     <div class="pricing-card reveal">
       <div class="pricing-card-badge">✦ Akses Premium Seumur Hidup</div>
       <div class="price-hero">
-        <div class="price-big"><sup>Rp</sup>129.000</div>
+        <div class="price-big"><sup>Rp</sup>99.000</div>
       </div>
-      <div class="price-was-p"><s>Rp 349.000</s></div>
+      <div class="price-was-p"><s>Rp 299.000</s></div>
       <div class="price-save-badge">🔥 Hemat 63% — Harga Promo Terbatas!</div>
       <ul class="include-list">
-        <li><div class="check">✓</div>Aplikasi Web NIKAH RAPI — 22+ modul lengkap & terintegrasi</li>
-        <li><div class="check">✓</div>Seserahan Tracker eksklusif — tidak ada di produk lain!</li>
-        <li><div class="check">✓</div>Kado & Angpao Tracker eksklusif — follow up terima kasih mudah</li>
-        <li><div class="check">✓</div>Dashboard otomatis update tanpa input ulang</li>
-        <li><div class="check">✓</div>Update akses gratis seumur hidup</li>
-        <li><div class="check">✓</div>Akses dari mana saja (HP, Tablet, Laptop)</li>
+        <li>
+          <div class="check">✓</div>Aplikasi Web NIKAH RAPI — 22+ modul lengkap & terintegrasi
+        </li>
+        <li>
+          <div class="check">✓</div>Seserahan Tracker eksklusif — tidak ada di produk lain!
+        </li>
+        <li>
+          <div class="check">✓</div>Kado & Angpao Tracker eksklusif — follow up terima kasih mudah
+        </li>
+        <li>
+          <div class="check">✓</div>Dashboard otomatis update tanpa input ulang
+        </li>
+        <li>
+          <div class="check">✓</div>Update akses gratis seumur hidup
+        </li>
+        <li>
+          <div class="check">✓</div>Akses dari mana saja (HP, Tablet, Laptop)
+        </li>
       </ul>
-      <a href="https://entrepreneurai.myscalev.com/checkout-page" class="btn-primary" style="width:100%;justify-content:center;font-size:15px;padding:22px;">
-        💍 Dapatkan Sekarang — Rp 129.000
+      <a href="https://entrepreneurai.myscalev.com/checkout-page" class="btn-primary"
+        style="width:100%;justify-content:center;font-size:15px;padding:22px;">
+        💍 Dapatkan Sekarang — Rp 99.000
       </a>
-      <p class="urgency-note">⏰ Harga segera naik ke Rp 349.000 · Garansi 7 hari · Akses langsung via WA</p>
+      <p class="urgency-note">⏰ Harga segera naik ke Rp 299.000 · Garansi 7 hari · Akses langsung via WA</p>
       <div class="heat-run-bar">
         <span style="font-size:24px">🔥</span>
         <div class="heat-run-text">
@@ -913,28 +2875,37 @@
     <h2 class="section-title reveal">FAQ</h2>
     <div class="faq-inner">
       <div class="faq-item reveal" onclick="toggleFaq(this)">
-        <div class="faq-q">Harus bisa Excel dulu tidak? <span class="faq-arrow">+</span></div>
-        <div class="faq-a">Tidak perlu jago Excel! NIKAH RAPI dirancang agar tinggal isi data — semua kalkulasi dan dashboard berjalan otomatis. Kalau bisa ngetik di HP, kamu bisa pakai ini.</div>
+        <div class="faq-q">Saya gaptek, bisa pakai tidak? <span class="faq-arrow">+</span></div>
+        <div class="faq-a">Tidak perlu jago teknologi! NIKAH RAPI dirancang agar tinggal isi data — semua kalkulasi dan
+          dashboard berjalan otomatis. Kalau kamu bisa ngetik di HP atau pakai WhatsApp, kamu sudah bisa pakai NIKAH
+          RAPI.</div>
       </div>
       <div class="faq-item reveal" onclick="toggleFaq(this)">
         <div class="faq-q">Bisa dibuka di HP atau hanya di laptop? <span class="faq-arrow">+</span></div>
-        <div class="faq-a">Bisa di keduanya! Paling nyaman di laptop dengan Microsoft Excel atau Google Sheets. Di HP bisa pakai aplikasi Excel/Google Sheets gratis — langsung bisa dipakai.</div>
+        <div class="faq-a">Bisa di keduanya! Cukup buka browser di HP atau laptop, login pakai email yang dipakai saat
+          checkout, dan langsung bisa akses semua fitur. Tidak perlu install aplikasi tambahan.</div>
       </div>
       <div class="faq-item reveal" onclick="toggleFaq(this)">
-        <div class="faq-q">Setelah bayar, file dikirim ke mana dan berapa lama? <span class="faq-arrow">+</span></div>
-        <div class="faq-a">File dikirim langsung ke email kamu setelah pembayaran dikonfirmasi. Akses seumur hidup!</div>
+        <div class="faq-q">Setelah bayar, link akses dikirim ke mana dan berapa lama? <span class="faq-arrow">+</span>
+        </div>
+        <div class="faq-a">Link akses dikirim langsung ke email kamu setelah pembayaran dikonfirmasi. Akses seumur
+          hidup!</div>
       </div>
       <div class="faq-item reveal" onclick="toggleFaq(this)">
         <div class="faq-q">Ada garansi uang kembali tidak? <span class="faq-arrow">+</span></div>
-        <div class="faq-a">Ada garansi 7 hari. Jika file tidak sesuai deskripsi, hubungi kami dan proses refund penuh tanpa pertanyaan berlebihan.</div>
+        <div class="faq-a">Ada garansi 7 hari. Jika file tidak sesuai deskripsi, hubungi kami dan proses refund penuh
+          tanpa pertanyaan berlebihan.</div>
       </div>
       <div class="faq-item reveal" onclick="toggleFaq(this)">
         <div class="faq-q">Bisa untuk pernikahan adat apa saja? <span class="faq-arrow">+</span></div>
-        <div class="faq-a">Bisa untuk semua adat — Jawa, Sunda, Minang, Betawi, Modern, dan lainnya. Sheet seserahan bisa disesuaikan dengan tradisi masing-masing daerah.</div>
+        <div class="faq-a">Bisa untuk semua adat — Jawa, Sunda, Minang, Betawi, Modern, dan lainnya. Sheet seserahan
+          bisa disesuaikan dengan tradisi masing-masing daerah.</div>
       </div>
       <div class="faq-item reveal" onclick="toggleFaq(this)">
         <div class="faq-q">Apa bedanya dengan wedding planner lain? <span class="faq-arrow">+</span></div>
-        <div class="faq-a">NIKAH RAPI adalah satu-satunya wedding planner Excel yang punya Seserahan Tracker & Kado/Angpao Tracker yang detail — dua fitur yang paling dibutuhkan calon pengantin Indonesia tapi tidak ada di produk manapun.</div>
+        <div class="faq-a">NIKAH RAPI adalah satu-satunya Web App wedding planner yang punya Seserahan Tracker &
+          Kado/Angpao Tracker yang detail — dua fitur yang paling dibutuhkan calon pengantin Indonesia tapi tidak ada di
+          produk manapun.</div>
       </div>
     </div>
   </section>
@@ -942,9 +2913,11 @@
   <!-- ══ FINAL CTA ══ -->
   <section class="final-cta">
     <p class="section-eyebrow reveal">Sudah siap?</p>
-    <h2 class="section-title reveal">Mulai rencanakan pernikahanmu<br>dengan lebih <em style="color:var(--gold-light)">tenang & rapi</em></h2>
-    <p class="reveal">Ratusan detail pernikahan dalam satu file. Supaya hari terbaikmu benar-benar terasa seperti hari terbaik.</p>
-    <div class="final-price reveal">Rp 129.000 · Hemat 63% · Garansi 7 hari · Akses langsung via WA</div>
+    <h2 class="section-title reveal">Mulai rencanakan pernikahanmu<br>dengan lebih <em
+        style="color:var(--gold-light)">tenang & rapi</em></h2>
+    <p class="reveal">Ratusan detail pernikahan dalam satu file. Supaya hari terbaikmu benar-benar terasa seperti hari
+      terbaik.</p>
+    <div class="final-price reveal">Rp 99.000 · Hemat 63% · Garansi 7 hari · Akses langsung via WA</div>
     <a href="https://entrepreneurai.myscalev.com/checkout-page" class="btn-secondary reveal" style="margin:0 auto;">
       💍 Ambil Sekarang Sebelum Harga Naik
     </a>
@@ -979,9 +2952,9 @@
       btn.classList.add('on');
       const el = document.getElementById(id);
       if (el) el.classList.add('on');
-      const map = {'p-dash':0,'p-budget':1,'p-ses':2,'p-kado':3,'p-guest':4,'p-vendor':5};
+      const map = { 'p-dash': 0, 'p-budget': 1, 'p-ses': 2, 'p-kado': 3, 'p-guest': 4, 'p-vendor': 5 };
       const idx = map[id];
-      document.querySelectorAll('.stab').forEach((t,i) => t.classList.toggle('on', i===idx));
+      document.querySelectorAll('.stab').forEach((t, i) => t.classList.toggle('on', i === idx));
     }
 
     function switchSheet(btn, id, idx) {
@@ -990,9 +2963,31 @@
       btn.classList.add('on');
       const el = document.getElementById(id);
       if (el) el.classList.add('on');
-      const ids = ['p-dash','p-budget','p-ses','p-kado','p-guest','p-vendor'];
-      document.querySelectorAll('.ptab').forEach((t,i) => t.classList.toggle('on', ids[i]===id || (i===0&&idx===0) || (i===1&&idx===2) || (i===2&&idx===3) || (i===3&&idx===1)));
+      const ids = ['p-dash', 'p-budget', 'p-ses', 'p-kado', 'p-guest', 'p-vendor'];
+      document.querySelectorAll('.ptab').forEach((t, i) => t.classList.toggle('on', ids[i] === id || (i === 0 && idx === 0) || (i === 1 && idx === 2) || (i === 2 && idx === 3) || (i === 3 && idx === 1)));
     }
   </script>
+
+  <!-- YouTube Load Script -->
+  <script>
+    function loadVideo(el) {
+      var videoId = 'YPl7CuUqbUs';
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&mute=1&rel=0&modestbranding=1';
+      iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:none;border-radius:16px;';
+      iframe.allow = 'autoplay; encrypted-media; fullscreen';
+      iframe.allowFullscreen = true;
+      // Clear placeholder and insert iframe
+      el.innerHTML = '';
+      el.appendChild(iframe);
+      el.style.cursor = 'default';
+      el.onclick = null;
+    }
+
+    // Auto-detect if YouTube video is available
+    // If you changed the video, update the ID below:
+    // var VIDEO_ID = 'YOUR_NEW_VIDEO_ID';
+  </script>
 </body>
+
 </html>

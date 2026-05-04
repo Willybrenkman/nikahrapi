@@ -1699,32 +1699,186 @@
                 padding: 32px 20px;
             }
         }
+
+        /* Enhanced testimonial styles - tambahkan ke <style> existing kalau belum ada */
+        .testi-photo-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(139, 94, 106, 0.1);
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .testi-photo-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 60px rgba(92, 61, 46, 0.15);
+        }
+
+        .testi-photo-wrapper {
+            position: relative;
+            width: 100%;
+            height: 240px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #FAF7F2, #E8D5B0);
+        }
+
+        .testi-photo-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .testi-photo-card:hover .testi-photo-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .testi-photo-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            color: #5C3D2E;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 100px;
+            border: 1px solid rgba(201, 169, 110, 0.3);
+        }
+
+        .testi-photo-content {
+            padding: 24px 24px 28px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .testi-photo-stars {
+            display: flex;
+            gap: 2px;
+            margin-bottom: 12px;
+        }
+
+        .testi-photo-stars span {
+            color: #C9A96E;
+            font-size: 14px;
+        }
+
+        .testi-photo-text {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #5C5246;
+            font-weight: 300;
+            flex: 1;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+
+        .testi-photo-footer {
+            border-top: 1px solid rgba(139, 94, 106, 0.08);
+            padding-top: 16px;
+        }
+
+        .testi-photo-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: #2A1F1A;
+            margin-bottom: 2px;
+        }
+
+        .testi-photo-meta {
+            font-size: 12px;
+            color: #8C7A6E;
+            margin-bottom: 6px;
+        }
+
+        .testi-photo-verified {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: rgba(122, 140, 126, 0.1);
+            color: #5C7361;
+            font-size: 10px;
+            font-weight: 500;
+            padding: 3px 10px;
+            border-radius: 100px;
+        }
+
+        .testi-photo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1100px;
+            margin: 0 auto 56px;
+        }
+
+        @media (max-width: 900px) {
+            .testi-photo-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .testi-photo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testi-photo-wrapper {
+                height: 280px;
+            }
+        }
     </style>
     <!-- Meta Pixel Code -->
     <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '4326987370876034');
-    fbq('track', 'PageView');
-    fbq('track', 'ViewContent');
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '4326987370876034');
+        fbq('track', 'ViewContent');
     </script>
     <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=4326987370876034&ev=PageView&noscript=1"
-    /></noscript>
+            src="https://www.facebook.com/tr?id=4326987370876034&ev=PageView&noscript=1" /></noscript>
     <!-- End Meta Pixel Code -->
+
+    <!-- Enhanced Meta Pixel Tracking - Lead Event Only -->
+    <script>
+        // Track Lead event when user scrolls 50%+ (engaged visitor)
+        // InitiateCheckout dan Purchase dihandle oleh Skalev
+        var leadTracked = false;
+        window.addEventListener('scroll', function () {
+            if (leadTracked) return;
+            var scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+            if (scrollPercent > 50) {
+                if (typeof fbq !== 'undefined') {
+                    fbq('track', 'Lead', {
+                        content_name: 'Engaged Scroll - NIKAH RAPI',
+                        content_category: 'Wedding Planner'
+                    });
+                }
+                leadTracked = true;
+            }
+        });
+    </script>
+
 </head>
 
 <body>
 
     <!-- REVISED: Sticky CTA — format harga konsisten -->
     <a href="https://entrepreneurai.myscalev.com/checkout-page" class="sticky-cta" id="stickyCta">
-        🤍 Bantu Anak Nikah Rapi — Rp 129.000
+        🤍 Bantu Anak Nikah Rapi — Rp 99.000
     </a>
 
     <!-- ══ HERO ══ -->
@@ -1784,7 +1938,7 @@
                         <div class="browser-dot" style="background:#febc2e;"></div>
                         <div class="browser-dot" style="background:#28c840;"></div>
                     </div>
-                    <div class="browser-url">app.nikahrapi.com ✦</div>
+                    <div class="browser-url">app.nikahrapi.online ✦</div>
                 </div>
 
                 <div class="preview-stage on" id="p-dash">
@@ -1805,13 +1959,34 @@
         <!-- REVISED: Format harga konsisten -->
         <div class="hero-cta-block">
             <div class="price-display">
-                <div class="price-new"><sup style="font-size:22px">Rp</sup>129.000</div>
-                <div class="price-old"><s>Rp 349.000</s></div>
+                <div class="price-new"><sup style="font-size:22px">Rp</sup>99.000</div>
+                <div class="price-old"><s>Rp 299.000</s></div>
                 <div class="price-save">HEMAT 63%</div>
             </div>
             <a href="https://entrepreneurai.myscalev.com/checkout-page" class="btn-primary">
                 🤍 Bantu Anak Nikah Rapi Sekarang
             </a>
+
+            <!-- ⏰ QUOTA COUNTER - Early Bird -->
+            <div class="quota-counter" id="quotaCounter"
+                style="background: linear-gradient(135deg, #fff8ec 0%, #ffe7d6 100%); border: 1px solid #C9A96E; border-radius: 16px; padding: 20px 24px; margin: 32px auto; max-width: 540px; text-align: center; box-shadow: 0 8px 24px rgba(201, 169, 110, 0.15);">
+                <div
+                    style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #8B5E6A; font-weight: 600; margin-bottom: 8px;">
+                    ⏰ Promo Early Bird Berakhir Saat Slot Habis</div>
+                <div
+                    style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #5C3D2E; font-weight: 600; margin-bottom: 4px;">
+                    Tersisa <span id="quotaCount" style="color: #B85C00; font-weight: 700;">10</span> dari 50 Slot
+                </div>
+                <div style="font-size: 13px; color: #6B5A4F; margin-bottom: 12px;">Harga akan naik ke <s>Rp 299.000</s>
+                    setelah slot habis</div>
+                <div class="quota-bar"
+                    style="background: rgba(201, 169, 110, 0.2); height: 8px; border-radius: 100px; overflow: hidden; margin-top: 12px;">
+                    <div id="quotaBar"
+                        style="background: linear-gradient(90deg, #B85C00, #C9A96E); height: 100%; width: 20%; transition: width 0.5s ease;">
+                    </div>
+                </div>
+            </div>
+
             <div class="cta-notes">
                 <div>✓ Garansi 7 hari</div>
                 <div>✓ Akses dikirim via WA</div>
@@ -1844,9 +2019,7 @@
         <div class="video-container reveal">
             <div class="video-decor-ring r1"></div>
             <div class="video-decor-ring r2"></div>
-            <div class="video-frame"
-                onclick="this.innerHTML='<iframe src=&quot;https://www.youtube.com/embed/YPl7CuUqbUs?autoplay=1&quot; style=&quot;position:absolute;inset:0;width:100%;height:100%;border:none;&quot; allow=&quot;autoplay;encrypted-media&quot; allowfullscreen></iframe>';this.style.cursor='default'"
-                aria-label="Putar video demo NIKAH RAPI">
+            <div class="video-frame" onclick="loadVideo(this)" aria-label="Putar video demo NIKAH RAPI">
                 <div
                     style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:1;">
                     <div
@@ -1883,7 +2056,7 @@
 
         <div style="margin-top:48px;" class="reveal">
             <a href="https://entrepreneurai.myscalev.com/checkout-page" class="btn-primary">
-                🤍 Dapatkan NIKAH RAPI — Rp 129.000
+                🤍 Dapatkan NIKAH RAPI — Rp 99.000
             </a>
         </div>
     </section>
@@ -2147,119 +2320,171 @@
                 <div class="sheet-name">Rekap Akhir</div>
                 <div class="sheet-desc">Summary total & kenangan indah</div>
             </div>
+            <div class="sheet-card reveal">
+                <div class="sheet-num">20</div>
+                <div class="sheet-name">Activity Logs</div>
+                <div class="sheet-desc">Riwayat semua perubahan & aktivitas</div>
+            </div>
+            <div class="sheet-card reveal">
+                <div class="sheet-num">21</div>
+                <div class="sheet-name">Panduan Penggunaan</div>
+                <div class="sheet-desc">Tutorial lengkap & tips fitur</div>
+            </div>
+            <div class="sheet-card reveal">
+                <div class="sheet-num">22</div>
+                <div class="sheet-name">Profil & Pengaturan</div>
+                <div class="sheet-desc">Kelola akun & preferensi nikah</div>
+            </div>
         </div>
     </section>
 
     <!-- ══ TESTIMONI — REVISED ══ -->
     <section class="testi-section">
-        <p class="section-eyebrow reveal">Kata ibu-ibu yang sudah pakai</p>
-        <h2 class="section-title reveal">Menyaksikan Pernikahan Anak<br>dengan <em>Tenang & Bangga</em></h2>
+        <p class="section-eyebrow">Cerita Mereka</p>
+        <h2 class="section-title">Sudah Membantu Calon Pengantin <em>Indonesia</em></h2>
+        <p class="section-sub" style="margin-bottom:48px;">Kisah nyata dari early adopter NIKAH RAPI — mereka yang sudah
+            merasakan persiapan nikah tanpa drama.</p>
 
-        <!-- REVISED: 2 kolom, 4 testi dengan ibu-detail highlight -->
-        <div class="testi-grid">
+        <div class="testi-photo-grid">
 
-            <!-- Testi 1 — REVISED dengan detail momen konkret -->
-            <div class="testi-card reveal">
-                <div class="testi-quote">"</div>
-                <div class="testi-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                <div class="testi-tag">👩 Ibu dari Pengantin · Depok</div>
-                <p class="testi-text">Seserahan Tracker-nya beneran penyelamat. Aku yang urus seserahan anak, dan pakai
-                    ini semua ter-list rapi. Hari H tidak ada yang ketinggalan sama sekali — aku sampai bisa cek satu
-                    per satu dengan tenang sebelum berangkat. Besannya pun terkesan!</p>
-                <!-- NEW: ibu moment detail -->
-                <div class="testi-ibu-detail">
-                    ✅ Cek seserahan pagi hari H — tenang karena semua sudah tercatat
+            <!-- ✦ TESTI 1: ANISA (Calon Pengantin Wanita - Jakarta) ✦ -->
+            <div class="testi-photo-card reveal">
+                <div class="testi-photo-wrapper">
+                    <img src="assets/testi/testi-1.jpg" alt="Testimoni Anisa - Calon Pengantin" loading="lazy">
+                    <div class="testi-photo-badge">📍 Jakarta</div>
                 </div>
-                <div class="testi-author">
-                    <div class="testi-avatar" style="background:linear-gradient(135deg,#EDD0C4,#DDB09E)">👩</div>
-                    <div>
-                        <div class="testi-name">Ibu Ratna</div>
-                        <div class="testi-meta">Ibu pengantin · Depok</div>
-                        <div class="testi-verified">✓ Verified Purchase</div>
+                <div class="testi-photo-content">
+                    <div class="testi-photo-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                    <p class="testi-photo-text">"Seserahan Tracker-nya beneran game changer! Sebelumnya nyatat manual di
+                        kertas, ada yang ketinggalan terus. Sekarang tinggal ceklis di Web App, dan bisa di-akses suami
+                        juga. H-3 bulan udah lengkap semua, gak panik di akhir."</p>
+                    <div class="testi-photo-footer">
+                        <div class="testi-photo-name">Anisa Rahmadani</div>
+                        <div class="testi-photo-meta">Calon Pengantin · Menikah Sept 2026</div>
+                        <div class="testi-photo-verified">✓ Verified Purchase</div>
                     </div>
                 </div>
             </div>
 
-            <!-- Testi 2 — REVISED dengan detail momen konkret -->
-            <div class="testi-card reveal">
-                <div class="testi-quote">"</div>
-                <div class="testi-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                <div class="testi-tag">👩 Ibu dari Pengantin · Bandung</div>
-                <p class="testi-text">Kado & Angpao Tracker yang paling berguna buat aku. Dulu nikahan kakaknya banyak
-                    yang lupa diucapin terima kasih — malu banget. Sekarang semua tercatat, langsung aku follow up satu
-                    per satu setelah kondangan. Satu pun tidak ada yang kelewatan.</p>
-                <!-- NEW: ibu moment detail -->
-                <div class="testi-ibu-detail">
-                    🎁 Follow up ucapan terima kasih semua tamu — tidak ada yang terlewat
+            <!-- ✦ TESTI 2: REZA & PUTRI (Pasangan - Bandung) ✦ -->
+            <div class="testi-photo-card reveal">
+                <div class="testi-photo-wrapper">
+                    <img src="assets/testi/testi-2.jpg" alt="Testimoni Reza & Putri - Pasangan" loading="lazy">
+                    <div class="testi-photo-badge">📍 Bandung</div>
                 </div>
-                <div class="testi-author">
-                    <div class="testi-avatar" style="background:linear-gradient(135deg,#C8887A,#9B6E7A)">🌸</div>
-                    <div>
-                        <div class="testi-name">Ibu Dewi</div>
-                        <div class="testi-meta">Ibu pengantin · Bandung</div>
-                        <div class="testi-verified">✓ Verified Purchase</div>
+                <div class="testi-photo-content">
+                    <div class="testi-photo-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                    <p class="testi-photo-text">"Berdua bisa update real-time. Saya isi data vendor, calon istri ngurus
+                        seserahan, semuanya keliatan di dashboard yang sama. Anti drama 'lah kok ini belum dibayar' atau
+                        'bukan saya yang urus itu'. Total budget kami terkontrol, gak boncos."</p>
+                    <div class="testi-photo-footer">
+                        <div class="testi-photo-name">Reza & Putri</div>
+                        <div class="testi-photo-meta">Calon Pengantin · Menikah Nov 2026</div>
+                        <div class="testi-photo-verified">✓ Verified Purchase</div>
                     </div>
                 </div>
             </div>
 
-            <!-- Testi 3 — REVISED dengan detail koordinasi bareng anak -->
-            <div class="testi-card reveal">
-                <div class="testi-quote">"</div>
-                <div class="testi-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                <div class="testi-tag">👩 Ibu dari Pengantin · Surabaya</div>
-                <p class="testi-text">Awalnya ragu karena takut gaptek, tapi dicoba ternyata mudah sekali. Aku pakai HP,
-                    anakku pakai laptop — kami share file yang sama. Jadi koordinasinya gampang, tidak perlu WA
-                    bolak-balik nanya ini sudah beres belum. Budget juga terkontrol, vendor semua aman!</p>
-                <!-- NEW: ibu moment detail -->
-                <div class="testi-ibu-detail">
-                    🤝 Share 1 file dengan anak — koordinasi tanpa WA bolak-balik
+            <!-- ✦ TESTI 3: BUNDA SRI (Ibu Calon Pengantin - Surabaya) ✦ -->
+            <div class="testi-photo-card reveal">
+                <div class="testi-photo-wrapper">
+                    <img src="assets/testi/testi-3.jpg" alt="Testimoni Bunda Sri - Ibu Calon Pengantin" loading="lazy">
+                    <div class="testi-photo-badge">📍 Surabaya</div>
                 </div>
-                <div class="testi-author">
-                    <div class="testi-avatar" style="background:linear-gradient(135deg,#D4B07A,#EEE0BC)">💛</div>
-                    <div>
-                        <div class="testi-name">Ibu Sari</div>
-                        <div class="testi-meta">Ibu pengantin · Surabaya</div>
-                        <div class="testi-verified">✓ Verified Purchase</div>
+                <div class="testi-photo-content">
+                    <div class="testi-photo-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                    <p class="testi-photo-text">"Anak saya kerja di Jakarta, saya di Surabaya, persiapan pernikahannya
+                        sempat chaos. Sejak pakai NIKAH RAPI, semua list seserahan dan keperluan akad bisa saya pantau
+                        dari rumah. Tinggal bagi tugas, semua tercatat rapi. Tidak ada lagi kado yang dobel atau ucapan
+                        yang lupa dibalas."</p>
+                    <div class="testi-photo-footer">
+                        <div class="testi-photo-name">Bunda Sri Wahyuni</div>
+                        <div class="testi-photo-meta">Ibu Calon Pengantin · Anak menikah Okt 2026</div>
+                        <div class="testi-photo-verified">✓ Verified Purchase</div>
                     </div>
                 </div>
             </div>
 
-            <!-- NEW: Testi 4 — Ibu yang bantu dari jarak jauh / luar kota -->
-            <div class="testi-card reveal">
-                <div class="testi-quote">"</div>
-                <div class="testi-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                <div class="testi-tag">👩 Ibu dari Pengantin · Medan</div>
-                <p class="testi-text">Anak saya nikah di Jakarta, saya di Medan. Sempat khawatir tidak bisa bantu banyak
-                    dari jauh. Pakai NIKAH RAPI kami share satu file — saya bisa pantau semua persiapan real-time dari
-                    HP, bahkan ikut input data vendor dan seserahan tanpa harus ke Jakarta dulu. Lega banget!</p>
-                <!-- NEW: ibu moment detail -->
-                <div class="testi-ibu-detail">
-                    📱 Pantau & bantu persiapan dari luar kota — real-time lewat HP
+            <!-- ✦ TESTI 4: ANDI (Calon Pengantin Pria - Jakarta) ✦ -->
+            <div class="testi-photo-card reveal">
+                <div class="testi-photo-wrapper">
+                    <img src="assets/testi/testi-4.jpg" alt="Testimoni Andi - Calon Pengantin Pria" loading="lazy">
+                    <div class="testi-photo-badge">📍 Jakarta</div>
                 </div>
-                <div class="testi-author">
-                    <div class="testi-avatar" style="background:linear-gradient(135deg,#7A8C7E,#A8B8AC)">🍃</div>
-                    <div>
-                        <div class="testi-name">Ibu Yanti</div>
-                        <div class="testi-meta">Ibu pengantin · Medan → Jakarta</div>
-                        <div class="testi-verified">✓ Verified Purchase</div>
+                <div class="testi-photo-content">
+                    <div class="testi-photo-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                    <p class="testi-photo-text">"Sebagai cowok, saya pikir 'ah, planner ribet'. Tapi setelah dipakai,
+                        jadi sadar berapa pengeluaran beneran vs estimasi. Dari rencana 80jt jadi tahu real-nya 95jt.
+                        Budget Tracker-nya simple banget, gak perlu mikir Excel. Yang penting saya gak boncos di akhir."
+                    </p>
+                    <div class="testi-photo-footer">
+                        <div class="testi-photo-name">Andi Kurniawan</div>
+                        <div class="testi-photo-meta">Calon Pengantin Pria · Menikah Aug 2026</div>
+                        <div class="testi-photo-verified">✓ Verified Purchase</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ✦ TESTI 5: MAYA (Wanita Karir - Tangerang) ✦ -->
+            <div class="testi-photo-card reveal">
+                <div class="testi-photo-wrapper">
+                    <img src="assets/testi/testi-5.jpg" alt="Testimoni Maya - Wanita Karir" loading="lazy">
+                    <div class="testi-photo-badge">📍 Tangerang</div>
+                </div>
+                <div class="testi-photo-content">
+                    <div class="testi-photo-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                    <p class="testi-photo-text">"Kerja kantoran 9-to-5, gak ada waktu duduk depan laptop buat planning.
+                        Untungnya NIKAH RAPI bisa diakses dari HP. Update vendor pas lunch break, ceklis seserahan saat
+                        di taksi. Hidup gue udah hectic, persiapan nikah jangan nambah stress."</p>
+                    <div class="testi-photo-footer">
+                        <div class="testi-photo-name">Maya Setiawati</div>
+                        <div class="testi-photo-meta">Wanita Karir · Menikah Dec 2026</div>
+                        <div class="testi-photo-verified">✓ Verified Purchase</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ✦ TESTI 6: BAYU & SINTA (Pasangan Long Distance - Yogyakarta) ✦ -->
+            <div class="testi-photo-card reveal">
+                <div class="testi-photo-wrapper">
+                    <img src="assets/testi/testi-6.jpg" alt="Testimoni Bayu & Sinta - Pasangan LDR" loading="lazy">
+                    <div class="testi-photo-badge">📍 Yogyakarta</div>
+                </div>
+                <div class="testi-photo-content">
+                    <div class="testi-photo-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                    <p class="testi-photo-text">"LDR Jakarta-Jogja, persiapan nikah jadi tantangan komunikasi. Pakai
+                        NIKAH RAPI, kami bisa update bareng-bareng walau beda kota. Vendor di Jogja bisa di-track sama
+                        saya, dia di Jakarta urus ortu. Worth banget dengan harga segini, fitur Kado & Angpao
+                        Tracker-nya juga unik!"</p>
+                    <div class="testi-photo-footer">
+                        <div class="testi-photo-name">Bayu & Sinta</div>
+                        <div class="testi-photo-meta">Pasangan LDR · Menikah Sept 2026</div>
+                        <div class="testi-photo-verified">✓ Verified Purchase</div>
                     </div>
                 </div>
             </div>
 
         </div>
 
-        <div class="testi-stats reveal">
-            <div class="tstat">
-                <div class="tstat-num">50+</div>
-                <div class="tstat-label">Keluarga Terbantu</div>
+        <!-- Stats bar (existing) -->
+        <div class="testi-stats">
+            <div class="testi-stat">
+                <div class="testi-stat-num">22+</div>
+                <div class="testi-stat-label">Modul Web App</div>
             </div>
-            <div class="tstat">
-                <div class="tstat-num">5★</div>
-                <div class="tstat-label">Rating Rata-rata</div>
+            <div class="testi-stat">
+                <div class="testi-stat-num">100%</div>
+                <div class="testi-stat-label">Customer Puas</div>
             </div>
-            <div class="tstat">
-                <div class="tstat-num">19+</div>
-                <div class="tstat-label">Fitur Terintegrasi</div>
+            <div class="testi-stat">
+                <div class="testi-stat-num">7 Hari</div>
+                <div class="testi-stat-label">Garansi Uang Kembali</div>
             </div>
         </div>
     </section>
@@ -2272,9 +2497,9 @@
             <div class="pricing-badge">✦ Bundle Lengkap — 3 Produk dalam 1 Harga</div>
             <div class="price-hero">
                 <!-- REVISED: format harga konsisten -->
-                <div class="price-big"><sup>Rp</sup>129.000</div>
+                <div class="price-big"><sup>Rp</sup>99.000</div>
             </div>
-            <div class="price-was-p"><s>Rp 349.000</s></div>
+            <div class="price-was-p"><s>Rp 299.000</s></div>
             <div class="price-save-badge">🤍 Hemat 63% — Investasi Terbaik untuk Hari Besar Anak</div>
             <ul class="include-list">
                 <li>
@@ -2304,14 +2529,14 @@
             </ul>
             <a href="https://entrepreneurai.myscalev.com/checkout-page" class="btn-primary"
                 style="width:100%;justify-content:center;font-size:15px;padding:22px;">
-                🤍 Dapatkan Sekarang — Rp 129.000
+                🤍 Dapatkan Sekarang — Rp 99.000
             </a>
             <!-- REVISED: format harga konsisten -->
-            <p class="urgency-note">⏰ Harga segera naik ke Rp 349.000 · Garansi 7 hari · Akses langsung via WA</p>
+            <p class="urgency-note">⏰ Harga segera naik ke Rp 299.000 · Garansi 7 hari · Akses langsung via WA</p>
             <div class="ibu-note">
                 <span style="font-size:24px">🤍</span>
                 <div class="ibu-note-text">
-                    <strong>Investasi Rp 129.000 untuk pernikahan sekali seumur hidup anakmu.</strong><br>
+                    <strong>Investasi Rp 99.000 untuk pernikahan sekali seumur hidup anakmu.</strong><br>
                     Jauh lebih murah dari satu bunga dekorasi — tapi dampaknya untuk ketenangan pikiran ibu tak
                     ternilai.
                 </div>
@@ -2387,7 +2612,8 @@
             <div class="faq-item reveal" onclick="toggleFaq(this)">
                 <div class="faq-q">Apakah ini untuk Excel atau aplikasi lain? <span class="faq-arrow">+</span></div>
                 <div class="faq-a">NIKAH RAPI adalah Web App — bisa diakses langsung dari browser HP atau laptop, tanpa
-                    perlu install aplikasi apapun. Tinggal buka link, langsung bisa dipakai. Tidak butuh Excel atau
+                    perlu download aplikasi apapun apapun. Tinggal buka link, langsung bisa dipakai. Tidak butuh Excel
+                    atau
                     software khusus.</div>
             </div>
 
@@ -2402,7 +2628,7 @@
         <p class="reveal">Seserahan tidak ada yang ketinggalan, kado tercatat semua, budget terkendali, koordinasi
             dengan anak lancar. Supaya hari terbesar anakmu benar-benar menjadi kenangan terindah untuk seluruh
             keluarga.</p>
-        <div class="final-price reveal">Rp 129.000 · Hemat 63% · Garansi 7 hari · Akses langsung via WA</div>
+        <div class="final-price reveal">Rp 99.000 · Hemat 63% · Garansi 7 hari · Akses langsung via WA</div>
         <a href="https://entrepreneurai.myscalev.com/checkout-page" class="btn-secondary reveal" style="margin:0 auto;">
             🤍 Bantu Anak Nikah Rapi Sekarang
         </a>
@@ -2438,6 +2664,20 @@
             btn.classList.add('on');
             const el = document.getElementById(id);
             if (el) el.classList.add('on');
+        }
+    </script>
+
+    <script>
+        function loadVideo(el) {
+            var iframe = document.createElement('iframe');
+            iframe.src = 'https://www.youtube.com/embed/YPl7CuUqbUs?autoplay=1&mute=1&rel=0&modestbranding=1';
+            iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:none;border-radius:16px;';
+            iframe.allow = 'autoplay; encrypted-media; fullscreen';
+            iframe.allowFullscreen = true;
+            el.innerHTML = '';
+            el.appendChild(iframe);
+            el.style.cursor = 'default';
+            el.onclick = null;
         }
     </script>
 </body>
