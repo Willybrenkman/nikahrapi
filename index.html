@@ -276,6 +276,7 @@
 
     .preview-stage {
       display: none;
+      min-height: 500px; /* Reserve space biar gak shift */
     }
 
     .preview-stage.on {
@@ -1649,6 +1650,10 @@
       .hero::before,
       .hero::after {
         display: none;
+      }
+
+      .preview-stage {
+        min-height: 280px;
       }
     }
 
