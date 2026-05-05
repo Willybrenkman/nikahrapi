@@ -5,11 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NIKAH RAPI — Wedding Planner Premium, Nikah Tanpa Drama!</title>
+
+  <!-- Preconnect ke Google Fonts (lebih cepat) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Preload gambar dashboard sebagai LCP candidate -->
+  <link rel="preload" as="image" href="assets/dashboard.png" fetchpriority="high">
+
+  <!-- Font dikurangi dari 10 weight ke 6 weight -->
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@400;500;600&display=swap"
     rel="stylesheet">
+
   <style>
     :root {
       --cream: #FAF7F2;
@@ -117,7 +125,7 @@
     .hero-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(36px, 5vw, 68px);
-      font-weight: 300;
+      font-weight: 400;
       line-height: 1.1;
       color: var(--text-dark);
       margin-bottom: 12px;
@@ -133,7 +141,7 @@
     .hero-hook {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(15px, 2vw, 20px);
-      font-weight: 300;
+      font-weight: 400;
       color: var(--text-mid);
       margin-bottom: 16px;
       animation: fadeDown 0.83s ease both;
@@ -145,7 +153,7 @@
     .hero-title-sub {
       font-size: clamp(13px, 1.6vw, 15px);
       color: var(--text-light);
-      font-weight: 300;
+      font-weight: 400;
       margin-bottom: 8px;
       animation: fadeDown 0.85s ease both;
       max-width: 700px;
@@ -276,6 +284,7 @@
 
     .preview-stage img {
       width: 100%;
+      height: auto;
       display: block;
     }
 
@@ -318,7 +327,7 @@
     .fb-label {
       font-size: 10px;
       color: var(--text-light);
-      font-weight: 300;
+      font-weight: 400;
       margin-bottom: 2px;
     }
 
@@ -380,7 +389,7 @@
     .price-new {
       font-family: 'Cormorant Garamond', serif;
       font-size: 52px;
-      font-weight: 300;
+      font-weight: 400;
       color: var(--mauve);
       line-height: 1;
     }
@@ -492,7 +501,7 @@
       text-align: center;
       max-width: 500px;
       margin: 0 auto 48px;
-      font-weight: 300;
+      font-weight: 400;
       line-height: 1.7;
     }
 
@@ -625,7 +634,7 @@
       font-size: 12px;
       color: var(--text-light);
       line-height: 1.6;
-      font-weight: 300;
+      font-weight: 400;
     }
 
     /* ══ DRAMA SECTION ══ */
@@ -646,7 +655,7 @@
     .section-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(28px, 4vw, 48px);
-      font-weight: 300;
+      font-weight: 400;
       text-align: center;
       line-height: 1.2;
       margin-bottom: 60px;
@@ -698,7 +707,7 @@
       font-size: 13px;
       line-height: 1.75;
       color: var(--text-mid);
-      font-weight: 300;
+      font-weight: 400;
     }
 
     .drama-scenario {
@@ -771,7 +780,7 @@
       font-size: 15px;
       line-height: 1.8;
       color: rgba(255, 255, 255, 0.75);
-      font-weight: 300;
+      font-weight: 400;
       margin-bottom: 32px;
     }
 
@@ -843,7 +852,7 @@
       font-size: 13px;
       color: rgba(255, 255, 255, 0.65);
       line-height: 1.6;
-      font-weight: 300;
+      font-weight: 400;
     }
 
     .usp-tag {
@@ -969,7 +978,7 @@
       font-family: 'Cormorant Garamond', serif;
       font-size: 26px;
       color: var(--blush);
-      font-weight: 300;
+      font-weight: 400;
       line-height: 1;
       margin-bottom: 8px;
     }
@@ -1060,7 +1069,7 @@
       font-size: 14px;
       line-height: 1.7;
       color: #5C5246;
-      font-weight: 300;
+      font-weight: 400;
       flex: 1;
       margin-bottom: 16px;
       font-style: italic;
@@ -1125,7 +1134,7 @@
     .tstat-num {
       font-family: 'Cormorant Garamond', serif;
       font-size: 44px;
-      font-weight: 300;
+      font-weight: 400;
       color: var(--mauve);
       line-height: 1;
       margin-bottom: 8px;
@@ -1134,7 +1143,7 @@
     .tstat-label {
       font-size: 12px;
       color: var(--text-light);
-      font-weight: 300;
+      font-weight: 400;
     }
 
     /* ══ PRICING ══ */
@@ -1189,7 +1198,7 @@
     .price-big {
       font-family: 'Cormorant Garamond', serif;
       font-size: 80px;
-      font-weight: 300;
+      font-weight: 400;
       color: var(--text-dark);
       line-height: 1;
     }
@@ -1235,7 +1244,7 @@
       color: var(--text-mid);
       padding: 11px 0;
       border-bottom: 1px solid #F5F0EC;
-      font-weight: 300;
+      font-weight: 400;
     }
 
     .include-list li:last-child {
@@ -1328,7 +1337,7 @@
       font-size: 14px;
       line-height: 1.8;
       color: var(--text-mid);
-      font-weight: 300;
+      font-weight: 400;
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.4s ease, padding 0.3s ease;
@@ -1371,7 +1380,7 @@
       font-size: 15px;
       color: rgba(255, 255, 255, 0.7);
       margin-bottom: 48px;
-      font-weight: 300;
+      font-weight: 400;
       max-width: 500px;
       margin-left: auto;
       margin-right: auto;
@@ -1398,7 +1407,7 @@
       font-size: 22px;
       color: white;
       letter-spacing: 2px;
-      font-weight: 300;
+      font-weight: 400;
     }
 
     .footer-note {
@@ -1618,6 +1627,29 @@
       .diff-table tbody td {
         padding: 10px 12px;
       }
+
+      /* Disable animasi di mobile untuk speed up render */
+      .badge,
+      .hero-eyebrow,
+      .hero-title,
+      .hero-hook,
+      .hero-title-sub,
+      .drama-tags,
+      .preview-tabs,
+      .product-showcase,
+      .hero-cta-block,
+      .social-proof-bar,
+      .float-badge {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+      }
+
+      /* Kurangi paint cost dari radial gradient di mobile */
+      .hero::before,
+      .hero::after {
+        display: none;
+      }
     }
 
     @media (max-width: 480px) {
@@ -1640,18 +1672,19 @@
         justify-content: center;
       }
     }
+
+    /* Respect user preference - kalau user disable animation */
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
   </style>
-  <!-- Meta Pixel Code -->
-  <script>
-    !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s) }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '4326987370876034'); fbq('track', 'ViewContent');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=4326987370876034&ev=PageView&noscript=1" /></noscript>
-  <script>
-    var leadTracked = false;
-    window.addEventListener('scroll', function () { if (leadTracked) return; var s = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100; if (s > 50) { if (typeof fbq !== 'undefined') { fbq('track', 'Lead', { content_name: 'Engaged Scroll - NIKAH RAPI', content_category: 'Wedding Planner' }); } leadTracked = true; } });
-  </script>
 </head>
 
 <body>
@@ -1716,15 +1749,28 @@
           <button class="stab" onclick="switchSheet(this,'p-guest',4)">👥 Guest List</button>
           <button class="stab" onclick="switchSheet(this,'p-vendor',5)">🏢 Vendor</button>
         </div>
-        <div class="preview-stage on" id="p-dash"><img src="assets/dashboard.png" alt="Dashboard" loading="lazy"></div>
-        <div class="preview-stage" id="p-ses"><img src="assets/seserahan.png" alt="Seserahan" loading="lazy">
+        <!-- Dashboard: prioritas LCP, eager loading, fetchpriority high -->
+        <div class="preview-stage on" id="p-dash">
+          <img src="assets/dashboard.png" alt="Dashboard NIKAH RAPI" width="900" height="500" fetchpriority="high"
+            decoding="async">
         </div>
-        <div class="preview-stage" id="p-kado"><img src="assets/kadoangpao.png" alt="Kado Angpao" loading="lazy">
+        <div class="preview-stage" id="p-ses">
+          <img src="assets/seserahan.png" alt="Seserahan Tracker" width="900" height="500" loading="lazy"
+            decoding="async">
         </div>
-        <div class="preview-stage" id="p-budget"><img src="assets/budget.png" alt="Budget" loading="lazy">
+        <div class="preview-stage" id="p-kado">
+          <img src="assets/kadoangpao.png" alt="Kado & Angpao Tracker" width="900" height="500" loading="lazy"
+            decoding="async">
         </div>
-        <div class="preview-stage" id="p-guest"><img src="assets/guestlist.png" alt="Guest List" loading="lazy"></div>
-        <div class="preview-stage" id="p-vendor"><img src="assets/vendor.png" alt="Vendor" loading="lazy"></div>
+        <div class="preview-stage" id="p-budget">
+          <img src="assets/budget.png" alt="Budget Planner" width="900" height="500" loading="lazy" decoding="async">
+        </div>
+        <div class="preview-stage" id="p-guest">
+          <img src="assets/guestlist.png" alt="Guest List" width="900" height="500" loading="lazy" decoding="async">
+        </div>
+        <div class="preview-stage" id="p-vendor">
+          <img src="assets/vendor.png" alt="Vendor Manager" width="900" height="500" loading="lazy" decoding="async">
+        </div>
       </div>
     </div>
 
@@ -2096,7 +2142,7 @@
   <section class="testi-section">
     <p class="section-eyebrow">Cerita Mereka</p>
     <h2 class="section-title">Sudah Membantu Calon Pengantin <em>Indonesia</em></h2>
-    <p style="text-align:center;font-size:14px;color:var(--text-light);margin-bottom:48px;font-weight:300;">Kisah nyata
+    <p style="text-align:center;font-size:14px;color:var(--text-light);margin-bottom:48px;font-weight:400;">Kisah nyata
       dari early adopter NIKAH RAPI — mereka yang sudah merasakan persiapan nikah tanpa drama.</p>
 
     <div class="testi-photo-grid">
@@ -2344,15 +2390,52 @@
     <div class="footer-note">© 2025 NIKAH RAPI · Wedding Planner Digital Premium · Made with love 🤍</div>
   </footer>
 
+  <!-- ══ SCRIPTS - PINDAH KE BAWAH BIAR GAK BLOCKING RENDER ══ -->
+
+  <!-- Meta Pixel Code - dipindah ke akhir body dengan async load -->
   <script>
+    // Delay Meta Pixel sampai page idle, biar gak ganggu LCP
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s) }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '4326987370876034');
+        fbq('track', 'ViewContent');
+      }, 1500);
+    });
+
+    // Scroll-based Lead tracking
+    var leadTracked = false;
+    window.addEventListener('scroll', function () {
+      if (leadTracked) return;
+      var s = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+      if (s > 50) {
+        if (typeof fbq !== 'undefined') {
+          fbq('track', 'Lead', { content_name: 'Engaged Scroll - NIKAH RAPI', content_category: 'Wedding Planner' });
+        }
+        leadTracked = true;
+      }
+    }, { passive: true });
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=4326987370876034&ev=PageView&noscript=1" /></noscript>
+
+  <script>
+    // Reveal animation
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => { if (entry.isIntersecting) setTimeout(() => entry.target.classList.add('visible'), i * 60); });
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 60);
+        }
+      });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     reveals.forEach(el => observer.observe(el));
 
+    // Sticky CTA
     const stickyCta = document.getElementById('stickyCta');
-    window.addEventListener('scroll', () => { stickyCta.classList.toggle('show', window.scrollY > 700); });
+    window.addEventListener('scroll', () => {
+      stickyCta.classList.toggle('show', window.scrollY > 700);
+    }, { passive: true });
 
     function toggleFaq(el) { el.classList.toggle('open'); }
 
