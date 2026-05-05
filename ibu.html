@@ -10,21 +10,19 @@
         rel="stylesheet">
     <style>
         :root {
-            --cream: #FDF8F2;
-            --warm-white: #FFFCF8;
-            --blush: #EDD0C4;
-            --blush-deep: #DDB09E;
-            --dusty-rose: #C8887A;
-            --mauve: #9B6E7A;
+            --cream: #FAF7F2;
+            --warm-white: #FDFBF8;
+            --blush: #E8C4B8;
+            --blush-deep: #D4A090;
+            --dusty-rose: #C4857A;
+            --mauve: #8B5E6A;
             --sage: #7A8C7E;
-            --brown: #6B4A38;
-            --gold: #D4B07A;
-            --gold-light: #EEE0BC;
-            --amber: #E8A86A;
-            --amber-light: #FDF0E0;
-            --text-dark: #3A2A1E;
-            --text-mid: #6A5448;
-            --text-light: #9A8478;
+            --brown: #5C3D2E;
+            --gold: #C9A96E;
+            --gold-light: #E8D5B0;
+            --text-dark: #2C2218;
+            --text-mid: #5C4A3E;
+            --text-light: #8C7A6E;
         }
 
         *,
@@ -65,10 +63,10 @@
             position: absolute;
             top: -200px;
             right: -200px;
-            width: 800px;
-            height: 800px;
+            width: 700px;
+            height: 700px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(237, 208, 196, 0.35) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(232, 196, 184, 0.3) 0%, transparent 70%);
             pointer-events: none;
         }
 
@@ -77,10 +75,10 @@
             position: absolute;
             bottom: -150px;
             left: -150px;
-            width: 600px;
-            height: 600px;
+            width: 500px;
+            height: 500px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(212, 176, 122, 0.2) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(168, 184, 172, 0.2) 0%, transparent 70%);
             pointer-events: none;
         }
 
@@ -88,7 +86,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: var(--amber-light);
+            background: var(--gold-light);
             color: var(--brown);
             font-size: 11px;
             font-weight: 500;
@@ -97,34 +95,32 @@
             padding: 8px 20px;
             border-radius: 100px;
             margin-bottom: 28px;
-            border: 1px solid rgba(212, 176, 122, 0.3);
             animation: fadeDown 0.6s ease both;
         }
 
         .badge::before {
-            content: '🤍';
-            margin-right: 2px;
+            content: '✦';
+            color: var(--gold);
         }
 
         .hero-eyebrow {
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
-            font-size: 20px;
+            font-size: 18px;
             color: var(--dusty-rose);
-            margin-bottom: 16px;
+            margin-bottom: 14px;
             animation: fadeDown 0.7s ease both;
         }
 
-        /* REVISED: Hero title lebih pendek & clean */
         .hero-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(36px, 5vw, 64px);
+            font-size: clamp(36px, 5vw, 68px);
             font-weight: 300;
             line-height: 1.1;
             color: var(--text-dark);
-            margin-bottom: 16px;
+            margin-bottom: 12px;
             animation: fadeDown 0.8s ease both;
-            max-width: 760px;
+            max-width: 800px;
         }
 
         .hero-title em {
@@ -132,77 +128,79 @@
             color: var(--mauve);
         }
 
-        .hero-title strong {
-            font-weight: 600;
-        }
-
-        /* NEW: Emotional hook paragraph */
         .hero-hook {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(15px, 1.8vw, 19px);
-            font-style: italic;
+            font-size: clamp(15px, 2vw, 20px);
             font-weight: 300;
             color: var(--text-mid);
-            max-width: 580px;
-            line-height: 1.7;
-            margin-bottom: 32px;
+            margin-bottom: 16px;
             animation: fadeDown 0.83s ease both;
+            max-width: 650px;
+            font-style: italic;
+            line-height: 1.6;
         }
 
-        /* REVISED: Concern tags — hanya 3 yang paling universal untuk ibu */
-        .concern-tags {
+        .hero-title-sub {
+            font-size: clamp(13px, 1.6vw, 15px);
+            color: var(--text-light);
+            font-weight: 300;
+            margin-bottom: 8px;
+            animation: fadeDown 0.85s ease both;
+            max-width: 700px;
+        }
+
+        .drama-tags {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px;
-            margin-bottom: 40px;
+            gap: 8px;
+            margin-bottom: 36px;
             animation: fadeDown 0.9s ease both;
         }
 
-        .concern-tag {
-            background: white;
-            border: 1px solid rgba(155, 110, 122, 0.2);
-            color: var(--text-mid);
-            font-size: 13px;
-            padding: 8px 18px;
+        .drama-tag {
+            background: rgba(139, 94, 106, 0.08);
+            border: 1px solid rgba(139, 94, 106, 0.2);
+            color: var(--mauve);
+            font-size: 12px;
+            padding: 6px 14px;
             border-radius: 100px;
             font-weight: 400;
-            box-shadow: 0 2px 8px rgba(107, 74, 56, 0.06);
         }
 
-        /* ══ PRODUCT SHOWCASE ══ */
+        /* ══ PRODUCT MOCKUP ══ */
         .product-showcase {
             position: relative;
             width: 100%;
-            max-width: 880px;
+            max-width: 900px;
             margin: 0 auto 48px;
             animation: floatUp 1s ease both;
         }
 
         .showcase-glow {
             position: absolute;
-            inset: -50px;
-            background: radial-gradient(ellipse at center, rgba(212, 176, 122, 0.15) 0%, transparent 70%);
+            inset: -40px;
+            background: radial-gradient(ellipse at center, rgba(139, 94, 106, 0.12) 0%, transparent 70%);
             pointer-events: none;
             border-radius: 50%;
         }
 
         .browser-frame {
             background: white;
-            border-radius: 18px;
-            box-shadow: 0 50px 100px rgba(107, 74, 56, 0.15), 0 0 0 1px rgba(155, 110, 122, 0.1);
+            border-radius: 16px;
+            box-shadow: 0 50px 100px rgba(92, 61, 46, 0.18), 0 20px 40px rgba(92, 61, 46, 0.1), 0 0 0 1px rgba(139, 94, 106, 0.1);
             overflow: hidden;
             position: relative;
             z-index: 2;
         }
 
         .browser-bar {
-            background: #F8EFE6;
+            background: #F5EEE6;
             padding: 12px 20px;
             display: flex;
             align-items: center;
             gap: 12px;
-            border-bottom: 1px solid rgba(155, 110, 122, 0.1);
+            border-bottom: 1px solid rgba(139, 94, 106, 0.1);
         }
 
         .browser-dots {
@@ -224,7 +222,46 @@
             font-size: 11px;
             color: var(--text-light);
             text-align: center;
-            border: 1px solid rgba(155, 110, 122, 0.1);
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(139, 94, 106, 0.1);
+        }
+
+        .sheet-tabs-bar {
+            background: #F0E8E0;
+            padding: 0 20px;
+            display: flex;
+            gap: 2px;
+            border-bottom: 1px solid rgba(139, 94, 106, 0.1);
+            overflow-x: auto;
+        }
+
+        .stab {
+            padding: 8px 16px;
+            font-size: 11px;
+            font-weight: 600;
+            border-radius: 4px 4px 0 0;
+            white-space: nowrap;
+            cursor: pointer;
+            color: rgba(92, 61, 46, 0.4);
+            transition: all 0.2s;
+            font-family: 'Jost';
+            border: none;
+            background: transparent;
+        }
+
+        .stab.on {
+            background: white;
+            color: var(--mauve);
+            border-top: 2px solid var(--mauve);
+        }
+
+        .stab.gold {
+            color: rgba(201, 169, 110, 0.6);
+        }
+
+        .stab.gold.on {
+            color: var(--gold);
+            border-top-color: var(--gold);
         }
 
         .preview-stage {
@@ -235,44 +272,51 @@
             display: block;
         }
 
+        .preview-stage img {
+            width: 100%;
+            display: block;
+        }
+
+        /* Floating badges */
         .float-badge {
             position: absolute;
             background: white;
-            border-radius: 14px;
-            padding: 14px 18px;
-            box-shadow: 0 12px 40px rgba(107, 74, 56, 0.18);
+            border-radius: 12px;
+            padding: 12px 16px;
+            box-shadow: 0 10px 40px rgba(92, 61, 46, 0.18);
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             z-index: 10;
         }
 
         .float-badge-top {
-            top: -18px;
+            top: -16px;
             right: 40px;
             animation: fadeLeft 1s ease 0.8s both;
         }
 
         .float-badge-bot {
-            bottom: -18px;
+            bottom: -16px;
             left: 40px;
             animation: fadeRight 1s ease 1s both;
         }
 
         .fb-icon {
-            width: 38px;
-            height: 38px;
+            width: 36px;
+            height: 36px;
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
+            font-size: 18px;
             flex-shrink: 0;
         }
 
         .fb-label {
             font-size: 10px;
             color: var(--text-light);
+            font-weight: 300;
             margin-bottom: 2px;
         }
 
@@ -287,7 +331,7 @@
             justify-content: center;
             gap: 8px;
             flex-wrap: wrap;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             animation: fadeDown 0.95s ease both;
         }
 
@@ -297,7 +341,7 @@
             font-size: 12px;
             font-weight: 500;
             cursor: pointer;
-            border: 1px solid rgba(155, 110, 122, 0.2);
+            border: 1px solid rgba(139, 94, 106, 0.2);
             color: var(--text-light);
             background: transparent;
             font-family: 'Jost';
@@ -322,7 +366,7 @@
             flex-direction: column;
             align-items: center;
             gap: 16px;
-            margin-top: 44px;
+            margin-top: 48px;
         }
 
         .price-display {
@@ -354,6 +398,7 @@
             font-weight: 600;
             padding: 4px 12px;
             border-radius: 100px;
+            letter-spacing: 1px;
         }
 
         .btn-primary {
@@ -379,7 +424,7 @@
         .btn-primary:hover {
             background: var(--brown);
             transform: translateY(-2px);
-            box-shadow: 0 16px 50px rgba(155, 110, 122, 0.35);
+            box-shadow: 0 16px 50px rgba(139, 94, 106, 0.35);
         }
 
         .cta-notes {
@@ -388,8 +433,12 @@
             gap: 20px;
             font-size: 12px;
             color: var(--text-light);
-            flex-wrap: wrap;
-            justify-content: center;
+        }
+
+        .cta-note-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
         .social-proof-bar {
@@ -408,15 +457,15 @@
         }
 
         .sp-avatar {
-            width: 30px;
-            height: 30px;
+            width: 28px;
+            height: 28px;
             border-radius: 50%;
             border: 2px solid white;
             margin-left: -8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 13px;
+            font-size: 12px;
         }
 
         .sp-avatar:first-child {
@@ -425,6 +474,7 @@
 
         .stars {
             color: var(--gold);
+            letter-spacing: 1px;
             font-size: 14px;
         }
 
@@ -432,276 +482,152 @@
         .video-section {
             background: var(--cream);
             padding: 100px 80px;
+        }
+
+        .video-sub {
+            font-size: 15px;
+            color: var(--text-mid);
             text-align: center;
-            position: relative;
-            overflow: hidden;
+            max-width: 500px;
+            margin: 0 auto 48px;
+            font-weight: 300;
+            line-height: 1.7;
         }
 
-        .video-section::before {
-            content: '';
-            position: absolute;
-            top: -120px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 900px;
-            height: 900px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(237, 208, 196, 0.18) 0%, transparent 70%);
-            pointer-events: none;
+        .video-wrapper {
+            max-width: 760px;
+            margin: 0 auto 48px;
         }
 
-        .video-container {
-            max-width: 780px;
-            margin: 0 auto 56px;
+        .video-placeholder {
             position: relative;
-        }
-
-        .video-frame {
-            position: relative;
+            width: 100%;
             aspect-ratio: 16/9;
-            background: linear-gradient(135deg, #F8EFE6 0%, #F0E4D8 50%, #EDD0C4 100%);
-            border-radius: 20px;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 40px 80px rgba(107, 74, 56, 0.14), 0 0 0 1px rgba(155, 110, 122, 0.1);
             cursor: pointer;
-            transition: all 0.4s ease;
+            background: linear-gradient(135deg, var(--brown) 0%, var(--mauve) 50%, var(--blush-deep) 100%);
+            box-shadow: 0 40px 80px rgba(92, 61, 46, 0.2), 0 0 0 1px rgba(139, 94, 106, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 16px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
 
-        .video-frame:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 50px 100px rgba(107, 74, 56, 0.2), 0 0 0 1px rgba(155, 110, 122, 0.15);
+        .video-placeholder:hover {
+            transform: translateY(-4px) scale(1.01);
+            box-shadow: 0 50px 100px rgba(92, 61, 46, 0.28);
+        }
+
+        .video-glow {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.08) 0%, transparent 60%);
+            pointer-events: none;
         }
 
         .video-play-btn {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 88px;
-            height: 88px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 8px 40px rgba(107, 74, 56, 0.25);
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            border: 2px solid rgba(255, 255, 255, 0.35);
             display: flex;
             align-items: center;
             justify-content: center;
             transition: all 0.3s ease;
             z-index: 2;
+            animation: pulse-play 2s ease-in-out infinite;
         }
 
-        .video-frame:hover .video-play-btn {
-            transform: translate(-50%, -50%) scale(1.1);
+        .video-placeholder:hover .video-play-btn {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
         }
 
-        .play-triangle {
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 14px 0 14px 24px;
-            border-color: transparent transparent transparent var(--mauve);
+        .video-play-btn svg {
             margin-left: 4px;
         }
 
-        .video-play-btn::after {
-            content: '';
-            position: absolute;
-            inset: -8px;
-            border-radius: 50%;
-            border: 2px solid rgba(255, 255, 255, 0.5);
-            animation: playPulse 2s ease-in-out infinite;
-        }
-
-        @keyframes playPulse {
-
-            0%,
-            100% {
-                transform: scale(1);
-                opacity: 0.5;
-            }
-
-            50% {
-                transform: scale(1.15);
-                opacity: 0;
-            }
-        }
-
-        .video-label {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(8px);
-            border-radius: 100px;
-            padding: 8px 20px;
-            font-size: 12px;
-            font-weight: 500;
-            color: var(--text-mid);
-            white-space: nowrap;
-            border: 1px solid rgba(155, 110, 122, 0.1);
+        .video-overlay-text {
             z-index: 2;
         }
 
-        .video-decor-ring {
-            position: absolute;
-            border-radius: 50%;
-            border: 1px solid rgba(212, 176, 122, 0.2);
-            pointer-events: none;
+        .video-badge-tag {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            padding: 6px 18px;
+            border-radius: 100px;
         }
 
-        .video-decor-ring.r1 {
-            width: 200px;
-            height: 200px;
-            top: -40px;
-            right: -60px;
+        @keyframes pulse-play {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 0 0 18px rgba(255, 255, 255, 0);
+            }
         }
 
-        .video-decor-ring.r2 {
-            width: 140px;
-            height: 140px;
-            bottom: -30px;
-            left: -40px;
-        }
-
-        .video-highlights {
+        .video-features {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            max-width: 780px;
+            gap: 20px;
+            max-width: 760px;
             margin: 0 auto;
         }
 
-        .vh-card {
+        .vf-card {
             background: white;
-            border-radius: 16px;
-            padding: 28px 24px;
-            border: 1px solid rgba(155, 110, 122, 0.08);
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-
-        .vh-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 16px 40px rgba(107, 74, 56, 0.08);
-            border-color: rgba(155, 110, 122, 0.15);
-        }
-
-        .vh-icon {
-            width: 52px;
-            height: 52px;
             border-radius: 14px;
+            padding: 24px 20px;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            margin: 0 auto 14px;
-        }
-
-        .vh-card h4 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 17px;
-            font-weight: 600;
-            color: var(--text-dark);
-            margin-bottom: 6px;
-        }
-
-        .vh-card p {
-            font-size: 12px;
-            color: var(--text-mid);
-            line-height: 1.7;
-            font-weight: 300;
-        }
-
-        /* ══ LETTER SECTION ══ */
-        .letter-section {
-            background: var(--amber-light);
-            padding: 80px 40px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .letter-section::before {
-            content: '🤍';
-            position: absolute;
-            font-size: 300px;
-            top: -60px;
-            right: -40px;
-            opacity: 0.06;
-            pointer-events: none;
-        }
-
-        .letter-card {
-            max-width: 680px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            padding: 56px 52px;
-            box-shadow: 0 30px 80px rgba(107, 74, 56, 0.1);
-            position: relative;
-        }
-
-        .letter-card::before {
-            content: '"';
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 120px;
-            color: rgba(155, 110, 122, 0.1);
-            position: absolute;
-            top: 10px;
-            left: 24px;
-            line-height: 1;
-        }
-
-        .letter-text {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(18px, 2.5vw, 24px);
-            font-weight: 300;
-            line-height: 1.8;
-            color: var(--text-dark);
-            margin-bottom: 32px;
-            font-style: italic;
-            position: relative;
-            z-index: 1;
-        }
-
-        .letter-text strong {
-            font-style: normal;
-            font-weight: 600;
-            color: var(--mauve);
-        }
-
-        .letter-author {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            align-items: flex-start;
             gap: 14px;
+            border: 1px solid rgba(139, 94, 106, 0.1);
+            transition: all 0.3s ease;
         }
 
-        .letter-avatar {
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--blush), var(--mauve));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
+        .vf-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(92, 61, 46, 0.08);
+            border-color: var(--blush);
         }
 
-        .letter-name {
+        .vf-icon {
+            font-size: 24px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .vf-text h4 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 600;
             color: var(--text-dark);
+            margin-bottom: 4px;
         }
 
-        .letter-desc {
+        .vf-text p {
             font-size: 12px;
             color: var(--text-light);
+            line-height: 1.6;
+            font-weight: 300;
         }
 
-        /* ══ PAIN ══ */
-        .pain-section {
+        /* ══ DRAMA SECTION ══ */
+        .drama-section {
             background: var(--cream);
             padding: 100px 80px;
         }
@@ -730,7 +656,7 @@
             color: var(--mauve);
         }
 
-        .pain-grid {
+        .drama-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 24px;
@@ -738,43 +664,43 @@
             margin: 0 auto 60px;
         }
 
-        .pain-card {
+        .drama-card {
             background: white;
             border-radius: 14px;
-            padding: 28px 24px;
+            padding: 32px 28px;
             border-left: 3px solid var(--blush);
             transition: all 0.3s ease;
         }
 
-        .pain-card:hover {
+        .drama-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 20px 50px rgba(107, 74, 56, 0.1);
+            box-shadow: 0 20px 50px rgba(92, 61, 46, 0.1);
             border-left-color: var(--mauve);
         }
 
-        .pain-icon {
-            font-size: 30px;
-            margin-bottom: 14px;
+        .drama-icon {
+            font-size: 32px;
+            margin-bottom: 16px;
             display: block;
         }
 
-        .pain-card h3 {
+        .drama-card h3 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 19px;
+            font-size: 20px;
             font-weight: 600;
             color: var(--text-dark);
             margin-bottom: 8px;
         }
 
-        .pain-card p {
+        .drama-card p {
             font-size: 13px;
             line-height: 1.75;
             color: var(--text-mid);
             font-weight: 300;
         }
 
-        .pain-scenario {
-            background: rgba(155, 110, 122, 0.06);
+        .drama-scenario {
+            background: rgba(139, 94, 106, 0.06);
             border-radius: 8px;
             padding: 8px 12px;
             margin-top: 10px;
@@ -784,9 +710,9 @@
             border-left: 2px solid var(--blush-deep);
         }
 
-        .pain-closer {
+        .drama-closer {
             text-align: center;
-            max-width: 600px;
+            max-width: 580px;
             margin: 0 auto;
             font-family: 'Cormorant Garamond', serif;
             font-size: 22px;
@@ -804,18 +730,19 @@
         }
 
         .solution-section::before {
-            content: 'IBU';
+            content: 'NIKAH';
             position: absolute;
             font-family: 'Cormorant Garamond', serif;
             font-size: 280px;
             font-weight: 600;
             color: rgba(255, 255, 255, 0.04);
-            top: -20px;
+            top: -30px;
             left: -20px;
             pointer-events: none;
+            line-height: 1;
         }
 
-        .sol-inner {
+        .solution-inner {
             max-width: 960px;
             margin: 0 auto;
             display: grid;
@@ -826,22 +753,22 @@
             z-index: 2;
         }
 
-        .sol-left .section-eyebrow {
+        .solution-left .section-eyebrow {
             text-align: left;
             color: var(--blush);
         }
 
-        .sol-left .section-title {
+        .solution-left .section-title {
             text-align: left;
             color: white;
-            font-size: clamp(24px, 3vw, 40px);
-            margin-bottom: 16px;
+            font-size: clamp(26px, 3vw, 40px);
+            margin-bottom: 20px;
         }
 
-        .sol-left p {
+        .solution-left p {
             font-size: 15px;
             line-height: 1.8;
-            color: rgba(255, 255, 255, 0.78);
+            color: rgba(255, 255, 255, 0.75);
             font-weight: 300;
             margin-bottom: 32px;
         }
@@ -868,25 +795,25 @@
             transform: translateY(-2px);
         }
 
-        .feat-cards {
+        .feature-cards {
             display: flex;
             flex-direction: column;
             gap: 14px;
         }
 
         .feat-card {
-            background: rgba(255, 255, 255, 0.09);
+            background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 12px;
-            padding: 18px 22px;
+            padding: 20px 24px;
             display: flex;
             align-items: flex-start;
-            gap: 14px;
+            gap: 16px;
             transition: all 0.3s ease;
         }
 
         .feat-card:hover {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.14);
             transform: translateX(4px);
         }
 
@@ -907,12 +834,12 @@
             font-size: 18px;
             font-weight: 600;
             color: white;
-            margin-bottom: 3px;
+            margin-bottom: 4px;
         }
 
         .feat-text p {
             font-size: 13px;
-            color: rgba(255, 255, 255, 0.68);
+            color: rgba(255, 255, 255, 0.65);
             line-height: 1.6;
             font-weight: 300;
         }
@@ -931,63 +858,85 @@
             font-weight: 500;
         }
 
-        /* ══ PEACE OF MIND ══ */
-        .peace-section {
+        /* ══ DIFF ══ */
+        .diff-section {
             background: var(--warm-white);
             padding: 100px 80px;
         }
 
-        .peace-inner {
-            max-width: 960px;
+        .diff-table-wrap {
+            max-width: 780px;
             margin: 0 auto;
         }
 
-        .peace-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin-top: 48px;
+        .diff-table {
+            width: 100%;
+            border-collapse: collapse;
         }
 
-        .peace-card {
-            border-radius: 16px;
-            padding: 32px 28px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .peace-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 50px rgba(107, 74, 56, 0.08);
-        }
-
-        .peace-num {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 56px;
-            font-weight: 300;
-            color: var(--mauve);
-            line-height: 1;
-            margin-bottom: 12px;
-        }
-
-        .peace-label {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 20px;
-            font-weight: 600;
-            color: var(--text-dark);
-            margin-bottom: 8px;
-        }
-
-        .peace-desc {
+        .diff-table thead th {
+            padding: 16px 20px;
             font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .diff-table thead th:first-child {
+            text-align: left;
+            color: var(--text-light);
+            width: 40%;
+        }
+
+        .diff-table thead th:nth-child(2) {
+            color: var(--text-light);
+            text-align: center;
+            background: rgba(139, 94, 106, 0.05);
+        }
+
+        .diff-table thead th:nth-child(3) {
+            color: var(--mauve);
+            text-align: center;
+            background: rgba(139, 94, 106, 0.08);
+            border-radius: 8px 8px 0 0;
+        }
+
+        .diff-table tbody td {
+            padding: 14px 20px;
+            font-size: 13px;
+            border-bottom: 1px solid rgba(139, 94, 106, 0.08);
+        }
+
+        .diff-table tbody td:first-child {
             color: var(--text-mid);
-            font-weight: 300;
-            line-height: 1.7;
+        }
+
+        .diff-table tbody td:nth-child(2) {
+            text-align: center;
+            color: var(--text-light);
+            background: rgba(139, 94, 106, 0.03);
+        }
+
+        .diff-table tbody td:nth-child(3) {
+            text-align: center;
+            background: rgba(139, 94, 106, 0.06);
+            font-weight: 600;
+            color: var(--mauve);
+        }
+
+        .diff-yes {
+            color: var(--sage) !important;
+            font-size: 16px;
+        }
+
+        .diff-no {
+            color: #ddd;
+            font-size: 16px;
         }
 
         /* ══ SHEETS ══ */
         .sheets-section {
-            background: var(--cream);
+            background: var(--warm-white);
             padding: 100px 80px;
         }
 
@@ -1000,17 +949,18 @@
         }
 
         .sheet-card {
-            background: white;
+            background: var(--cream);
             border-radius: 10px;
             padding: 18px 16px;
-            border: 1px solid rgba(155, 110, 122, 0.1);
+            border: 1px solid rgba(139, 94, 106, 0.1);
             transition: all 0.3s ease;
         }
 
         .sheet-card:hover {
             border-color: var(--blush);
+            background: white;
             transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(107, 74, 56, 0.08);
+            box-shadow: 0 12px 30px rgba(139, 94, 106, 0.08);
         }
 
         .sheet-num {
@@ -1036,7 +986,7 @@
         }
 
         .sheet-card.star {
-            background: linear-gradient(135deg, #FDF0EA, #F8E8E0);
+            background: linear-gradient(135deg, #FAF0EC, #F5E8E2);
             border-color: var(--blush-deep);
         }
 
@@ -1046,135 +996,111 @@
 
         /* ══ TESTIMONI ══ */
         .testi-section {
-            background: var(--warm-white);
+            background: var(--cream);
             padding: 100px 80px;
         }
 
-        /* REVISED: 2 kolom untuk tampung 4 testi */
-        .testi-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-            max-width: 960px;
-            margin: 0 auto 48px;
-        }
-
-        .testi-card {
+        .testi-photo-card {
             background: white;
-            border-radius: 16px;
-            padding: 32px 28px;
-            border: 1px solid rgba(155, 110, 122, 0.1);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .testi-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 50px rgba(107, 74, 56, 0.1);
-        }
-
-        .testi-quote {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 60px;
-            color: rgba(155, 110, 122, 0.1);
-            line-height: 1;
-            position: absolute;
-            top: 14px;
-            left: 18px;
-        }
-
-        .testi-stars {
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(139, 94, 106, 0.1);
+            transition: all 0.4s ease;
             display: flex;
-            gap: 3px;
-            margin-bottom: 14px;
-            margin-top: 8px;
+            flex-direction: column;
         }
 
-        .testi-stars span {
-            color: var(--gold);
-            font-size: 14px;
+        .testi-photo-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 60px rgba(92, 61, 46, 0.15);
         }
 
-        .testi-tag {
-            display: inline-block;
-            background: var(--amber-light);
-            color: var(--brown);
-            font-size: 10px;
+        .testi-photo-wrapper {
+            position: relative;
+            width: 100%;
+            height: 130px;
+            overflow: hidden;
+        }
+
+        .testi-photo-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            color: #5C3D2E;
+            font-size: 11px;
             font-weight: 600;
-            padding: 3px 10px;
+            padding: 6px 12px;
             border-radius: 100px;
+            border: 1px solid rgba(201, 169, 110, 0.3);
+        }
+
+        .testi-photo-content {
+            padding: 24px 24px 28px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .testi-photo-stars {
+            display: flex;
+            gap: 2px;
             margin-bottom: 12px;
         }
 
-        .testi-text {
-            font-size: 13px;
-            line-height: 1.8;
-            color: var(--text-mid);
+        .testi-photo-stars span {
+            color: #C9A96E;
+            font-size: 14px;
+        }
+
+        .testi-photo-text {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #5C5246;
             font-weight: 300;
+            flex: 1;
             margin-bottom: 16px;
-            position: relative;
-            z-index: 1;
+            font-style: italic;
         }
 
-        /* NEW: ibu moment highlight */
-        .testi-ibu-detail {
-            background: rgba(212, 176, 122, 0.1);
-            border: 1px solid rgba(212, 176, 122, 0.25);
-            border-radius: 8px;
-            padding: 8px 12px;
-            font-size: 12px;
-            color: var(--brown);
-            font-weight: 500;
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .testi-author {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            border-top: 1px solid rgba(155, 110, 122, 0.08);
+        .testi-photo-footer {
+            border-top: 1px solid rgba(139, 94, 106, 0.08);
             padding-top: 16px;
         }
 
-        .testi-avatar {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            flex-shrink: 0;
-        }
-
-        .testi-name {
+        .testi-photo-name {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 17px;
+            font-size: 18px;
             font-weight: 600;
-            color: var(--text-dark);
-            margin-bottom: 1px;
+            color: #2A1F1A;
+            margin-bottom: 2px;
         }
 
-        .testi-meta {
-            font-size: 11px;
-            color: var(--text-light);
+        .testi-photo-meta {
+            font-size: 12px;
+            color: #8C7A6E;
+            margin-bottom: 6px;
         }
 
-        .testi-verified {
+        .testi-photo-verified {
             display: inline-flex;
             align-items: center;
-            gap: 5px;
+            gap: 4px;
             background: rgba(122, 140, 126, 0.1);
-            border: 1px solid rgba(122, 140, 126, 0.2);
-            color: var(--sage);
+            color: #5C7361;
             font-size: 10px;
             font-weight: 500;
             padding: 3px 10px;
             border-radius: 100px;
-            margin-top: 5px;
+        }
+
+        .testi-photo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1100px;
+            margin: 0 auto 56px;
         }
 
         .testi-stats {
@@ -1183,7 +1109,7 @@
             gap: 1px;
             max-width: 600px;
             margin: 0 auto;
-            background: rgba(155, 110, 122, 0.1);
+            background: rgba(139, 94, 106, 0.1);
             border-radius: 16px;
             overflow: hidden;
         }
@@ -1211,7 +1137,7 @@
 
         /* ══ PRICING ══ */
         .pricing-section {
-            background: var(--cream);
+            background: var(--warm-white);
             padding: 100px 80px;
             text-align: center;
         }
@@ -1222,7 +1148,7 @@
             background: white;
             border-radius: 20px;
             padding: 56px 48px;
-            box-shadow: 0 40px 100px rgba(107, 74, 56, 0.14);
+            box-shadow: 0 40px 100px rgba(92, 61, 46, 0.14);
             position: relative;
             overflow: hidden;
         }
@@ -1237,7 +1163,7 @@
             background: linear-gradient(90deg, var(--blush), var(--mauve), var(--gold));
         }
 
-        .pricing-badge {
+        .pricing-card-badge {
             display: inline-block;
             background: linear-gradient(135deg, var(--gold-light), var(--blush));
             color: var(--brown);
@@ -1246,7 +1172,7 @@
             text-transform: uppercase;
             padding: 8px 20px;
             border-radius: 100px;
-            margin-bottom: 28px;
+            margin-bottom: 32px;
             font-weight: 500;
         }
 
@@ -1255,27 +1181,26 @@
             align-items: baseline;
             justify-content: center;
             gap: 16px;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
 
         .price-big {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 76px;
+            font-size: 80px;
             font-weight: 300;
             color: var(--text-dark);
             line-height: 1;
         }
 
         .price-big sup {
-            font-size: 26px;
+            font-size: 28px;
             vertical-align: super;
         }
 
         .price-was-p {
-            font-size: 20px;
+            font-size: 22px;
             font-family: 'Cormorant Garamond', serif;
             color: var(--text-light);
-            margin-bottom: 6px;
         }
 
         .price-was-p s {
@@ -1290,12 +1215,13 @@
             font-weight: 600;
             padding: 6px 16px;
             border-radius: 100px;
-            margin-bottom: 32px;
+            margin-bottom: 36px;
+            letter-spacing: 0.5px;
         }
 
         .include-list {
             list-style: none;
-            margin-bottom: 36px;
+            margin-bottom: 40px;
             text-align: left;
         }
 
@@ -1305,13 +1231,13 @@
             gap: 12px;
             font-size: 14px;
             color: var(--text-mid);
-            padding: 10px 0;
+            padding: 11px 0;
             border-bottom: 1px solid #F5F0EC;
             font-weight: 300;
         }
 
         .include-list li:last-child {
-            border: none;
+            border-bottom: none;
         }
 
         .check {
@@ -1330,35 +1256,35 @@
         .urgency-note {
             font-size: 13px;
             color: var(--dusty-rose);
-            margin-top: 18px;
+            margin-top: 20px;
             font-weight: 500;
         }
 
-        .ibu-note {
-            background: var(--amber-light);
-            border: 1px solid rgba(212, 176, 122, 0.3);
+        .heat-run-bar {
+            background: rgba(139, 94, 106, 0.06);
+            border: 1px solid rgba(139, 94, 106, 0.15);
             border-radius: 10px;
-            padding: 14px 18px;
-            margin-top: 18px;
+            padding: 14px 20px;
+            margin-top: 20px;
             display: flex;
             align-items: center;
             gap: 12px;
             text-align: left;
         }
 
-        .ibu-note-text {
+        .heat-run-text {
             font-size: 12px;
             color: var(--text-mid);
             line-height: 1.5;
         }
 
-        .ibu-note-text strong {
-            color: var(--brown);
+        .heat-run-text strong {
+            color: var(--mauve);
         }
 
         /* ══ FAQ ══ */
         .faq-section {
-            background: var(--warm-white);
+            background: var(--cream);
             padding: 100px 80px;
         }
 
@@ -1368,14 +1294,14 @@
         }
 
         .faq-item {
-            border-bottom: 1px solid rgba(155, 110, 122, 0.15);
-            padding: 22px 0;
+            border-bottom: 1px solid rgba(139, 94, 106, 0.15);
+            padding: 24px 0;
             cursor: pointer;
         }
 
         .faq-q {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 19px;
+            font-size: 20px;
             font-weight: 600;
             color: var(--text-dark);
             display: flex;
@@ -1389,6 +1315,7 @@
             font-size: 20px;
             transition: transform 0.3s ease;
             flex-shrink: 0;
+            line-height: 1;
         }
 
         .faq-item.open .faq-arrow {
@@ -1406,23 +1333,8 @@
         }
 
         .faq-item.open .faq-a {
-            max-height: 250px;
-            padding-top: 14px;
-        }
-
-        /* NEW: FAQ tag untuk ibu-spesifik */
-        .faq-ibu-tag {
-            display: inline-block;
-            background: var(--amber-light);
-            color: var(--brown);
-            font-size: 9px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            padding: 2px 8px;
-            border-radius: 100px;
-            margin-left: 10px;
-            vertical-align: middle;
+            max-height: 200px;
+            padding-top: 16px;
         }
 
         /* ══ FINAL CTA ══ */
@@ -1435,12 +1347,12 @@
         }
 
         .final-cta::before {
-            content: '🤍';
+            content: '♡';
             position: absolute;
-            font-size: 350px;
-            top: -60px;
-            right: -20px;
-            opacity: 0.05;
+            font-size: 400px;
+            color: rgba(255, 255, 255, 0.03);
+            top: -80px;
+            right: -40px;
             pointer-events: none;
         }
 
@@ -1455,10 +1367,10 @@
 
         .final-cta p {
             font-size: 15px;
-            color: rgba(255, 255, 255, 0.78);
-            margin-bottom: 44px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 48px;
             font-weight: 300;
-            max-width: 560px;
+            max-width: 500px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -1506,7 +1418,7 @@
             letter-spacing: 1px;
             text-transform: uppercase;
             text-decoration: none;
-            box-shadow: 0 8px 30px rgba(155, 110, 122, 0.4);
+            box-shadow: 0 8px 30px rgba(139, 94, 106, 0.4);
             transition: all 0.3s ease;
             z-index: 100;
             display: none;
@@ -1598,10 +1510,11 @@
         /* ══ RESPONSIVE ══ */
         @media (max-width: 1024px) {
 
-            .pain-section,
+            .video-section,
+            .drama-section,
             .solution-section,
-            .peace-section,
             .sheets-section,
+            .diff-section,
             .testi-section,
             .pricing-section,
             .faq-section,
@@ -1613,6 +1526,14 @@
             .sheets-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
+
+            .testi-photo-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .solution-inner {
+                gap: 50px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -1620,9 +1541,10 @@
                 padding: 70px 20px 50px;
             }
 
-            .pain-section,
+            .video-section,
+            .drama-section,
             .solution-section,
-            .peace-section,
+            .diff-section,
             .sheets-section,
             .testi-section,
             .pricing-section,
@@ -1638,13 +1560,20 @@
                 text-align: center;
             }
 
-            .pain-grid,
-            .testi-grid,
-            .peace-grid {
+            .drama-grid {
                 grid-template-columns: 1fr;
             }
 
-            .sol-inner {
+            .testi-photo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .video-features {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+            }
+
+            .solution-inner {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
@@ -1670,12 +1599,22 @@
                 display: none;
             }
 
-            .letter-card {
-                padding: 40px 28px;
+            .hero-title {
+                font-size: clamp(30px, 7vw, 46px);
             }
 
-            .video-highlights {
-                grid-template-columns: 1fr;
+            .cta-notes {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .diff-table {
+                font-size: 12px;
+            }
+
+            .diff-table thead th,
+            .diff-table tbody td {
+                padding: 10px 12px;
             }
         }
 
@@ -1685,252 +1624,79 @@
                 gap: 10px;
             }
 
-            .btn-primary {
-                padding: 18px 28px;
-                width: 100%;
-                justify-content: center;
+            .pricing-card {
+                padding: 32px 20px;
             }
 
             .price-big {
                 font-size: 52px;
             }
 
-            .letter-card {
-                padding: 32px 20px;
-            }
-        }
-
-        /* Enhanced testimonial styles - tambahkan ke <style> existing kalau belum ada */
-        .testi-photo-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid rgba(139, 94, 106, 0.1);
-            transition: all 0.4s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .testi-photo-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 24px 60px rgba(92, 61, 46, 0.15);
-        }
-
-        .testi-photo-wrapper {
-            position: relative;
-            width: 100%;
-            height: 240px;
-            overflow: hidden;
-            background: linear-gradient(135deg, #FAF7F2, #E8D5B0);
-        }
-
-        .testi-photo-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-
-        .testi-photo-card:hover .testi-photo-wrapper img {
-            transform: scale(1.05);
-        }
-
-        .testi-photo-badge {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            color: #5C3D2E;
-            font-size: 11px;
-            font-weight: 600;
-            padding: 6px 12px;
-            border-radius: 100px;
-            border: 1px solid rgba(201, 169, 110, 0.3);
-        }
-
-        .testi-photo-content {
-            padding: 24px 24px 28px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .testi-photo-stars {
-            display: flex;
-            gap: 2px;
-            margin-bottom: 12px;
-        }
-
-        .testi-photo-stars span {
-            color: #C9A96E;
-            font-size: 14px;
-        }
-
-        .testi-photo-text {
-            font-size: 14px;
-            line-height: 1.7;
-            color: #5C5246;
-            font-weight: 300;
-            flex: 1;
-            margin-bottom: 16px;
-            font-style: italic;
-        }
-
-        .testi-photo-footer {
-            border-top: 1px solid rgba(139, 94, 106, 0.08);
-            padding-top: 16px;
-        }
-
-        .testi-photo-name {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 18px;
-            font-weight: 600;
-            color: #2A1F1A;
-            margin-bottom: 2px;
-        }
-
-        .testi-photo-meta {
-            font-size: 12px;
-            color: #8C7A6E;
-            margin-bottom: 6px;
-        }
-
-        .testi-photo-verified {
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            background: rgba(122, 140, 126, 0.1);
-            color: #5C7361;
-            font-size: 10px;
-            font-weight: 500;
-            padding: 3px 10px;
-            border-radius: 100px;
-        }
-
-        .testi-photo-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            max-width: 1100px;
-            margin: 0 auto 56px;
-        }
-
-        @media (max-width: 900px) {
-            .testi-photo-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 600px) {
-            .testi-photo-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .testi-photo-wrapper {
-                height: 280px;
+            .btn-primary {
+                padding: 18px 32px;
+                width: 100%;
+                justify-content: center;
             }
         }
     </style>
     <!-- Meta Pixel Code -->
     <script>
-        !function (f, b, e, v, n, t, s) {
-            if (f.fbq) return; n = f.fbq = function () {
-                n.callMethod ?
-                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-            };
-            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-            n.queue = []; t = b.createElement(e); t.async = !0;
-            t.src = v; s = b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t, s)
-        }(window, document, 'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '4326987370876034');
-        fbq('track', 'ViewContent');
+        !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s) }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '4326987370876034'); fbq('track', 'ViewContent');
     </script>
     <noscript><img height="1" width="1" style="display:none"
             src="https://www.facebook.com/tr?id=4326987370876034&ev=PageView&noscript=1" /></noscript>
-    <!-- End Meta Pixel Code -->
-
-    <!-- Enhanced Meta Pixel Tracking - Lead Event Only -->
     <script>
-        // Track Lead event when user scrolls 50%+ (engaged visitor)
-        // InitiateCheckout dan Purchase dihandle oleh Skalev
         var leadTracked = false;
-        window.addEventListener('scroll', function () {
-            if (leadTracked) return;
-            var scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-            if (scrollPercent > 50) {
-                if (typeof fbq !== 'undefined') {
-                    fbq('track', 'Lead', {
-                        content_name: 'Engaged Scroll - NIKAH RAPI',
-                        content_category: 'Wedding Planner'
-                    });
-                }
-                leadTracked = true;
-            }
-        });
+        window.addEventListener('scroll', function () { if (leadTracked) return; var s = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100; if (s > 50) { if (typeof fbq !== 'undefined') { fbq('track', 'Lead', { content_name: 'Engaged Scroll - NIKAH RAPI', content_category: 'Wedding Planner' }); } leadTracked = true; } });
     </script>
-
 </head>
 
 <body>
 
-    <!-- REVISED: Sticky CTA — format harga konsisten -->
-    <a href="https://entrepreneurai.myscalev.com/checkout-page" class="sticky-cta" id="stickyCta">
-        🤍 Bantu Anak Nikah Rapi — Rp 99.000
-    </a>
+    <a href="https://entrepreneurai.myscalev.com/checkout-page" class="sticky-cta" id="stickyCta">🤍 Dapatkan Sekarang —
+        Rp 99.000</a>
 
     <!-- ══ HERO ══ -->
     <section class="hero">
         <div class="badge">Untuk Ibu yang Anaknya Mau Menikah</div>
-
         <p class="hero-eyebrow">Karena pernikahan anak adalah salah satu hari terpenting dalam hidupmu juga</p>
-
-        <!-- REVISED: Title lebih pendek, clean, dan kuat -->
-        <h1 class="hero-title">
-            Pernikahan Anakmu <em>Sempurna</em> —<br><strong>Tanpa Satu Pun yang Terlupa.</strong>
-        </h1>
-
-        <!-- NEW: Emotional hook paragraph -->
-        <p class="hero-hook">
-            "Seserahan lengkap, kado tercatat semua, budget terkendali —
-            agar kamu bisa menyaksikan hari besarnya dengan hati yang benar-benar tenang dan bangga."
-        </p>
-
-        <!-- REVISED: Hanya 3 concern tags paling universal untuk ibu -->
-        <div class="concern-tags">
-            <span class="concern-tag">💍 Takut ada seserahan yang ketinggalan</span>
-            <span class="concern-tag">🎁 Bingung catat kado & angpao dari siapa</span>
-            <span class="concern-tag">🤝 Koordinasi sama anak yang sibuk kerja</span>
+        <h1 class="hero-title">Pernikahan Anakmu <em>Sempurna</em> —<br>Tanpa Satu Pun yang Terlupa.</h1>
+        <p class="hero-hook">"Seserahan lengkap, kado tercatat semua, budget terkendali — agar kamu bisa menyaksikan
+            hari besarnya dengan hati yang benar-benar tenang dan bangga."</p>
+        <p class="hero-title-sub">Semua persiapan pernikahan — terkontrol rapi dalam 1 platform. Cukup isi datanya,
+            sistem yang bekerja.</p>
+        <div class="drama-tags">
+            <span class="drama-tag">💍 Takut ada seserahan yang ketinggalan</span>
+            <span class="drama-tag">🎁 Bingung catat kado & angpao dari siapa</span>
+            <span class="drama-tag">🤝 Koordinasi sama anak yang sibuk kerja</span>
         </div>
 
-        <!-- Preview tabs -->
         <div class="preview-tabs">
             <button class="ptab on" onclick="switchPreview(this,'p-dash')">🏠 Dashboard</button>
             <button class="ptab" onclick="switchPreview(this,'p-ses')">💍 Seserahan ✦</button>
             <button class="ptab" onclick="switchPreview(this,'p-kado')">🎁 Kado & Angpao ✦</button>
+            <button class="ptab" onclick="switchPreview(this,'p-budget')">💰 Budget</button>
+            <button class="ptab" onclick="switchPreview(this,'p-guest')">👥 Guest List</button>
+            <button class="ptab" onclick="switchPreview(this,'p-vendor')">🏢 Vendor</button>
         </div>
 
-        <!-- PRODUCT SHOWCASE -->
         <div class="product-showcase">
             <div class="showcase-glow"></div>
-
             <div class="float-badge float-badge-top">
-                <div class="fb-icon" style="background:#FFF0EC;">💍</div>
+                <div class="fb-icon" style="background:#FFF0EC;">🎁</div>
                 <div>
-                    <div class="fb-label">Seserahan Tracker</div>
-                    <div class="fb-val">12/15 item siap ✓ Tidak ada yang lupa</div>
+                    <div class="fb-label">Kado & Angpao Tracker</div>
+                    <div class="fb-val">Rp 48.500.000 tercatat ✓</div>
                 </div>
             </div>
             <div class="float-badge float-badge-bot">
-                <div class="fb-icon" style="background:#FFF8EC;">🎁</div>
+                <div class="fb-icon" style="background:#F0F4F0;">💍</div>
                 <div>
-                    <div class="fb-label">Kado & Angpao</div>
-                    <div class="fb-val">42 pemberi tercatat · Rp 48,5jt</div>
+                    <div class="fb-label">Seserahan Tracker</div>
+                    <div class="fb-val">12/15 item siap ✓</div>
                 </div>
             </div>
-
             <div class="browser-frame">
                 <div class="browser-bar">
                     <div class="browser-dots">
@@ -1940,300 +1706,297 @@
                     </div>
                     <div class="browser-url">app.nikahrapi.online ✦</div>
                 </div>
-
-                <div class="preview-stage on" id="p-dash">
-                    <img src="assets/Dashboard.png" alt="Dashboard Utama NIKAH RAPI"
-                        style="width:100%;height:auto;display:block;">
+                <div class="sheet-tabs-bar">
+                    <button class="stab on" onclick="switchSheet(this,'p-dash',0)">🏠 Dashboard</button>
+                    <button class="stab" onclick="switchSheet(this,'p-budget',1)">💰 Budget</button>
+                    <button class="stab" onclick="switchSheet(this,'p-ses',2)">💍 Seserahan ✦</button>
+                    <button class="stab gold" onclick="switchSheet(this,'p-kado',3)">🎁 Kado & Angpao ✦</button>
+                    <button class="stab" onclick="switchSheet(this,'p-guest',4)">👥 Guest List</button>
+                    <button class="stab" onclick="switchSheet(this,'p-vendor',5)">🏢 Vendor</button>
                 </div>
-                <div class="preview-stage" id="p-ses">
-                    <img src="assets/seserahan.png" alt="Seserahan Tracker NIKAH RAPI"
-                        style="width:100%;height:auto;display:block;">
+                <div class="preview-stage on" id="p-dash"><img src="assets/Dashboard.png" alt="Dashboard"
+                        loading="lazy"></div>
+                <div class="preview-stage" id="p-ses"><img src="assets/Seserahan%20Tracker.png" alt="Seserahan"
+                        loading="lazy"></div>
+                <div class="preview-stage" id="p-kado"><img src="assets/Kado%20Angpao.png" alt="Kado Angpao"
+                        loading="lazy"></div>
+                <div class="preview-stage" id="p-budget"><img src="assets/Budget%20planner.png" alt="Budget"
+                        loading="lazy"></div>
+                <div class="preview-stage" id="p-guest"><img src="assets/GuestList.png" alt="Guest List" loading="lazy">
                 </div>
-                <div class="preview-stage" id="p-kado">
-                    <img src="assets/Kado & Angpao.png" alt="Kado dan Angpao Tracker NIKAH RAPI"
-                        style="width:100%;height:auto;display:block;">
-                </div>
+                <div class="preview-stage" id="p-vendor"><img src="assets/Vendor.png" alt="Vendor" loading="lazy"></div>
             </div>
         </div>
 
-        <!-- REVISED: Format harga konsisten -->
         <div class="hero-cta-block">
             <div class="price-display">
                 <div class="price-new"><sup style="font-size:22px">Rp</sup>99.000</div>
                 <div class="price-old"><s>Rp 299.000</s></div>
                 <div class="price-save">HEMAT 63%</div>
             </div>
-            <a href="https://entrepreneurai.myscalev.com/checkout-page" class="btn-primary">
-                🤍 Bantu Anak Nikah Rapi Sekarang
-            </a>
+            <a href="https://entrepreneurai.myscalev.com/checkout-page" class="btn-primary">🤍 Bantu Anak Nikah Rapi
+                Sekarang</a>
 
-            <!-- ⏰ QUOTA COUNTER - Early Bird -->
-            <div class="quota-counter" id="quotaCounter"
-                style="background: linear-gradient(135deg, #fff8ec 0%, #ffe7d6 100%); border: 1px solid #C9A96E; border-radius: 16px; padding: 20px 24px; margin: 32px auto; max-width: 540px; text-align: center; box-shadow: 0 8px 24px rgba(201, 169, 110, 0.15);">
+            <div
+                style="background:linear-gradient(135deg,#fff8ec 0%,#ffe7d6 100%);border:1px solid #C9A96E;border-radius:16px;padding:20px 24px;margin:32px auto;max-width:540px;text-align:center;box-shadow:0 8px 24px rgba(201,169,110,0.15);">
                 <div
-                    style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #8B5E6A; font-weight: 600; margin-bottom: 8px;">
+                    style="font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#8B5E6A;font-weight:600;margin-bottom:8px;">
                     ⏰ Promo Early Bird Berakhir Saat Slot Habis</div>
                 <div
-                    style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #5C3D2E; font-weight: 600; margin-bottom: 4px;">
-                    Tersisa <span id="quotaCount" style="color: #B85C00; font-weight: 700;">10</span> dari 50 Slot
-                </div>
-                <div style="font-size: 13px; color: #6B5A4F; margin-bottom: 12px;">Harga akan naik ke <s>Rp 299.000</s>
+                    style="font-family:'Cormorant Garamond',serif;font-size:28px;color:#5C3D2E;font-weight:600;margin-bottom:4px;">
+                    Tersisa <span style="color:#B85C00;font-weight:700;">10</span> dari 50 Slot</div>
+                <div style="font-size:13px;color:#6B5A4F;margin-bottom:12px;">Harga akan naik ke <s>Rp 299.000</s>
                     setelah slot habis</div>
-                <div class="quota-bar"
-                    style="background: rgba(201, 169, 110, 0.2); height: 8px; border-radius: 100px; overflow: hidden; margin-top: 12px;">
-                    <div id="quotaBar"
-                        style="background: linear-gradient(90deg, #B85C00, #C9A96E); height: 100%; width: 20%; transition: width 0.5s ease;">
+                <div
+                    style="background:rgba(201,169,110,0.2);height:8px;border-radius:100px;overflow:hidden;margin-top:12px;">
+                    <div
+                        style="background:linear-gradient(90deg,#B85C00,#C9A96E);height:100%;width:20%;transition:width 0.5s ease;">
                     </div>
                 </div>
             </div>
 
             <div class="cta-notes">
-                <div>✓ Garansi 7 hari</div>
-                <div>✓ Akses dikirim via WA</div>
-                <div>✓ Bisa dipakai bareng anak</div>
+                <div class="cta-note-item">✓ Garansi 7 hari</div>
+                <div class="cta-note-item">✓ Akses instan Web App</div>
+                <div class="cta-note-item">✓ Tersimpan aman di Cloud</div>
             </div>
         </div>
 
         <div class="social-proof-bar">
             <div class="sp-avatars">
-                <div class="sp-avatar" style="background:linear-gradient(135deg,#EDD0C4,#DDB09E)">👩</div>
-                <div class="sp-avatar" style="background:linear-gradient(135deg,#C8887A,#9B6E7A)">🌸</div>
-                <div class="sp-avatar" style="background:linear-gradient(135deg,#D4B07A,#EEE0BC)">💛</div>
-                <div class="sp-avatar" style="background:linear-gradient(135deg,#7A8C7E,#A8B8AC)">🍃</div>
+                <div class="sp-avatar" style="background:linear-gradient(135deg,#E8C4B8,#D4A090)">🌸</div>
+                <div class="sp-avatar" style="background:linear-gradient(135deg,#C4857A,#8B5E6A)">💐</div>
+                <div class="sp-avatar" style="background:linear-gradient(135deg,#C9A96E,#E8D5B0)">👑</div>
+                <div class="sp-avatar" style="background:linear-gradient(135deg,#A8B8AC,#7A8C7E)">🍃</div>
             </div>
             <div class="stars">★★★★★</div>
-            <span>Dipercaya <strong>50+ keluarga</strong> di Indonesia</span>
+            <span><strong>Tersisa 10 slot</strong> dari 50 Early Bird</span>
         </div>
     </section>
 
     <!-- ══ VIDEO SECTION ══ -->
     <section class="video-section">
-        <p class="section-eyebrow reveal">Lihat sebelum membeli</p>
-        <h2 class="section-title reveal">Lihat Cara Kerjanya —<br><em>Mudah Banget, Tidak Perlu Jago IT</em></h2>
-        <p class="reveal"
-            style="font-size:15px;color:var(--text-mid);font-weight:300;max-width:540px;margin:0 auto 48px;line-height:1.8;">
-            Tinggal isi data, semua otomatis terhitung dan terhubung. Bisa dibuka dari HP maupun Laptop, bisa dipakai
-            bareng anak dari perangkat masing-masing.
-        </p>
-
-        <div class="video-container reveal">
-            <div class="video-decor-ring r1"></div>
-            <div class="video-decor-ring r2"></div>
-            <div class="video-frame" onclick="loadVideo(this)" aria-label="Putar video demo NIKAH RAPI">
-                <div
-                    style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:1;">
-                    <div
-                        style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--mauve);letter-spacing:3px;margin-bottom:4px;opacity:0.6;">
-                        NIKAH RAPI</div>
-                    <div
-                        style="font-size:11px;color:var(--text-light);letter-spacing:2px;text-transform:uppercase;opacity:0.5;">
-                        Demo Video</div>
+        <p class="section-eyebrow reveal">✨ Intip Dulu Sebelum Beli</p>
+        <h2 class="section-title reveal">Lihat <em>Cara Kerjanya</em></h2>
+        <p class="video-sub reveal">Tidak perlu download aplikasi apapun. Akses langsung via browser, data otomatis
+            tersinkronisasi secara real-time.</p>
+        <div class="video-wrapper reveal">
+            <div class="video-placeholder" id="videoPlaceholder" onclick="loadVideo(this)">
+                <div class="video-glow"></div>
+                <div class="video-play-btn"><svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+                        <polygon points="5,3 19,12 5,21" />
+                    </svg></div>
+                <div class="video-overlay-text"><span class="video-badge-tag">▶ Preview Demo</span></div>
+            </div>
+        </div>
+        <div class="video-features reveal">
+            <div class="vf-card">
+                <div class="vf-icon">💍</div>
+                <div class="vf-text">
+                    <h4>Seserahan Tracker <span class="usp-tag">Eksklusif</span></h4>
+                    <p>Catat item, harga, status, auto-hitung total.</p>
                 </div>
-                <div class="video-play-btn">
-                    <div class="play-triangle"></div>
+            </div>
+            <div class="vf-card">
+                <div class="vf-icon">🎁</div>
+                <div class="vf-text">
+                    <h4>Kado & Angpao Tracker <span class="usp-tag">Eksklusif</span></h4>
+                    <p>Siapa beri apa, nominal, follow up ucapan.</p>
                 </div>
-                <div class="video-label">▶ Tonton demo 2 menit — lihat betapa mudahnya</div>
             </div>
-        </div>
-
-        <div class="video-highlights">
-            <div class="vh-card reveal">
-                <div class="vh-icon" style="background:linear-gradient(135deg,#FFF0EC,#FAE8E2);">💍</div>
-                <h4>Seserahan Tracker</h4>
-                <p>Catat item, harga, status beli — auto-hitung total. Tidak ada yang ketinggalan di hari H.</p>
-            </div>
-            <div class="vh-card reveal">
-                <div class="vh-icon" style="background:linear-gradient(135deg,#FFF8EC,#F5EEDD);">🎁</div>
-                <h4>Kado & Angpao Tracker</h4>
-                <p>Siapa beri apa, nominal berapa, follow up ucapan terima kasih — semua terdata rapi.</p>
-            </div>
-            <div class="vh-card reveal">
-                <div class="vh-icon" style="background:linear-gradient(135deg,#F0F4F0,#E8EEE8);">🤝</div>
-                <h4>Pakai Bareng Anak</h4>
-                <p>Share satu file, ibu dan anak bisa update dari perangkat masing-masing secara bersamaan.</p>
-            </div>
-        </div>
-
-        <div style="margin-top:48px;" class="reveal">
-            <a href="https://entrepreneurai.myscalev.com/checkout-page" class="btn-primary">
-                🤍 Dapatkan NIKAH RAPI — Rp 99.000
-            </a>
-        </div>
-    </section>
-
-    <!-- ══ LETTER FROM MOM ══ -->
-    <section class="letter-section">
-        <div class="letter-card reveal">
-            <p class="letter-text">
-                Sebagai ibu, kamu ingin pernikahan anakmu <strong>sempurna.</strong>
-                Tidak ada seserahan yang ketinggalan. Tidak ada tamu yang terlewat diundang.
-                Tidak ada kado yang lupa diucapkan terima kasih.
-                <br><br>
-                Tapi mengurus semua itu sambil <strong>koordinasi dengan puluhan vendor, keluarga, dan tamu</strong>
-                — tanpa sistem yang benar — bisa membuat momen indah ini terasa melelahkan.
-                <br><br>
-                <strong>NIKAH RAPI hadir untuk meringankan beban itu.</strong>
-                Supaya kamu bisa fokus pada yang benar-benar penting:
-                <strong>menyaksikan anak kesayanganmu menikah dengan tenang dan bahagia.</strong>
-            </p>
-            <div class="letter-author">
-                <div class="letter-avatar">🌸</div>
-                <div>
-                    <div class="letter-name">Untuk setiap Ibu yang ingin yang terbaik</div>
-                    <div class="letter-desc">— NIKAH RAPI, Wedding Planner Digital Premium</div>
+            <div class="vf-card">
+                <div class="vf-icon">💰</div>
+                <div class="vf-text">
+                    <h4>Budget Planner</h4>
+                    <p>Rencana vs realisasi, update otomatis real-time.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ══ PAIN SECTION ══ -->
-    <section class="pain-section">
-        <p class="section-eyebrow reveal">Pasti familiar rasanya...</p>
-        <h2 class="section-title reveal">Kekhawatiran yang Dirasakan<br>Setiap <em>Ibu Menjelang Pernikahan Anaknya</em>
-        </h2>
-        <div class="pain-grid">
-            <div class="pain-card reveal">
-                <span class="pain-icon">💍</span>
-                <h3>Seserahan Tidak Terkontrol</h3>
-                <p>Daftar seserahan ditulis di kertas, dicatat di HP, dikomunikasikan via WA — tersebar mana-mana. Hari
-                    H ada barang yang ketinggalan.</p>
-                <div class="pain-scenario">"Sampai di rumah mempelai baru sadar satu item seserahan ketinggalan. Malu
-                    sama keluarga besannya."</div>
+    <!-- ══ DRAMA ══ -->
+    <section class="drama-section">
+        <p class="section-eyebrow reveal">Cerita yang terlalu familiar...</p>
+        <h2 class="section-title reveal">Drama Menuju Pernikahan<br>yang <em>Bikin Capek Sebelum Hari H</em></h2>
+        <div class="drama-grid">
+            <div class="drama-card reveal"><span class="drama-icon">💰</span>
+                <h3>Drama Budget Jebol</h3>
+                <p>Estimasi Rp 80jt, realisasi Rp 120jt. Pengeluaran kecil-kecil yang tidak tercatat akhirnya numpuk
+                    tanpa disadari.</p>
+                <div class="drama-scenario">"Udah bayar DP katering, eh lupa dicatat. Sekarang gak tau sisa budget
+                    berapa."</div>
             </div>
-            <div class="pain-card reveal">
-                <span class="pain-icon">🎁</span>
-                <h3>Kado & Angpao Tidak Tercatat</h3>
-                <p>Siapa yang sudah kasih kado apa? Amplop dari keluarga mana? Mau kirim ucapan terima kasih tapi data
-                    tidak ada.</p>
-                <div class="pain-scenario">"Ketemu Bu RT di arisan, baru ingat belum ucapin terima kasih untuk
-                    angpaonya. Awkward banget."</div>
+            <div class="drama-card reveal"><span class="drama-icon">💍</span>
+                <h3>Drama Seserahan Ketinggalan</h3>
+                <p>Daftar seserahan ditulis di kertas, notes HP, chat WA — tersebar mana-mana. Hari H ada barang yang
+                    ketinggalan.</p>
+                <div class="drama-scenario">"Sampai di lokasi baru sadar parfum seserahan ketinggalan di rumah. Panik!"
+                </div>
             </div>
-            <div class="pain-card reveal">
-                <span class="pain-icon">💰</span>
-                <h3>Budget Tidak Ter-track dengan Baik</h3>
-                <p>Bayar ini-itu, DP sana-sini, tapi tidak tahu persis total yang sudah keluar. Tiba-tiba budget habis
-                    sebelum semua beres.</p>
-                <div class="pain-scenario">"Sudah bayar semua vendor, eh ternyata ada pengeluaran dadakan yang belum
-                    diperhitungkan."</div>
+            <div class="drama-card reveal"><span class="drama-icon">🏢</span>
+                <h3>Drama Vendor Tiba-tiba Cabut</h3>
+                <p>Vendor cancel H-7, nomor susah dihubungi, kontrak tidak jelas. Semua info vendor tersebar di berbagai
+                    chat WA.</p>
+                <div class="drama-scenario">"WO tiba-tiba bilang ada double booking. Kontraknya mana? Sudah bayar
+                    berapa?"</div>
             </div>
-            <div class="pain-card reveal">
-                <span class="pain-icon">🏢</span>
-                <h3>Vendor Susah Dikontrol</h3>
-                <p>Kontrak vendor di mana? DP sudah dibayar berapa? Siapa yang belum dikonfirmasi? Semua tersebar di
-                    berbagai chat.</p>
-                <div class="pain-scenario">"WO tanya pembayaran lunas fotografer, aku tidak tahu sudah bayar berapa.
-                    Kacau."</div>
+            <div class="drama-card reveal"><span class="drama-icon">💄</span>
+                <h3>Drama MUA Double Booking</h3>
+                <p>MUA impian ternyata sudah di-booking orang lain di tanggal yang sama. Baru ketahuan 2 minggu sebelum
+                    hari H.</p>
+                <div class="drama-scenario">"Udah fitting 3x, eh MUA-nya bilang double booking. Cari pengganti
+                    mendadak."</div>
             </div>
-            <div class="pain-card reveal">
-                <span class="pain-icon">🤝</span>
-                <h3>Koordinasi dengan Anak Susah</h3>
-                <p>Anak sibuk kerja, ibu di rumah urus persiapan. Siapa yang tanggung jawab apa? Sering overlapping atau
-                    ada yang tidak diurus.</p>
-                <div class="pain-scenario">"Ternyata aku dan anakku sudah hubungi vendor yang sama, beda hasil.
-                    Vendor-nya bingung juga."</div>
+            <div class="drama-card reveal"><span class="drama-icon">🎁</span>
+                <h3>Drama Kado & Angpao Kacau</h3>
+                <p>Siapa yang kasih kado apa? Amplop dari siapa? Mau kirim ucapan terima kasih tapi datanya tidak ada
+                    sama sekali.</p>
+                <div class="drama-scenario">"Mau WA ucapan terima kasih tapi lupa siapa yang kasih angpao berapa.
+                    Awkward."</div>
             </div>
-            <div class="pain-card reveal">
-                <span class="pain-icon">😰</span>
-                <h3>Stres Menjelang Hari H</h3>
-                <p>Harusnya excited menyambut pernikahan anak, tapi malah stres karena banyak yang tidak terkontrol dan
-                    takut ada yang terlewat.</p>
-                <div class="pain-scenario">"Malam sebelum akad masih kelabakan cek ulang seserahan satu per satu. Tidak
-                    bisa tidur."</div>
+            <div class="drama-card reveal"><span class="drama-icon">😫</span>
+                <h3>Drama Tamu Melebihi Kapasitas</h3>
+                <p>Undangan 300 orang, kursi cuma 250. Konfirmasi hadir berantakan, catering kurang, meja tidak cukup.
+                </p>
+                <div class="drama-scenario">"Tamu yang konfirmasi hadir ternyata lebih dari kapasitas gedung. Chaos!"
+                </div>
             </div>
         </div>
-        <p class="pain-closer reveal">"Semua kekhawatiran ini bisa diredakan — kalau semua tercatat di satu tempat yang
-            benar dan terorganisir."</p>
+        <p class="drama-closer reveal">"Semua drama ini bisa dihindari — kalau semua tercatat di satu tempat yang
+            benar."</p>
     </section>
 
     <!-- ══ SOLUTION ══ -->
     <section class="solution-section">
-        <div class="sol-inner">
-            <div class="sol-left">
-                <p class="section-eyebrow reveal">Solusi untuk Ibu</p>
-                <h2 class="section-title reveal">Satu File.<br>Semua Detail<br>Terkontrol.<br>Hati Lebih Tenang.</h2>
-                <p class="reveal">NIKAH RAPI membantu ibu dan anak mengatur semua persiapan pernikahan — dari seserahan,
-                    kado, budget, tamu, hingga vendor — dalam satu file yang rapi dan mudah dipakai bersama.</p>
+        <div class="solution-inner">
+            <div class="solution-left">
+                <p class="section-eyebrow reveal">Solusi yang kamu butuhkan</p>
+                <h2 class="section-title reveal">Satu platform.<br>Semua drama<br>bisa dicegah.</h2>
+                <p class="reveal">NIKAH RAPI dirancang khusus untuk calon pengantin Indonesia — 22+ modul Web App
+                    terintegrasi yang saling terhubung otomatis. Input sekali, semua terupdate. Tersinkronisasi cloud,
+                    aman, dan bisa diakses dari perangkat manapun.</p>
                 <a href="#pricing" class="btn-secondary reveal">Lihat Harga & Paket →</a>
             </div>
-            <div class="feat-cards">
+            <div class="feature-cards">
                 <div class="feat-card reveal">
                     <div class="feat-icon">💍</div>
                     <div class="feat-text">
                         <h4>Seserahan Tracker <span class="usp-tag">Eksklusif</span></h4>
-                        <p>Catat semua item seserahan, harga, status beli. Auto-hitung total. Hari H tidak ada yang
-                            ketinggalan!</p>
+                        <p>Catat semua item, harga, status beli. Auto-hitung total. Tidak ada di produk manapun di
+                            Indonesia.</p>
                     </div>
                 </div>
                 <div class="feat-card reveal">
                     <div class="feat-icon">🎁</div>
                     <div class="feat-text">
                         <h4>Kado & Angpao Tracker <span class="usp-tag">Eksklusif</span></h4>
-                        <p>Rekap lengkap siapa beri apa, nominal angpao, status ucapan terima kasih. Tidak ada yang
-                            dilupakan.</p>
-                    </div>
-                </div>
-                <div class="feat-card reveal">
-                    <div class="feat-icon">🤝</div>
-                    <div class="feat-text">
-                        <h4>Bisa Dipakai Bareng Anak</h4>
-                        <p>Share satu file, ibu dan anak update dari perangkat masing-masing. Koordinasi lebih mudah,
-                            tidak ada yang overlap.</p>
+                        <p>Rekap siapa beri apa, nominal angpao, status ucapan terima kasih. Tidak ada yang terlewat.
+                        </p>
                     </div>
                 </div>
                 <div class="feat-card reveal">
                     <div class="feat-icon">💰</div>
                     <div class="feat-text">
                         <h4>Budget Planner Otomatis</h4>
-                        <p>Rencana vs realisasi terupdate real-time. Tahu persis berapa yang sudah keluar dan yang masih
-                            harus dibayar.</p>
+                        <p>Rencana vs realisasi terupdate real-time. Tahu persis kategori mana yang overbudget sebelum
+                            terlambat.</p>
+                    </div>
+                </div>
+                <div class="feat-card reveal">
+                    <div class="feat-icon">🏢</div>
+                    <div class="feat-text">
+                        <h4>Vendor Manager Lengkap</h4>
+                        <p>Kontak, kontrak, DP & pelunasan semua vendor. Tidak ada lagi vendor yang tiba-tiba "lupa"
+                            perjanjian.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ══ PEACE OF MIND ══ -->
-    <section class="peace-section">
-        <div class="peace-inner">
-            <p class="section-eyebrow reveal">Yang kamu rasakan setelah pakai NIKAH RAPI</p>
-            <h2 class="section-title reveal">Dari Khawatir Jadi <em>Tenang & Yakin</em></h2>
-            <div class="peace-grid">
-                <div class="peace-card reveal" style="background:linear-gradient(135deg,#FFF0EC,#FAE8E2)">
-                    <div class="peace-num" style="color:var(--mauve)">100%</div>
-                    <div class="peace-label">Seserahan Tercatat</div>
-                    <div class="peace-desc">Tidak ada satu pun item seserahan yang ketinggalan hari H. Semua
-                        ter-checklist dengan jelas.</div>
-                </div>
-                <div class="peace-card reveal" style="background:linear-gradient(135deg,#FFF8EC,#F5EEDD)">
-                    <div class="peace-num" style="color:var(--gold)">0</div>
-                    <div class="peace-label">Ucapan Terlewat</div>
-                    <div class="peace-desc">Setiap pemberi kado & angpao sudah didata dan diucapkan terima kasih. Tidak
-                        ada yang terlewat.</div>
-                </div>
-                <div class="peace-card reveal" style="background:linear-gradient(135deg,#F0F4F0,#E8EEE8)">
-                    <div class="peace-num" style="color:var(--sage)">✓</div>
-                    <div class="peace-label">Budget Terkontrol</div>
-                    <div class="peace-desc">Tidak ada lagi budget yang jebol tanpa sadar. Semua pengeluaran tercatat dan
-                        bisa dipantau kapan saja.</div>
-                </div>
-            </div>
+    <!-- ══ DIFF ══ -->
+    <section class="diff-section">
+        <p class="section-eyebrow reveal">Kenapa NIKAH RAPI?</p>
+        <h2 class="section-title reveal">Beda dari yang lain —<br><em>Dibuat untuk Pernikahan Indonesia</em></h2>
+        <div class="diff-table-wrap reveal">
+            <table class="diff-table">
+                <thead>
+                    <tr>
+                        <th>Fitur</th>
+                        <th>Wedding Planner Biasa</th>
+                        <th>NIKAH RAPI ✦</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Seserahan Tracker</td>
+                        <td><span class="diff-no">✕</span> Tidak ada</td>
+                        <td><span class="diff-yes">✓</span> Lengkap & eksklusif</td>
+                    </tr>
+                    <tr>
+                        <td>Kado & Angpao Tracker</td>
+                        <td><span class="diff-no">✕</span> Tidak ada</td>
+                        <td><span class="diff-yes">✓</span> Lengkap & eksklusif</td>
+                    </tr>
+                    <tr>
+                        <td>Budget real-time otomatis</td>
+                        <td><span class="diff-no">✕</span> Manual & terpisah</td>
+                        <td><span class="diff-yes">✓</span> Auto-update terintegrasi</td>
+                    </tr>
+                    <tr>
+                        <td>Dashboard visual progress</td>
+                        <td><span class="diff-no">✕</span> Tidak ada</td>
+                        <td><span class="diff-yes">✓</span> Grafik & KPI lengkap</td>
+                    </tr>
+                    <tr>
+                        <td>Disesuaikan adat Indonesia</td>
+                        <td><span class="diff-no">✕</span> Template generik barat</td>
+                        <td><span class="diff-yes">✓</span> Khusus pernikahan Indonesia</td>
+                    </tr>
+                    <tr>
+                        <td>22+ modul terintegrasi</td>
+                        <td><span class="diff-no">✕</span> 5–8 aplikasi terpisah</td>
+                        <td><span class="diff-yes">✓</span> 22+ modul dalam 1 tempat</td>
+                    </tr>
+                    <tr>
+                        <td>Akses PWA & Offline Support</td>
+                        <td><span class="diff-no">✕</span> Tergantung sinyal</td>
+                        <td><span class="diff-yes">✓</span> Cache-first & sangat cepat</td>
+                    </tr>
+                    <tr>
+                        <td>Notifikasi WA/Telegram</td>
+                        <td><span class="diff-no">✕</span> Manual & merepotkan</td>
+                        <td><span class="diff-yes">✓</span> Notif ucapan & reminder (Segera)</td>
+                    </tr>
+                    <tr>
+                        <td>Export & Import Data</td>
+                        <td><span class="diff-no">✕</span> Data terkunci / manual</td>
+                        <td><span class="diff-yes">✓</span> Export/Import CSV & Excel</td>
+                    </tr>
+                    <tr>
+                        <td>Honeymoon Planner</td>
+                        <td><span class="diff-no">✕</span> Tidak termasuk</td>
+                        <td><span class="diff-yes">✓</span> Bonus gratis</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </section>
 
-    <!-- ══ FITUR LENGKAP ══ -->
+    <!-- ══ SHEETS ══ -->
     <section class="sheets-section">
         <p class="section-eyebrow reveal">Yang kamu dapatkan</p>
-        <h2 class="section-title reveal">Fitur Premium Lengkap —<br><em>Semua Detail Pernikahan Anak Terjaga</em></h2>
+        <h2 class="section-title reveal">22+ Modul Web App Lengkap,<br><em>Tidak Ada yang Terlewat</em></h2>
         <div class="sheets-grid">
             <div class="sheet-card star reveal">
                 <div class="sheet-num">01</div>
                 <div class="sheet-name">Dashboard Utama ✦</div>
-                <div class="sheet-desc">Semua progress dalam 1 tampilan</div>
+                <div class="sheet-desc">Ringkasan semua progress pernikahan</div>
             </div>
             <div class="sheet-card reveal">
                 <div class="sheet-num">02</div>
                 <div class="sheet-name">Budget Planner</div>
-                <div class="sheet-desc">Rencana & realisasi auto-update</div>
+                <div class="sheet-desc">Rencana & realisasi per kategori</div>
             </div>
             <div class="sheet-card star reveal">
                 <div class="sheet-num">03</div>
@@ -2243,17 +2006,17 @@
             <div class="sheet-card star reveal">
                 <div class="sheet-num">04</div>
                 <div class="sheet-name">Kado & Angpao ✦</div>
-                <div class="sheet-desc">Rekap pemberi & ucapan — eksklusif!</div>
+                <div class="sheet-desc">Rekap pemberi & follow up — eksklusif!</div>
             </div>
             <div class="sheet-card reveal">
                 <div class="sheet-num">05</div>
                 <div class="sheet-name">Guest List</div>
-                <div class="sheet-desc">Daftar tamu lengkap kedua pihak</div>
+                <div class="sheet-desc">Daftar tamu lengkap & kategori</div>
             </div>
             <div class="sheet-card reveal">
                 <div class="sheet-num">06</div>
                 <div class="sheet-name">RSVP Tracker</div>
-                <div class="sheet-desc">Konfirmasi hadir & meja otomatis</div>
+                <div class="sheet-desc">Konfirmasi hadir & kebutuhan meja</div>
             </div>
             <div class="sheet-card reveal">
                 <div class="sheet-num">07</div>
@@ -2263,7 +2026,7 @@
             <div class="sheet-card reveal">
                 <div class="sheet-num">08</div>
                 <div class="sheet-name">Timeline Acara</div>
-                <div class="sheet-desc">Rundown lengkap H-1 & hari H</div>
+                <div class="sheet-desc">Rundown H-1 hingga hari H</div>
             </div>
             <div class="sheet-card reveal">
                 <div class="sheet-num">09</div>
@@ -2273,12 +2036,12 @@
             <div class="sheet-card reveal">
                 <div class="sheet-num">10</div>
                 <div class="sheet-name">Dekorasi & Tema</div>
-                <div class="sheet-desc">Referensi dekor & konsep nikah</div>
+                <div class="sheet-desc">Moodboard, referensi warna & dekor</div>
             </div>
             <div class="sheet-card reveal">
                 <div class="sheet-num">11</div>
                 <div class="sheet-name">Katering & Menu</div>
-                <div class="sheet-desc">Porsi, menu, tracking pembayaran</div>
+                <div class="sheet-desc">Menu, porsi, tracking pembayaran</div>
             </div>
             <div class="sheet-card reveal">
                 <div class="sheet-num">12</div>
@@ -2288,7 +2051,7 @@
             <div class="sheet-card reveal">
                 <div class="sheet-num">13</div>
                 <div class="sheet-name">MUA & Busana</div>
-                <div class="sheet-desc">Jadwal fitting & MUA anak</div>
+                <div class="sheet-desc">Fitting, MUA, sewa/beli baju</div>
             </div>
             <div class="sheet-card reveal">
                 <div class="sheet-num">14</div>
@@ -2303,22 +2066,22 @@
             <div class="sheet-card reveal">
                 <div class="sheet-num">16</div>
                 <div class="sheet-name">Honeymoon Planner</div>
-                <div class="sheet-desc">Itinerary bulan madu anak</div>
+                <div class="sheet-desc">Itinerary & budget bulan madu</div>
             </div>
             <div class="sheet-card reveal">
                 <div class="sheet-num">17</div>
                 <div class="sheet-name">Souvenir & Hampers</div>
-                <div class="sheet-desc">Jumlah, vendor, distribusi</div>
+                <div class="sheet-desc">Jumlah, vendor, distribusi souvenir</div>
             </div>
             <div class="sheet-card reveal">
                 <div class="sheet-num">18</div>
                 <div class="sheet-name">Catatan Penting</div>
-                <div class="sheet-desc">Notes & reminder hal kritis</div>
+                <div class="sheet-desc">Notes & reminder hal penting</div>
             </div>
             <div class="sheet-card reveal">
                 <div class="sheet-num">19</div>
                 <div class="sheet-name">Rekap Akhir</div>
-                <div class="sheet-desc">Summary total & kenangan indah</div>
+                <div class="sheet-desc">Summary total biaya & kenangan</div>
             </div>
             <div class="sheet-card reveal">
                 <div class="sheet-num">20</div>
@@ -2338,21 +2101,23 @@
         </div>
     </section>
 
-    <!-- ══ TESTIMONI — REVISED ══ -->
+    <!-- ══ TESTIMONI ══ -->
     <section class="testi-section">
         <p class="section-eyebrow">Cerita Mereka</p>
         <h2 class="section-title">Sudah Membantu Calon Pengantin <em>Indonesia</em></h2>
-        <p class="section-sub" style="margin-bottom:48px;">Kisah nyata dari early adopter NIKAH RAPI — mereka yang sudah
-            merasakan persiapan nikah tanpa drama.</p>
+        <p style="text-align:center;font-size:14px;color:var(--text-light);margin-bottom:48px;font-weight:300;">Kisah
+            nyata dari early adopter NIKAH RAPI — mereka yang sudah merasakan persiapan nikah tanpa drama.</p>
 
         <div class="testi-photo-grid">
 
-            <!-- ✦ TESTI 1: ANISA (Calon Pengantin Wanita - Jakarta) ✦ -->
             <div class="testi-photo-card reveal">
-                <div class="testi-photo-wrapper">
-                    <img src="assets/testi/testi-1.jpg" alt="Testimoni Anisa - Calon Pengantin" loading="lazy">
-                    <div class="testi-photo-badge">📍 Jakarta</div>
+                <div class="testi-photo-wrapper"
+                    style="height:130px;display:flex;align-items:center;justify-content:center;background:transparent;">
+                    <div
+                        style="width:88px;height:88px;border-radius:50%;background:linear-gradient(135deg,#E8C4B8,#C4857A);display:flex;align-items:center;justify-content:center;font-size:42px;box-shadow:0 8px 24px rgba(92,61,46,0.15);">
+                        🌸</div>
                 </div>
+                <div class="testi-photo-badge">📍 Jakarta</div>
                 <div class="testi-photo-content">
                     <div class="testi-photo-stars">
                         <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
@@ -2367,12 +2132,14 @@
                 </div>
             </div>
 
-            <!-- ✦ TESTI 2: REZA & PUTRI (Pasangan - Bandung) ✦ -->
             <div class="testi-photo-card reveal">
-                <div class="testi-photo-wrapper">
-                    <img src="assets/testi/testi-2.jpg" alt="Testimoni Reza & Putri - Pasangan" loading="lazy">
-                    <div class="testi-photo-badge">📍 Bandung</div>
+                <div class="testi-photo-wrapper"
+                    style="height:130px;display:flex;align-items:center;justify-content:center;background:transparent;">
+                    <div
+                        style="width:88px;height:88px;border-radius:50%;background:linear-gradient(135deg,#8B5E6A,#C9A96E);display:flex;align-items:center;justify-content:center;font-size:42px;box-shadow:0 8px 24px rgba(92,61,46,0.15);">
+                        💑</div>
                 </div>
+                <div class="testi-photo-badge">📍 Bandung</div>
                 <div class="testi-photo-content">
                     <div class="testi-photo-stars">
                         <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
@@ -2387,19 +2154,20 @@
                 </div>
             </div>
 
-            <!-- ✦ TESTI 3: BUNDA SRI (Ibu Calon Pengantin - Surabaya) ✦ -->
             <div class="testi-photo-card reveal">
-                <div class="testi-photo-wrapper">
-                    <img src="assets/testi/testi-3.jpg" alt="Testimoni Bunda Sri - Ibu Calon Pengantin" loading="lazy">
-                    <div class="testi-photo-badge">📍 Surabaya</div>
+                <div class="testi-photo-wrapper"
+                    style="height:130px;display:flex;align-items:center;justify-content:center;background:transparent;">
+                    <div
+                        style="width:88px;height:88px;border-radius:50%;background:linear-gradient(135deg,#C9A96E,#8B5E6A);display:flex;align-items:center;justify-content:center;font-size:42px;box-shadow:0 8px 24px rgba(92,61,46,0.15);">
+                        👩</div>
                 </div>
+                <div class="testi-photo-badge">📍 Surabaya</div>
                 <div class="testi-photo-content">
                     <div class="testi-photo-stars">
                         <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
                     <p class="testi-photo-text">"Anak saya kerja di Jakarta, saya di Surabaya, persiapan pernikahannya
                         sempat chaos. Sejak pakai NIKAH RAPI, semua list seserahan dan keperluan akad bisa saya pantau
-                        dari rumah. Tinggal bagi tugas, semua tercatat rapi. Tidak ada lagi kado yang dobel atau ucapan
-                        yang lupa dibalas."</p>
+                        dari rumah. Tinggal bagi tugas, semua tercatat rapi."</p>
                     <div class="testi-photo-footer">
                         <div class="testi-photo-name">Bunda Sri Wahyuni</div>
                         <div class="testi-photo-meta">Ibu Calon Pengantin · Anak menikah Okt 2026</div>
@@ -2408,19 +2176,20 @@
                 </div>
             </div>
 
-            <!-- ✦ TESTI 4: ANDI (Calon Pengantin Pria - Jakarta) ✦ -->
             <div class="testi-photo-card reveal">
-                <div class="testi-photo-wrapper">
-                    <img src="assets/testi/testi-4.jpg" alt="Testimoni Andi - Calon Pengantin Pria" loading="lazy">
-                    <div class="testi-photo-badge">📍 Jakarta</div>
+                <div class="testi-photo-wrapper"
+                    style="height:130px;display:flex;align-items:center;justify-content:center;background:transparent;">
+                    <div
+                        style="width:88px;height:88px;border-radius:50%;background:linear-gradient(135deg,#5C3D2E,#8B5E6A);display:flex;align-items:center;justify-content:center;font-size:42px;box-shadow:0 8px 24px rgba(92,61,46,0.15);">
+                        👨</div>
                 </div>
+                <div class="testi-photo-badge">📍 Jakarta</div>
                 <div class="testi-photo-content">
                     <div class="testi-photo-stars">
                         <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
                     <p class="testi-photo-text">"Sebagai cowok, saya pikir 'ah, planner ribet'. Tapi setelah dipakai,
                         jadi sadar berapa pengeluaran beneran vs estimasi. Dari rencana 80jt jadi tahu real-nya 95jt.
-                        Budget Tracker-nya simple banget, gak perlu mikir Excel. Yang penting saya gak boncos di akhir."
-                    </p>
+                        Budget Tracker-nya simple banget, gak perlu mikir Excel."</p>
                     <div class="testi-photo-footer">
                         <div class="testi-photo-name">Andi Kurniawan</div>
                         <div class="testi-photo-meta">Calon Pengantin Pria · Menikah Aug 2026</div>
@@ -2429,12 +2198,14 @@
                 </div>
             </div>
 
-            <!-- ✦ TESTI 5: MAYA (Wanita Karir - Tangerang) ✦ -->
             <div class="testi-photo-card reveal">
-                <div class="testi-photo-wrapper">
-                    <img src="assets/testi/testi-5.jpg" alt="Testimoni Maya - Wanita Karir" loading="lazy">
-                    <div class="testi-photo-badge">📍 Tangerang</div>
+                <div class="testi-photo-wrapper"
+                    style="height:130px;display:flex;align-items:center;justify-content:center;background:transparent;">
+                    <div
+                        style="width:88px;height:88px;border-radius:50%;background:linear-gradient(135deg,#7A8C7E,#8B5E6A);display:flex;align-items:center;justify-content:center;font-size:42px;box-shadow:0 8px 24px rgba(92,61,46,0.15);">
+                        💼</div>
                 </div>
+                <div class="testi-photo-badge">📍 Tangerang</div>
                 <div class="testi-photo-content">
                     <div class="testi-photo-stars">
                         <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
@@ -2449,19 +2220,20 @@
                 </div>
             </div>
 
-            <!-- ✦ TESTI 6: BAYU & SINTA (Pasangan Long Distance - Yogyakarta) ✦ -->
             <div class="testi-photo-card reveal">
-                <div class="testi-photo-wrapper">
-                    <img src="assets/testi/testi-6.jpg" alt="Testimoni Bayu & Sinta - Pasangan LDR" loading="lazy">
-                    <div class="testi-photo-badge">📍 Yogyakarta</div>
+                <div class="testi-photo-wrapper"
+                    style="height:130px;display:flex;align-items:center;justify-content:center;background:transparent;">
+                    <div
+                        style="width:88px;height:88px;border-radius:50%;background:linear-gradient(135deg,#E8C4B8,#8B5E6A);display:flex;align-items:center;justify-content:center;font-size:42px;box-shadow:0 8px 24px rgba(92,61,46,0.15);">
+                        🤝</div>
                 </div>
+                <div class="testi-photo-badge">📍 Yogyakarta</div>
                 <div class="testi-photo-content">
                     <div class="testi-photo-stars">
                         <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
                     <p class="testi-photo-text">"LDR Jakarta-Jogja, persiapan nikah jadi tantangan komunikasi. Pakai
                         NIKAH RAPI, kami bisa update bareng-bareng walau beda kota. Vendor di Jogja bisa di-track sama
-                        saya, dia di Jakarta urus ortu. Worth banget dengan harga segini, fitur Kado & Angpao
-                        Tracker-nya juga unik!"</p>
+                        saya, dia di Jakarta urus ortu. Worth banget dengan harga segini!"</p>
                     <div class="testi-photo-footer">
                         <div class="testi-photo-name">Bayu & Sinta</div>
                         <div class="testi-photo-meta">Pasangan LDR · Menikah Sept 2026</div>
@@ -2472,189 +2244,132 @@
 
         </div>
 
-        <!-- Stats bar (existing) -->
         <div class="testi-stats">
-            <div class="testi-stat">
-                <div class="testi-stat-num">22+</div>
-                <div class="testi-stat-label">Modul Web App</div>
+            <div class="tstat">
+                <div class="tstat-num">22+</div>
+                <div class="tstat-label">Modul Web App</div>
             </div>
-            <div class="testi-stat">
-                <div class="testi-stat-num">100%</div>
-                <div class="testi-stat-label">Customer Puas</div>
+            <div class="tstat">
+                <div class="tstat-num">100%</div>
+                <div class="tstat-label">Customer Puas</div>
             </div>
-            <div class="testi-stat">
-                <div class="testi-stat-num">7 Hari</div>
-                <div class="testi-stat-label">Garansi Uang Kembali</div>
+            <div class="tstat">
+                <div class="tstat-num">7 Hari</div>
+                <div class="tstat-label">Garansi Uang Kembali</div>
             </div>
         </div>
     </section>
 
     <!-- ══ PRICING ══ -->
     <section class="pricing-section" id="pricing">
-        <p class="section-eyebrow reveal">Hadiah terbaik untuk pernikahan anakmu</p>
+        <p class="section-eyebrow reveal">Investasi terkecil untuk pernikahan terbaik</p>
         <h2 class="section-title reveal">Dapatkan NIKAH RAPI Sekarang</h2>
         <div class="pricing-card reveal">
-            <div class="pricing-badge">✦ Bundle Lengkap — 3 Produk dalam 1 Harga</div>
+            <div class="pricing-card-badge">✦ Akses Premium Seumur Hidup</div>
             <div class="price-hero">
-                <!-- REVISED: format harga konsisten -->
                 <div class="price-big"><sup>Rp</sup>99.000</div>
             </div>
             <div class="price-was-p"><s>Rp 299.000</s></div>
-            <div class="price-save-badge">🤍 Hemat 63% — Investasi Terbaik untuk Hari Besar Anak</div>
+            <div class="price-save-badge">🔥 Hemat 63% — Harga Promo Terbatas!</div>
             <ul class="include-list">
                 <li>
-                    <div class="check">✓</div>Aplikasi Web NIKAH RAPI — 19 fitur lengkap & terintegrasi
+                    <div class="check">✓</div>Aplikasi Web NIKAH RAPI — 22+ modul lengkap & terintegrasi
                 </li>
                 <li>
                     <div class="check">✓</div>Seserahan Tracker eksklusif — tidak ada di produk lain!
                 </li>
                 <li>
-                    <div class="check">✓</div>Kado & Angpao Tracker eksklusif — tidak ada ucapan yang terlewat
+                    <div class="check">✓</div>Kado & Angpao Tracker eksklusif — follow up terima kasih mudah
                 </li>
                 <li>
-                    <div class="check">✓</div>Bisa dipakai bareng anak — share 1 file, update dari mana saja
+                    <div class="check">✓</div>Dashboard otomatis update tanpa input ulang
                 </li>
                 <li>
-                    <div class="check">✓</div>Honeymoon Rapi — planner bulan madu anak
+                    <div class="check">✓</div>Update akses gratis seumur hidup
                 </li>
                 <li>
-                    <div class="check">✓</div>Honeymoon Anti Drama — ebook panduan honeymoon
-                </li>
-                <li>
-                    <div class="check">✓</div>Panduan penggunaan PDF — mudah langsung dipakai
-                </li>
-                <li>
-                    <div class="check">✓</div>Dashboard auto-update tanpa input ulang
+                    <div class="check">✓</div>Akses dari mana saja (HP, Tablet, Laptop)
                 </li>
             </ul>
             <a href="https://entrepreneurai.myscalev.com/checkout-page" class="btn-primary"
-                style="width:100%;justify-content:center;font-size:15px;padding:22px;">
-                🤍 Dapatkan Sekarang — Rp 99.000
-            </a>
-            <!-- REVISED: format harga konsisten -->
+                style="width:100%;justify-content:center;font-size:15px;padding:22px;">🤍 Dapatkan Sekarang — Rp
+                99.000</a>
             <p class="urgency-note">⏰ Harga segera naik ke Rp 299.000 · Garansi 7 hari · Akses langsung via WA</p>
-            <div class="ibu-note">
-                <span style="font-size:24px">🤍</span>
-                <div class="ibu-note-text">
-                    <strong>Investasi Rp 99.000 untuk pernikahan sekali seumur hidup anakmu.</strong><br>
-                    Jauh lebih murah dari satu bunga dekorasi — tapi dampaknya untuk ketenangan pikiran ibu tak
-                    ternilai.
-                </div>
+            <div class="heat-run-bar">
+                <span style="font-size:24px">🔥</span>
+                <div class="heat-run-text"><strong>Produk digital — jangan tunda!</strong><br>Keputusan yang ditunda
+                    hari ini = persiapan nikah yang makin kacau esok hari.</div>
             </div>
         </div>
     </section>
 
-    <!-- ══ FAQ — REVISED dengan pertanyaan ibu-spesifik di atas ══ -->
+    <!-- ══ FAQ ══ -->
     <section class="faq-section">
-        <p class="section-eyebrow reveal">Pertanyaan yang sering ditanya ibu</p>
+        <p class="section-eyebrow reveal">Pertanyaan yang sering ditanya</p>
         <h2 class="section-title reveal">FAQ</h2>
         <div class="faq-inner">
-
-            <!-- NEW: Pertanyaan ibu-spesifik #1 — gaptek concern -->
             <div class="faq-item reveal" onclick="toggleFaq(this)">
-                <div class="faq-q">
-                    Takut gaptek, apakah saya bisa pakai ini?
-                    <span class="faq-ibu-tag">Untuk Ibu</span>
-                    <span class="faq-arrow">+</span>
-                </div>
-                <div class="faq-a">Tidak perlu khawatir! NIKAH RAPI dirancang sangat mudah — seperti mengisi form biasa
-                    di HP. Tidak perlu jago komputer atau Excel. Banyak ibu-ibu yang bahkan tidak terbiasa pakai laptop
-                    pun bisa langsung pakai dari HP. Disertai panduan PDF langkah demi langkah.</div>
+                <div class="faq-q">Saya gaptek, bisa pakai tidak? <span class="faq-arrow">+</span></div>
+                <div class="faq-a">Tidak perlu jago teknologi! NIKAH RAPI dirancang agar tinggal isi data — semua
+                    kalkulasi dan dashboard berjalan otomatis. Kalau kamu bisa ngetik di HP atau pakai WhatsApp, kamu
+                    sudah bisa pakai NIKAH RAPI.</div>
             </div>
-
-            <!-- NEW: Pertanyaan ibu-spesifik #2 — koordinasi dengan anak -->
             <div class="faq-item reveal" onclick="toggleFaq(this)">
-                <div class="faq-q">
-                    Bisa dipakai bareng anak saya yang juga sibuk kerja?
-                    <span class="faq-ibu-tag">Untuk Ibu</span>
-                    <span class="faq-arrow">+</span>
+                <div class="faq-q">Bisa dibuka di HP atau hanya di laptop? <span class="faq-arrow">+</span></div>
+                <div class="faq-a">Bisa di keduanya! Cukup buka browser di HP atau laptop, login pakai email yang
+                    dipakai saat checkout, dan langsung bisa akses semua fitur. Tidak perlu install aplikasi tambahan.
                 </div>
-                <div class="faq-a">Bisa! Simpan di Google Drive dan bagikan ke anak. Ibu dan anak bisa update bersama
-                    dari perangkat masing-masing. Ibu bisa pantau dari HP, anak bisa update dari laptop di kantor. Tidak
-                    perlu ketemu dulu untuk sinkronisasi — semua langsung terhubung real-time.</div>
             </div>
-
-            <!-- NEW: Pertanyaan ibu-spesifik #3 — bantu dari jauh -->
             <div class="faq-item reveal" onclick="toggleFaq(this)">
-                <div class="faq-q">
-                    Bagaimana kalau saya dan anak beda kota?
-                    <span class="faq-ibu-tag">Untuk Ibu</span>
-                    <span class="faq-arrow">+</span>
-                </div>
-                <div class="faq-a">Justru ini salah satu keunggulan NIKAH RAPI! Karena berbasis cloud, ibu bisa memantau
-                    dan membantu persiapan anak dari mana saja — bahkan dari luar kota atau luar negeri. Cukup buka dari
-                    HP, semua data persiapan anak bisa dipantau real-time.</div>
-            </div>
-
-            <!-- Pertanyaan umum -->
-            <div class="faq-item reveal" onclick="toggleFaq(this)">
-                <div class="faq-q">Setelah bayar, akses dikirim ke mana dan berapa lama? <span
+                <div class="faq-q">Setelah bayar, link akses dikirim ke mana dan berapa lama? <span
                         class="faq-arrow">+</span></div>
-                <div class="faq-a">Akses dikirim langsung ke WhatsApp dalam waktu maksimal 1x24 jam (biasanya langsung).
-                    Disertai panduan singkat agar langsung bisa digunakan bersama anak.</div>
+                <div class="faq-a">Link akses dikirim langsung ke email kamu setelah pembayaran dikonfirmasi. Akses
+                    seumur hidup!</div>
             </div>
-
             <div class="faq-item reveal" onclick="toggleFaq(this)">
                 <div class="faq-q">Ada garansi uang kembali tidak? <span class="faq-arrow">+</span></div>
                 <div class="faq-a">Ada garansi 7 hari. Jika file tidak sesuai deskripsi, hubungi kami dan proses refund
                     penuh tanpa pertanyaan berlebihan.</div>
             </div>
-
-            <!-- Pertahankan FAQ adat — sudah bagus di versi lama -->
             <div class="faq-item reveal" onclick="toggleFaq(this)">
-                <div class="faq-q">Bisa untuk adat Jawa, Sunda, Minang, Betawi, dll? <span class="faq-arrow">+</span>
-                </div>
-                <div class="faq-a">Bisa untuk semua adat! Sheet seserahan bisa disesuaikan dengan tradisi masing-masing
-                    daerah. Sudah dipakai untuk pernikahan adat Jawa, Sunda, Minang, Betawi, dan lainnya. Ibu tinggal
-                    sesuaikan daftar seserahan dengan adat yang dipakai.</div>
+                <div class="faq-q">Bisa untuk pernikahan adat apa saja? <span class="faq-arrow">+</span></div>
+                <div class="faq-a">Bisa untuk semua adat — Jawa, Sunda, Minang, Betawi, Modern, dan lainnya.</div>
             </div>
-
             <div class="faq-item reveal" onclick="toggleFaq(this)">
-                <div class="faq-q">Apakah ini untuk Excel atau aplikasi lain? <span class="faq-arrow">+</span></div>
-                <div class="faq-a">NIKAH RAPI adalah Web App — bisa diakses langsung dari browser HP atau laptop, tanpa
-                    perlu download aplikasi apapun apapun. Tinggal buka link, langsung bisa dipakai. Tidak butuh Excel
-                    atau
-                    software khusus.</div>
+                <div class="faq-q">Apa bedanya dengan wedding planner lain? <span class="faq-arrow">+</span></div>
+                <div class="faq-a">NIKAH RAPI adalah satu-satunya Web App wedding planner yang punya Seserahan Tracker &
+                    Kado/Angpao Tracker yang detail — dua fitur yang paling dibutuhkan calon pengantin Indonesia tapi
+                    tidak ada di produk manapun.</div>
             </div>
-
         </div>
     </section>
 
     <!-- ══ FINAL CTA ══ -->
     <section class="final-cta">
-        <p class="section-eyebrow reveal">Untuk ibu yang ingin yang terbaik</p>
-        <h2 class="section-title reveal">Saksikan Pernikahan Anak<br>dengan <em style="color:var(--gold-light)">Tenang,
-                Bangga & Bahagia</em></h2>
-        <p class="reveal">Seserahan tidak ada yang ketinggalan, kado tercatat semua, budget terkendali, koordinasi
-            dengan anak lancar. Supaya hari terbesar anakmu benar-benar menjadi kenangan terindah untuk seluruh
-            keluarga.</p>
+        <p class="section-eyebrow reveal">Sudah siap?</p>
+        <h2 class="section-title reveal">Mulai rencanakan pernikahanmu<br>dengan lebih <em
+                style="color:var(--gold-light)">tenang & rapi</em></h2>
+        <p class="reveal">Ratusan detail pernikahan dalam satu file. Supaya hari terbaikmu benar-benar terasa seperti
+            hari terbaik.</p>
         <div class="final-price reveal">Rp 99.000 · Hemat 63% · Garansi 7 hari · Akses langsung via WA</div>
-        <a href="https://entrepreneurai.myscalev.com/checkout-page" class="btn-secondary reveal" style="margin:0 auto;">
-            🤍 Bantu Anak Nikah Rapi Sekarang
-        </a>
+        <a href="https://entrepreneurai.myscalev.com/checkout-page" class="btn-secondary reveal"
+            style="margin:0 auto;">🤍 Bantu Anak Nikah Rapi Sekarang</a>
     </section>
 
-    <!-- ══ FOOTER ══ -->
     <footer>
         <div class="footer-brand">NIKAH RAPI ✦</div>
-        <div class="footer-note">© 2025 NIKAH RAPI · Wedding Planner App Premium · Made with love 🤍</div>
+        <div class="footer-note">© 2025 NIKAH RAPI · Wedding Planner Digital Premium · Made with love 🤍</div>
     </footer>
 
     <script>
         const reveals = document.querySelectorAll('.reveal');
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, i) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => entry.target.classList.add('visible'), i * 60);
-                }
-            });
+            entries.forEach((entry, i) => { if (entry.isIntersecting) setTimeout(() => entry.target.classList.add('visible'), i * 60); });
         }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
         reveals.forEach(el => observer.observe(el));
 
         const stickyCta = document.getElementById('stickyCta');
-        window.addEventListener('scroll', () => {
-            stickyCta.classList.toggle('show', window.scrollY > 700);
-        });
+        window.addEventListener('scroll', () => { stickyCta.classList.toggle('show', window.scrollY > 700); });
 
         function toggleFaq(el) { el.classList.toggle('open'); }
 
@@ -2664,22 +2379,29 @@
             btn.classList.add('on');
             const el = document.getElementById(id);
             if (el) el.classList.add('on');
+            const map = { 'p-dash': 0, 'p-budget': 1, 'p-ses': 2, 'p-kado': 3, 'p-guest': 4, 'p-vendor': 5 };
+            document.querySelectorAll('.stab').forEach((t, i) => t.classList.toggle('on', i === map[id]));
         }
-    </script>
 
-    <script>
+        function switchSheet(btn, id, idx) {
+            document.querySelectorAll('.stab').forEach(t => t.classList.remove('on'));
+            document.querySelectorAll('.preview-stage').forEach(s => s.classList.remove('on'));
+            btn.classList.add('on');
+            const el = document.getElementById(id);
+            if (el) el.classList.add('on');
+        }
+
         function loadVideo(el) {
             var iframe = document.createElement('iframe');
             iframe.src = 'https://www.youtube.com/embed/YPl7CuUqbUs?autoplay=1&mute=1&rel=0&modestbranding=1';
             iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:none;border-radius:16px;';
             iframe.allow = 'autoplay; encrypted-media; fullscreen';
             iframe.allowFullscreen = true;
-            el.innerHTML = '';
-            el.appendChild(iframe);
-            el.style.cursor = 'default';
-            el.onclick = null;
+            el.innerHTML = ''; el.appendChild(iframe);
+            el.style.cursor = 'default'; el.onclick = null;
         }
     </script>
+
 </body>
 
 </html>
