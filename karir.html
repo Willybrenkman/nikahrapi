@@ -1641,17 +1641,7 @@
             }
         }
     </style>
-    <!-- Meta Pixel Code -->
-    <script>
-        !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s) }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '4326987370876034'); fbq('track', 'ViewContent');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=4326987370876034&ev=PageView&noscript=1" /></noscript>
-    <script>
-        var leadTracked = false;
-        window.addEventListener('scroll', function () { if (leadTracked) return; var s = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100; if (s > 50) { if (typeof fbq !== 'undefined') { fbq('track', 'Lead', { content_name: 'Engaged Scroll - NIKAH RAPI', content_category: 'Wedding Planner' }); } leadTracked = true; } });
-    </script>
+    
 </head>
 
 <body>
@@ -1716,19 +1706,29 @@
                     <button class="stab" onclick="switchSheet(this,'p-guest',4)">👥 Guest List</button>
                     <button class="stab" onclick="switchSheet(this,'p-vendor',5)">🏢 Vendor</button>
                 </div>
-                <div class="preview-stage on" id="p-dash"><img src="assets/dashboard.png" alt="Dashboard"
-                        loading="lazy"></div>
-                <div class="preview-stage" id="p-ses"><img src="assets/seserahan.png" alt="Seserahan"
-                        loading="lazy"></div>
-                <div class="preview-stage" id="p-kado"><img src="assets/kadoangpao.png" alt="Kado Angpao"
-                        loading="lazy"></div>
-                <div class="preview-stage" id="p-budget"><img src="assets/budget.png" alt="Budget"
-                        loading="lazy"></div>
-                <div class="preview-stage" id="p-guest"><img src="assets/guestlist.png" alt="Guest List" loading="lazy">
-                </div>
-                <div class="preview-stage" id="p-vendor"><img src="assets/vendor.png" alt="Vendor" loading="lazy"></div>
-            </div>
+                <div class="preview-stage on" id="p-dash">
+          <img src="assets/dashboard.png" alt="Dashboard NIKAH RAPI" width="900" height="500" fetchpriority="high"
+            decoding="async">
         </div>
+        <div class="preview-stage" id="p-ses">
+          <img src="assets/seserahan.png" alt="Seserahan Tracker" width="900" height="500" loading="lazy"
+            decoding="async">
+        </div>
+        <div class="preview-stage" id="p-kado">
+          <img src="assets/kadoangpao.png" alt="Kado & Angpao Tracker" width="900" height="500" loading="lazy"
+            decoding="async">
+        </div>
+        <div class="preview-stage" id="p-budget">
+          <img src="assets/budget.png" alt="Budget Planner" width="900" height="500" loading="lazy" decoding="async">
+        </div>
+        <div class="preview-stage" id="p-guest">
+          <img src="assets/guestlist.png" alt="Guest List" width="900" height="500" loading="lazy" decoding="async">
+        </div>
+        <div class="preview-stage" id="p-vendor">
+          <img src="assets/vendor.png" alt="Vendor Manager" width="900" height="500" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
 
         <div class="hero-cta-block">
             <div class="price-display">
@@ -2369,46 +2369,83 @@
         <div class="footer-note">© 2025 NIKAH RAPI · Wedding Planner Digital Premium · Made with love 🤍</div>
     </footer>
 
-    <script>
-        const reveals = document.querySelectorAll('.reveal');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, i) => { if (entry.isIntersecting) setTimeout(() => entry.target.classList.add('visible'), i * 60); });
-        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-        reveals.forEach(el => observer.observe(el));
+    <!-- ══ SCRIPTS - PINDAH KE BAWAH BIAR GAK BLOCKING RENDER ══ -->
 
-        const stickyCta = document.getElementById('stickyCta');
-        window.addEventListener('scroll', () => { stickyCta.classList.toggle('show', window.scrollY > 700); });
+  <!-- Meta Pixel Code - dipindah ke akhir body dengan async load -->
+  <script>
+    // Delay Meta Pixel sampai page idle, biar gak ganggu LCP
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s) }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '4326987370876034');
+        fbq('track', 'ViewContent');
+      }, 1500);
+    });
 
-        function toggleFaq(el) { el.classList.toggle('open'); }
-
-        function switchPreview(btn, id) {
-            document.querySelectorAll('.ptab').forEach(t => t.classList.remove('on'));
-            document.querySelectorAll('.preview-stage').forEach(s => s.classList.remove('on'));
-            btn.classList.add('on');
-            const el = document.getElementById(id);
-            if (el) el.classList.add('on');
-            const map = { 'p-dash': 0, 'p-budget': 1, 'p-ses': 2, 'p-kado': 3, 'p-guest': 4, 'p-vendor': 5 };
-            document.querySelectorAll('.stab').forEach((t, i) => t.classList.toggle('on', i === map[id]));
+    // Scroll-based Lead tracking
+    var leadTracked = false;
+    window.addEventListener('scroll', function () {
+      if (leadTracked) return;
+      var s = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+      if (s > 50) {
+        if (typeof fbq !== 'undefined') {
+          fbq('track', 'Lead', { content_name: 'Engaged Scroll - NIKAH RAPI', content_category: 'Wedding Planner' });
         }
+        leadTracked = true;
+      }
+    }, { passive: true });
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=4326987370876034&ev=PageView&noscript=1" /></noscript>
 
-        function switchSheet(btn, id, idx) {
-            document.querySelectorAll('.stab').forEach(t => t.classList.remove('on'));
-            document.querySelectorAll('.preview-stage').forEach(s => s.classList.remove('on'));
-            btn.classList.add('on');
-            const el = document.getElementById(id);
-            if (el) el.classList.add('on');
+  <script>
+    // Reveal animation
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 60);
         }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(el => observer.observe(el));
 
-        function loadVideo(el) {
-            var iframe = document.createElement('iframe');
-            iframe.src = 'https://www.youtube.com/embed/YPl7CuUqbUs?autoplay=1&mute=1&rel=0&modestbranding=1';
-            iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:none;border-radius:16px;';
-            iframe.allow = 'autoplay; encrypted-media; fullscreen';
-            iframe.allowFullscreen = true;
-            el.innerHTML = ''; el.appendChild(iframe);
-            el.style.cursor = 'default'; el.onclick = null;
-        }
-    </script>
+    // Sticky CTA
+    const stickyCta = document.getElementById('stickyCta');
+    window.addEventListener('scroll', () => {
+      stickyCta.classList.toggle('show', window.scrollY > 700);
+    }, { passive: true });
+
+    function toggleFaq(el) { el.classList.toggle('open'); }
+
+    function switchPreview(btn, id) {
+      document.querySelectorAll('.ptab').forEach(t => t.classList.remove('on'));
+      document.querySelectorAll('.preview-stage').forEach(s => s.classList.remove('on'));
+      btn.classList.add('on');
+      const el = document.getElementById(id);
+      if (el) el.classList.add('on');
+      const map = { 'p-dash': 0, 'p-budget': 1, 'p-ses': 2, 'p-kado': 3, 'p-guest': 4, 'p-vendor': 5 };
+      document.querySelectorAll('.stab').forEach((t, i) => t.classList.toggle('on', i === map[id]));
+    }
+
+    function switchSheet(btn, id, idx) {
+      document.querySelectorAll('.stab').forEach(t => t.classList.remove('on'));
+      document.querySelectorAll('.preview-stage').forEach(s => s.classList.remove('on'));
+      btn.classList.add('on');
+      const el = document.getElementById(id);
+      if (el) el.classList.add('on');
+    }
+
+    function loadVideo(el) {
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube.com/embed/YPl7CuUqbUs?autoplay=1&mute=1&rel=0&modestbranding=1';
+      iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:none;border-radius:16px;';
+      iframe.allow = 'autoplay; encrypted-media; fullscreen';
+      iframe.allowFullscreen = true;
+      el.innerHTML = ''; el.appendChild(iframe);
+      el.style.cursor = 'default'; el.onclick = null;
+    }
+  </script>
 
 </body>
 
